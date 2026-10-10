@@ -14,7 +14,7 @@ This folder supports the HackShack Labs article, but does **not** contain firmwa
 
 Run `python3 research/piratebox-wr703n/inspect_sources.py` from the repo root. It reads the source manifest and prints pinned clone commands, without executing downloads or building firmware.
 
-The manifest initially contains branch references for discovery only. Replace each with an immutable commit hash before reproducible builds.
+The two upstream Git repositories are now pinned to immutable commit hashes. Build dependencies, ImageBuilder archives, package repository contents and licenses remain unverified.
 
 ## Security gates
 
