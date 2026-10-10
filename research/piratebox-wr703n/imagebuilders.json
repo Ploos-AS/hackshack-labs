@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "verified_from": "official OpenWrt archive directory listings, 2026-10-11",
+  "candidates": [
+    {
+      "release": "12.09",
+      "url": "https://archive.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/OpenWrt-ImageBuilder-ar71xx_generic-for-linux-i486.tar.bz2",
+      "checksum_type": "md5",
+      "checksum": "5047df658799b399ddbffcf0251b8e6d",
+      "notes": "32-bit host build; MD5 is not an adequate security authenticity guarantee"
+    },
+    {
+      "release": "14.07",
+      "url": "https://archive.openwrt.org/barrier_breaker/14.07/ar71xx/generic/OpenWrt-ImageBuilder-ar71xx_generic-for-linux-x86_64.tar.bz2",
+      "checksum_type": "md5",
+      "checksum": "66a9b806a363ec44f09c8a24191ec600",
+      "notes": "Historic x86_64 imagebuilder; do not assume PirateBox package ABI compatibility"
+    },
+    {
+      "release": "18.06.0",
+      "url": "https://downloads.openwrt.org/releases/18.06.0/targets/ar71xx/generic/openwrt-imagebuilder-18.06.0-ar71xx-generic.Linux-x86_64.tar.xz",
+      "checksum_type": "sha256",
+      "checksum": "b2960fe9706fccef86380b5ab8582e4856a32677c1f6d80979049fc52a42e6f2",
+      "notes": "Alternative research baseline only"
+    },
+    {
+      "release": "19.07.10",
+      "url": "https://downloads.openwrt.org/releases/19.07.10/targets/ar71xx/generic/openwrt-imagebuilder-19.07.10-ar71xx-generic.Linux-x86_64.tar.xz",
+      "checksum_type": "sha256",
+      "checksum": "31858a49bc7002cf4afb8c10999401797839ebc61f618f986acc927d28a3177f",
+      "notes": "Later archived OpenWrt; no PirateBox compatibility demonstrated"
+    }
+  ],
+  "piratebox_custom_imagebuilder": {
+    "url": "http://downloads.piratebox.de/OpenWrt-ImageBuilder-ar71xx_generic-for-linux-x86_64.tar.bz2",
+    "checksum": null,
+    "status": "not verified; HTTP-only upstream reference; do not automatically download"
+  },
+  "warning": "These are candidate archive entries, not tested firmware, not verified package ABI compatibility, and not safe-to-flash recommendations."
+}
