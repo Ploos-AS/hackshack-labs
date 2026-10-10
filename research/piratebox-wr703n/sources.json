@@ -7,15 +7,17 @@
       "name": "openwrt-image-build",
       "url": "https://github.com/PirateBox-Dev/openwrt-image-build.git",
       "ref": "master",
-      "commit": null,
-      "license": "not yet verified"
+      "commit": "fd335adb54d7797023608896d12edb5d0bb6a05c",
+      "license": "not yet verified",
+      "commit_date": "2018-11-02"
     },
     {
       "name": "openwrt-piratebox-feed",
       "url": "https://github.com/PirateBox-Dev/openwrt-piratebox-feed.git",
       "ref": "master",
-      "commit": null,
-      "license": "not yet verified"
+      "commit": "3a9d8c3cd66d50555fb32135b96f6960e8c9262e",
+      "license": "not yet verified",
+      "commit_date": "2016-09-20"
     }
   ],
   "historical_target": {
@@ -25,5 +27,5 @@
     "imagebuilder_sha256": null,
     "package_repository_status": "unverified"
   },
-  "status": "research-only; no firmware build or hardware test performed"
+  "status": "upstream commits pinned; build dependencies and hardware unverified"
 }
