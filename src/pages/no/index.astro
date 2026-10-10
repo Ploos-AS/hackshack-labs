@@ -1,0 +1,5 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+const sections=['Prosjekter','Guider','How-Tos','Mini How-Tos','Anmeldelser','Tester','Kurs','Dybdeanalyser','Demonteringer','Eksperimenter','Oppslagsverk'];
+---
+<SiteLayout title="Utforsk · Bygg · Hack" lang="nb"><section class="hero"><p class="tag">root@hackshack:~$ ls projects/</p><h1>Utforsk. Bygg. Hack.</h1><p>Praktiske prosjekter, grundige guider, maskinvareanmeldelser og etterprøvbare tester.</p><p class="muted">Første serie: PirateBox → LibraryBox → PocketBox.</p></section><h2 id="topics">Utforsk laboratoriet</h2><div class="grid">{sections.map(s => <article class="card"><span class="tag">[ {s.toUpperCase()} ]</span><h3>{s}</h3><p class="muted">Artikler og ressurser er under arbeid.</p></article>)}</div></SiteLayout>
