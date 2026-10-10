@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "device": "TP-Link TL-WR703N",
+  "target_revision": "v1 (historical build target; physical unit unverified)",
+  "sources": [
+    {
+      "name": "openwrt-image-build",
+      "url": "https://github.com/PirateBox-Dev/openwrt-image-build.git",
+      "ref": "master",
+      "commit": null,
+      "license": "not yet verified"
+    },
+    {
+      "name": "openwrt-piratebox-feed",
+      "url": "https://github.com/PirateBox-Dev/openwrt-piratebox-feed.git",
+      "ref": "master",
+      "commit": null,
+      "license": "not yet verified"
+    }
+  ],
+  "historical_target": {
+    "profile": "TLWR703",
+    "filename": "openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin",
+    "version_tag": "PBX_Image_2.0.1",
+    "imagebuilder_sha256": null,
+    "package_repository_status": "unverified"
+  },
+  "status": "research-only; no firmware build or hardware test performed"
+}
