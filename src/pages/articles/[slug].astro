@@ -1,0 +1,16 @@
+---
+import { render } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { published, articleUrl, categoryLabels } from '../../lib/articles';
+export async function getStaticPaths(){
+  const entries=(await published()).filter(a=>a.data.lang==='en');
+  return entries.map(entry=>({params:{slug:entry.id.split('/').at(-1)},props:{entry}}));
+}
+const {entry}=Astro.props;
+const {Content}=await render(entry);
+const all=await published();
+const counterpart=all.find(a=>a.data.lang==='nb' && a.data.translationKey && a.data.translationKey===entry.data.translationKey);
+---
+<SiteLayout title={entry.data.title} lang="en" alternateUrl={counterpart ? articleUrl(counterpart.id,'nb') : undefined}>
+  <article><p class="tag">{categoryLabels[entry.data.category]} · {entry.data.date.toLocaleDateString('en-GB')} · {entry.data.tested ? 'Hardware verified' : 'Not hardware verified'}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p><Content /></article>
+</SiteLayout>
