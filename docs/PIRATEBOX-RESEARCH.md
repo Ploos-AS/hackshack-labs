@@ -33,3 +33,22 @@ Do not publish flashing commands or set `tested: true` until firmware compatibil
 - **Guide:** Installing PirateBox on the TP-Link TL-WR703N in 2026 (draft)
 - **Mini How-To:** Identify the TL-WR703N hardware revision (draft)
 - **How-To:** Recover a TL-WR703N (planned; needs verified procedure)
+
+## Verified upstream build-script findings (source inspection, not execution)
+
+Inspected upstream `master` files on 2026-10-11:
+
+- [Image build README](https://github.com/PirateBox-Dev/openwrt-image-build/blob/master/README) says it uses the **OpenWrt ImageBuilder** and installs `pbxopg` from a historical package repository.
+- [Image build Makefile](https://github.com/PirateBox-Dev/openwrt-image-build/blob/master/Makefile) defines `VERSION_TAG=\"PBX_Image_2.0.1\"`, references an **ar71xx_generic** ImageBuilder tarball from `downloads.piratebox.de`, and includes the `TLWR703` profile.
+- The Makefile's `WR703N` target expects output named `openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin`. This is evidence of a historical **v1 factory-image target**, **not** proof that the image exists, is safe, or works.
+- The Makefile references package sources over plain **HTTP** and contains no checksum verification for its ImageBuilder download. Do **not** run it blindly or treat the resulting binary as trusted.
+- [PirateBox feed README](https://github.com/PirateBox-Dev/openwrt-piratebox-feed/blob/master/README.md) describes a custom OpenWrt feed. Its example uses a legacy `git://` transport; this is historical documentation, not a recommended secure setup.
+
+### Consequences for the guide
+
+1. Focus initial compatibility investigation on the **TL-WR703N v1** target, while verifying the actual hardware revision before any firmware selection.
+2. Reconstruct the historical build environment in an isolated container/VM, pin source commits, replace insecure download transport where authenticated mirrors exist, and verify hashes from trusted independent references.
+3. Inspect build dependencies and package provenance before attempting reproduction; modern OpenWrt releases cannot be assumed compatible with these historical packages.
+4. Document recovery and preserve stock firmware before any real-device flashing.
+
+**Outstanding:** historical archive availability, hashes, package provenance, build reproducibility, exact supported hardware revisions, and physical-device testing.
