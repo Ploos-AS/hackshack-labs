@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { categories } from '../../../content.config';
+import { published, articleUrl, categoryLabelsNo } from '../../../lib/articles';
+export async function getStaticPaths(){return categories.map(category=>({params:{category}}));}
+const category=Astro.params.category!;
+const articles=(await published()).filter(a=>a.data.lang==='nb' && a.data.category===category);
+---
+<SiteLayout title={categoryLabelsNo[category]} lang="nb"><h1>{categoryLabelsNo[category]}</h1><div class="grid">{articles.length ? articles.map(a=><article class="card"><a href={articleUrl(a.id,'nb')}>{a.data.title}</a><p class="muted">{a.data.description}</p></article>) : <p class="muted">Ingen publiserte artikler ennå.</p>}</div></SiteLayout>
