@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Print safe source inspection commands. Never downloads or flashes firmware."""
+"""Print reproducible source checkout commands. Never executes commands."""
 import json
+import re
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -11,11 +12,14 @@ for source in manifest["sources"]:
     if parsed.scheme != "https" or parsed.hostname != "github.com":
         raise ValueError("Only HTTPS GitHub sources are allowed")
     name = source["name"]
-    if not name.replace("-", "").replace("_", "").isalnum():
+    if not re.fullmatch(r"[A-Za-z0-9_-]+", name):
         raise ValueError("Invalid source name")
-    print(f"# {name}: read and verify LICENSE before reuse")
+    commit = source.get("commit")
+    if not commit or not re.fullmatch(r"[0-9a-f]{40}", commit):
+        raise ValueError(f"{name}: missing immutable 40-character commit hash")
+    print(f"# {name}: review its license before redistributing any code")
     print(f"git clone --no-checkout {url} {name}")
-    print(f"git -C {name} rev-parse origin/{source['ref']}")
-    print(f"# Record immutable commit in sources.json, then inspect in isolation")
+    print(f"git -C {name} checkout --detach {commit}")
+    print(f"git -C {name} rev-parse HEAD  # expected: {commit}")
     print()
-print("No commands executed. No firmware downloaded or flashed.")
+print("Commands printed only. No downloads or firmware operations performed.")
