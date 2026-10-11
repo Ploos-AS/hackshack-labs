@@ -41,6 +41,20 @@ Consult the [OpenWrt WR703N device page](https://openwrt.org/toh/tp-link/tl-wr70
 
 Before publishing instructions we will record the file's source, HTTP availability, exact filename, cryptographic checksum from a trustworthy release manifest, and the intended installation path. A factory image and a sysupgrade image are not interchangeable.
 
+## Newer official release check (11 Oct 2026)
+
+The official `sha256sums` manifests were searched for WR703N-specific filenames:
+
+- **LEDE 17.01.7, ar71xx/generic:** both WR703N v1 images are present.
+- **OpenWrt 18.06.9, ar71xx/generic:** no WR703N entry was found.
+- **OpenWrt 19.07.10, ath79/tiny:** no WR703N entry was found.
+
+This makes **17.01.7 the latest device-specific stable release identified so far**, not proof that no other historical, snapshot, or community builds exist. The statement that 19.07.10 was the last release for the broader 4/32 device class must not be interpreted as confirmation of a WR703N image.
+
+Sources: [17.01.7 SHA-256 manifest](https://downloads.openwrt.org/releases/17.01.7/targets/ar71xx/generic/sha256sums), [18.06.9 SHA-256 manifest](https://downloads.openwrt.org/releases/18.06.9/targets/ar71xx/generic/sha256sums), [19.07.10 ath79/tiny SHA-256 manifest](https://downloads.openwrt.org/releases/19.07.10/targets/ath79/tiny/sha256sums).
+
+**Independent binary verification:** attempted, but the lab environment could not download the binary files. HTTP availability and locally computed hashes are therefore **not yet confirmed**. Do not flash based on the manifest alone.
+
 ## Step 3: Prepare recovery first
 
 The device documentation describes a 3.3V UART serial console at **115200 8N1**. Verify the exact board revision and UART pinout before connecting a 3.3V USB-to-UART adapter. Never attach a conventional RS-232 port directly. We will add annotated photographs of the board and document the bootloader and TFTP recovery process after testing.
@@ -58,7 +72,7 @@ The device documentation describes a 3.3V UART serial console at **115200 8N1**.
 | Check | Status |
 | --- | --- |
 | WR703N hardware revision photographed | Pending |
-| Official archive lists exact filenames and SHA-256 | Confirmed from index |\n| Binary downloaded and independently hashed | Pending |
+| Official archive lists exact filenames and SHA-256 | Confirmed from index |\n| Binary downloaded and independently hashed | Blocked by download environment; pending |\n| 18.06.9 ar71xx/generic manifest searched | No WR703N image found |\n| 19.07.10 ath79/tiny manifest searched | No WR703N image found |
 | Stock-firmware installation tested | Pending |
 | Existing OpenWrt upgrade tested | Pending |
 | Serial pinout and boot output recorded | Pending |
