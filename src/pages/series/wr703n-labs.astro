@@ -1,0 +1,17 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { published, articleUrl } from '../../lib/articles';
+const entries=(await published()).filter(a=>a.data.lang==='en' && a.data.series==='WR703N Labs').sort((a,b)=>a.data.date.getTime()-b.data.date.getTime());
+---
+<SiteLayout title="WR703N Labs">
+  <section class="hero">
+    <p class="tag">HACKSHACK LABS / SERIES</p>
+    <h1>WR703N Labs</h1>
+    <p>Giving the tiny TP-Link TL-WR703N a second life. Practical guides to legacy OpenWrt, hardware, and embedded Linux.</p>
+    <p class="muted">Articles are published as they are ready. Firmware installation and recovery instructions will follow after verification.</p>
+  </section>
+  <h2>Articles</h2>
+  <div class="grid">
+    {entries.map((entry,i)=><article class="card"><p class="tag">PART {i+1}</p><h3><a href={articleUrl(entry.id,'en')}>{entry.data.title}</a></h3><p class="muted">{entry.data.description}</p></article>)}
+  </div>
+</SiteLayout>
