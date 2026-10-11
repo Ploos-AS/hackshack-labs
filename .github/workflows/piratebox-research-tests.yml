@@ -1,0 +1,36 @@
+name: PirateBox research tools
+
+on:
+  push:
+    paths:
+      - 'research/piratebox-wr703n/*.py'
+      - '.github/workflows/piratebox-research-tests.yml'
+  pull_request:
+    paths:
+      - 'research/piratebox-wr703n/*.py'
+      - '.github/workflows/piratebox-research-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile Python research tools
+        run: python -m compileall -q research/piratebox-wr703n
+      - name: Run offline archive and report tests
+        working-directory: research/piratebox-wr703n
+        run: |
+          python -m unittest -v \
+            test_archive_inspector \
+            test_compare_imagebuilder_reports \
+            test_imagebuilder_metadata
