@@ -6,7 +6,7 @@ openwrt-piratebox-feed commit. Never executes source scripts or downloads.
 """
 import argparse
 import json
-import re
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -31,10 +31,17 @@ parser = argparse.ArgumentParser()
 parser.add_argument("checkout", type=Path, help="local upstream feed checkout")
 args = parser.parse_args()
 checkout = args.checkout.resolve()
-if not (checkout / ".git").exists():
-    raise SystemExit("Refusing: expected an existing git checkout directory")
-print("Expected pinned commit:", feed["commit"])
-print("Verify independently: git -C", checkout, "rev-parse HEAD")
+try:
+    head = subprocess.run(
+        ["git", "-C", str(checkout), "rev-parse", "HEAD"],
+        capture_output=True, text=True, check=True,
+    ).stdout.strip()
+except (OSError, subprocess.CalledProcessError) as exc:
+    raise SystemExit(f"Refusing: not a readable Git checkout: {exc}")
+expected = feed["commit"]
+if head != expected:
+    raise SystemExit(f"Refusing: checkout HEAD {head} != pinned {expected}")
+print("Verified pinned checkout HEAD:", head)
 failures = 0
 for relative, needles in checks.items():
     target = checkout / relative
