@@ -33,4 +33,5 @@ jobs:
           python -m unittest -v \
             test_archive_inspector \
             test_compare_imagebuilder_reports \
-            test_imagebuilder_metadata
+            test_imagebuilder_metadata \
+            test_imagebuilder_pipeline
