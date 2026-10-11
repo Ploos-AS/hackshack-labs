@@ -37,7 +37,7 @@ If original TP-Link firmware is installed, record its version using the manufact
 
 Consult the [OpenWrt WR703N device page](https://openwrt.org/toh/tp-link/tl-wr703n), [device-specific hardware data](https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr703n_v1), and [release archive](https://archive.openwrt.org/releases/).
 
-The database has historically listed LEDE 17.01.7 factory and sysupgrade images. The direct URLs checked on 11 Oct 2026 did not resolve, so **no firmware image is currently approved for download or flashing by this guide**.
+**Archive filename discrepancy discovered:** the OpenWrt device database uses the prefix `openwrt-17.01.7-`, but the official 17.01.7 release index lists the WR703N v1 images with the prefix `lede-17.01.7-`. The release index lists both files and their SHA-256 checksums:\n\n| Image | Filename | Size | SHA-256 |\n| --- | --- | --- | --- |\n| Factory | `lede-17.01.7-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin` | 3840 KiB | `25ca8f0291a0c968eccab8014f07caf7396aaf426a93971fdc78e9b277caade9` |\n| Sysupgrade | `lede-17.01.7-ar71xx-generic-tl-wr703n-v1-squashfs-sysupgrade.bin` | 3520 KiB | `d2da675ed456743c674b2190de859954fb1606be7dbd9e59056ec10fc878e44f` |\n\nSource: [Official LEDE 17.01.7 ar71xx/generic release index](https://downloads.openwrt.org/releases/17.01.7/targets/ar71xx/generic/). The index is available, but the binaries have **not** yet been downloaded and independently hashed in this lab; do not treat them as hardware-qualified firmware. The incorrect old `openwrt-` URLs should not be used.
 
 Before publishing instructions we will record the file's source, HTTP availability, exact filename, cryptographic checksum from a trustworthy release manifest, and the intended installation path. A factory image and a sysupgrade image are not interchangeable.
 
@@ -58,7 +58,7 @@ The device documentation describes a 3.3V UART serial console at **115200 8N1**.
 | Check | Status |
 | --- | --- |
 | WR703N hardware revision photographed | Pending |
-| Firmware file and checksum verified | Pending |
+| Official archive lists exact filenames and SHA-256 | Confirmed from index |\n| Binary downloaded and independently hashed | Pending |
 | Stock-firmware installation tested | Pending |
 | Existing OpenWrt upgrade tested | Pending |
 | Serial pinout and boot output recorded | Pending |
