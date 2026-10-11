@@ -37,7 +37,14 @@ If original TP-Link firmware is installed, record its version using the manufact
 
 Consult the [OpenWrt WR703N device page](https://openwrt.org/toh/tp-link/tl-wr703n), [device-specific hardware data](https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr703n_v1), and [release archive](https://archive.openwrt.org/releases/).
 
-**Archive filename discrepancy discovered:** the OpenWrt device database uses the prefix `openwrt-17.01.7-`, but the official 17.01.7 release index lists the WR703N v1 images with the prefix `lede-17.01.7-`. The release index lists both files and their SHA-256 checksums:\n\n| Image | Filename | Size | SHA-256 |\n| --- | --- | --- | --- |\n| Factory | `lede-17.01.7-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin` | 3840 KiB | `25ca8f0291a0c968eccab8014f07caf7396aaf426a93971fdc78e9b277caade9` |\n| Sysupgrade | `lede-17.01.7-ar71xx-generic-tl-wr703n-v1-squashfs-sysupgrade.bin` | 3520 KiB | `d2da675ed456743c674b2190de859954fb1606be7dbd9e59056ec10fc878e44f` |\n\nSource: [Official LEDE 17.01.7 ar71xx/generic release index](https://downloads.openwrt.org/releases/17.01.7/targets/ar71xx/generic/). The index is available, but the binaries have **not** yet been downloaded and independently hashed in this lab; do not treat them as hardware-qualified firmware. The incorrect old `openwrt-` URLs should not be used.
+**Archive filename discrepancy discovered:** the OpenWrt device database uses the prefix `openwrt-17.01.7-`, but the official 17.01.7 release index lists the WR703N v1 images with the prefix `lede-17.01.7-`. The release index lists both files and their SHA-256 checksums:
+
+| Image | Filename | Size | SHA-256 |
+| --- | --- | --- | --- |
+| Factory | `lede-17.01.7-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin` | 3840 KiB | `25ca8f0291a0c968eccab8014f07caf7396aaf426a93971fdc78e9b277caade9` |
+| Sysupgrade | `lede-17.01.7-ar71xx-generic-tl-wr703n-v1-squashfs-sysupgrade.bin` | 3520 KiB | `d2da675ed456743c674b2190de859954fb1606be7dbd9e59056ec10fc878e44f` |
+
+Source: [Official LEDE 17.01.7 ar71xx/generic release index](https://downloads.openwrt.org/releases/17.01.7/targets/ar71xx/generic/). The index is available, but the binaries have **not** yet been downloaded and independently hashed in this lab; do not treat them as hardware-qualified firmware. The incorrect old `openwrt-` URLs should not be used.
 
 Before publishing instructions we will record the file's source, HTTP availability, exact filename, cryptographic checksum from a trustworthy release manifest, and the intended installation path. A factory image and a sysupgrade image are not interchangeable.
 
@@ -54,6 +61,16 @@ This makes **17.01.7 the latest device-specific stable release identified so far
 Sources: [17.01.7 SHA-256 manifest](https://downloads.openwrt.org/releases/17.01.7/targets/ar71xx/generic/sha256sums), [18.06.9 SHA-256 manifest](https://downloads.openwrt.org/releases/18.06.9/targets/ar71xx/generic/sha256sums), [19.07.10 ath79/tiny SHA-256 manifest](https://downloads.openwrt.org/releases/19.07.10/targets/ath79/tiny/sha256sums).
 
 **Independent binary verification:** attempted, but the lab environment could not download the binary files. HTTP availability and locally computed hashes are therefore **not yet confirmed**. Do not flash based on the manifest alone.
+
+## Reproduce the firmware integrity check
+
+The repository includes a [download and SHA-256 verification script](https://github.com/Ploos-AS/hackshack-labs/blob/main/scripts/verify-wr703n-firmware.sh). On a Linux workstation with `curl` and `sha256sum`, run it from a checked-out copy of the repository:
+
+```sh
+bash scripts/verify-wr703n-firmware.sh
+```
+
+The script downloads both images and exits unsuccessfully if either download or checksum validation fails. It does **not** flash the router, check the hardware revision, or qualify a firmware image for installation. Retain the terminal output and actual SHA-256 results as evidence before changing the verification record.
 
 ## Step 3: Prepare recovery first
 
@@ -72,7 +89,10 @@ The device documentation describes a 3.3V UART serial console at **115200 8N1**.
 | Check | Status |
 | --- | --- |
 | WR703N hardware revision photographed | Pending |
-| Official archive lists exact filenames and SHA-256 | Confirmed from index |\n| Binary downloaded and independently hashed | Blocked by download environment; pending |\n| 18.06.9 ar71xx/generic manifest searched | No WR703N image found |\n| 19.07.10 ath79/tiny manifest searched | No WR703N image found |
+| Official archive lists exact filenames and SHA-256 | Confirmed from index |
+| Binary downloaded and independently hashed | Blocked by download environment; pending |
+| 18.06.9 ar71xx/generic manifest searched | No WR703N image found |
+| 19.07.10 ath79/tiny manifest searched | No WR703N image found |
 | Stock-firmware installation tested | Pending |
 | Existing OpenWrt upgrade tested | Pending |
 | Serial pinout and boot output recorded | Pending |
