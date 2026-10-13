@@ -21,6 +21,32 @@ MAGICS = {
     "SquashFS big-endian": b"sqsh",
 }
 
+def inspect_tplink_v1_candidate(data: bytes) -> dict:
+    """Inspect candidate legacy TP-Link fields; never authorize flashing."""
+    if len(data) < 0x200:
+        return {"candidate": False, "reason": "shorter than 512-byte header"}
+    def be32(offset: int) -> int:
+        return struct.unpack_from(">I", data, offset)[0]
+    def ascii_field(start: int, length: int) -> str:
+        return data[start:start + length].split(b"\\x00", 1)[0].decode("ascii", errors="replace")
+    return {
+        "candidate": True,
+        "header_length_assumption": 512,
+        "header_version_be32": be32(0),
+        "vendor_string": ascii_field(4, 24),
+        "firmware_version_string": ascii_field(28, 36),
+        "hardware_id_be32": be32(0x40),
+        "hardware_revision_be32": be32(0x44),
+        "checksum_region_0x4c_0x5b_hex": data[0x4c:0x5c].hex(),
+        "firmware_length_be32": be32(0x7c),
+        "kernel_offset_be32": be32(0x80),
+        "kernel_length_be32": be32(0x84),
+        "rootfs_offset_be32": be32(0x88),
+        "rootfs_length_be32": be32(0x8c),
+        "warning": "Candidate offsets from legacy TP-Link v1 layout; not independently validated as an installable image.",
+    }
+
+
 def parse_squashfs(data: bytes, offset: int) -> dict:
     """Decode the standard 96-byte SquashFS v4 superblock, read-only."""
     fmt = "<5I6H8Q"
@@ -69,6 +95,7 @@ def analyze(path: Path) -> dict:
         "first_32_bytes_hex": data[:32].hex(),
         "signature_offsets_decimal": signatures,
         "squashfs_superblocks": squashfs,
+        "tplink_v1_candidate": inspect_tplink_v1_candidate(data),
         "warning": "Signature scanning is heuristic, not image validation or flash-layout proof.",
     }
 
