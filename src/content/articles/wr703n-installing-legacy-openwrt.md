@@ -116,7 +116,7 @@ Both files begin with the same OpenWrt-related header bytes. The scan is heurist
 
 The read-only analyzer now compares the two verified images byte for byte and records their identical prefix and suffix lengths, first differing offset, file-size difference, and first 64 bytes. This comparison runs automatically as part of the firmware analysis workflow.
 
-**Interpretation pending:** these byte-level measurements do not, by themselves, establish an OEM header length, padding policy, bootloader region, or safe flash offsets. We will publish the actual values after reviewing the new workflow artifact. Use the **factory** image only for a verified OEM installation route, and **sysupgrade** only for a compatible OpenWrt upgrade route.
+**Measured in [GitHub Actions run #3](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38400344910), 13 Oct 2026:** the factory image is **327,676 bytes larger** than sysupgrade; they share an **identical 76-byte prefix**, differ first at **offset 76**, and have no identical suffix. Both start with the ASCII string `OpenWrt` and the identifier `r4030-6028f00df0` within their first 64 bytes. Both image SHA-256 checks passed. These byte-level measurements do not, by themselves, establish an OEM header length, padding policy, bootloader region, or safe flash offsets. Use the **factory** image only for a verified OEM installation route, and **sysupgrade** only for a compatible OpenWrt upgrade route.
 
 ## Step 3: Prepare recovery first
 
