@@ -1,6 +1,14 @@
 name: WR703N firmware integrity and analysis
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * 1'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/wr703n-firmware-analysis.yml'
+      - 'scripts/verify-wr703n-firmware.sh'
+      - 'scripts/analyze-wr703n-images.py'
 
 permissions:
   contents: read
