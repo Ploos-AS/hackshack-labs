@@ -118,6 +118,26 @@ The read-only analyzer now compares the two verified images byte for byte and re
 
 **Measured in [GitHub Actions run #3](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38400344910), 13 Oct 2026:** the factory image is **327,676 bytes larger** than sysupgrade; they share an **identical 76-byte prefix**, differ first at **offset 76**, and have no identical suffix. Both start with the ASCII string `OpenWrt` and the identifier `r4030-6028f00df0` within their first 64 bytes. Both image SHA-256 checks passed. These byte-level measurements do not, by themselves, establish an OEM header length, padding policy, bootloader region, or safe flash offsets. Use the **factory** image only for a verified OEM installation route, and **sysupgrade** only for a compatible OpenWrt upgrade route.
 
+## TP-Link v1 header: measured values
+
+The [13 Oct 2026 automated run](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38466400856) inspected candidate TP-Link v1 header fields in both SHA-256-verified images. The layout corresponds to the field definitions in [OpenWrt's mktplinkfw source](https://lxr.openwrt.org/source/firmware-utils/src/mktplinkfw.c).
+
+| Header field | Factory | Sysupgrade |
+| --- | --- | --- |
+| Header version (big-endian) | `0x01000000` | `0x01000000` |
+| Vendor | `OpenWrt` | `OpenWrt` |
+| Firmware revision | `r4030-6028f00df0` | Same |
+| Hardware ID | `0x07030101` | Same |
+| Hardware revision | `1` | `1` |
+| Declared firmware length | 3,932,160 bytes | 3,932,160 bytes |
+| Kernel offset field | `0x200` | `0x200` |
+| Kernel length field | 1,276,308 bytes | 1,276,308 bytes |
+| Rootfs offset field | `0x100000` | `0x100000` |
+| Rootfs length field | 2,303,654 bytes | 2,303,654 bytes |
+| Primary checksum bytes | Different | Different |
+
+The **rootfs offset header field** must not be confused with the **observed SquashFS magic offset** at byte 1,276,820; they describe different aspects of the image and are not interchangeable flash-write addresses. The shorter sysupgrade file retains the same declared total length in its header. This is consistent with different output padding, but padding content and checksum rules still require explicit verification. No flash offsets or installation commands are inferred from this report.
+
 ## Step 3: Prepare recovery first
 
 The device documentation describes a 3.3V UART serial console at **115200 8N1**. Verify the exact board revision and UART pinout before connecting a 3.3V USB-to-UART adapter. Never attach a conventional RS-232 port directly. We will add annotated photographs of the board and document the bootloader and TFTP recovery process after testing.
