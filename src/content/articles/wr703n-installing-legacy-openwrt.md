@@ -72,6 +72,21 @@ bash scripts/verify-wr703n-firmware.sh
 
 The script downloads both images and exits unsuccessfully if either download or checksum validation fails. It does **not** flash the router, check the hardware revision, or qualify a firmware image for installation. Retain the terminal output and actual SHA-256 results as evidence before changing the verification record.
 
+## Read-only image structure analysis
+
+After downloading and verifying the images, run the repository's [read-only analyzer](https://github.com/Ploos-AS/hackshack-labs/blob/main/scripts/analyze-wr703n-images.py) on a Linux workstation:
+
+```sh
+python3 scripts/analyze-wr703n-images.py \
+  wr703n-firmware/lede-17.01.7-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin \
+  wr703n-firmware/lede-17.01.7-ar71xx-generic-tl-wr703n-v1-squashfs-sysupgrade.bin \
+  --output wr703n-firmware/analysis.json
+```
+
+The JSON report includes sizes, computed and expected hashes, the first 32 bytes and offsets of possible uImage/SquashFS signatures. Signature scans are **heuristic** and do not validate partition boundaries, bootloader compatibility or flash safety. The analyzer returns a nonzero exit code unless every supplied file has a known filename and matching SHA-256.
+
+The analysis results are **pending**: this lab environment cannot currently resolve the archive download host. No image-structure findings are claimed here.
+
 ## Step 3: Prepare recovery first
 
 The device documentation describes a 3.3V UART serial console at **115200 8N1**. Verify the exact board revision and UART pinout before connecting a 3.3V USB-to-UART adapter. Never attach a conventional RS-232 port directly. We will add annotated photographs of the board and document the bootloader and TFTP recovery process after testing.
