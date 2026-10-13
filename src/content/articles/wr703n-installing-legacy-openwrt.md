@@ -60,7 +60,7 @@ This makes **17.01.7 the latest device-specific stable release identified so far
 
 Sources: [17.01.7 SHA-256 manifest](https://downloads.openwrt.org/releases/17.01.7/targets/ar71xx/generic/sha256sums), [18.06.9 SHA-256 manifest](https://downloads.openwrt.org/releases/18.06.9/targets/ar71xx/generic/sha256sums), [19.07.10 ath79/tiny SHA-256 manifest](https://downloads.openwrt.org/releases/19.07.10/targets/ath79/tiny/sha256sums).
 
-**Independent binary verification:** attempted, but the lab environment could not download the binary files. HTTP availability and locally computed hashes are therefore **not yet confirmed**. Do not flash based on the manifest alone.
+**Independent binary verification:** both archived images were successfully downloaded and SHA-256 verified in [GitHub Actions run #1](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38355522292) on 13 Oct 2026. The resulting JSON artifact records a PASS for each image. Integrity verification does **not** establish hardware compatibility or a safe flashing procedure.
 
 ## Reproduce the firmware integrity check
 
@@ -85,7 +85,7 @@ python3 scripts/analyze-wr703n-images.py \
 
 The JSON report includes sizes, computed and expected hashes, the first 32 bytes and offsets of possible uImage/SquashFS signatures. Signature scans are **heuristic** and do not validate partition boundaries, bootloader compatibility or flash safety. The analyzer returns a nonzero exit code unless every supplied file has a known filename and matching SHA-256.
 
-The analysis results are **pending**: this lab environment cannot currently resolve the archive download host. No image-structure findings are claimed here.
+**Analysis results (13 Oct 2026):** [GitHub Actions run #1](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38355522292) produced a JSON report from the actual downloaded binaries:\n\n| Field | Factory | Sysupgrade |\n| --- | ---: | ---: |\n| Bytes | 3,932,160 | 3,604,484 |\n| SHA-256 comparison | PASS | PASS |\n| SquashFS little-endian signature offset | 1,276,820 | 1,276,820 |\n| uImage signature | Not found | Not found |\n\nBoth files begin with the same OpenWrt-related header bytes. The scan is heuristic; an absent uImage signature is not evidence of invalid firmware, and the offset is **not** an established flash partition boundary. These findings do not constitute hardware testing.
 
 ## Step 3: Prepare recovery first
 
@@ -137,7 +137,7 @@ Record: board revision, USB-UART adapter model, serial port, bootloader version,
 | --- | --- |
 | WR703N hardware revision photographed | Pending |
 | Official archive lists exact filenames and SHA-256 | Confirmed from index |
-| Binary downloaded and independently hashed | Blocked by download environment; pending |
+| Binary downloaded and independently hashed | PASS in GitHub Actions run #1, 13 Oct 2026 |
 | 18.06.9 ar71xx/generic manifest searched | No WR703N image found |
 | 19.07.10 ath79/tiny manifest searched | No WR703N image found |
 | Stock-firmware v1.6-and-earlier OEM route documented | Source reviewed; not hardware tested |\n| v1.7 OEM rejection / TFTP exception documented | Source reviewed; not hardware tested |\n| Stock-firmware installation tested | Pending |
