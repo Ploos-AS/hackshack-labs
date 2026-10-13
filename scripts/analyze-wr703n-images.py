@@ -72,6 +72,28 @@ def analyze(path: Path) -> dict:
         "warning": "Signature scanning is heuristic, not image validation or flash-layout proof.",
     }
 
+def compare_images(first: Path, second: Path) -> dict:
+    """Compare bytes without assuming an OEM header or flash partition layout."""
+    a, b = first.read_bytes(), second.read_bytes()
+    prefix = 0
+    while prefix < min(len(a), len(b)) and a[prefix] == b[prefix]:
+        prefix += 1
+    suffix = 0
+    limit = min(len(a), len(b)) - prefix
+    while suffix < limit and a[len(a) - suffix - 1] == b[len(b) - suffix - 1]:
+        suffix += 1
+    return {
+        "first": first.name, "second": second.name,
+        "size_difference_bytes": len(a) - len(b),
+        "identical_prefix_bytes": prefix,
+        "identical_suffix_bytes": suffix,
+        "first_difference_offset": prefix if prefix < min(len(a), len(b)) else None,
+        "first_64_bytes_hex": a[:64].hex(),
+        "second_64_bytes_hex": b[:64].hex(),
+        "warning": "Shared bytes do not prove image headers, padding or flash partition offsets.",
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("files", nargs="+", type=Path)
@@ -82,7 +104,9 @@ def main() -> int:
         if not path.is_file():
             parser.error(f"not a regular file: {path}")
         reports.append(analyze(path))
-    result = {"format": "wr703n-readonly-report-v1", "reports": reports}
+    result = {"format": "wr703n-readonly-report-v2", "reports": reports}
+    if len(args.files) == 2:
+        result["pair_comparison"] = compare_images(args.files[0], args.files[1])
     rendered = json.dumps(result, indent=2) + "\n"
     if args.output:
         args.output.write_text(rendered, encoding="utf-8")
