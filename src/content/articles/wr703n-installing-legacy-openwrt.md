@@ -78,11 +78,25 @@ The device documentation describes a 3.3V UART serial console at **115200 8N1**.
 
 ## Step 4: Choose the correct installation route
 
-**Original TP-Link firmware:** document the exact supported factory-image procedure only after verifying both the image and the firmware interface.
+### A. Original TP-Link firmware: v1.6 and earlier
 
-**Existing OpenWrt:** document the supported sysupgrade route, including whether settings should be preserved, only after confirming compatibility with the installed release.
+The [WR703N device documentation](https://openwrt.org/toh/tp-link/tl-wr703n) describes a factory-image upload through the OEM web interface (historically at `192.168.1.1`, with `admin/admin` credentials on some stock firmware). Some OEM interfaces reject long filenames with error **23002**; the documented workaround is to rename the *verified factory image file* to `openwrt.bin`. Renaming does not alter or validate its contents.
 
-**Non-booting device:** document serial bootloader access and recovery separately. Recovery is not guaranteed if the bootloader or flash is damaged.
+**Do not perform this procedure yet:** first confirm the exact hardware revision, starting firmware, correct factory image, independent SHA-256 result, and recovery readiness. OEM interfaces and credentials may differ.
+
+### B. Original TP-Link firmware: v1.7 exception
+
+The same device page specifically reports that **v1.7 running 3.17.1 Build 140120 Rel.56593n** rejects OpenWrt installation via the OEM web interface. It directs users to a TFTP method instead. We will not invent TFTP addresses, filenames, flash offsets, or bootloader commands. These must be taken from revision-specific documentation and checked against an actual serial boot log before writing an executable procedure.
+
+### C. Already running OpenWrt
+
+Use a device-matched **sysupgrade** image, not a factory image. The [official sysupgrade guide](https://openwrt.org/docs/guide-user/installation/generic.sysupgrade) documents both LuCI and command-line upgrade paths. Before choosing one, collect the installed release, target platform, package list, configuration backup and image hash. Upgrades can erase installed packages and unpreserved files.
+
+The [OpenWrt settings guidance](https://openwrt.org/docs/guide-quick-start/admingui_sysupgrade_keepsettings) advises against retaining old configuration across major version changes. For this legacy lab, a clean configuration is the default *planning assumption*, subject to confirmation of the specific upgrade path. **No flash command is provided here until the route is qualified.**
+
+### D. Non-booting device: recovery only
+
+The device's documented recovery option is **U-Boot TFTP plus serial access**. This is not interchangeable with a normal web upgrade. Recovery is not guaranteed if the bootloader or flash itself is damaged. Capture the serial boot log and identify the actual bootloader before deciding on any recovery commands.
 
 ## Verification record
 
@@ -93,7 +107,7 @@ The device documentation describes a 3.3V UART serial console at **115200 8N1**.
 | Binary downloaded and independently hashed | Blocked by download environment; pending |
 | 18.06.9 ar71xx/generic manifest searched | No WR703N image found |
 | 19.07.10 ath79/tiny manifest searched | No WR703N image found |
-| Stock-firmware installation tested | Pending |
+| Stock-firmware v1.6-and-earlier OEM route documented | Source reviewed; not hardware tested |\n| v1.7 OEM rejection / TFTP exception documented | Source reviewed; not hardware tested |\n| Stock-firmware installation tested | Pending |
 | Existing OpenWrt upgrade tested | Pending |
 | Serial pinout and boot output recorded | Pending |
 | Recovery tested | Pending |
