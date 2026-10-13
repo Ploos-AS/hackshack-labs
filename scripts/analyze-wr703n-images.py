@@ -6,6 +6,7 @@ Not a flashing tool. Known SHA-256 values are from LEDE 17.01.7 ar71xx/generic.
 import argparse
 import hashlib
 import json
+import struct
 from pathlib import Path
 
 EXPECTED = {
@@ -19,6 +20,29 @@ MAGICS = {
     "SquashFS little-endian": b"hsqs",
     "SquashFS big-endian": b"sqsh",
 }
+
+def parse_squashfs(data: bytes, offset: int) -> dict:
+    """Decode the standard 96-byte SquashFS v4 superblock, read-only."""
+    fmt = "<5I6H8Q"
+    size = struct.calcsize(fmt)
+    if offset + size > len(data):
+        return {"offset": offset, "valid": False, "reason": "truncated superblock"}
+    fields = struct.unpack_from(fmt, data, offset)
+    (magic, inodes, mtime, block_size, fragments, compression, block_log,
+     flags, ids, major, minor, root_inode, bytes_used, id_start, xattr_start,
+     inode_start, directory_start, fragment_start, lookup_start) = fields
+    valid = (magic == 0x73717368 and major == 4 and minor == 0
+             and block_size > 0 and block_size & (block_size - 1) == 0
+             and bytes_used >= size and offset + bytes_used <= len(data))
+    return {
+        "offset": offset, "valid": valid, "version": f"{major}.{minor}",
+        "inode_count": inodes, "block_size": block_size,
+        "compression_id": compression, "fragments": fragments,
+        "bytes_used": bytes_used, "end_offset_exclusive": offset + bytes_used,
+        "fits_within_file": offset + bytes_used <= len(data),
+        "note": "Superblock sanity check only; filesystem content not extracted or validated.",
+    }
+
 
 def analyze(path: Path) -> dict:
     data = path.read_bytes()
@@ -35,6 +59,7 @@ def analyze(path: Path) -> dict:
             offsets.append(offset)
             start = offset + 1
         signatures[name] = offsets
+    squashfs = [parse_squashfs(data, offset) for offset in signatures["SquashFS little-endian"]]
     return {
         "filename": path.name,
         "bytes": len(data),
@@ -43,6 +68,7 @@ def analyze(path: Path) -> dict:
         "sha256_status": ("PASS" if digest == expected else "FAIL") if expected else "UNKNOWN_FILENAME",
         "first_32_bytes_hex": data[:32].hex(),
         "signature_offsets_decimal": signatures,
+        "squashfs_superblocks": squashfs,
         "warning": "Signature scanning is heuristic, not image validation or flash-layout proof.",
     }
 
