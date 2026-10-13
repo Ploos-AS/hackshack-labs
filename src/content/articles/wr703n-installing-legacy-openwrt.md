@@ -85,7 +85,23 @@ python3 scripts/analyze-wr703n-images.py \
 
 The JSON report includes sizes, computed and expected hashes, the first 32 bytes and offsets of possible uImage/SquashFS signatures. Signature scans are **heuristic** and do not validate partition boundaries, bootloader compatibility or flash safety. The analyzer returns a nonzero exit code unless every supplied file has a known filename and matching SHA-256.
 
-**Analysis results (13 Oct 2026):** [GitHub Actions run #1](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38355522292) produced a JSON report from the actual downloaded binaries:\n\n| Field | Factory | Sysupgrade |\n| --- | ---: | ---: |\n| Bytes | 3,932,160 | 3,604,484 |\n| SHA-256 comparison | PASS | PASS |\n| SquashFS little-endian signature offset | 1,276,820 | 1,276,820 |\n| uImage signature | Not found | Not found |\n\nBoth files begin with the same OpenWrt-related header bytes. The scan is heuristic; an absent uImage signature is not evidence of invalid firmware, and the offset is **not** an established flash partition boundary. These findings do not constitute hardware testing.
+**Analysis results (13 Oct 2026):** [GitHub Actions run #1](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38355522292) produced a JSON report from the actual downloaded binaries:\n\n| Field | Factory | Sysupgrade |\n| --- | ---: | ---: |\n| Bytes | 3,932,160 | 3,604,484 |\n| SHA-256 comparison | PASS | PASS |\n| SquashFS little-endian signature offset | 1,276,820 | 1,276,820 |\n| uImage signature | Not found | Not found |\n\nThe second automated run on [13 Oct 2026](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38356130125) decoded the SquashFS v4 superblock in both images:
+
+| SquashFS property | Both images |
+| --- | ---: |
+| Version | 4.0 |
+| Compression ID | 4 (XZ) |
+| Block size | 262,144 bytes |
+| Inodes | 1,127 |
+| Fragments | 18 |
+| Bytes used | 2,303,654 |
+| Start offset | 1,276,820 |
+| End offset (exclusive) | 3,580,474 |
+| Superblock sanity check | PASS |
+
+The SquashFS fields match across the two image variants, and the declared filesystem extents fit inside both files. This does not validate every compressed block or establish the router's flash partition boundaries.
+
+Both files begin with the same OpenWrt-related header bytes. The scan is heuristic; an absent uImage signature is not evidence of invalid firmware, and the offset is **not** an established flash partition boundary. These findings do not constitute hardware testing.
 
 ## Step 3: Prepare recovery first
 
