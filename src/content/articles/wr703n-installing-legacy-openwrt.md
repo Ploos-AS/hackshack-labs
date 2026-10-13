@@ -98,6 +98,24 @@ The [OpenWrt settings guidance](https://openwrt.org/docs/guide-quick-start/admin
 
 The device's documented recovery option is **U-Boot TFTP plus serial access**. This is not interchangeable with a normal web upgrade. Recovery is not guaranteed if the bootloader or flash itself is damaged. Capture the serial boot log and identify the actual bootloader before deciding on any recovery commands.
 
+## Recovery decision tree: start with the least invasive option
+
+**Case 1 — OpenWrt boots but configuration or access is broken.** Try OpenWrt **failsafe** first. This is not the same as bootloader recovery or a factory reset. The [official failsafe guide](https://openwrt.org/docs/guide-user/troubleshooting/failsafe_and_factory_reset) explains that the mode starts with wireless and DHCP disabled and normally uses `192.168.1.1`. Connect a workstation directly over Ethernet and set a compatible static address (for example `192.168.1.10/24`). Historical WR703N instructions differ on *when* to press Reset: follow the observed LED pattern rather than assuming a universal delay. Failsafe cannot repair a missing kernel or broken bootloader.
+
+**Case 2 — OpenWrt starts and is reachable.** Back up configuration and inspect firmware details before considering any upgrade. Do not invoke TFTP or erase flash merely to recover from a settings issue.
+
+**Case 3 — Kernel does not boot, but U-Boot still runs.** The [WR703N hardware page](https://openwrt.org/toh/tp-link/tl-wr703n) documents U-Boot serial/TFTP recovery. First collect a read-only serial boot log at **115200 8N1** and inspect the actual bootloader environment. Its historical examples include destructive `erase` and `cp.b` commands; **do not copy them without independently verifying the memory map, exact image layout, and revision**. U-Boot/TFTP is a separate recovery path, not OpenWrt failsafe.
+
+**Case 4 — No serial bootloader output.** Check power and electrical connections before assuming flash corruption. A damaged bootloader or hardware fault may require specialist SPI-flash recovery; this article does not provide unverified flash programming instructions.
+
+### Safe serial observation checklist
+
+Use a USB-to-UART interface with **3.3V logic** and identify `TP_OUT`, `TP_IN`, and ground from board-specific documentation. For initial read-only observation, connect **router TX → adapter RX** and **ground → ground**, power the router normally through its micro-USB input, and capture the boot log. Do not connect adapter VCC or attach a conventional RS-232 port. Only connect router RX after verifying the wiring and deciding that interactive recovery is required. Avoid mechanical strain on fragile test pads.
+
+A Linux workstation can capture a serial session using `picocom -b 115200 /dev/ttyUSB0` after confirming the actual serial device name. This is a workstation command, **not** a router flashing command.
+
+Record: board revision, USB-UART adapter model, serial port, bootloader version, detected flash size, LED behavior, network behavior, and full console output. Do not publish MAC addresses or other device identifiers from logs without redaction.
+
 ## Verification record
 
 | Check | Status |
