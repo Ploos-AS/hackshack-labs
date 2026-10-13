@@ -1,0 +1,32 @@
+name: WR703N firmware integrity and analysis
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download and verify archived firmware
+        run: bash scripts/verify-wr703n-firmware.sh
+      - name: Produce read-only analysis report
+        run: |
+          python3 scripts/analyze-wr703n-images.py \
+            wr703n-firmware/lede-17.01.7-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin \
+            wr703n-firmware/lede-17.01.7-ar71xx-generic-tl-wr703n-v1-squashfs-sysupgrade.bin \
+            --output wr703n-firmware/analysis.json
+      - name: Upload JSON report and verification log only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wr703n-analysis
+          path: |
+            wr703n-firmware/analysis.json
+            wr703n-firmware/expected.sha256
+          if-no-files-found: warn
+          retention-days: 30
