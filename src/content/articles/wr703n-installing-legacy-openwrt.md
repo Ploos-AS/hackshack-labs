@@ -44,7 +44,7 @@ Consult the [OpenWrt WR703N device page](https://openwrt.org/toh/tp-link/tl-wr70
 | Factory | `lede-17.01.7-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin` | 3840 KiB | `25ca8f0291a0c968eccab8014f07caf7396aaf426a93971fdc78e9b277caade9` |
 | Sysupgrade | `lede-17.01.7-ar71xx-generic-tl-wr703n-v1-squashfs-sysupgrade.bin` | 3520 KiB | `d2da675ed456743c674b2190de859954fb1606be7dbd9e59056ec10fc878e44f` |
 
-Source: [Official LEDE 17.01.7 ar71xx/generic release index](https://downloads.openwrt.org/releases/17.01.7/targets/ar71xx/generic/). The index is available, but the binaries have **not** yet been downloaded and independently hashed in this lab; do not treat them as hardware-qualified firmware. The incorrect old `openwrt-` URLs should not be used.
+Source: [Official LEDE 17.01.7 ar71xx/generic release index](https://downloads.openwrt.org/releases/17.01.7/targets/ar71xx/generic/). Both binaries have since been downloaded and SHA-256 verified by GitHub Actions; they are **not** hardware-qualified firmware. The incorrect old `openwrt-` URLs should not be used.
 
 Before publishing instructions we will record the file's source, HTTP availability, exact filename, cryptographic checksum from a trustworthy release manifest, and the intended installation path. A factory image and a sysupgrade image are not interchangeable.
 
@@ -85,7 +85,16 @@ python3 scripts/analyze-wr703n-images.py \
 
 The JSON report includes sizes, computed and expected hashes, the first 32 bytes and offsets of possible uImage/SquashFS signatures. Signature scans are **heuristic** and do not validate partition boundaries, bootloader compatibility or flash safety. The analyzer returns a nonzero exit code unless every supplied file has a known filename and matching SHA-256.
 
-**Analysis results (13 Oct 2026):** [GitHub Actions run #1](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38355522292) produced a JSON report from the actual downloaded binaries:\n\n| Field | Factory | Sysupgrade |\n| --- | ---: | ---: |\n| Bytes | 3,932,160 | 3,604,484 |\n| SHA-256 comparison | PASS | PASS |\n| SquashFS little-endian signature offset | 1,276,820 | 1,276,820 |\n| uImage signature | Not found | Not found |\n\nThe second automated run on [13 Oct 2026](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38356130125) decoded the SquashFS v4 superblock in both images:
+**Analysis results (13 Oct 2026):** [GitHub Actions run #1](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38355522292) produced a JSON report from the actual downloaded binaries:
+
+| Field | Factory | Sysupgrade |
+| --- | ---: | ---: |
+| Bytes | 3,932,160 | 3,604,484 |
+| SHA-256 comparison | PASS | PASS |
+| SquashFS little-endian signature offset | 1,276,820 | 1,276,820 |
+| uImage signature | Not found | Not found |
+
+The second automated run on [13 Oct 2026](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38356130125) decoded the SquashFS v4 superblock in both images:
 
 | SquashFS property | Both images |
 | --- | ---: |
@@ -102,6 +111,12 @@ The JSON report includes sizes, computed and expected hashes, the first 32 bytes
 The SquashFS fields match across the two image variants, and the declared filesystem extents fit inside both files. This does not validate every compressed block or establish the router's flash partition boundaries.
 
 Both files begin with the same OpenWrt-related header bytes. The scan is heuristic; an absent uImage signature is not evidence of invalid firmware, and the offset is **not** an established flash partition boundary. These findings do not constitute hardware testing.
+
+## Factory versus sysupgrade: measured differences, not assumptions
+
+The read-only analyzer now compares the two verified images byte for byte and records their identical prefix and suffix lengths, first differing offset, file-size difference, and first 64 bytes. This comparison runs automatically as part of the firmware analysis workflow.
+
+**Interpretation pending:** these byte-level measurements do not, by themselves, establish an OEM header length, padding policy, bootloader region, or safe flash offsets. We will publish the actual values after reviewing the new workflow artifact. Use the **factory** image only for a verified OEM installation route, and **sysupgrade** only for a compatible OpenWrt upgrade route.
 
 ## Step 3: Prepare recovery first
 
@@ -156,7 +171,9 @@ Record: board revision, USB-UART adapter model, serial port, bootloader version,
 | Binary downloaded and independently hashed | PASS in GitHub Actions run #1, 13 Oct 2026 |
 | 18.06.9 ar71xx/generic manifest searched | No WR703N image found |
 | 19.07.10 ath79/tiny manifest searched | No WR703N image found |
-| Stock-firmware v1.6-and-earlier OEM route documented | Source reviewed; not hardware tested |\n| v1.7 OEM rejection / TFTP exception documented | Source reviewed; not hardware tested |\n| Stock-firmware installation tested | Pending |
+| Stock-firmware v1.6-and-earlier OEM route documented | Source reviewed; not hardware tested |
+| v1.7 OEM rejection / TFTP exception documented | Source reviewed; not hardware tested |
+| Stock-firmware installation tested | Pending |
 | Existing OpenWrt upgrade tested | Pending |
 | Serial pinout and boot output recorded | Pending |
 | Recovery tested | Pending |
