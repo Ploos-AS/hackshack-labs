@@ -1,0 +1,91 @@
+---
+title: "Proton-økosystemet: Personverntjenester sett fra selvhosting"
+description: "En uavhengig innføring i Protons tjenester, avveininger og når selvhosting kan være et bedre valg."
+category: deep-dives
+lang: nb
+date: 2026-10-14
+tags: [proton, personvern, selvhosting, kryptering, epost, vpn]
+series: "Privacy & Digital Independence"
+translationKey: proton-ecosystem-overview
+draft: true
+tested: false
+---
+
+> **Redaksjonell status – researchutkast (14. oktober 2026):** Dette er en oversiktsartikkel, ikke en praktisk ytelsestest. Produktfunksjoner, abonnementer og plattformstøtte må kontrolleres på nytt før publisering. Ingen Proton-tjenester er uavhengig testet spesielt for denne artikkelen.
+
+## Personvern betyr ikke at du må drifte alle tjenester selv
+
+Hos HackShack Labs liker vi selvhosting. En server du kontrollerer selv, gjør det mulig å velge programvare, undersøke logger, beholde sikkerhetskopier og redusere avhengigheten av én leverandør. Men du må også oppdatere, overvåke og planlegge for feil.
+
+En personvernorientert skytjeneste kan iblant være et bedre teknisk valg. Spørsmålene er **hvilke data leverandøren kan se, hva du må stole på, hvor enkelt du kan flytte, og hva som skjer når tjenesten er utilgjengelig**.
+
+Proton er interessant fordi flere tjenester samles under én konto. Det er praktisk, men skaper også en felles avhengighet.
+
+## Hva inneholder Proton-økosystemet?
+
+| Tjeneste | Formål | Alternativ å sammenligne med |
+| --- | --- | --- |
+| **Proton Mail** | E-posttjeneste med personvernorienterte krypteringsfunksjoner | Egen e-postserver eller annen leverandør |
+| **Proton VPN** | Kryptert tunnel til VPN-leverandørens servere | Egen WireGuard-server eller annen VPN |
+| **Proton Drive** | Kryptert fillagring, deling og dokumentverktøy | Nextcloud, Syncthing, kryptert ekstern backup |
+| **Proton Pass** | Passord og identitetsfunksjoner | KeePassXC, Bitwarden, selvhostet Vaultwarden |
+| **Proton Calendar** | Kalender integrert med Proton-konto | CalDAV som Radicale eller Nextcloud |
+| **Proton Authenticator** | App for engangskoder | Andre offline-autentikatorer og sikkerhetsnøkler |
+| **Lumo** | Personvernorientert AI-assistent | Lokale modeller, for eksempel med Ollama |
+
+Dette er ikke funksjonsmessig identiske produkter. **Syncthing synkroniserer filer; det er ikke automatisk en sikkerhetskopi**. Og en egen WireGuard-server gir ikke nødvendigvis de samme egenskapene som utgangsnettverket til en kommersiell VPN.
+
+Offisielle kilder: [Proton](https://proton.me/) · [Protons brukerstøtte](https://proton.me/support).
+
+## Når kan Proton være et fornuftig valg?
+
+### Mail: driftssikkerhet mot kontroll
+
+Å drifte e-post selv lærer deg mye om SMTP, DNS, SPF, DKIM, DMARC og leveringssikkerhet. Men god leveringsgrad og håndtering av misbruk krever kontinuerlig innsats. En ekstern e-posttjeneste kan være riktig når e-post er kritisk og man ikke ønsker å drifte hele systemet.
+
+Kryptering må beskrives presist: E-post til vilkårlige eksterne mottakere blir ikke automatisk ende-til-ende-kryptert bare fordi din postkasse er hos Proton. I en egen artikkel skal vi undersøke mottakere utenfor Proton, metadata, egne domener, eksport og samspill med andre systemer.
+
+### VPN: tilliten flyttes, den forsvinner ikke
+
+En VPN kan beskytte trafikk mot enkelte lokale observatører og la nettsteder se VPN-serverens IP-adresse. Den gjør deg **ikke anonym i seg selv**. Nettleser, innloggede kontoer, enheter og VPN-leverandør inngår fortsatt i trusselmodellen.
+
+For selvhosting er Linux-stabilitet, WireGuard-oppsett, kill switch, DNS-lekkasjer, delt ruting og ruterintegrasjon viktige. Vi vil teste feilsituasjoner i praksis, ikke bare stole på en grønn «tilkoblet»-indikator.
+
+### Drive: bekvemmelighet erstatter ikke backup
+
+Proton oppgir at Drive ende-til-ende-krypterer både filinnhold og navn. Det er positivt for konfidensialiteten, men det erstatter ikke tester av gjenoppretting, offline-kopier, versjonshistorikk og eksport. Skrivebordsklienter og synkronisering varierer også mellom operativsystemer.
+
+Offisiell kilde: [Proton Drive – brukerstøtte](https://proton.me/support/drive).
+
+### Pass, Calendar, Authenticator og Lumo
+
+Passordbehandlere bør sammenlignes ut fra eksport, passkeys, nettleserutvidelser, gjenoppretting og støtte på tvers av enheter. Kalendere bør vurderes ut fra deling, import/eksport og åpne standarder. Autentikator-apper krever en gjennomtenkt gjenopprettingsplan; tap av appen kan låse deg ute. AI-tjenester må vurderes separat for databehandling, modelltilgang og driftssikkerhet.
+
+## Hva skal vi teste?
+
+Oppfølgende artikler får etterprøvbare testplaner:
+
+1. **Plattformer:** Linux på skrivebord og server først, Windows/mobil der det er relevant.
+2. **Samspill:** Åpne protokoller, import/eksport, API-er og automatisering.
+3. **Personvern:** Dokumentert krypteringsomfang, metadata, kontogjenoppretting og tillitsforutsetninger.
+4. **Drift:** Tilgjengelighet, feilsituasjoner, gjenoppretting, logging og feilsøking.
+5. **Kostnader:** Gjeldende abonnementspriser mot maskinvare, driftstid og vedlikehold.
+6. **Exit-strategi:** Hvordan flytte til et alternativ uten å miste viktige data.
+
+Et produkt kan være godt egnet til én oppgave og dårlig egnet til en annen. Vi skal beskrive begge sider.
+
+## Redaksjonell uavhengighet
+
+HackShack Labs er uavhengig. Et affiliate-samarbeid med Proton skal ikke styre våre tekniske konklusjoner. **Dette utkastet inneholder ingen affiliate-sporingslenker**. Dersom slike lenker legges til, skal de merkes tydelig ved lenkene, og reklamemerkingen oppdateres før publisering.
+
+**Reklame – annonselenker (kun dersom aktivert ved publisering):** Artikkelen kan inneholde tydelig merkede annonselenker. Vi kan motta provisjon ved kvalifiserte kjøp uten ekstra kostnad for deg. Dette påvirker ikke vurderingene våre.
+
+## Neste artikler
+
+- Proton Mail mot selvhostet e-post: drift i praksis
+- Proton VPN på Linux og med Docker/Gluetun: tilkobling og feilhåndtering
+- Proton Drive mot Nextcloud: synkronisering, deling og gjenoppretting
+- Proton Pass mot Bitwarden og KeePassXC: flyttbarhet og gjenoppretting
+- Proton med eget domene uten å låse seg inne
+
+**Kilder og kontroll:** [Protons brukerstøtte](https://proton.me/support); [Proton Drive](https://proton.me/support/drive); [Proton-konto uten Proton Mail-adresse](https://proton.me/support/external-accounts). Teksten er et researchutkast per 14. oktober 2026, ikke en anbefaling.
