@@ -7,7 +7,7 @@ date: 2026-10-14
 tags: [proton, email, self-hosting, smtp, deliverability, privacy]
 series: "Privacy & Digital Independence"
 translationKey: proton-mail-vs-self-hosted-email
-draft: true
+draft: false
 tested: false
 ---
 
