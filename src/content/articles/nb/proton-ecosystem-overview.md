@@ -27,13 +27,13 @@ Proton er interessant fordi flere tjenester samles under én konto. Det er prakt
 
 | Tjeneste | Formål | Alternativ å sammenligne med |
 | --- | --- | --- |
-| <a href="https://go.getproton.me/SH33i" rel="sponsored noopener noreferrer">Proton Mail (annonselenke)</a> | E-posttjeneste med personvernorienterte krypteringsfunksjoner | Egen e-postserver eller annen leverandør |
-| <a href="https://go.getproton.me/SH33j" rel="sponsored noopener noreferrer">Proton VPN (annonselenke)</a> | Kryptert tunnel til VPN-leverandørens servere | Egen WireGuard-server eller annen VPN |
-| <a href="https://go.getproton.me/SH33l" rel="sponsored noopener noreferrer">Proton Drive (annonselenke)</a> | Kryptert fillagring, deling og dokumentverktøy | Nextcloud, Syncthing, kryptert ekstern backup |
-| <a href="https://go.getproton.me/SH33k" rel="sponsored noopener noreferrer">Proton Pass (annonselenke)</a> | Passord og identitetsfunksjoner | KeePassXC, Bitwarden, selvhostet Vaultwarden |
+| <a href="https://go.getproton.me/SH33i" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton Mail (annonselenke)</a> | E-posttjeneste med personvernorienterte krypteringsfunksjoner | Egen e-postserver eller annen leverandør |
+| <a href="https://go.getproton.me/SH33j" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton VPN (annonselenke)</a> | Kryptert tunnel til VPN-leverandørens servere | Egen WireGuard-server eller annen VPN |
+| <a href="https://go.getproton.me/SH33l" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton Drive (annonselenke)</a> | Kryptert fillagring, deling og dokumentverktøy | Nextcloud, Syncthing, kryptert ekstern backup |
+| <a href="https://go.getproton.me/SH33k" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton Pass (annonselenke)</a> | Passord og identitetsfunksjoner | KeePassXC, Bitwarden, selvhostet Vaultwarden |
 | **Proton Calendar** | Kalender integrert med Proton-konto | CalDAV som Radicale eller Nextcloud |
 | **Proton Authenticator** | App for engangskoder | Andre offline-autentikatorer og sikkerhetsnøkler |
-| <a href="https://go.getproton.me/SH33m" rel="sponsored noopener noreferrer">Lumo (annonselenke)</a> | Personvernorientert AI-assistent | Lokale modeller, for eksempel med Ollama |
+| <a href="https://go.getproton.me/SH33m" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Lumo (annonselenke)</a> | Personvernorientert AI-assistent | Lokale modeller, for eksempel med Ollama |
 
 Dette er ikke funksjonsmessig identiske produkter. **Syncthing synkroniserer filer; det er ikke automatisk en sikkerhetskopi**. Og en egen WireGuard-server gir ikke nødvendigvis de samme egenskapene som utgangsnettverket til en kommersiell VPN.
 
