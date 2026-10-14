@@ -10,5 +10,5 @@ export const categoryLabelsNo: Record<string,string> = {
   'teardowns':'Demonteringer','experiments':'Eksperimenter','reference':'Oppslagsverk'
 };
 export const published = async () => (await getCollection('articles', ({data}) => !data.draft))
-  .sort((a,b) => b.data.date.getTime() - a.data.date.getTime());
+  .sort((a,b) => b.data.date.getTime() - a.data.date.getTime() || a.data.title.localeCompare(b.data.title));
 export const articleUrl = (id:string,lang:string) => `${lang === 'nb' ? '/no' : ''}/articles/${id.split('/').at(-1)}/`;
