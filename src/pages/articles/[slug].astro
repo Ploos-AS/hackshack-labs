@@ -10,8 +10,9 @@ const {entry}=Astro.props;
 const {Content}=await render(entry);
 const all=await published();
 const seriesUrl=entry.data.series==='WR703N Labs' ? '/series/wr703n-labs/' : undefined;
+const lastReviewed=entry.data.updated ?? entry.data.date;
 const counterpart=all.find(a=>a.data.lang==='nb' && a.data.translationKey && a.data.translationKey===entry.data.translationKey);
 ---
 <SiteLayout title={entry.data.title} lang="en" alternateUrl={counterpart ? articleUrl(counterpart.id,'nb') : undefined} hideLanguageSwitch={!counterpart}>
-  <article><p class="tag">{categoryLabels[entry.data.category]} · {seriesUrl && <><a href={seriesUrl}>{entry.data.series} · Part 1</a> · </>} {entry.data.date.toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})} · {entry.data.tested ? 'Hardware verified' : 'Documentation-based'}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p>{!counterpart && <p class="muted">Norwegian translation is not available for this article yet.</p>}<Content /></article>
+  <article><p class="tag">{categoryLabels[entry.data.category]} · {seriesUrl && <><a href={seriesUrl}>{entry.data.series} · Part 1</a> · </>} {entry.data.date.toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})} · {entry.data.tested ? 'Hardware verified' : 'Documentation-based'}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p>{!counterpart && <p class="muted">Norwegian translation is not available for this article yet.</p>}<Content /><footer class="muted"><p>Last editorial review: <time datetime={lastReviewed.toISOString().slice(0,10)}>{lastReviewed.toISOString().slice(0,10)}</time> · <a href="/about/">Editorial policy and evidence levels</a> · <a href="https://github.com/Ploos-AS/hackshack-labs/issues">Suggest a correction</a></p><p>Review date does not imply that external links were checked or that the article was hardware-tested.</p></footer></article>
 </SiteLayout>
