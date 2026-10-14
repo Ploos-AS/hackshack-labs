@@ -1,5 +1,5 @@
 ---
-title: "Proton Mail eller egen e-postserver: Hva lønner seg i 2026?"
+title: "Proton Mail eller egen e-postserver: Hva passer best i 2026?"
 description: "En praktisk sammenligning av leveringssikkerhet, kryptering, DNS, Linux-integrasjon, driftskostnader og muligheten til å flytte."
 category: guides
 lang: nb
@@ -57,7 +57,7 @@ Eget domene krever riktig DNS også hos en driftet leverandør. Protons [veiledn
 
 **Kryptering ved lagring** beskytter lagrede data under bestemte forutsetninger. Du må undersøke hvem som kontrollerer nøklene, og hvilke metadata som fortsatt er tilgjengelige.
 
-**Ende-til-ende-kryptering** skal begrense innsyn til endepunktene som kommuniserer. Proton opplyser at e-post mellom Proton-brukere krypteres ende-til-ende automatisk. Vanlig e-post til eksterne mottakere er **ikke automatisk ende-til-ende-kryptert**; Proton dokumenterer passordbeskyttede meldinger og PGP. Innkommende e-post fra andre leverandører har også andre sikkerhetsegenskaper. Avsender- og mottakerinformasjon og andre metadata må vurderes separat. Se [Protons krypteringsoversikt](https://proton.me/support/what-is-encrypted-within-protonmail) og [passordbeskyttet e-post](https://proton.me/support/password-protected-emails).
+**Ende-til-ende-kryptering** skal begrense innsyn til endepunktene som kommuniserer. Proton opplyser at e-post mellom Proton-brukere krypteres ende-til-ende automatisk. Vanlig e-post til eksterne mottakere er **ikke automatisk ende-til-ende-kryptert**; Proton dokumenterer passordbeskyttede meldinger og PGP. Innkommende ukryptert e-post fra andre leverandører har også andre sikkerhetsegenskaper: Proton beskriver lagring med zero-access-kryptering etter mottak, ikke tilbakevirkende ende-til-ende-beskyttelse mot avsenderens leverandør. Proton oppgir at emnefelt og avsender-/mottakeradresser er kryptert ved lagring, men **ikke ende-til-ende-kryptert**; ruting av e-post krever fortsatt adresseringsmetadata. Se [Protons krypteringsoversikt](https://proton.me/support/what-is-encrypted-within-protonmail) og [passordbeskyttet e-post](https://proton.me/support/password-protected-emails).
 
 Selvhosting gir **ikke** automatisk ende-til-ende-kryptering. Hvis du sender vanlig internett-e-post fra egen SMTP-server, kan systemene som behandler meldingen fremdeles få tilgang til innholdet.
 
@@ -67,7 +67,11 @@ Mange som selvhoster, bruker Thunderbird, skript, overvåkingsverktøy eller app
 
 Protons [Mail Bridge](https://proton.me/support/imap-smtp-and-pop3-setup) gir kompatible skrivebordsklienter lokal IMAP/SMTP-tilgang. **Bridge krever betalt abonnement.** Programmet er ikke en generell ekstern SMTP-reléserver for vilkårlige tjenester. Proton tilbyr Linux-pakker for DEB, RPM og PKGBUILD, men **offisiell støtte** omfatter færre distribusjoner enn dem hvor installasjonen kan fungere. Se [Bridge for Linux](https://proton.me/support/bridge-for-linux) og [støttede operativsystemer](https://proton.me/support/operating-systems-supported-bridge).
 
-Bridge legger til en lokal tjeneste og en avhengighet til nøkkelring i arbeidsflyten. For hodeløse servere, CI-varsler og ubetjente applikasjoner bør du kontrollere om den aktuelle SMTP-bruken faktisk støttes. Proton dokumenterer en separat funksjon for [SMTP Submission](https://proton.me/support/imap-smtp-and-pop3-setup) for kvalifisert bedriftsbruk.
+Proton tilbyr **ikke POP3**; Bridge bruker IMAP og SMTP. På Linux støtter Proton offisielt nyeste Ubuntu LTS og Fedora Workstation, krever 64-biters system og oppgir at en passordnøkkelring som GNOME Keyring eller Pass må være tilgjengelig. Bridge legger til en lokal tjeneste og en avhengighet til nøkkelring i arbeidsflyten. For hodeløse servere, CI-varsler og ubetjente applikasjoner bør du kontrollere om den aktuelle SMTP-bruken faktisk støttes. Proton dokumenterer en separat funksjon for [SMTP Submission](https://proton.me/support/imap-smtp-and-pop3-setup) for kvalifisert bedriftsbruk; den må ikke forveksles med Bridge.
+
+## Kostnader: abonnement mot løpende drift
+
+Det finnes ingen ærlig universell prissammenligning. Et betalt abonnement kan omfatte postkasser, lagring og støtte innenfor planens begrensninger. Selvhosting krever server eller VPS, ekstern backup, domenefornyelse, overvåking, håndtering av misbruk og administratortid. Bedrifter bør også regne inn gjenopprettingstester og beredskap. Vi oppgir ikke udokumenterte abonnementspriser for 2026 som om de var faste.
 
 ## Tillit, jurisdiksjon og muligheten til å flytte
 
@@ -96,4 +100,4 @@ Et eget domene er et av de beste tiltakene for flyttbarhet uansett driftsmodell:
 
 Denne artikkelen dokumenterer **ikke** sammenlignbar leveringsgrad eller oppetid. En praktisk oppfølger bør ha en etterprøvbar testmatrise for DNS-oppsett, spamvurderinger, mottak hos store e-postleverandører, katastrofegjenoppretting, Thunderbird/Bridge på støttede Linux-distribusjoner, korrekt eksport og faktisk driftskostnad. Resultater må merkes med dato, domene, nettverk og begrensninger.
 
-**Kilder:** [Protons kryptering](https://proton.me/support/what-is-encrypted-within-protonmail) · [Egne domener](https://proton.me/support/custom-domain) · [SPF/DKIM/DMARC](https://proton.me/support/anti-spoofing-custom-domain) · [Mail Bridge](https://proton.me/support/imap-smtp-and-pop3-setup) · [Linux-støtte](https://proton.me/support/operating-systems-supported-bridge).
+**Kilder:** [Protons kryptering](https://proton.me/support/what-is-encrypted-within-protonmail) · [Egne domener](https://proton.me/support/custom-domain) · [SPF/DKIM/DMARC](https://proton.me/support/anti-spoofing-custom-domain) · [Mail Bridge](https://proton.me/support/imap-smtp-and-pop3-setup) · [Linux-støtte](https://proton.me/support/operating-systems-supported-bridge) · [Bridge for Linux](https://proton.me/support/bridge-for-linux).
