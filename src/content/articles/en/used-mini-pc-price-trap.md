@@ -7,11 +7,11 @@ date: 2026-10-14
 tags: [mac-mini, intel-nuc, mini-pc, used-hardware, homelab, ebay, norway]
 series: "Used Hardware & Homelab"
 translationKey: used-mini-pc-price-trap
-draft: true
+draft: false
 tested: false
 ---
 
-> **Editorial status — 14 October 2026:** Desk research, not a hardware benchmark. The prices below are examples of *asking prices* observed in accessible listings and retailer pages, not completed sale prices, verified Norwegian delivery quotes or evidence of a market-wide average. Listings change or disappear. No affiliate links are used.
+> **Editorial status — 14 October 2026:** Desk research, not a hardware benchmark. The prices below are visible listing prices, including some sold listings whose final accepted prices are not necessarily known, verified Norwegian delivery quotes or evidence of a market-wide average. Listings change or disappear. No affiliate links are used.
 
 ## A used computer is not automatically a bargain
 
@@ -19,21 +19,19 @@ There is something appealing about an old Intel NUC or Mac mini. The footprint i
 
 But a ten-year-old computer can still have an unreasonable asking price. The question is not whether it was expensive when new. It is **what the machine can do for you today, at the total price you will actually pay**.
 
-## A few price observations—not a price index
+## Sourced eBay examples and the FINN limitation
 
-Here are examples found during research on 14 October 2026. They are snapshots and should not be interpreted as statistically representative.
+Checked 14 October 2026. These are individually linked examples, not a representative sample or verified delivered prices to Norway.
 
-| Example | Advertised price | What the listing actually tells us |
+| Example | Displayed price | Status |
 | --- | --- | --- |
-| Intel NUC D54250WYK, Core i5-4250U, 8 GB RAM, 120 GB SSD, tested, with power adapter | **NOK 1,399**, out of stock | Norwegian refurbisher Rebuild IT's listed price; the item was unavailable when checked |
-| Intel NUC 8 with i5-8259U, 8 GB RAM, 128 GB storage | **US $139.99** | Example asking price on eBay; shipping and Norwegian import costs not established |
-| Intel NUC 7 i5-7260U barebone, without RAM or SSD | **US $59.50 + US $11.50 listed delivery** | The quoted delivery is not a verified Norway shipping quote; memory, storage and power supply must be checked |
-| Mac mini Late 2014, Core i5, 8 GB RAM, 1 TB SSD | **US $220** | Example eBay asking price, seller in the United States |
-| Mac mini Late 2014, Core i5, 16 GB RAM, 500 GB SSD | **US $160** | Another eBay asking price: configuration matters enormously |
+| [Intel NUC 5 i5, 16 GB, 256 GB](https://www.ebay.com/itm/266538571456) | USD 97.30 | Listing ended 17 July 2026 |
+| [Intel NUC 10 i3, 8 GB, 256 GB](https://www.ebay.com/itm/205696247969) | USD 134.99 | Sold listing, best offer accepted; actual paid price unknown |
+| [Intel NUC 11 Pro i5, 8 GB, 256 GB](https://www.ebay.com/itm/398150635339) | USD 195 | Sold listing, 20 July 2026 |
+| [Intel NUC 12 i5, 8 GB, 512 GB](https://www.ebay.com/itm/127733816087) | USD 199.99 | Sold listing, 11 September 2026; accepted price not independently confirmed |
+| [Mac mini M4, 16 GB, 256 GB](https://www.ebay.com/itm/227505964146) | USD 769.99 | Used asking price, not an older Intel Mac |
 
-Sources: [Rebuild IT NUC listing](https://www.rebuildit.no/products/intel-nuc-d54250wyk-i5-4250u-8gb-ram-120gb-ssd), [eBay Intel NUC search](https://www.ebay.com/sch/i.html?_nkw=intel+intel+nuc), and [eBay Mac mini 2014 search](https://www.ebay.com/sch/i.html?_nkw=mac+mini+2014+i7). These are live pages, so later readers may see different items and prices.
-
-FINN also has a substantial selection of Mac mini listings: a search page returned **267 results** during this check, but that count alone says nothing about whether the prices are fair. We have **not** extracted a reproducible sample of individual FINN asking prices yet, so we will not claim a Norwegian market average. [FINN Mac mini search](https://www.finn.no/recommerce/forsale/search?q=mac+mini).
+The [FINN Mac mini search](https://www.finn.no/recommerce/forsale/search?q=mac+mini) and [FINN NUC search](https://www.finn.no/recommerce/forsale/search?q=nuc) were checked, but we could not independently verify a reproducible set of individual FINN listing prices. We therefore cannot publish a credible FINN price average or conclude that all sellers overprice their machines. US shipping prices displayed by eBay do not establish shipping costs to Norway.
 
 ## The real price is the landed, working price
 
