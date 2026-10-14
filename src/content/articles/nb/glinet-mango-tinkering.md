@@ -7,7 +7,7 @@ date: 2026-10-14
 tags: [gl-inet, mango, openwrt, ruter, linux, nettverk, maker]
 series: "Pocket Networking Lab"
 translationKey: glinet-mango-tinkering
-draft: true
+draft: false
 tested: false
 ---
 
@@ -25,13 +25,13 @@ GL.iNets egen nettside oppga **29,99 USD ved kontroll 14. oktober 2026**. Dette 
 
 | Egenskap | GL-MT300N-V2 |
 | --- | --- |
-| Systembrikke | MediaTek MT7628-familien, ca. 580 MHz |
+| Systembrikke | MediaTek MT7628NN (produsent); MT7628AN (OpenWrt-database), 580 MHz |
 | RAM / flash | 128 MB DDR2 / 16 MB NOR |
 | Wi-Fi | 2,4 GHz 802.11b/g/n, markedsført som N300 |
 | Ethernet | 1 × WAN og 1 × LAN, begge 10/100 Mbps |
 | Andre porter | USB 2.0, Micro-USB for strøm, reset- og modusbryter |
 | Maskinvareeksperimenter | UART og GPIO dokumentert av GL.iNet |
-| Strøm | Micro-USB med egnet 5 V-strømforsyning |
+| Strøm | Micro-USB, 5 V; dokumentasjonen oppgir både 1 A og 2 A – bruk strømforsyning med tilstrekkelig kapasitet |
 | Størrelse | Ca. 58 × 58 × 25 mm |
 
 Dette er **produsentopplysninger**, ikke våre målinger. De markedsførte 300 Mbps gjelder teoretisk Wi-Fi-linkhastighet, ikke reell datagjennomstrømning. Ethernet-portene er begrenset til 100 Mbps, og 2,4 GHz-båndet er mange steder tettpakket. Kilder: [GL.iNet](https://www.gl-inet.com/products/gl-mt300n-v2) og [maskinvaredokumentasjonen](https://docs.gl-inet.com/router/en/2/hardware/mt300n-v2/).
@@ -44,7 +44,7 @@ Dette er **produsentopplysninger**, ikke våre målinger. De markedsførte 300 M
 
 **Begrensningene lærer deg noe.** 16 MB flash og 128 MB RAM er betydelig romsligere enn 4 MB/32 MB, men gjør den ikke til en fullverdig server. Du må fortsatt tenke på pakkestørrelser, minnebruk, lagring og hvordan du gjenoppretter enheten etter feil.
 
-GL.iNets maskinvaredokumentasjon peker på en viktig **forskjell mellom Wi-Fi-drivere**: leverandørens MediaTek-driver og den åpne driveren har ikke nødvendigvis samme egenskaper. Ikke anta at monitor mode, repeater-broing eller stabilitet er identisk mellom original firmware og vanlig OpenWrt. Dette må testes. [Kilde](https://docs.gl-inet.com/router/en/2/hardware/mt300n-v2/).
+GL.iNets maskinvaredokumentasjon peker på en viktig **forskjell mellom Wi-Fi-drivere**: leverandørens MediaTek-driver og den åpne mt76-driveren har ikke nødvendigvis samme egenskaper. GL.iNet omtaler dessuten tidligere problemer med kjernekræsj for den åpne driveren. Ikke anta at monitor mode, repeater-broing eller stabilitet er identisk mellom original firmware og vanlig OpenWrt. Dette må testes. [Kilde](https://docs.gl-inet.com/router/en/2/hardware/mt300n-v2/).
 
 ## Seks morsomme prosjekter
 
