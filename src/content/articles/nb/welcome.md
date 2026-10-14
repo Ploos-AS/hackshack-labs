@@ -11,4 +11,4 @@ tested: false
 
 HackShack Labs dokumenterer praktiske dataprosjekter, maskinvareeksperimenter og etterprøvbare tekniske guider.
 
-Den første planlagte serien handler om **PirateBox**, **LibraryBox** og **Ploos PocketBox** på små MIPS-baserte rutere. Maskinvareguider publiseres først etter kontroll av relevante firmware- og maskinvareversjoner.
+Serien om frakoblet nettverk dekker små rutere, OpenWrt og planlagt arbeid med MikroWrt og Ploos PocketBox. **PirateBox og LibraryBox er avsluttede historiske prosjekter**, ikke nye planlagte installasjonsguider. Maskinvareguider merkes først som verifiserte etter kontroll på fysisk utstyr. Se [serien om frakoblet nettverk](/no/series/offline-networking/).
