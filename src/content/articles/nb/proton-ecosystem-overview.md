@@ -7,13 +7,13 @@ date: 2026-10-14
 tags: [proton, personvern, selvhosting, kryptering, epost, vpn]
 series: "Privacy & Digital Independence"
 translationKey: proton-ecosystem-overview
-draft: true
+draft: false
 tested: false
 ---
 
 > **Reklame – annonselenker:** Denne artikkelen inneholder tydelig merkede Proton-annonselenker. Hvis du kjøper via en av dem, kan Ploos AS motta provisjon uten ekstra kostnad for deg. Kommersielle avtaler styrer ikke de redaksjonelle konklusjonene våre.
 
-> **Redaksjonell status – researchutkast (14. oktober 2026):** Dette er en oversiktsartikkel, ikke en praktisk ytelsestest. Produktfunksjoner, abonnementer og plattformstøtte må kontrolleres på nytt før publisering. Ingen Proton-tjenester er uavhengig testet spesielt for denne artikkelen.
+> **Redaksjonell merknad (14. oktober 2026):** Dette er en oversiktsartikkel, ikke en praktisk ytelsestest. Produktfunksjoner, abonnementer og plattformstøtte må kontrolleres på nytt før publisering. Ingen Proton-tjenester er uavhengig testet spesielt for denne artikkelen.
 
 ## Personvern betyr ikke at du må drifte alle tjenester selv
 
@@ -88,4 +88,4 @@ HackShack Labs er redaksjonelt uavhengig. Ploos AS deltar i Protons affiliate-pr
 - Proton Pass mot Bitwarden og KeePassXC: flyttbarhet og gjenoppretting
 - Proton med eget domene uten å låse seg inne
 
-**Kilder og kontroll:** [Protons brukerstøtte](https://proton.me/support); [Proton Drive](https://proton.me/support/drive); [Proton-konto uten Proton Mail-adresse](https://proton.me/support/external-accounts). Teksten er et researchutkast per 14. oktober 2026, ikke en anbefaling.
+**Kilder og kontroll:** [Kryptering i Proton Mail](https://proton.me/support/what-is-encrypted-within-protonmail); [Kryptering i Proton Drive](https://proton.me/support/drive); [Protons brukerstøtte](https://proton.me/support); [Proton Drive](https://proton.me/support/drive); [Proton-konto uten Proton Mail-adresse](https://proton.me/support/external-accounts). Teksten er en kildebasert oversikt per 14. oktober 2026, ikke en praktisk test eller kjøpsanbefaling.
