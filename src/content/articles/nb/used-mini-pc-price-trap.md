@@ -77,22 +77,24 @@ Strømforbruk bør måles på konkrete maskiner, ikke anslås ut fra alder alene
 - Sammenlign med en nyere maskin med garanti.
 - Betal ekstra for samlerverdi bare hvis det faktisk er samlerverdien du ønsker.
 
-## Vår vurdering: Hva bør en ti år gammel mini-PC koste?
+## Vår vurdering: Gammelt utstyr fortjener et nytt liv, ikke en premiumpris
 
-**Dette er HackShack Labs' redaksjonelle kjøpsgrenser, ikke dokumenterte markedsverdier eller takster.** Vi forutsetter en testet, fungerende og komplett maskin med strømforsyning, brukbar RAM og lagring, *før* frakt og avgifter. Til vanlig bruk ville vi normalt takket nei over høyre kolonne.
+> **Old hardware deserves a second life, not a premium price.**
 
-| Maskinvare | Det vi kaller et godt kjøp | Vår vanlige makspris |
+Dette er **HackShack Labs' bevisst strenge redaksjonelle kjøpsgrenser**, ikke dokumenterte markedsverdier, gjennomsnittspriser eller påstander om hva selgere vil akseptere. Vi vurderer *vanlig bruksverdi*, ikke nostalgi, sjeldenhet eller samlerinteresse. Vi forutsetter testede, komplette og fungerende maskiner med strømforsyning, brukbar RAM og lagring, før frakt og avgifter.
+
+| Maskinvare | Godt kjøp for oss | Vår vanlige absolutte grense |
 | --- | ---: | ---: |
-| Intel Mac mini 2011–2012 | 25–50 USD | 75 USD |
-| Intel Mac mini 2014 | 30–60 USD | 80 USD |
-| Intel Mac mini 2018 | 70–110 USD | 150 USD |
-| Intel NUC 4.–5. generasjon | 20–40 USD | 60 USD |
-| Intel NUC 6.–7. generasjon | 30–60 USD | 85 USD |
-| Intel NUC 8. generasjon | 50–90 USD | 120 USD |
+| Intel Mac mini 2011–2012 | 5–10 USD | 20 USD |
+| Intel Mac mini 2014 | 10–15 USD | 25 USD |
+| Intel Mac mini 2018 | 25–40 USD | 60 USD |
+| Intel NUC 4.–5. generasjon | 5–10 USD | 15 USD |
+| Intel NUC 6.–7. generasjon | 10–15 USD | 25 USD |
+| Intel NUC 8. generasjon | 20–30 USD | 45 USD |
 
-Vi setter grensene forholdsvis lavt fordi eldre maskinvare har begrenset forventet levetid, varierende støtte for fastvare og operativsystemer og konkurrerer med nyere, strømgjerrige alternativer. Dette er **hva vi selv ville vært villige til å betale**, ikke en påstand om faktisk markedspris.
+Vi ville ofte heller ventet på et utrangert parti med bedrifts-PC-er eller kjøpt en nyere maskin enn å betale over disse grensene. Eldre maskiner kan fortsatt være nyttige, men alder, begrenset støtte og usikker gjenværende levetid må gjenspeiles i prisen. Manglende strømforsyning, ukjent tilstand, lite fastloddet RAM eller defekt lagring trekker betalingsviljen ytterligere ned.
 
-Samlerverdi, PowerPC-maskiner til spesielle operativsystemer, uvanlige konfigurasjoner eller dokumentert garanti kan forsvare mer. Barebone-maskiner, utestede enheter, manglende strømforsyning eller lite fastloddet RAM bør koste mindre. Norske kjøpere må i tillegg regne med faktisk frakt og aktuelle avgifter.
+**Vi skiller mellom tre typer verdi:** vanlig bruksverdi (tabellen), spesialverdi for bestemte operativsystemer eller maskinvaregrensesnitt, og samlerverdi. En PowerPC Mac mini til MorphOS hører for eksempel hjemme i en spesialkategori, ikke i denne tabellen. Dette er **våre kjøpspreferanser**, ikke en påstand om at markedsprisen objektivt er feil.
 
 ## Konklusjon
 
