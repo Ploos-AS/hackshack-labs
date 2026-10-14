@@ -103,7 +103,7 @@ Before committing either way, try an exit rehearsal:
 
 ## Other managed email providers belong in the comparison
 
-Proton Mail is not the only alternative to running your own server. [Fastmail](https://www.fastmail.com/), [mailbox.org](https://mailbox.org/), [Migadu](https://www.migadu.com/) and local Norwegian email providers are also worth considering. These services differ in privacy model, jurisdiction, encryption features, protocol access, storage, pricing and custom-domain policies. **We have no affiliate links for these alternatives in this article.** Their inclusion is not a comparative endorsement: evaluate each against the same requirements and current documentation.
+Proton Mail is not the only alternative to running your own server. [Fastmail](https://www.fastmail.com/), [mailbox.org](https://mailbox.org/), [Migadu](https://www.migadu.com/) are also worth considering. These internationally accessible services differ in privacy model, jurisdiction, encryption features, protocol access, storage, pricing and custom-domain policies. Regional providers can also be relevant depending on the reader's country, language, compliance requirements and support needs; we do not assume any particular home market. **We have no affiliate links for these alternatives in this article.** Their inclusion is not a comparative endorsement: evaluate each against the same requirements and current documentation.
 
 ## What should you choose?
 
