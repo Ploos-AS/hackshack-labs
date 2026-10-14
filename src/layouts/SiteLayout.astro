@@ -2,8 +2,10 @@
 import '../styles/global.css';
 const { title = 'HackShack Labs', lang = 'en', alternateUrl } = Astro.props;
 const no = lang === 'nb';
-const sections = [['Projects','projects'],['Guides','guides'],['How-Tos','how-tos'],['Mini How-Tos','mini-how-tos'],['Reviews','reviews'],['Tests','tests']];
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const alternate = alternateUrl ? new URL(alternateUrl, Astro.site).href : undefined;
+const sections = [['Projects','Prosjekter','projects'],['Guides','Guider','guides'],['How-Tos','Fremgangsmåter','how-tos'],['Mini How-Tos','Korte tips','mini-how-tos'],['Reviews','Anmeldelser','reviews'],['Tests','Tester','tests']];
 ---
-<!doctype html><html lang={lang}><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#080d0a"/><title>{title} | HackShack Labs</title>{alternateUrl && <link rel="alternate" hreflang={no ? "en" : "nb"} href={new URL(alternateUrl, Astro.site).href}/>}<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href}/></head><body>
-<header><div class="wrap"><a class="brand" href="/">HACKSHACK_ LABS</a><nav aria-label="Main navigation">{sections.map(([label,slug]) => <a href={`${no ? '/no' : ''}/category/${slug}/`}>{label}</a>)}<a href={no ? '/no/search/' : '/search/'}>{no ? 'Søk' : 'Search'}</a><a href={no ? '/no/series/offline-networking/' : '/series/offline-networking/'}>Offline Networking</a><a href={alternateUrl ?? (no ? '/' : '/no/')} lang={no ? 'en' : 'nb'}>{no ? 'EN' : 'NO'}</a></nav></div></header>
+<!doctype html><html lang={lang}><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#080d0a"/><title>{title} | HackShack Labs</title><link rel="alternate" hreflang={no ? "nb" : "en"} href={canonical}/>{alternate && <link rel="alternate" hreflang={no ? "en" : "nb"} href={alternate}/>}<link rel="canonical" href={canonical}/></head><body>
+<header><div class="wrap"><a class="brand" href="/">HACKSHACK_ LABS</a><nav aria-label="Main navigation">{sections.map(([english,norwegian,slug]) => <a href={`${no ? '/no' : ''}/category/${slug}/`}>{no ? norwegian : english}</a>)}<a href={no ? '/no/search/' : '/search/'}>{no ? 'Søk' : 'Search'}</a><a href={no ? '/no/series/offline-networking/' : '/series/offline-networking/'}>{no ? 'Frakoblet nettverk' : 'Offline Networking'}</a><a href={alternateUrl ?? (no ? '/' : '/no/')} lang={no ? 'en' : 'nb'}>{no ? 'EN' : 'NO'}</a></nav></div></header>
 <main class="wrap"><slot/></main><footer><div class="wrap muted">Ploos AS · Open technology, practical knowledge.</div></footer></body></html>
