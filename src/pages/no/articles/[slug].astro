@@ -9,8 +9,9 @@ export async function getStaticPaths(){
 const {entry}=Astro.props;
 const {Content}=await render(entry);
 const all=await published();
+const lastReviewed=entry.data.updated ?? entry.data.date;
 const counterpart=all.find(a=>a.data.lang==='en' && a.data.translationKey && a.data.translationKey===entry.data.translationKey);
 ---
 <SiteLayout title={entry.data.title} lang="nb" alternateUrl={counterpart ? articleUrl(counterpart.id,'en') : undefined} hideLanguageSwitch={!counterpart}>
-  <article><p class="tag">{categoryLabelsNo[entry.data.category]} · {entry.data.date.toLocaleDateString('nb-NO')} · {entry.data.tested ? 'Maskinvareverifisert' : 'Dokumentasjonsbasert'}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p>{!counterpart && <p class="muted">Engelsk oversettelse er ikke tilgjengelig for denne artikkelen ennå.</p>}<Content /></article>
+  <article><p class="tag">{categoryLabelsNo[entry.data.category]} · {entry.data.date.toLocaleDateString('nb-NO')} · {entry.data.tested ? 'Maskinvareverifisert' : 'Dokumentasjonsbasert'}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p>{!counterpart && <p class="muted">Engelsk oversettelse er ikke tilgjengelig for denne artikkelen ennå.</p>}<Content /><footer class="muted"><p>Sist redaksjonelt gjennomgått: <time datetime={lastReviewed.toISOString().slice(0,10)}>{lastReviewed.toISOString().slice(0,10)}</time> · <a href="/no/about/">Redaksjonell policy og dokumentasjonsnivåer</a> · <a href="https://github.com/Ploos-AS/hackshack-labs/issues">Foreslå rettelse</a></p><p>Gjennomgangsdatoen betyr ikke at eksterne lenker er kontrollert eller at artikkelen er maskinvaretestet.</p></footer></article>
 </SiteLayout>
