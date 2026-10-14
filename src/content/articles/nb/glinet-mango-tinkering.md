@@ -1,7 +1,7 @@
 ---
-title: "GL.iNet Mango: En billig liten ruter å leke med"
+title: "GL.iNet Mango: En liten ruter å eksperimentere med"
 description: "Hvorfor GL-MT300N-V2 kan være en glimrende inngang til OpenWrt, Linux og nettverkseksperimenter – og hvor begrensningene går."
-category: projects
+category: reference
 lang: nb
 date: 2026-10-14
 tags: [gl-inet, mango, openwrt, ruter, linux, nettverk, maker]
@@ -29,16 +29,22 @@ Du kan undersøke tilgjengelighet og aktuell pris her: <a href="https://tidd.ly/
 
 | Egenskap | GL-MT300N-V2 |
 | --- | --- |
-| Systembrikke | MediaTek MT7628NN (produsent); MT7628AN (OpenWrt-database), 580 MHz |
+| Prosessor (SoC) | MediaTek MT7628NN (produsent); MT7628AN (OpenWrt-database), 580 MHz |
 | RAM / flash | 128 MB DDR2 / 16 MB NOR |
 | Wi-Fi | 2,4 GHz 802.11b/g/n, markedsført som N300 |
 | Ethernet | 1 × WAN og 1 × LAN, begge 10/100 Mbps |
 | Andre porter | USB 2.0, Micro-USB for strøm, reset- og modusbryter |
-| Maskinvareeksperimenter | UART og GPIO dokumentert av GL.iNet |
+| Maskinvaretilgang (UART/GPIO) | UART og GPIO dokumentert av GL.iNet |
 | Strøm | Micro-USB, 5 V; dokumentasjonen oppgir både 1 A og 2 A – bruk strømforsyning med tilstrekkelig kapasitet |
 | Størrelse | Ca. 58 × 58 × 25 mm |
 
 Dette er **produsentopplysninger**, ikke våre målinger. De markedsførte 300 Mbps gjelder teoretisk Wi-Fi-linkhastighet, ikke reell datagjennomstrømning. Ethernet-portene er begrenset til 100 Mbps, og 2,4 GHz-båndet er mange steder tettpakket. Kilder: [GL.iNet](https://www.gl-inet.com/products/gl-mt300n-v2) og [maskinvaredokumentasjonen](https://docs.gl-inet.com/router/en/2/hardware/mt300n-v2/).
+
+## Hvorfor Mango i 2026 – og når bør du velge noe annet?
+
+Mango er en eldre ruter med bevisste begrensninger. Den er attraktiv fordi den er rimelig, OpenWrt-basert og utstyrt med grensesnitt som egner seg til eksperimenter – ikke fordi den er rask eller moderne. Har du allerede en brukt ruter med OpenWrt-støtte, er det kanskje et billigere og mer miljøvennlig valg. En nyere GL.iNet-modell er bedre hvis du trenger tobånds Wi-Fi, raskere Ethernet eller en fast reiseruter. En enkortsmaskin passer bedre om prosjektet krever mer minne, lagring eller regnekraft, men erstatter ikke nødvendigvis en ruter med to nettverksporter.
+
+Ingen av alternativene nevnes som del av et affiliate-samarbeid. Velg maskinvare ut fra hva du ønsker å undersøke.
 
 ## Hvorfor er den så interessant å hacke på?
 
@@ -55,23 +61,23 @@ GL.iNets maskinvaredokumentasjon peker på en viktig **forskjell mellom Wi-Fi-dr
 1. **Isolert trådløst labnett:** Lag et eget Wi-Fi-nett og koble en annen maskin til Ethernet for nettsider, BBS eller et offline bibliotek. Hold labnettet adskilt fra hjemmenettet.
 2. **OpenWrt som læremiljø:** Utforsk LuCI, SSH, nettverksgrensesnitt, DHCP, DNS og brannmursoner. Lagre en fungerende konfigurasjon først.
 3. **Reiseruter-lab:** Sammenlign Ethernet som WAN, Wi-Fi-repeater og USB-deling av mobilnett på firmware som støtter funksjonene.
-4. **Undersøk seriellkonsollen:** Dokumenter UART-spenning og pinout *før* du kobler til adapter. Bruk riktig 3,3 V TTL-grensesnitt, aldri RS-232-spenningsnivåer direkte.
+4. **Undersøk seriellkonsollen:** Dokumenter UART-spenning og pinout *før* du kobler til adapter. Bruk riktig 3,3 V TTL-grensesnitt, aldri RS-232-spenningsnivåer direkte. Når ruteren har egen strøm, kobler man vanligvis bare **GND, TX og RX** (TX krysses mot RX). La VCC fra serieadapteren være frakoblet. Bekreft pinout og spenningsnivå før noe kobles til.
 5. **USB og pakkehåndtering:** Undersøk hvor langt USB, pakkesystem og begrenset flash rekker. Mål begrensningene før du setter viktige tjenester på den.
 6. **Et lite offline-nettverk:** La Mango være Wi-Fi-tilgangspunkt og ruter, mens en kraftigere maskin på Ethernet kjører de krevende tjenestene.
 
-Det siste er kanskje det morsomste: Ruteren trenger ikke gjøre *alt*. Et lite aksesspunkt og en separat server kan bli en imponerende, bærbar lab.
+Det siste er kanskje det morsomste: Ruteren trenger ikke gjøre *alt*. Et lite tilgangspunkt og en separat server kan bli en imponerende, bærbar lab.
 
 ## Original firmware eller vanlig OpenWrt?
 
-De to alternativene gir ikke automatisk samme funksjoner. Leverandørens firmware kan ha brukervennlige reiseruterfunksjoner og andre Wi-Fi-egenskaper. Vanlig OpenWrt gir direkte tilgang til oppstrøms pakker og oppsett, men riktig image, versjon, maskinvarerevisjon og driver må kontrolleres.
+De to alternativene gir ikke automatisk samme funksjoner. Leverandørens firmware kan ha brukervennlige reiseruterfunksjoner og andre Wi-Fi-egenskaper. Vanlig OpenWrt gir direkte tilgang til OpenWrts egne pakker og oppsett, men riktig image, versjon, maskinvarerevisjon og driver må kontrolleres.
 
-**Ikke flash en firmware bare fordi en annen ruter ligner.** Bekreft modellbetegnelsen **GL-MT300N-V2**, finn riktig installasjonsveiledning og filtype, verifiser filen og sett deg inn i gjenoppretting før du begynner. Vi har ikke verifisert en bestemt flashprosedyre til denne artikkelen.
+**Ikke flash en firmware bare fordi en annen ruter ligner.** Bekreft modellbetegnelsen **GL-MT300N-V2**, finn riktig installasjonsveiledning og filtype, verifiser filen og sett deg inn i gjenoppretting før du begynner. Vi har ikke verifisert en bestemt flashprosedyre til denne artikkelen. I Norge må korrekt regulatorisk landskode (**NO**) konfigureres, og tillatte Wi-Fi-kanaler og sendeeffekt kontrolleres etter firmwarebytte. Ikke anta at innstillingene overføres fra original firmware.
 
 ## Når er Mango feil valg?
 
 - **Raske moderne nettverk:** 100 Mbps Ethernet, én Wi-Fi-frekvens og beskjeden CPU er klare begrensninger.
 - **Krevende VPN-bruk:** GL.iNet oppgir rundt 45 Mbps med WireGuard og 11 Mbps med OpenVPN *under egne testforhold*, ikke garantert ytelse.
-- **Mange programmer og lagring:** 16 MB intern flash setter grenser uten nøye planlagt ekstern lagring.
+- **Mange pakker og mye lagring:** 16 MB intern flash setter grenser uten nøye planlagt ekstern lagring.
 - **Hovedruter med eksperimentell firmware:** Ikke la hele husstandens nett avhenge av en ruter du stadig installerer ny firmware på.
 
 Nettopp derfor er den en ypperlig **ruter nummer to**.
@@ -80,7 +86,6 @@ Nettopp derfor er den en ypperlig **ruter nummer to**.
 
 Vi vil dokumentere: utpakking og firmwareversjon; strømforbruk og hastighet; backup og gjenoppretting; original firmware mot vanlig OpenWrt; isolert tilgangspunkt med tjenester på Ethernet; eventuell USB-lagring; og begrensninger ved VPN-bruk.
 
-Mango er også interessant for **PocketBox**: et lite offline Wi-Fi-miljø der ruteren sørger for forbindelsen og en ekstern maskin tilbyr de rikere tjenestene. **MikroWrt** omtales foreløpig bare som et fremtidig eksperiment, ikke som ferdig firmware for Mango.
 
 **Åpenhet:** GL.iNet Mango-lenken ovenfor er en annonselenke. Ploos AS kan motta provisjon ved kvalifiserte kjøp. HackShack Labs' tekniske vurderinger og fremtidige tester er redaksjonelt uavhengige.
 
