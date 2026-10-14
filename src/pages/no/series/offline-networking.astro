@@ -1,7 +1,7 @@
 ---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
 import { published,articleUrl } from '../../../lib/articles';
-const entries=(await published()).filter(a=>a.data.lang==='nb'&&a.data.series==='offline-networking');
+const entries=(await published()).filter(a=>a.data.lang==='nb'&&(a.data.series==='offline-networking'||a.data.tags.some(t=>['openwrt','wr703n','mango','pocketbox','piratebox','networking'].includes(t))||/wr703n|mango|openwrt/i.test(a.data.title)));
 const roadmap=[
  ['TP-Link TL-WR703N','Dokumentere kompatibel, eldre ordinær OpenWrt etter testing på fysisk maskinvare; vurdere MikroWrt når den er klar.'],
  ['GL.iNet Mango GL-MT300N-V2','Teste kompatibel OpenWrt og PocketBox som Wi-Fi-aksesspunkt, også for tjenester på Ethernet.'],
