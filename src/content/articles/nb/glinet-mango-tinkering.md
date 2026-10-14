@@ -11,6 +11,8 @@ draft: false
 tested: false
 ---
 
+> **Reklame – annonselenke:** Artikkelen inneholder en tydelig merket annonselenke til GL.iNet Mango. Ploos AS kan motta provisjon ved kvalifiserte kjøp, uten ekstra kostnad for deg. Det påvirker ikke våre redaksjonelle vurderinger.
+
 > **Redaksjonell merknad (14. oktober 2026):** Dette er en dokumentbasert forhåndsomtale, ikke en praktisk test. Vi har ennå ikke installert firmware eller målt ytelsen på GL-MT300N-V2 i forbindelse med artikkelen. Priser og firmwarestøtte kan endre seg.
 
 ## Den morsomste ruteren er kanskje den du tør å eksperimentere med
@@ -20,6 +22,8 @@ En kraftig ruter er fornuftig som hovedruter hjemme. Den er sjelden det beste st
 Lille **GL.iNet Mango (GL-MT300N-V2)** tilbyr noe annet: rimelig maskinvare, et Linux-basert firmwaremiljø, nyttige grensesnitt og stor frihet til å prøve nye ting. Den er liten nok til å bli med i sekken og billig nok til å settes av til ett eksperiment av gangen.
 
 GL.iNets egen nettside oppga **29,99 USD ved kontroll 14. oktober 2026**. Dette er en veiledende pris fra produsenten, ikke dokumentert norsk utsalgspris. Frakt, merverdiavgift og tilgjengelighet kan endre totalen.
+
+Du kan undersøke tilgjengelighet og aktuell pris her: <a href="https://tidd.ly/4zA195J" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">GL.iNet Mango (annonselenke)</a>. Endelig pris og kjøpsvilkår bestemmes av nettbutikken lenken fører til.
 
 ## Hva finnes inni Mango?
 
@@ -78,6 +82,6 @@ Vi vil dokumentere: utpakking og firmwareversjon; strømforbruk og hastighet; ba
 
 Mango er også interessant for **PocketBox**: et lite offline Wi-Fi-miljø der ruteren sørger for forbindelsen og en ekstern maskin tilbyr de rikere tjenestene. **MikroWrt** omtales foreløpig bare som et fremtidig eksperiment, ikke som ferdig firmware for Mango.
 
-**Åpenhet:** Denne artikkelen har ingen GL.iNet-affiliate-lenke. HackShack Labs kan få kommersielle samarbeid med nettverksleverandører, men konklusjonene og testene skal være uavhengige.
+**Åpenhet:** GL.iNet Mango-lenken ovenfor er en annonselenke. Ploos AS kan motta provisjon ved kvalifiserte kjøp. HackShack Labs' tekniske vurderinger og fremtidige tester er redaksjonelt uavhengige.
 
 **Kilder:** [GL.iNet produktspesifikasjoner](https://www.gl-inet.com/products/gl-mt300n-v2) · [maskinvaredetaljer](https://docs.gl-inet.com/router/en/2/hardware/mt300n-v2/) · [brukerveiledning](https://docs.gl-inet.com/router/en/4/user_guide/gl-mt300n-v2/) · [OpenWrt maskinvaredatabase](https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt300n_v2).
