@@ -60,9 +60,13 @@ services:
 
 Det avgjørende er `network_mode: "service:gluetun"`: testklienten deler Gluetuns nettverksnavnerom. Publiserte porter for applikasjoner som bruker dette mønsteret, må vanligvis defineres på Gluetun-tjenesten. Eksempelet trenger verken tilgang til Docker-socketen eller `privileged: true`.
 
+For Proton krever Gluetuns leverandørdokumentasjon per nå `VPN_SERVICE_PROVIDER=protonvpn`, `VPN_TYPE=wireguard` og en gyldig `WIREGUARD_PRIVATE_KEY` generert via Proton. Noen andre leverandører krever også `WIREGUARD_ADDRESSES`; **ikke kopier andre leverandørers innstillinger ukritisk**. Bruk aldri eksempel-nøkler fra dokumentasjon.
+
 Se [Gluetun og Proton](https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/protonvpn.md) og [WireGuard-alternativene](https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md) for gjeldende innstillinger.
 
 ## Feiltesting er viktigere enn å slå opp offentlig IP-adresse
+
+Kontroller først Compose-filen med `docker compose config`, og lås testede image-versjoner eller digester. Noter om IPv6 er aktivert på vertsmaskinen og Docker-nettene; ikke anta at det er avslått. Bruk et isolert testnett, ikke et produksjonsmiljø.
 
 Et enkelt oppslag av offentlig IP viser bare hvor forespørselen gikk ut. Det beviser ikke at DNS, IPv6 og feil under gjentilkobling håndteres trygt.
 
@@ -77,6 +81,10 @@ Dokumenter følgende tester **fra testklient-containeren**:
 7. **Praktisk oppgave:** Ved nedlasting eller andre nettverksjobber, undersøk faktisk trafikk under feil. Ikke anta at applikasjonens status viser nettverksisolasjonen.
 
 En ekte test bør dokumentere anonymisert konfigurasjon, programvareversjoner, logger, pakkefangst eller brannmurtellere og resultater fra gjentatte forsøk. Ikke publiser hemmeligheter eller identifiserbare trafikkdata.
+
+## Reproduserbar testrapport
+
+Noter test-ID, image-digester, Docker- og Ubuntu-versjoner, brannmurmodus, VPN-endepunkt (uten hemmeligheter), IPv4/IPv6-observasjoner, forventet og faktisk resultat, og om pakkefangst bekrefter resultatet. En grønn tilkoblingsindikator er ikke nok til å erklære kill switch verifisert. Gjenta feiltestene etter oppdateringer av Gluetun eller endret Docker-nettverk.
 
 ## Om feil fra helsesjekken
 
