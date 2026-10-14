@@ -43,6 +43,10 @@ A homelab is an environment you control for learning, experimentation or running
 
 These are workload categories, not guarantees that every mini PC handles all of them simultaneously.
 
+## A few security basics
+
+If a service matters to your household, do not expose its administration interface directly to the public internet by default. Prefer access through a properly configured VPN, keep the host and applications patched, and consider a separate network or VLAN for less-trusted IoT devices. A VPN is not a replacement for authentication, updates or backups.
+
 ## Containers or virtual machines?
 
 Containers share the host kernel and are usually a sensible starting point for Linux services. A plain Debian or Ubuntu host with Docker or Podman may be all you need. Virtual machines provide separate guest kernels and stronger OS-level separation, at additional resource cost. Proxmox VE is useful when you want to manage VMs, Linux containers, snapshots and multiple hosts through a unified interface.
@@ -57,9 +61,11 @@ There is no universal magic specification. As an editorial starting point—not 
 - **16 GB RAM:** more comfortable for several containers and limited VM experiments.
 - **32 GB or more:** useful for multiple VMs, heavier databases or development workloads, if the *specific system* supports the capacity.
 
-Prefer a replaceable SSD, sensible backup strategy and enough storage for actual data growth. Check whether memory is socketed or soldered, how many drives fit, and whether storage uses SATA, NVMe or a vendor-specific layout. Never assume a CPU's published memory limit describes every real-world system configuration.
+Size storage for the actual operating system, applications, databases, media and expected growth rather than choosing a fixed capacity for everyone. One internal SSD is a single point of failure; keep independent, tested backups on another device or medium, ideally with an off-site copy. Prefer a replaceable SSD and enough storage for actual data growth. Check whether memory is socketed or soldered, how many drives fit, and whether storage uses SATA, NVMe or a vendor-specific layout. Never assume a CPU's published memory limit describes every real-world system configuration.
 
 ## The electricity calculation
+
+To measure your own machine, use a plug-in electricity meter or a suitable energy-monitoring smart plug. Record consumption for at least 24 hours under a representative mix of idle time and real workloads, including disk activity. Check the meter's accuracy and rating.
 
 Suppose two always-on systems average **10 W** and **50 W at the wall** respectively. Those are *hypothetical averages*, not measured mini-PC and rack-server benchmarks.
 
@@ -69,7 +75,9 @@ Suppose two always-on systems average **10 W** and **50 W at the wall** respecti
 | 50 W | 438 kWh |
 | Difference | 350.4 kWh |
 
-The formula is `watts × 24 × 365 ÷ 1,000`. Multiply kWh by **your local all-in electricity price** to estimate the annual difference. For example, at an illustrative **USD 0.20/kWh**, the difference is **USD 70.08 per year**. Your actual tariff, climate, cooling, uptime and measured idle/load profile may change the result substantially.
+The formula is `watts × 24 × 365 ÷ 1,000`. Multiply kWh by the **incremental per-kWh cost** in your location to estimate the difference; fixed charges usually do not change proportionally with consumption, although some capacity-based tariffs can respond to peak demand. For example, at an illustrative **USD 0.20/kWh**, the difference is **USD 70.08 per year**. Your actual tariff, climate, cooling, uptime and measured idle/load profile may change the result substantially.
+
+The 10 W versus 50 W example is intentionally conservative: a different illustrative comparison could use 5–15 W for a compact system and 50–150 W for a larger server. Those are **scenarios, not verified typical idle-power ranges**; actual machines can fall outside them.
 
 ## Where mini PCs fall short
 
@@ -86,7 +94,15 @@ An external USB drive is not automatically a substitute for a well-designed NAS 
 
 Start with one machine and learn to operate it well: automated updates where appropriate, monitoring, documented configuration, independent backups and tested recovery. Add nodes only when you have a reason—separate failure domains, capacity, experiments with clustering or maintenance flexibility. Three boxes are not automatically highly available: quorum, shared or replicated storage, networking and application design still matter.
 
-## Mini PC or rack server?
+## Buying checks for inexpensive mini PCs
+
+Before ordering an N100/N150-class system, check the **specific** Ethernet controller and Linux driver support, availability of BIOS/UEFI updates, memory configuration, power supply and vendor support history. A CPU name alone does not establish the quality of the whole box.
+
+Used business systems are worth searching for under model families such as **Lenovo ThinkCentre Tiny**, **HP EliteDesk/ProDesk Mini** and **Dell OptiPlex Micro**. Compare generations, configurations and complete delivered prices rather than assuming any brand is best.
+
+## Mini PC, single-board computer or rack server?
+
+A **Raspberry Pi or another single-board computer** may be enough for light services, GPIO projects or ARM-specific learning. Check storage endurance, accessories, software architecture and total cost; x86 mini PCs can be more convenient for some VM and software workloads.
 
 Choose a **mini PC** when you value low space requirements, manageable noise, modest power draw and a small set of services. Consider a **tower or rack server** when you genuinely need many disks, expansion cards, substantial memory, multiple high-speed interfaces, redundant components or enterprise remote management. Used enterprise servers can be cheap to acquire yet costly to power, cool and maintain; mini PCs can also be overpriced.
 
@@ -94,6 +110,6 @@ Choose a **mini PC** when you value low space requirements, manageable noise, mo
 
 **You don't need a rack full of servers to build a serious homelab. Sometimes one quiet, efficient mini PC is the better starting point.**
 
-Buy for the workload, not the logo. Check upgradeability, real measured wall power, Linux compatibility, firmware support and total delivered cost. If you are shopping used, remember our rule: **old hardware deserves a second life, not a premium price**.
+Buy for the workload, not the logo. Check upgradeability, real measured wall power, Linux compatibility, firmware support and total delivered cost. If you are shopping used, see our [price-trap guide](/articles/used-mini-pc-price-trap/) and its editorial principle: **old hardware deserves a second life, not a premium price**.
 
 This guide contains no affiliate links. Future hands-on articles should publish exact hardware revisions, firmware versions, power measurements, noise conditions and workload methodology before making performance claims.
