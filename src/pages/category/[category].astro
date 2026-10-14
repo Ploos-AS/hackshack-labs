@@ -6,4 +6,4 @@ export async function getStaticPaths(){return categories.map(category=>({params:
 const category=Astro.params.category!;
 const articles=(await published()).filter(a=>a.data.lang==='en' && a.data.category===category);
 ---
-<SiteLayout title={categoryLabels[category]} alternateUrl={`/no/category/${category}/`}><h1>{categoryLabels[category]}</h1><div class="grid">{articles.length ? articles.map(a=><article class="card"><a href={articleUrl(a.id,'en')}>{a.data.title}</a><p class="muted">{a.data.description}</p></article>) : <p class="muted">No articles published yet.</p>}</div></SiteLayout>
+<SiteLayout title={categoryLabels[category]} alternateUrl={`/no/category/${category}/`}><h1>{categoryLabels[category]}</h1><div class="grid">{articles.length ? articles.map(a=><article class="card"><p class="tag">{a.data.date.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})} · {a.data.tested ? "Hardware verified" : "Documentation-based"}</p><h2><a href={articleUrl(a.id,'en')}>{a.data.title}</a></h2><p class="muted">{a.data.description}</p></article>) : <p class="muted">No articles published yet.</p>}</div></SiteLayout>
