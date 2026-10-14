@@ -12,5 +12,5 @@ const all=await published();
 const counterpart=all.find(a=>a.data.lang==='en' && a.data.translationKey && a.data.translationKey===entry.data.translationKey);
 ---
 <SiteLayout title={entry.data.title} lang="nb" alternateUrl={counterpart ? articleUrl(counterpart.id,'en') : undefined}>
-  <article><p class="tag">{categoryLabelsNo[entry.data.category]} · {entry.data.date.toLocaleDateString('nb-NO')} · {entry.data.tested ? 'Testet på maskinvare' : 'Ikke verifisert på maskinvare'}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p><Content /></article>
+  <article><p class="tag">{categoryLabelsNo[entry.data.category]} · {entry.data.date.toLocaleDateString('nb-NO')}{entry.data.category !== 'reference' && <> · {entry.data.category !== 'reference' && (entry.data.tested ? 'Testet på maskinvare' : 'Ikke verifisert på maskinvare')}</>}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p><Content /></article>
 </SiteLayout>
