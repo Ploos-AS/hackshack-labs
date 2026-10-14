@@ -1,0 +1,27 @@
+{
+  "merchant": "proton",
+  "network": "proton-partners",
+  "offers": {
+    "mail": {
+      "id": 7,
+      "url": "https://go.getproton.me/SH33i",
+      "source": "hackshacklabs"
+    },
+    "vpn": {
+      "id": 26,
+      "url": null
+    },
+    "pass": {
+      "id": 38,
+      "url": null
+    },
+    "drive": {
+      "id": 43,
+      "url": null
+    },
+    "lumo": {
+      "id": 68,
+      "url": null
+    }
+  }
+}
