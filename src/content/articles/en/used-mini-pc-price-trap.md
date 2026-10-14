@@ -68,6 +68,23 @@ A comparison must match usable RAM, storage, network interfaces, warranty, suppo
 - The machine is too old for the intended supported OS, security posture or virtualization features.
 - A newer, warrantied alternative costs only a little more *after all extras are counted*.
 
+## Our opinion: what should a decade-old mini PC cost?
+
+**These are HackShack Labs' editorial buying thresholds, not measured market values or appraisals.** They assume a tested, working, complete machine with power supply, usable RAM and storage, *before* shipping and destination-specific taxes. We would normally walk away above the right-hand column for general-purpose computing.
+
+| Hardware | We would call it a good buy | Our usual ceiling |
+| --- | ---: | ---: |
+| Intel Mac mini 2011–2012 | USD 25–50 | USD 75 |
+| Intel Mac mini 2014 | USD 30–60 | USD 80 |
+| Intel Mac mini 2018 | USD 70–110 | USD 150 |
+| Intel NUC 4th–5th generation | USD 20–40 | USD 60 |
+| Intel NUC 6th–7th generation | USD 30–60 | USD 85 |
+| Intel NUC 8th generation | USD 50–90 | USD 120 |
+
+These ceilings are deliberately conservative: old hardware has limited remaining service life, variable firmware and OS support, and opportunity costs compared with newer low-power systems. They are **what we would be willing to pay**, not claims about what sellers should legally charge or what the market actually clears at.
+
+A special OS requirement, a collectible PowerPC Mac, an unusually capable configuration or a documented refurbishment warranty can justify paying more. A barebone, untested unit, missing PSU or soldered low-memory configuration should cost less. International readers must add shipping and taxes for **their own destination**, not assume delivery to Norway.
+
 ## Our buying rule
 
 Do not ask, “Is this old Mac mini or NUC cheap compared with its original price?” Ask:
