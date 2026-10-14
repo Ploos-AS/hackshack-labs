@@ -1,7 +1,7 @@
 ---
-title: "GL.iNet Mango: A $30 Router Made for Tinkering"
+title: "GL.iNet Mango: A Tiny Router Made for Tinkering"
 description: "Why the tiny GL-MT300N-V2 is an inviting OpenWrt, Wi-Fi and Linux lab—and where its limitations begin."
-category: projects
+category: reference
 lang: en
 date: 2026-10-14
 tags: [gl-inet, mango, openwrt, routers, linux, networking, maker]
@@ -40,6 +40,12 @@ If you want to check current availability and pricing: <a href="https://tidd.ly/
 
 These are manufacturer specifications, **not our measurements**. The advertised 300 Mbps Wi-Fi figure is a theoretical PHY link rate, not a promise of real throughput. Ethernet is limited to 100 Mbps, and 2.4 GHz Wi-Fi is crowded in many environments. Sources: [GL.iNet product page](https://www.gl-inet.com/products/gl-mt300n-v2) and [hardware documentation](https://docs.gl-inet.com/router/en/2/hardware/mt300n-v2/).
 
+## Why choose Mango in 2026—and when not to?
+
+Mango is an older, deliberately modest device. Its appeal is the combination of approachable pricing, familiar OpenWrt-based software, accessible interfaces and low stakes for experiments—not speed or longevity. If you already own a supported second-hand OpenWrt router, using that may be the cheaper and more responsible option. A newer GL.iNet router may be a better fit for dual-band Wi-Fi, faster Ethernet or daily travel use. A single-board computer may suit projects needing more RAM, storage or compute, though it is not a drop-in replacement for a two-port router.
+
+None of these alternatives is an affiliate recommendation. Choose based on the experiment you actually want to run.
+
 ## Why it is unusually hackable
 
 **It is part of the OpenWrt world.** The GL.iNet firmware is OpenWrt-derived and presents an approachable interface. The upstream [OpenWrt hardware database](https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt300n_v2) also lists the GL-MT300N-V2, which makes it a candidate for experimenting with vanilla OpenWrt.
@@ -55,7 +61,7 @@ GL.iNet's hardware documentation also flags a **Wi-Fi driver trade-off**: its pr
 1. **An isolated pocket access point:** create a lab SSID and attach a separate machine to Ethernet for web services, a BBS or an offline library. Keep it separate from your home network.
 2. **A small OpenWrt classroom:** explore LuCI, SSH, interfaces, DHCP, DNS and firewall zones. Save a known-good configuration first.
 3. **A travel-network practice rig:** compare Ethernet WAN, Wi-Fi repeater and USB tethering on firmware that supports each mode; document behavior rather than assuming perfect isolation.
-4. **A serial console investigation:** document UART voltage and pinout *before* connecting an adapter. Use a proper 3.3 V TTL interface; never connect RS-232 voltage directly.
+4. **A serial console investigation:** document UART voltage and pinout *before* connecting an adapter. Use a proper 3.3 V TTL interface; never connect RS-232 voltage directly. For a router powered separately, the usual UART hookup is **GND, TX and RX only** (cross TX to RX); leave the serial adapter's VCC unconnected. Verify the board pinout and voltage before connecting anything.
 5. **A storage and package experiment:** see how far its USB port, package manager and constrained flash take you; measure limits before relying on it.
 6. **An offline micro-network:** use Mango as the Wi-Fi AP and router while a more capable Ethernet-connected host runs the heavier services.
 
@@ -65,7 +71,7 @@ That last idea is especially appealing: the router does not have to run *everyth
 
 They are not interchangeable promises. Vendor firmware can supply convenient travel-router features and a wireless stack with different capabilities. Vanilla OpenWrt gives a more direct view of upstream packaging and configuration, but the exact image, release, hardware revision and driver behavior must be checked.
 
-**Never flash a generic image because a router looks similar.** Confirm the precise model **GL-MT300N-V2**, get the correct installation instructions and image type, verify file integrity, and understand the recovery path before touching the firmware. Save any configuration needed to restore access. We have not validated a specific upgrade procedure for this article.
+**Never flash a generic image because a router looks similar.** Confirm the precise model **GL-MT300N-V2**, get the correct installation instructions and image type, verify file integrity, and understand the recovery path before touching the firmware. Save any configuration needed to restore access. In Norway, configure the correct regulatory country (**NO**) and verify allowed Wi-Fi channels and transmit-power limits after changing firmware; do not assume the new image inherits the vendor's settings. We have not validated a specific upgrade procedure for this article.
 
 ## Where Mango is *not* ideal
 
@@ -80,7 +86,6 @@ These drawbacks are precisely why it is a good **second router** for learning.
 
 We want to document: unboxing and firmware inventory; power draw and throughput; initial backup and recovery; stock vs vanilla OpenWrt behavior; isolated AP with an Ethernet service host; optional USB storage; and the practical limitations of VPN use.
 
-Mango is also relevant to our **PocketBox** concept: a minimal offline Wi-Fi environment where the access point provides connectivity and a separate device provides richer services. We will discuss **MikroWrt** only as a future experimental alternative, not as released firmware for Mango.
 
 **Disclosure:** The GL.iNet Mango link above is an affiliate link. Ploos AS may earn commission on qualifying purchases. HackShack Labs' technical conclusions and future test results remain editorially independent.
 
