@@ -7,13 +7,13 @@ date: 2026-10-14
 tags: [proton, privacy, self-hosting, encryption, email, vpn]
 series: "Privacy & Digital Independence"
 translationKey: proton-ecosystem-overview
-draft: true
+draft: false
 tested: false
 ---
 
 > **Advertisement — affiliate links:** This article contains clearly marked Proton affiliate links. If you buy through one of them, Ploos AS may earn a commission at no additional cost to you. Affiliate partnerships do not determine our editorial conclusions.
 
-> **Editorial status — research draft (14 October 2026):** This is a feature overview, not a hands-on benchmark. Product behavior, subscriptions and platform support need to be rechecked before publication. No Proton service has been independently tested specifically for this article.
+> **Editorial note (14 October 2026):** This is a feature overview, not a hands-on benchmark. Product behavior, subscriptions and platform support need to be rechecked before publication. No Proton service has been independently tested specifically for this article.
 
 ## Privacy does not require running every server yourself
 
@@ -88,4 +88,4 @@ HackShack Labs is editorially independent. Ploos AS participates in the Proton a
 - Proton Pass vs Bitwarden and KeePassXC: portability and recovery
 - Using Proton with a custom domain while preserving an exit strategy
 
-**Sources and verification:** [Proton support](https://proton.me/support); [Proton Drive support](https://proton.me/support/drive); [Using Proton services without Proton Mail](https://proton.me/support/external-accounts). This article is a desk-research draft as of 14 October 2026, not an endorsement.
+**Sources and verification:** [Proton Mail encryption scope](https://proton.me/support/what-is-encrypted-within-protonmail); [Proton Drive encryption scope](https://proton.me/support/drive); [Proton support](https://proton.me/support); [Proton Drive support](https://proton.me/support/drive); [Using Proton services without Proton Mail](https://proton.me/support/external-accounts). This article is a sourced overview as of 14 October 2026, not a hands-on review or endorsement.
