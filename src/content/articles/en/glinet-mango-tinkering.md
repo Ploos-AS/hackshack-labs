@@ -11,6 +11,8 @@ draft: false
 tested: false
 ---
 
+> **Advertisement — affiliate link:** This article includes a clearly marked affiliate link to the GL.iNet Mango. Ploos AS may receive a commission from qualifying purchases, at no additional cost to you. It does not affect our editorial conclusions.
+
 > **Editorial status (14 October 2026):** This is a documentation-based first look, not a hands-on review. We have not yet flashed or benchmarked the GL-MT300N-V2 for this article. Prices and firmware support can change.
 
 ## The most fun router might be the one you are not afraid to break
@@ -20,6 +22,8 @@ A high-end router is a sensible choice for a busy home network. It is rarely the
 The little **GL.iNet Mango (GL-MT300N-V2)** makes the opposite proposition: inexpensive hardware, a Linux-based firmware ecosystem, accessible network interfaces and enough flexibility to try things. It is small enough to take anywhere and modest enough to dedicate to one project at a time.
 
 GL.iNet's listed price was **US$29.99 when checked on 14 October 2026**. That is a reference price on its own product site—not a confirmed Norwegian retail price. Shipping, VAT and local availability can change the total. No purchasing recommendation depends on that exact figure.
+
+If you want to check current availability and pricing: <a href="https://tidd.ly/4zA195J" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">GL.iNet Mango (affiliate link)</a>. The final price and seller terms are determined by the linked store.
 
 ## What is inside the Mango?
 
@@ -78,6 +82,6 @@ We want to document: unboxing and firmware inventory; power draw and throughput;
 
 Mango is also relevant to our **PocketBox** concept: a minimal offline Wi-Fi environment where the access point provides connectivity and a separate device provides richer services. We will discuss **MikroWrt** only as a future experimental alternative, not as released firmware for Mango.
 
-**Disclosure:** This article has no GL.iNet affiliate tracking link. HackShack Labs may pursue commercial relationships with networking vendors, but opinions and the outcome of tests are independent.
+**Disclosure:** The GL.iNet Mango link above is an affiliate link. Ploos AS may earn commission on qualifying purchases. HackShack Labs' technical conclusions and future test results remain editorially independent.
 
 **References:** [GL.iNet official specifications](https://www.gl-inet.com/products/gl-mt300n-v2) · [GL.iNet hardware details](https://docs.gl-inet.com/router/en/2/hardware/mt300n-v2/) · [GL.iNet current user guide](https://docs.gl-inet.com/router/en/4/user_guide/gl-mt300n-v2/) · [OpenWrt hardware entry](https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt300n_v2).
