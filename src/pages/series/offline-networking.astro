@@ -2,6 +2,11 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import { published,articleUrl } from '../../lib/articles';
 const entries=(await published()).filter(a=>a.data.lang==='en'&&a.data.series==='offline-networking');
-const roadmap=['PirateBox on TP-Link TL-WR703N','LibraryBox on TP-Link TL-WR703N','PirateBox port to GL.iNet Mango','LibraryBox port to GL.iNet Mango','Ploos PocketBox on MIPS routers'];
+const roadmap=[
+ ['TP-Link TL-WR703N','Document compatible legacy vanilla OpenWrt after testing on actual hardware; evaluate MikroWrt as it matures.'],
+ ['GL.iNet Mango GL-MT300N-V2','Test compatible OpenWrt and PocketBox as a Wi-Fi access point with services also available over Ethernet.'],
+ ['MikroWrt','Follow the development of a configurable, useful Linux distribution for resource-constrained routers.'],
+ ['Ploos PocketBox','Document offline Wi-Fi services on the supported MIPS routers once the MikroWrt dependency is ready.']
+];
 ---
-<SiteLayout title="Offline Networking"><p class="tag">SERIES / NETWORKING</p><h1>Offline Networking</h1><p>Self-contained Wi-Fi networks, portable libraries and services without Internet access.</p><h2>Planned investigations</h2><ol>{roadmap.map(item=><li>{item} <span class="muted">— planned; hardware verification pending</span></li>)}</ol><h2>Published articles</h2>{entries.length ? <ul>{entries.map(a=><li><a href={articleUrl(a.id,'en')}>{a.data.title}</a></li>)}</ul> : <p class="muted">Technical articles are being prepared.</p>}</SiteLayout>
+<SiteLayout title="Offline Networking" alternateUrl="/no/series/offline-networking/"><p class="tag">SERIES / NETWORKING</p><h1>Offline Networking</h1><p>Self-contained Wi-Fi networks, portable libraries and services without Internet access.</p><h2>Current investigations</h2><ol>{roadmap.map(([name,description])=><li><strong>{name}</strong> — {description} <span class="muted">(hardware verification pending)</span></li>)}</ol><h2>Historical projects</h2><p>PirateBox and LibraryBox are discontinued upstream. We retain archival research, but no longer plan fresh installation tutorials or ports unless usable installation materials can be recovered and tested on physical hardware.</p><h2>Published articles</h2>{entries.length ? <ul>{entries.map(a=><li><a href={articleUrl(a.id,'en')}>{a.data.title}</a></li>)}</ul> : <p class="muted">Technical articles are being prepared.</p>}</SiteLayout>
