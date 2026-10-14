@@ -11,6 +11,8 @@ draft: true
 tested: false
 ---
 
+> **Reklame – annonselenker:** Denne artikkelen inneholder tydelig merkede Proton-annonselenker. Hvis du kjøper via en av dem, kan Ploos AS motta provisjon uten ekstra kostnad for deg. Kommersielle avtaler styrer ikke de redaksjonelle konklusjonene våre.
+
 > **Redaksjonell status – researchutkast (14. oktober 2026):** Dette er en oversiktsartikkel, ikke en praktisk ytelsestest. Produktfunksjoner, abonnementer og plattformstøtte må kontrolleres på nytt før publisering. Ingen Proton-tjenester er uavhengig testet spesielt for denne artikkelen.
 
 ## Personvern betyr ikke at du må drifte alle tjenester selv
@@ -25,13 +27,13 @@ Proton er interessant fordi flere tjenester samles under én konto. Det er prakt
 
 | Tjeneste | Formål | Alternativ å sammenligne med |
 | --- | --- | --- |
-| **Proton Mail** | E-posttjeneste med personvernorienterte krypteringsfunksjoner | Egen e-postserver eller annen leverandør |
-| **Proton VPN** | Kryptert tunnel til VPN-leverandørens servere | Egen WireGuard-server eller annen VPN |
-| **Proton Drive** | Kryptert fillagring, deling og dokumentverktøy | Nextcloud, Syncthing, kryptert ekstern backup |
-| **Proton Pass** | Passord og identitetsfunksjoner | KeePassXC, Bitwarden, selvhostet Vaultwarden |
+| <a href="https://go.getproton.me/SH33i" rel="sponsored noopener noreferrer">Proton Mail (annonselenke)</a> | E-posttjeneste med personvernorienterte krypteringsfunksjoner | Egen e-postserver eller annen leverandør |
+| <a href="https://go.getproton.me/SH33j" rel="sponsored noopener noreferrer">Proton VPN (annonselenke)</a> | Kryptert tunnel til VPN-leverandørens servere | Egen WireGuard-server eller annen VPN |
+| <a href="https://go.getproton.me/SH33l" rel="sponsored noopener noreferrer">Proton Drive (annonselenke)</a> | Kryptert fillagring, deling og dokumentverktøy | Nextcloud, Syncthing, kryptert ekstern backup |
+| <a href="https://go.getproton.me/SH33k" rel="sponsored noopener noreferrer">Proton Pass (annonselenke)</a> | Passord og identitetsfunksjoner | KeePassXC, Bitwarden, selvhostet Vaultwarden |
 | **Proton Calendar** | Kalender integrert med Proton-konto | CalDAV som Radicale eller Nextcloud |
 | **Proton Authenticator** | App for engangskoder | Andre offline-autentikatorer og sikkerhetsnøkler |
-| **Lumo** | Personvernorientert AI-assistent | Lokale modeller, for eksempel med Ollama |
+| <a href="https://go.getproton.me/SH33m" rel="sponsored noopener noreferrer">Lumo (annonselenke)</a> | Personvernorientert AI-assistent | Lokale modeller, for eksempel med Ollama |
 
 Dette er ikke funksjonsmessig identiske produkter. **Syncthing synkroniserer filer; det er ikke automatisk en sikkerhetskopi**. Og en egen WireGuard-server gir ikke nødvendigvis de samme egenskapene som utgangsnettverket til en kommersiell VPN.
 
@@ -76,9 +78,7 @@ Et produkt kan være godt egnet til én oppgave og dårlig egnet til en annen. V
 
 ## Redaksjonell uavhengighet
 
-HackShack Labs er uavhengig. Et affiliate-samarbeid med Proton skal ikke styre våre tekniske konklusjoner. **Dette utkastet inneholder ingen affiliate-sporingslenker**. Dersom slike lenker legges til, skal de merkes tydelig ved lenkene, og reklamemerkingen oppdateres før publisering.
-
-**Reklame – annonselenker (kun dersom aktivert ved publisering):** Artikkelen kan inneholde tydelig merkede annonselenker. Vi kan motta provisjon ved kvalifiserte kjøp uten ekstra kostnad for deg. Dette påvirker ikke vurderingene våre.
+HackShack Labs er redaksjonelt uavhengig. Ploos AS deltar i Protons affiliate-program, og de fem tjenestelenkene i sammenligningstabellen er annonselenker, ikke testresultater eller anbefalinger. Vi kan motta provisjon ved kvalifiserte kjøp. Dette påvirker ikke våre tekniske konklusjoner. Vi skiller tydelig mellom Protons dokumenterte produktpåstander og fremtidige egne tester.
 
 ## Neste artikler
 
