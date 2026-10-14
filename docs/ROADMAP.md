@@ -15,3 +15,7 @@
 - PirateBox and LibraryBox are discontinued historical projects: archival research only unless complete, verifiable installation resources are recovered.
 
 Do not publish unverified hardware instructions as tested. Clearly disclose affiliate links.
+
+## Mini PC, local AI and independent buying advice
+- [ ] Plan and publish the [25-article Mini PC & AI series](MINI-PC-AI-EDITORIAL-PLAN.md); check for existing coverage before drafting.
+- [x] Establish [editorial independence policy](EDITORIAL-POLICY.md) and [article template](ARTICLE-TEMPLATE.md).
