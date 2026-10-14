@@ -11,6 +11,8 @@ draft: true
 tested: false
 ---
 
+> **Advertisement — affiliate links:** This article contains clearly marked Proton affiliate links. If you buy through one of them, Ploos AS may earn a commission at no additional cost to you. Affiliate partnerships do not determine our editorial conclusions.
+
 > **Editorial status — research draft (14 October 2026):** This is a feature overview, not a hands-on benchmark. Product behavior, subscriptions and platform support need to be rechecked before publication. No Proton service has been independently tested specifically for this article.
 
 ## Privacy does not require running every server yourself
@@ -25,13 +27,13 @@ Proton is an interesting example because it offers multiple privacy-focused serv
 
 | Service | What it does | Alternative worth comparing |
 | --- | --- | --- |
-| **Proton Mail** | Hosted email with privacy-oriented encryption features | Hosting your own mail stack, or another mail provider |
-| **Proton VPN** | Encrypted tunnel to a VPN provider's servers | Your own WireGuard endpoint; a different VPN provider |
-| **Proton Drive** | Encrypted cloud files, sharing and document tools | Nextcloud, Syncthing, encrypted off-site backup |
-| **Proton Pass** | Passwords, credentials and related identity features | KeePassXC, Bitwarden and self-hosted Vaultwarden |
+| <a href="https://go.getproton.me/SH33i" rel="sponsored noopener noreferrer">Proton Mail (affiliate link)</a> | Hosted email with privacy-oriented encryption features | Hosting your own mail stack, or another mail provider |
+| <a href="https://go.getproton.me/SH33j" rel="sponsored noopener noreferrer">Proton VPN (affiliate link)</a> | Encrypted tunnel to a VPN provider's servers | Your own WireGuard endpoint; a different VPN provider |
+| <a href="https://go.getproton.me/SH33l" rel="sponsored noopener noreferrer">Proton Drive (affiliate link)</a> | Encrypted cloud files, sharing and document tools | Nextcloud, Syncthing, encrypted off-site backup |
+| <a href="https://go.getproton.me/SH33k" rel="sponsored noopener noreferrer">Proton Pass (affiliate link)</a> | Passwords, credentials and related identity features | KeePassXC, Bitwarden and self-hosted Vaultwarden |
 | **Proton Calendar** | Calendar integrated with Proton's account ecosystem | CalDAV servers such as Radicale or Nextcloud |
 | **Proton Authenticator** | Authentication-code application | Other offline authenticators and security keys |
-| **Lumo** | Privacy-focused hosted AI assistant | Local models using tools such as Ollama |
+| <a href="https://go.getproton.me/SH33m" rel="sponsored noopener noreferrer">Lumo (affiliate link)</a> | Privacy-focused hosted AI assistant | Local models using tools such as Ollama |
 
 These are not feature-for-feature substitutes. For example, **Syncthing synchronizes files; it is not automatically a remote backup**. And a personal WireGuard endpoint does not provide the same exit-network properties as a commercial VPN.
 
@@ -76,9 +78,7 @@ A product may be right for one workload and wrong for another. We will state bot
 
 ## Our editorial position
 
-HackShack Labs is independent. A future affiliate relationship with Proton will not determine our technical conclusions. **This draft does not contain an affiliate tracking link**. If tracking links are added, they will be identified clearly next to the links and the article's disclosure will be updated before publication.
-
-**Affiliate disclosure (for future publication if links are activated):** This article may contain clearly marked affiliate links. We may receive a commission from qualifying purchases, at no additional cost to you. That does not affect our evaluations.
+HackShack Labs is editorially independent. Ploos AS participates in the Proton affiliate program, and the five service links in the comparison table are commercial links, not test results or recommendations. We may earn a commission from qualifying purchases. This does not affect our technical conclusions. We explicitly distinguish Proton's documented product claims from our own future hands-on testing.
 
 ## Coming next
 
