@@ -7,7 +7,7 @@ date: 2026-10-14
 tags: [gl-inet, mango, openwrt, routers, linux, networking, maker]
 series: "Pocket Networking Lab"
 translationKey: glinet-mango-tinkering
-draft: true
+draft: false
 tested: false
 ---
 
@@ -25,13 +25,13 @@ GL.iNet's listed price was **US$29.99 when checked on 14 October 2026**. That is
 
 | Specification | GL-MT300N-V2 |
 | --- | --- |
-| SoC | MediaTek MT7628-family, ~580 MHz |
+| SoC | MediaTek MT7628NN (manufacturer); MT7628AN (OpenWrt database), 580 MHz |
 | RAM / flash | 128 MB DDR2 / 16 MB NOR |
 | Wi-Fi | 2.4 GHz 802.11b/g/n, advertised N300 link rate |
 | Wired ports | 1 × 10/100 WAN, 1 × 10/100 LAN |
 | Other interfaces | USB 2.0, Micro-USB power, reset and mode switch |
 | DIY access | UART and GPIO pads/interfaces documented by GL.iNet |
-| Power | Micro-USB, manufacturer recommends a suitable 5 V supply |
+| Power | Micro-USB, 5 V; vendor documents differ between 1 A and 2 A—use an adequately rated supply |
 | Size | Approximately 58 × 58 × 25 mm |
 
 These are manufacturer specifications, **not our measurements**. The advertised 300 Mbps Wi-Fi figure is a theoretical PHY link rate, not a promise of real throughput. Ethernet is limited to 100 Mbps, and 2.4 GHz Wi-Fi is crowded in many environments. Sources: [GL.iNet product page](https://www.gl-inet.com/products/gl-mt300n-v2) and [hardware documentation](https://docs.gl-inet.com/router/en/2/hardware/mt300n-v2/).
@@ -44,7 +44,7 @@ These are manufacturer specifications, **not our measurements**. The advertised 
 
 **The limits are educational.** With 16 MB flash and 128 MB RAM, package selection still matters. It is much more comfortable than a 4 MB/32 MB router, but it is not a general-purpose server. Every extra service makes you think about memory, storage, startup and recovery.
 
-GL.iNet's hardware documentation also flags a **Wi-Fi driver trade-off**: its proprietary MediaTek driver and open-source driver do not provide identical behavior. In particular, do not assume that monitor mode, repeater bridging or stability are the same on vendor firmware and a self-flashed upstream image. This deserves explicit testing. [Source](https://docs.gl-inet.com/router/en/2/hardware/mt300n-v2/).
+GL.iNet's hardware documentation also flags a **Wi-Fi driver trade-off**: its proprietary MediaTek driver and upstream mt76 driver do not provide identical behavior. GL.iNet also reports past kernel-panics with the open driver. In particular, do not assume that monitor mode, repeater bridging or stability are the same on vendor firmware and a self-flashed upstream image. This deserves explicit testing. [Source](https://docs.gl-inet.com/router/en/2/hardware/mt300n-v2/).
 
 ## Six experiments worth trying
 
