@@ -11,6 +11,6 @@ const {Content}=await render(entry);
 const all=await published();
 const counterpart=all.find(a=>a.data.lang==='en' && a.data.translationKey && a.data.translationKey===entry.data.translationKey);
 ---
-<SiteLayout title={entry.data.title} lang="nb" alternateUrl={counterpart ? articleUrl(counterpart.id,'en') : undefined}>
-  <article><p class="tag">{categoryLabelsNo[entry.data.category]} · {entry.data.date.toLocaleDateString('nb-NO')} · {entry.data.tested ? 'Maskinvareverifisert' : 'Dokumentasjonsbasert'}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p><Content /></article>
+<SiteLayout title={entry.data.title} lang="nb" alternateUrl={counterpart ? articleUrl(counterpart.id,'en') : undefined} hideLanguageSwitch={!counterpart}>
+  <article><p class="tag">{categoryLabelsNo[entry.data.category]} · {entry.data.date.toLocaleDateString('nb-NO')} · {entry.data.tested ? 'Maskinvareverifisert' : 'Dokumentasjonsbasert'}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p>{!counterpart && <p class="muted">Engelsk oversettelse er ikke tilgjengelig for denne artikkelen ennå.</p>}<Content /></article>
 </SiteLayout>
