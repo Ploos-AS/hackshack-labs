@@ -13,5 +13,5 @@ const seriesUrl=entry.data.series==='WR703N Labs' ? '/series/wr703n-labs/' : und
 const counterpart=all.find(a=>a.data.lang==='nb' && a.data.translationKey && a.data.translationKey===entry.data.translationKey);
 ---
 <SiteLayout title={entry.data.title} lang="en" alternateUrl={counterpart ? articleUrl(counterpart.id,'nb') : undefined}>
-  <article><p class="tag">{categoryLabels[entry.data.category]} · {seriesUrl && <><a href={seriesUrl}>{entry.data.series} · Part 1</a> · </>} {entry.data.date.toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})}{entry.data.category !== 'reference' && <> · {entry.data.category !== 'reference' && (entry.data.tested ? 'Hardware verified' : 'Not hardware verified')}</>}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p><Content /></article>
+  <article><p class="tag">{categoryLabels[entry.data.category]} · {seriesUrl && <><a href={seriesUrl}>{entry.data.series} · Part 1</a> · </>} {entry.data.date.toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})}{<> · {entry.data.tested ? 'Hardware verified' : 'Documentation-based'}</>}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p><Content /></article>
 </SiteLayout>
