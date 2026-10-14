@@ -21,7 +21,7 @@ A high-end router is a sensible choice for a busy home network. It is rarely the
 
 The little **GL.iNet Mango (GL-MT300N-V2)** makes the opposite proposition: inexpensive hardware, a Linux-based firmware ecosystem, accessible network interfaces and enough flexibility to try things. It is small enough to take anywhere and modest enough to dedicate to one project at a time.
 
-GL.iNet's listed price was **US$29.99 when checked on 14 October 2026**. That is a reference price on its own product site—not a confirmed Norwegian retail price. Shipping, VAT and local availability can change the total. No purchasing recommendation depends on that exact figure.
+GL.iNet's listed price was **US$29.99 when checked on 14 October 2026**. That is the manufacturer's listed reference price, not a guaranteed checkout price. Taxes, shipping charges, regional pricing and availability vary by market. No purchasing recommendation depends on that exact figure.
 
 If you want to check current availability and pricing: <a href="https://tidd.ly/4zA195J" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">GL.iNet Mango (affiliate link)</a>. The final price and seller terms are determined by the linked store.
 
