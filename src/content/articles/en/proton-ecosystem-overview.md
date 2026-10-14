@@ -1,7 +1,7 @@
 ---
 title: "The Proton Ecosystem: Privacy Services Through a Self-Hosting Lens"
 description: "A practical, independent introduction to Proton's services, their trade-offs, and when self-hosting remains the better choice."
-category: deep-dives
+category: reference
 lang: en
 date: 2026-10-14
 tags: [proton, privacy, self-hosting, encryption, email, vpn]
@@ -13,7 +13,7 @@ tested: false
 
 > **Advertisement — affiliate links:** This article contains clearly marked Proton affiliate links. If you buy through one of them, Ploos AS may earn a commission at no additional cost to you. Affiliate partnerships do not determine our editorial conclusions.
 
-> **Editorial note (14 October 2026):** This is a feature overview, not a hands-on benchmark. Product behavior, subscriptions and platform support need to be rechecked before publication. No Proton service has been independently tested specifically for this article.
+> **Editorial note (14 October 2026):** This is a feature overview, not a hands-on benchmark. Features, subscription terms and platform availability may change; check the linked official documentation. This is a sourced overview, not an independent hands-on test of these services.
 
 ## Privacy does not require running every server yourself
 
@@ -31,13 +31,19 @@ Proton is an interesting example because it offers multiple privacy-focused serv
 | <a href="https://go.getproton.me/SH33j" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton VPN (affiliate link)</a> | Encrypted tunnel to a VPN provider's servers | Your own WireGuard endpoint; a different VPN provider |
 | <a href="https://go.getproton.me/SH33l" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton Drive (affiliate link)</a> | Encrypted cloud files, sharing and document tools | Nextcloud, Syncthing, encrypted off-site backup |
 | <a href="https://go.getproton.me/SH33k" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton Pass (affiliate link)</a> | Passwords, credentials and related identity features | KeePassXC, Bitwarden and self-hosted Vaultwarden |
-| **Proton Calendar** | Calendar integrated with Proton's account ecosystem | CalDAV servers such as Radicale or Nextcloud |
-| **Proton Authenticator** | Authentication-code application | Other offline authenticators and security keys |
-| <a href="https://go.getproton.me/SH33m" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Lumo (affiliate link)</a> | Privacy-focused hosted AI assistant | Local models using tools such as Ollama |
+| [**Proton Calendar**](https://proton.me/support/calendar) | Calendar integrated with Proton's account ecosystem | CalDAV servers such as Radicale or Nextcloud |
+| [**Proton Authenticator**](https://proton.me/authenticator) | Authentication-code application | Other offline authenticators and security keys |
+| <a href="https://go.getproton.me/SH33m" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Lumo (affiliate link)</a> | Hosted AI assistant described by Proton as privacy-focused | Local models using tools such as Ollama |
 
 These are not feature-for-feature substitutes. For example, **Syncthing synchronizes files; it is not automatically a remote backup**. And a personal WireGuard endpoint does not provide the same exit-network properties as a commercial VPN.
 
 Official service overview: [Proton](https://proton.me/) · [Proton support](https://proton.me/support).
+
+## Trust and interoperability matter
+
+Proton operates under Swiss jurisdiction, but jurisdiction alone does not eliminate the need to examine applicable law and disclosure requests. Proton publishes source code for many of its applications and information about external security audits; the scope differs by product and version. Users should check the specific service rather than assume that every component is open source or independently audited.
+
+There are also practical compatibility costs. For example, traditional desktop email clients generally require **Proton Mail Bridge** for IMAP/SMTP access, and Bridge requires an eligible paid plan. Proton Calendar has its own import and export workflows; it should not be assumed to act as a general-purpose CalDAV server. See [Proton Mail Bridge](https://proton.me/support/imap-smtp-and-pop3-setup), [Calendar export](https://proton.me/support/protoncalendar-calendars), [Proton's open-source overview](https://proton.me/community/open-source) and [Proton's transparency information](https://proton.me/legal/transparency).
 
 ## Where Proton may be a sensible choice
 
@@ -88,4 +94,4 @@ HackShack Labs is editorially independent. Ploos AS participates in the Proton a
 - Proton Pass vs Bitwarden and KeePassXC: portability and recovery
 - Using Proton with a custom domain while preserving an exit strategy
 
-**Sources and verification:** [Proton Mail encryption scope](https://proton.me/support/what-is-encrypted-within-protonmail); [Proton Drive encryption scope](https://proton.me/support/drive); [Proton support](https://proton.me/support); [Proton Drive support](https://proton.me/support/drive); [Using Proton services without Proton Mail](https://proton.me/support/external-accounts). This article is a sourced overview as of 14 October 2026, not a hands-on review or endorsement.
+**Sources and verification:** [Proton Mail encryption](https://proton.me/support/what-is-encrypted-within-protonmail); [Proton Drive](https://proton.me/support/drive); [Proton Mail Bridge](https://proton.me/support/imap-smtp-and-pop3-setup); [Proton Calendar](https://proton.me/support/calendar); [Proton Authenticator](https://proton.me/authenticator); [Proton open source](https://proton.me/community/open-source); [Proton transparency](https://proton.me/legal/transparency). Sourced overview as of 14 October 2026; no hands-on testing is claimed.
