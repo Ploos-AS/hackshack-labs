@@ -60,9 +60,13 @@ services:
 
 The sidecar pattern is the critical point: `network_mode: "service:gluetun"` means the test client shares Gluetun's network namespace. Published ports for such applications generally belong on the Gluetun service. Docker socket access and `privileged: true` are unnecessary for this example.
 
+For Proton specifically, the Gluetun provider guide currently requires `VPN_SERVICE_PROVIDER=protonvpn`, `VPN_TYPE=wireguard` and a valid Proton-generated `WIREGUARD_PRIVATE_KEY`. Some other providers also require `WIREGUARD_ADDRESSES`; **do not blindly copy another provider's settings**. Never copy keys from documentation samples.
+
 For provider-specific configuration and current options, use the [Gluetun Proton page](https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/protonvpn.md) and [WireGuard options](https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md).
 
 ## A failure test is more important than a successful IP check
+
+Before running tests, verify the exact Compose file with `docker compose config` and pin tested image versions/digests. Check whether IPv6 is enabled on the host and Docker networks; record the result rather than assuming that it is off. Run the test workload only in an isolated, non-production network.
 
 A one-time public-IP lookup only shows where a request exited. It cannot prove that DNS, IPv6 or reconnect failures are safe.
 
@@ -77,6 +81,10 @@ Document the following checks, all from **inside the test-client container**:
 7. **Operational case:** if using a downloader, pause and inspect traffic during failures; avoid assuming application-level status indicates network isolation.
 
 For a real test, collect sanitized configuration, software versions, logs, packet captures or firewall counters and repeated run outcomes. Do not publish credentials, public management endpoints or identifiable browsing data.
+
+## A reproducible test record
+
+For each run, record the test identifier, image digests, Docker/Ubuntu versions, firewall mode, tunnel endpoint (without credentials), IPv4/IPv6 observations, expected outcome, observed outcome and whether a packet capture confirms it. A connection status is not sufficient to call a kill switch verified. Repeat every failure test after updating Gluetun or changing the Docker networking configuration.
 
 ## A note on health-check failures
 
