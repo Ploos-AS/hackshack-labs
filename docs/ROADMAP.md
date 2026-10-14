@@ -9,11 +9,9 @@
 - [ ] Article content collections and taxonomy
 - [ ] Search, RSS, article translation linkage, accessibility audit
 
-## First editorial series (drafts, not yet tested)
-1. PirateBox on TP-Link TL-WR703N
-2. LibraryBox on TP-Link TL-WR703N
-3. Port PirateBox to GL.iNet GL-MT300N-V2 Mango
-4. Port LibraryBox to GL.iNet GL-MT300N-V2 Mango
-5. Ploos PocketBox architecture and builds (MIPS, C, OpenWrt)
+## Active editorial series
+- Offline networking: legacy OpenWrt on TP-Link TL-WR703N and GL.iNet Mango, MikroWrt, and PocketBox; hardware verification pending.
+- Amateur radio & SDR: RTL-SDR, OpenWebRX, APRS, AX.25, packet radio BBS, digital modes and portable receiving stations. See [HAM-RADIO-EDITORIAL-PLAN.md](HAM-RADIO-EDITORIAL-PLAN.md).
+- PirateBox and LibraryBox are discontinued historical projects: archival research only unless complete, verifiable installation resources are recovered.
 
 Do not publish unverified hardware instructions as tested. Clearly disclose affiliate links.
