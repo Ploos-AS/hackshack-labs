@@ -1,7 +1,7 @@
 ---
-title: "Proton-økosystemet: Personverntjenester sett fra selvhosting"
+title: "Proton-økosystemet: Personverntjenester sett fra et selvhostingperspektiv"
 description: "En uavhengig innføring i Protons tjenester, avveininger og når selvhosting kan være et bedre valg."
-category: deep-dives
+category: reference
 lang: nb
 date: 2026-10-14
 tags: [proton, personvern, selvhosting, kryptering, epost, vpn]
@@ -13,7 +13,7 @@ tested: false
 
 > **Reklame – annonselenker:** Denne artikkelen inneholder tydelig merkede Proton-annonselenker. Hvis du kjøper via en av dem, kan Ploos AS motta provisjon uten ekstra kostnad for deg. Kommersielle avtaler styrer ikke de redaksjonelle konklusjonene våre.
 
-> **Redaksjonell merknad (14. oktober 2026):** Dette er en oversiktsartikkel, ikke en praktisk ytelsestest. Produktfunksjoner, abonnementer og plattformstøtte må kontrolleres på nytt før publisering. Ingen Proton-tjenester er uavhengig testet spesielt for denne artikkelen.
+> **Redaksjonell merknad (14. oktober 2026):** Dette er en oversiktsartikkel, ikke en praktisk ytelsestest. Funksjoner, abonnementsvilkår og plattformstøtte kan endres; kontroller den lenkede dokumentasjonen. Dette er en kildebasert oversikt, ikke en uavhengig praktisk test av tjenestene.
 
 ## Personvern betyr ikke at du må drifte alle tjenester selv
 
@@ -31,13 +31,19 @@ Proton er interessant fordi flere tjenester samles under én konto. Det er prakt
 | <a href="https://go.getproton.me/SH33j" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton VPN (annonselenke)</a> | Kryptert tunnel til VPN-leverandørens servere | Egen WireGuard-server eller annen VPN |
 | <a href="https://go.getproton.me/SH33l" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton Drive (annonselenke)</a> | Kryptert fillagring, deling og dokumentverktøy | Nextcloud, Syncthing, kryptert ekstern backup |
 | <a href="https://go.getproton.me/SH33k" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton Pass (annonselenke)</a> | Passord og identitetsfunksjoner | KeePassXC, Bitwarden, selvhostet Vaultwarden |
-| **Proton Calendar** | Kalender integrert med Proton-konto | CalDAV som Radicale eller Nextcloud |
-| **Proton Authenticator** | App for engangskoder | Andre offline-autentikatorer og sikkerhetsnøkler |
-| <a href="https://go.getproton.me/SH33m" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Lumo (annonselenke)</a> | Personvernorientert AI-assistent | Lokale modeller, for eksempel med Ollama |
+| [**Proton Calendar**](https://proton.me/support/calendar) | Kalender integrert med Proton-konto | CalDAV som Radicale eller Nextcloud |
+| [**Proton Authenticator**](https://proton.me/authenticator) | App for engangskoder | Andre offline-autentikatorer og sikkerhetsnøkler |
+| <a href="https://go.getproton.me/SH33m" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Lumo (annonselenke)</a> | AI-assistent som Proton beskriver som personvernorientert | Lokale modeller, for eksempel med Ollama |
 
 Dette er ikke funksjonsmessig identiske produkter. **Syncthing synkroniserer filer; det er ikke automatisk en sikkerhetskopi**. Og en egen WireGuard-server gir ikke nødvendigvis de samme egenskapene som utgangsnettverket til en kommersiell VPN.
 
 Offisielle kilder: [Proton](https://proton.me/) · [Protons brukerstøtte](https://proton.me/support).
+
+## Tillit og interoperabilitet betyr noe
+
+Proton opererer under sveitsisk jurisdiksjon, men jurisdiksjonen alene gjør ikke spørsmål om lovgivning og utleveringskrav irrelevante. Proton publiserer kildekode for mange av applikasjonene sine og informasjon om eksterne sikkerhetsrevisjoner; omfanget varierer mellom produkter og versjoner. Kontroller derfor den konkrete tjenesten fremfor å anta at alle komponentene har åpen kildekode eller er uavhengig revidert.
+
+Det finnes også praktiske kompatibilitetskostnader. Tradisjonelle e-postklienter trenger normalt **Proton Mail Bridge** for IMAP/SMTP-tilgang, og Bridge krever et kvalifisert betalt abonnement. Proton Calendar har egne import- og eksportfunksjoner; ikke anta at tjenesten er en generell CalDAV-server. Se [Proton Mail Bridge](https://proton.me/support/imap-smtp-and-pop3-setup), [kalendereksport](https://proton.me/support/protoncalendar-calendars), [Protons oversikt over åpen kildekode](https://proton.me/community/open-source) og [Protons åpenhetsinformasjon](https://proton.me/legal/transparency).
 
 ## Når kan Proton være et fornuftig valg?
 
@@ -68,7 +74,7 @@ Passordbehandlere bør sammenlignes ut fra eksport, passkeys, nettleserutvidelse
 Oppfølgende artikler får etterprøvbare testplaner:
 
 1. **Plattformer:** Linux på skrivebord og server først, Windows/mobil der det er relevant.
-2. **Samspill:** Åpne protokoller, import/eksport, API-er og automatisering.
+2. **Interoperabilitet:** Åpne protokoller, import/eksport, API-er og automatisering.
 3. **Personvern:** Dokumentert krypteringsomfang, metadata, kontogjenoppretting og tillitsforutsetninger.
 4. **Drift:** Tilgjengelighet, feilsituasjoner, gjenoppretting, logging og feilsøking.
 5. **Kostnader:** Gjeldende abonnementspriser mot maskinvare, driftstid og vedlikehold.
@@ -88,4 +94,4 @@ HackShack Labs er redaksjonelt uavhengig. Ploos AS deltar i Protons affiliate-pr
 - Proton Pass mot Bitwarden og KeePassXC: flyttbarhet og gjenoppretting
 - Proton med eget domene uten å låse seg inne
 
-**Kilder og kontroll:** [Kryptering i Proton Mail](https://proton.me/support/what-is-encrypted-within-protonmail); [Kryptering i Proton Drive](https://proton.me/support/drive); [Protons brukerstøtte](https://proton.me/support); [Proton Drive](https://proton.me/support/drive); [Proton-konto uten Proton Mail-adresse](https://proton.me/support/external-accounts). Teksten er en kildebasert oversikt per 14. oktober 2026, ikke en praktisk test eller kjøpsanbefaling.
+**Kilder og kontroll:** [Kryptering i Proton Mail](https://proton.me/support/what-is-encrypted-within-protonmail); [Proton Drive](https://proton.me/support/drive); [Proton Mail Bridge](https://proton.me/support/imap-smtp-and-pop3-setup); [Proton Calendar](https://proton.me/support/calendar); [Proton Authenticator](https://proton.me/authenticator); [Protons åpne kildekode](https://proton.me/community/open-source); [Protons åpenhetsinformasjon](https://proton.me/legal/transparency). Kildebasert oversikt per 14. oktober 2026; ingen praktisk test er gjennomført.
