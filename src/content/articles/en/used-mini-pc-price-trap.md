@@ -41,11 +41,11 @@ For an overseas purchase, compare:
 
 Before buying, check whether the listing includes a working power adapter, RAM, SSD, mounting accessories and a return policy. A cheap barebone is not a cheap finished computer if every component must be sourced separately.
 
-For Norway, determine the actual checkout total and how VAT is collected for that seller and marketplace. Do not simply assume that the displayed US shipping fee applies to Norway or add VAT twice.
+For Norwegian private imports, the standard VAT rate for computers is 25%, generally calculated on the goods plus shipping and relevant costs. Eligible VOEC purchases below NOK 3,000 can have Norwegian VAT collected at checkout; otherwise import VAT and carrier handling fees may apply. Do not count VAT twice. See [Norwegian Customs](https://www.toll.no/no/netthandel/utregning-mva/) and [the Tax Administration](https://www.skatteetaten.no/person/avgifter/kjop-fra-utlandet/). None of the listings above has a verified Norway checkout total.
 
 ## What about a new N100 or N150 mini PC?
 
-A modern low-power mini PC may offer a more sensible always-on server, but **new does not always mean cheap**. Norwegian price listings for N150 systems vary widely depending on memory, storage, manufacturer and seller. For example, a price comparison showed a Zotac ZBOX CI360 nano N150 starting around **NOK 2,874**, while other N150 configurations were much more expensive. This is a price observation, not a like-for-like benchmark against an old NUC. [Prisjakt N150 search](https://www.prisjakt.no/s/n150-mini-pc/).
+A modern low-power mini PC may offer a more sensible always-on server, but **new does not always mean cheap**. Norwegian price listings for N150 systems vary widely depending on memory, storage, manufacturer and seller. For context, Apple announced a Mac mini M6 starting at NOK 11,990 in Norway in September 2026; it is a different class of product, not a like-for-like alternative to an older NUC. This is a price observation, not a like-for-like benchmark against an old NUC. [Apple's Norwegian launch announcement](https://images.apple.com/no/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/).
 
 A comparison must match usable RAM, storage, network interfaces, warranty, supported operating systems and actual workloads. We should measure idle and load power before claiming energy savings for a specific model.
 
@@ -78,4 +78,4 @@ Sometimes the answer is a used NUC. Sometimes it is a modern N150 mini PC, a ref
 
 ## What we will test next
 
-This article is a pricing framework, not a verdict based on measured hardware. A follow-up will collect a dated, reproducible set of FINN and eBay listings, compare complete delivered prices to Norway, and test representative machines for power, noise, Linux/BSD compatibility and performance. Until then, we will not publish blanket claims that a particular generation is always overpriced.
+This article is a pricing framework, not a verdict based on measured hardware. A follow-up should collect a dated, reproducible sample of individually linked FINN listings and Norway-specific checkout quotes, then test representative machines for power, noise, Linux/BSD compatibility and performance. Until then, we will not publish blanket claims that a particular generation is always overpriced.
