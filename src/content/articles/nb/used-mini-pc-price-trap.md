@@ -77,6 +77,23 @@ Strømforbruk bør måles på konkrete maskiner, ikke anslås ut fra alder alene
 - Sammenlign med en nyere maskin med garanti.
 - Betal ekstra for samlerverdi bare hvis det faktisk er samlerverdien du ønsker.
 
+## Vår vurdering: Hva bør en ti år gammel mini-PC koste?
+
+**Dette er HackShack Labs' redaksjonelle kjøpsgrenser, ikke dokumenterte markedsverdier eller takster.** Vi forutsetter en testet, fungerende og komplett maskin med strømforsyning, brukbar RAM og lagring, *før* frakt og avgifter. Til vanlig bruk ville vi normalt takket nei over høyre kolonne.
+
+| Maskinvare | Det vi kaller et godt kjøp | Vår vanlige makspris |
+| --- | ---: | ---: |
+| Intel Mac mini 2011–2012 | 25–50 USD | 75 USD |
+| Intel Mac mini 2014 | 30–60 USD | 80 USD |
+| Intel Mac mini 2018 | 70–110 USD | 150 USD |
+| Intel NUC 4.–5. generasjon | 20–40 USD | 60 USD |
+| Intel NUC 6.–7. generasjon | 30–60 USD | 85 USD |
+| Intel NUC 8. generasjon | 50–90 USD | 120 USD |
+
+Vi setter grensene forholdsvis lavt fordi eldre maskinvare har begrenset forventet levetid, varierende støtte for fastvare og operativsystemer og konkurrerer med nyere, strømgjerrige alternativer. Dette er **hva vi selv ville vært villige til å betale**, ikke en påstand om faktisk markedspris.
+
+Samlerverdi, PowerPC-maskiner til spesielle operativsystemer, uvanlige konfigurasjoner eller dokumentert garanti kan forsvare mer. Barebone-maskiner, utestede enheter, manglende strømforsyning eller lite fastloddet RAM bør koste mindre. Norske kjøpere må i tillegg regne med faktisk frakt og aktuelle avgifter.
+
 ## Konklusjon
 
 Spør ikke bare om en gammel Mac mini eller Intel NUC er billig sammenlignet med nyprisen den hadde. Spør:
