@@ -5,3 +5,11 @@ Bilingual HackShack Labs articles (English canonical, Norwegian Bokmål translat
 ## Current TL-WR703N editorial roadmap
 
 See [the WR703N article plan](docs/WR703N-ARTICLE-PLAN.md): vanilla OpenWrt first, followed by MikroWrt and PocketBox when hardware-tested. PirateBox/LibraryBox installation reconstruction is discontinued; previous research is retained for historical reference only.
+
+## Editorial standards and upcoming articles
+
+- [Editorial independence policy](docs/EDITORIAL-POLICY.md)
+- [Article template](docs/ARTICLE-TEMPLATE.md)
+- [Mini PC & AI 25-article plan](docs/MINI-PC-AI-EDITORIAL-PLAN.md)
+
+**Best value. No brand loyalty. No unnecessary upgrades.**
