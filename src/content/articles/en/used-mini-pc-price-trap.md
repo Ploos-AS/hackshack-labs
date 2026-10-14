@@ -31,7 +31,7 @@ Checked 14 October 2026. These are individually linked examples, not a represent
 | [Intel NUC 12 i5, 8 GB, 512 GB](https://www.ebay.com/itm/127733816087) | USD 199.99 | Sold listing, 11 September 2026; accepted price not independently confirmed |
 | [Mac mini M4, 16 GB, 256 GB](https://www.ebay.com/itm/227505964146) | USD 769.99 | Used asking price, not an older Intel Mac |
 
-The [FINN Mac mini search](https://www.finn.no/recommerce/forsale/search?q=mac+mini) and [FINN NUC search](https://www.finn.no/recommerce/forsale/search?q=nuc) were checked, but we could not independently verify a reproducible set of individual FINN listing prices. We therefore cannot publish a credible FINN price average or conclude that all sellers overprice their machines. US shipping prices displayed by eBay do not establish shipping costs to Norway.
+The [FINN Mac mini search](https://www.finn.no/recommerce/forsale/search?q=mac+mini) and [FINN NUC search](https://www.finn.no/recommerce/forsale/search?q=nuc) were checked, but we could not independently verify a reproducible set of individual FINN listing prices. We therefore cannot publish a credible FINN price average or conclude that all sellers overprice their machines. US shipping prices displayed by eBay do not establish international shipping costs.
 
 ## The real price is the landed, working price
 
@@ -41,7 +41,7 @@ For an overseas purchase, compare:
 
 Before buying, check whether the listing includes a working power adapter, RAM, SSD, mounting accessories and a return policy. A cheap barebone is not a cheap finished computer if every component must be sourced separately.
 
-For Norwegian private imports, the standard VAT rate for computers is 25%, generally calculated on the goods plus shipping and relevant costs. Eligible VOEC purchases below NOK 3,000 can have Norwegian VAT collected at checkout; otherwise import VAT and carrier handling fees may apply. Do not count VAT twice. See [Norwegian Customs](https://www.toll.no/no/netthandel/utregning-mva/) and [the Tax Administration](https://www.skatteetaten.no/person/avgifter/kjop-fra-utlandet/). None of the listings above has a verified Norway checkout total.
+**International readers:** Calculate shipping, import taxes and fees for your own delivery country and seller; the total can vary substantially by destination. A displayed US domestic shipping price is not an international quote. **Norway-specific example:** Norwegian private imports generally attract 25% VAT on the relevant taxable basis; eligible VOEC purchases below NOK 3,000 may have VAT collected at checkout. See [Norwegian Customs](https://www.toll.no/no/netthandel/utregning-mva/) and [the Norwegian Tax Administration](https://www.skatteetaten.no/person/avgifter/kjop-fra-utlandet/). We have not verified destination-specific checkout totals for the listings above.
 
 ## What about a new N100 or N150 mini PC?
 
@@ -78,4 +78,4 @@ Sometimes the answer is a used NUC. Sometimes it is a modern N150 mini PC, a ref
 
 ## What we will test next
 
-This article is a pricing framework, not a verdict based on measured hardware. A follow-up should collect a dated, reproducible sample of individually linked FINN listings and Norway-specific checkout quotes, then test representative machines for power, noise, Linux/BSD compatibility and performance. Until then, we will not publish blanket claims that a particular generation is always overpriced.
+This article is a pricing framework, not a verdict based on measured hardware. A follow-up should collect a dated, reproducible sample of individually linked FINN listings and destination-specific checkout quotes, then test representative machines for power, noise, Linux/BSD compatibility and performance. Until then, we will not publish blanket claims that a particular generation is always overpriced.
