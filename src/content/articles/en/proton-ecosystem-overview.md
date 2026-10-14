@@ -27,13 +27,13 @@ Proton is an interesting example because it offers multiple privacy-focused serv
 
 | Service | What it does | Alternative worth comparing |
 | --- | --- | --- |
-| <a href="https://go.getproton.me/SH33i" rel="sponsored noopener noreferrer">Proton Mail (affiliate link)</a> | Hosted email with privacy-oriented encryption features | Hosting your own mail stack, or another mail provider |
-| <a href="https://go.getproton.me/SH33j" rel="sponsored noopener noreferrer">Proton VPN (affiliate link)</a> | Encrypted tunnel to a VPN provider's servers | Your own WireGuard endpoint; a different VPN provider |
-| <a href="https://go.getproton.me/SH33l" rel="sponsored noopener noreferrer">Proton Drive (affiliate link)</a> | Encrypted cloud files, sharing and document tools | Nextcloud, Syncthing, encrypted off-site backup |
-| <a href="https://go.getproton.me/SH33k" rel="sponsored noopener noreferrer">Proton Pass (affiliate link)</a> | Passwords, credentials and related identity features | KeePassXC, Bitwarden and self-hosted Vaultwarden |
+| <a href="https://go.getproton.me/SH33i" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton Mail (affiliate link)</a> | Hosted email with privacy-oriented encryption features | Hosting your own mail stack, or another mail provider |
+| <a href="https://go.getproton.me/SH33j" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton VPN (affiliate link)</a> | Encrypted tunnel to a VPN provider's servers | Your own WireGuard endpoint; a different VPN provider |
+| <a href="https://go.getproton.me/SH33l" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton Drive (affiliate link)</a> | Encrypted cloud files, sharing and document tools | Nextcloud, Syncthing, encrypted off-site backup |
+| <a href="https://go.getproton.me/SH33k" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Proton Pass (affiliate link)</a> | Passwords, credentials and related identity features | KeePassXC, Bitwarden and self-hosted Vaultwarden |
 | **Proton Calendar** | Calendar integrated with Proton's account ecosystem | CalDAV servers such as Radicale or Nextcloud |
 | **Proton Authenticator** | Authentication-code application | Other offline authenticators and security keys |
-| <a href="https://go.getproton.me/SH33m" rel="sponsored noopener noreferrer">Lumo (affiliate link)</a> | Privacy-focused hosted AI assistant | Local models using tools such as Ollama |
+| <a href="https://go.getproton.me/SH33m" rel="sponsored noopener" referrerpolicy="strict-origin-when-cross-origin">Lumo (affiliate link)</a> | Privacy-focused hosted AI assistant | Local models using tools such as Ollama |
 
 These are not feature-for-feature substitutes. For example, **Syncthing synchronizes files; it is not automatically a remote backup**. And a personal WireGuard endpoint does not provide the same exit-network properties as a commercial VPN.
 
