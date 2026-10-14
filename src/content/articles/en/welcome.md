@@ -11,4 +11,4 @@ tested: false
 
 HackShack Labs documents practical computing projects, hardware experiments, and reproducible technical guides.
 
-Our first planned series explores **PirateBox**, **LibraryBox**, and **Ploos PocketBox** on small MIPS-based routers. Hardware instructions will be published only after the relevant firmware and device revisions have been checked.
+Our offline-networking series documents small routers, OpenWrt and planned MikroWrt/Ploos PocketBox work. **PirateBox and LibraryBox are discontinued historical projects**, not planned new installation guides. Hardware instructions will be labelled verified only after firmware and device revisions have been checked on physical equipment. See the [Offline Networking series](/series/offline-networking/).
