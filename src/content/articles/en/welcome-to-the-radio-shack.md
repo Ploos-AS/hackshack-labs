@@ -53,4 +53,4 @@ Antenna installations also need a safety plan: safe mounting and work at height,
 
 ## Start here
 
-Our [Ham Radio & SDR series](/series/ham-radio-sdr/) will collect the articles. **Next planned guide (not yet published): Building an ADS-B Aircraft Tracker with an SBC and RTL-SDR.** The first practical build is planned as **Building an ADS-B Aircraft Tracker with an SBC and RTL-SDR**, followed by an AIS receiver and then a combined station. Until those builds are physically tested, they remain planned experiments rather than verified tutorials.
+Our [Ham Radio & SDR series](/series/ham-radio-sdr/) will collect the articles. **Next planned guide (not yet published): Building an ADS-B Aircraft Tracker with an SBC and RTL-SDR.** An AIS receiver and a combined station are planned afterward. Until those builds are physically tested, they remain planned experiments rather than verified tutorials.
