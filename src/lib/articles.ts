@@ -12,3 +12,14 @@ export const categoryLabelsNo: Record<string,string> = {
 export const published = async () => (await getCollection('articles', ({data}) => !data.draft))
   .sort((a,b) => b.data.date.getTime() - a.data.date.getTime() || a.data.title.localeCompare(b.data.title));
 export const articleUrl = (id:string,lang:string) => `${lang === 'nb' ? '/no' : ''}/articles/${id.split('/').at(-1)}/`;
+
+export const evidenceLabel = (data:{evidence?:string;tested?:boolean},lang:'en'|'nb'='en') => {
+  const level=data.evidence ?? (data.tested ? 'hardware-verified' : 'documentation');
+  const labels:Record<string,[string,string]>={
+    'documentation':['Documentation-based','Dokumentasjonsbasert'],
+    'desk-research':['Desk research','Skrivebordsundersøkelse'],
+    'lab-tested':['Lab-tested','Laboratorietestet'],
+    'hardware-verified':['Hardware verified','Maskinvareverifisert']
+  };
+  return (labels[level]??labels.documentation)[lang==='nb'?1:0];
+};
