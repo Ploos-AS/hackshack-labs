@@ -34,6 +34,27 @@ Følgende annonser ble undersøkt 14. oktober 2026. Dette er et lite, ikke-tilfe
 
 En pris på eBay er **ikke en norsk totalpris**. Oppgitt amerikansk frakt gjelder ikke nødvendigvis levering til Norge. Tilstand, strømforsyning, RAM, SSD og returvilkår må undersøkes.
 
+## Regneeksempel: import av en brukt NUC til Norge
+
+**Illustrativt regnestykke – ikke et pristilbud eller en observert valutakurs.** Anta at en brukt mini-PC koster **100 USD**, frakt koster **25 USD**, og at vi bruker **10,00 NOK per USD** utelukkende for å vise regnemåten. Ved et virkelig kjøp må riktig kurs for betaling eller fortolling brukes.
+
+| Kostnad | NOK |
+| --- | ---: |
+| Maskin: 100 USD × 10,00 | 1 000 |
+| Frakt: 25 USD × 10,00 | 250 |
+| Delsum | 1 250 |
+| Illustrativ innførselsmva: 25 % × 1 250 | 312,50 |
+| Antatt fortollingsgebyr (**ikke en bekreftet prisliste**) | 150 |
+| **Totalt før oppgraderinger** | **1 712,50** |
+| Eksempel på ny SSD eller strømforsyning (antakelse) | 400 |
+| **Budsjett for bruksklar maskin** | **2 112,50** |
+
+Maskinen som så ut til å koste **100 USD**, har dermed et tenkt totalbudsjett på **2 112,50 kroner**. Dette beviser **ikke** at en bestemt ny N150-maskin er billigere. Sammenlign med et datert norsk tilbud med tilsvarende RAM, SSD og tilbehør.
+
+Regnestykket forutsetter vanlig innførsel, ingen tollavgift og at norsk mva ikke allerede er innkrevd av selger. **Ikke legg på mva to ganger.** For kvalifiserte varer under 3 000 kroner per stykk fra en **VOEC-registrert nettbutikk eller markedsplass** kreves norsk mva normalt inn ved betaling. VOEC gjelder ikke automatisk alle utenlandske selgere; kjøp til næringsvirksomhet behandles annerledes. Reell valutakurs, avgiftsgrunnlag og transportørgebyr må kontrolleres.
+
+Offisielle kilder: [Tolletaten: beregning av mva](https://www.toll.no/no/netthandel/utregning-mva/) · [Skatteetaten: kjøp fra utlandet](https://www.skatteetaten.no/person/avgifter/kjop-fra-utlandet/) · [VOEC](https://www.skatteetaten.no/bedrift-og-organisasjon/avgifter/mva/utland/e-handel-voec/).
+
 ## Og hva med FINN?
 
 Vi undersøkte [FINN-søk etter Mac mini](https://www.finn.no/recommerce/forsale/search?q=mac+mini) og [FINN-søk etter NUC](https://www.finn.no/recommerce/forsale/search?q=nuc). Vi fikk imidlertid ikke hentet et pålitelig, individuelt lenkbart utvalg av FINN-annonser med priser.
