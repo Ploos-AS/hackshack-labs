@@ -9,6 +9,7 @@ series: "Privacy & Digital Independence"
 translationKey: proton-drive-docs-vs-nextcloud
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Redaksjonell status – 15. oktober 2026:** Dokumentasjonsbasert sammenligning, **ikke en sikkerhetsrevisjon eller en ytelsestest i identiske miljøer**. Funksjoner og abonnementer kan endres. Artikkelen inneholder en tydelig merket annonselenke til Proton Drive. Ploos AS kan motta provisjon ved kvalifiserte kjøp uten ekstra kostnad for leseren; det påvirker ikke konklusjonene.
