@@ -9,6 +9,7 @@ series: "Privacy & Digital Independence"
 translationKey: proton-drive-docs-vs-nextcloud
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Editorial status — 15 October 2026:** Documentation-based comparison, **not a hands-on security audit or identical-environment benchmark**. Features and plans may change. This article includes a clearly marked Proton Drive affiliate link. Ploos AS may receive a commission on qualifying purchases at no additional cost to readers; this does not determine our conclusions.
