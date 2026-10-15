@@ -38,7 +38,7 @@ Tabellen beskriver vanlige oppsett, ikke alle valgfrie Nextcloud-apper eller Pro
 
 Proton [beskriver Drive som ende-til-ende-kryptert](https://proton.me/drive/security), slik at leverandøren etter tjenestens sikkerhetsmodell ikke skal kunne lese beskyttet filinnhold. [Proton Docs](https://proton.me/drive/docs) bygger videre på dette for dokumentarbeid. **Det betyr ikke at alle metadata, tilgangsmønstre eller detaljer rundt delingslenker nødvendigvis er skjult.**
 
-Nextcloud er en **selvhostet samarbeidsplattform**, ikke automatisk en ende-til-ende-kryptert dokumenttjeneste. En vanlig Nextcloud-server håndterer TLS, tilgangskontroll og normalt lesbare fildata. Nextcloud har [funksjonalitet for ende-til-ende-kryptering](https://docs.nextcloud.com/server/latest/user_manual/en/files/encryption.html) i bestemte klientarbeidsflyter, men begrensningene må vurderes særskilt. **Kryptering på serversiden gir ikke automatisk samme trusselmodell som Protons E2EE.**
+Nextcloud er en **selvhostet samarbeidsplattform**, ikke automatisk en ende-til-ende-kryptert dokumenttjeneste. En vanlig Nextcloud-server håndterer TLS, tilgangskontroll og normalt lesbare fildata. Nextcloud har [funksjonalitet for ende-til-ende-kryptering](https://docs.nextcloud.com/server/latest/user_manual/en/files/using_e2ee.html) i bestemte klientarbeidsflyter, men begrensningene må vurderes særskilt. **Kryptering på serversiden gir ikke automatisk samme trusselmodell som Protons E2EE.**
 
 På en server du stoler på, kan administratorinnsyn være ønskelig. Hvis innholdet også må beskyttes mot lagringsoperatøren, blir vurderingen annerledes.
 
@@ -99,7 +99,7 @@ Ved særskilte krav til personvern eller etterlevelse må avtaler, lagringssted,
 - [Nextcloud – funksjoner](https://nextcloud.com/features/)
 - [Nextcloud Office](https://nextcloud.com/office/)
 - [Nextcloud-dokumentasjon](https://docs.nextcloud.com/)
-- [Nextcloud – kryptering](https://docs.nextcloud.com/server/latest/user_manual/en/files/encryption.html)
+- [Nextcloud – kryptering](https://docs.nextcloud.com/server/latest/user_manual/en/files/using_e2ee.html)
 
 **Reklame – annonselenke:** [Se Proton Drive (annonselenke)](https://go.getproton.me/SH33l). Ploos AS er med i Protons affiliateprogram og kan motta provisjon ved kvalifiserte kjøp uten ekstra kostnad for deg. **Nextcloud kan fortsatt være det beste valget** når kontroll og integrasjoner er viktigere. Et kommersielt samarbeid er ikke dokumentasjon på teknisk overlegenhet. Se også [Proton Mail mot egen e-postserver](/no/articles/proton-mail-vs-self-hosted-email/).
 
