@@ -75,6 +75,28 @@ Kommandoene leser informasjon uten å endre oppsettet. De beviser ikke at CUDA, 
 
 **En Thunderbolt-/USB4-port er ikke en GPU-test.** Produsentens QVL er nyttig, men garanterer ikke at en annen BIOS-, dokk-, driver- eller OS-versjon fungerer. ASUS [beskriver selv begrensningene ved periferiutstyrstesting](https://rog.asus.com/support/faq/1052501/).
 
+## Utvidelse: MINISFORUM, GEEKOM, Beelink og GMKtec
+
+Oppføringene nedenfor er **ikke maskinvaretestet av HackShack Labs**. Vi gjengir kun det de lenkede produsentkildene dokumenterer. Produsentstøtte for en PC og dokk betyr ikke at en bestemt GPU fungerer under Linux.
+
+| Mini-PC | Tilkobling / dokk | Bevisnivå | Dokumentert | Må fortsatt verifiseres |
+| --- | --- | --- | --- | --- |
+| **MINISFORUM UM890 Pro** | PCIe 4.0 ×4 OCuLink; **DEG1** | **Kombinasjon demonstrert av produsenten** | MINISFORUM viser [UM890 Pro + DEG1 i en eGPU-video](https://www.youtube.com/watch?v=bAZGI6LaPFc) og dokumenterer [OCuLink-porten](https://store.minisforum.com/products/minisforum-um890pro-mini-pc) | Eksakt GPU-variant, BIOS, Linux-driver og forhandlet PCIe-lenke |
+| **GEEKOM GT1 Mega** | USB4; ukjent dokk | **Produsentdokumentert eGPU-funksjon** | [GEEKOMs spesifikasjoner](https://www.geekom.co.uk/product/geekom-gt1-mega-mini-pc) nevner eGPU som ekstern USB4-enhet | Dokk, GPU, fastvare, Linux og PCIe-tunnelens hastighet |
+| **Beelink GTi14 Ultra** | Egen kontakt under PC-en + **EX Pro** | **Produsentdokumentert PC–dokk-kombinasjon** | [GTi14-siden](https://www.bee-link.com/products/beelink-gti14-ultra-ai-pc-intel-core-uitra-9-185h-openclaw-pre-installed) beskriver GPU-utvidelse; [EX Pro](https://www.bee-link.com/products/beelink-ex-docking-station) oppgis med PCIe 5.0 ×8 og 600 W PSU | Eksakt GPU, driver og OS; ikke anta standard pinnekobling |
+| **GMKtec NucBox K8 Plus** | PCIe 4.0 ×4 OCuLink; ukjent dokk | **Kun eksternt PCIe-grensesnitt dokumentert** | [GMKtec](https://www.gmktec.com/products/gmktec-nucbox-k8-plus-mini-pc-amd-ryzen%E2%84%A2-7-8845hs) oppgir OCuLink ×4 og forbyr tilkobling under drift | Dokk, GPU, fastvare og OS |
+| **GMKtec NucBox K11** | PCIe 4.0 ×4 OCuLink; ukjent dokk | **Kun eksternt PCIe-grensesnitt dokumentert** | [GMKtec](https://www.gmktec.com/products/amd-ryzen%E2%84%A2-9-8945hs-nucbox-k11) oppgir OCuLink ×4 og forbyr tilkobling under drift | Dokk, GPU, fastvare og OS |
+
+### Konkrete kombinasjoner vi bør undersøke videre
+
+**MINISFORUM UM890 Pro + DEG1** er den tydeligste nye kandidaten: produsenten demonstrerer kombinasjonen. [DEG1-dokken](https://www.minisforum.com/products/minisforum-deg1-egpu-dock) og [UM890 Pro](https://store.minisforum.com/products/minisforum-um890pro-mini-pc) er dokumentert, men dette er **ikke en garanti for alle skjermkort eller Linux**. Undersøk også om OCuLink-oppsettet bruker en M.2-plass som ellers kunne vært brukt til lagring.
+
+**Beelink GTi14 Ultra + EX Pro** er en produsentdokumentert kombinasjon, men bruker en **proprietær dokktilkobling**. Ikke anta at en generisk PCIe-adapter eller OCuLink-kabel passer. [Beelinks FAQ](https://bbs.bee-link.com/d/3917-faq-for-gti14) skiller mellom produsentens dokk og Thunderbolt-kabinetter. Kontroller også forskjellen mellom EX og EX Pro.
+
+**GEEKOM GT1 Mega** er interessant fordi produsenten uttrykkelig nevner eGPU via USB4. Vi mangler likevel en konkret kombinasjon av dokk, GPU og reproduserbar programvaretest.
+
+**GMKtec K8 Plus og K11** har dokumentert PCIe 4.0 ×4 OCuLink, men ikke dokumentert funksjonalitet med en bestemt dokk og GPU i kildene over. Følg produsentens advarsel mot tilkobling mens utstyret er på.
+
 ## Neste verifiseringsmål
 
 Vi utvider matrisen når vi har en kilde for en **konkret kombinasjon**, eller egne reproduserbare tester. En komplett oppføring med vertsmaskin, dokk, GPU, fastvare og Linux er mer nyttig enn en lang liste med markedsføringspåstander.
