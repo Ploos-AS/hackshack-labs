@@ -9,8 +9,8 @@ for (const lang of ['en','nb']) {
   for (const filename of readdirSync(join(root,lang)).filter(n=>n.endsWith('.md'))) {
     const file = join(root,lang,filename);
     const body = readFileSync(file,'utf8');
-    const frontmatter = body.match(/^---\\r?\\n([\\s\\S]*?)\\r?\\n---/);
-    if (frontmatter && /^draft:\\s*true\\s*$/m.test(frontmatter[1])) continue;
+    const frontmatter = body.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    if (frontmatter && /^draft:\s*true\s*$/m.test(frontmatter[1])) continue;
     const links = [...body.matchAll(/https?:\/\/[^\s<>"')\]]+/g)].map(m=>m[0].replace(/[.,;:]$/,''));
     for (const url of links) {
       try {
