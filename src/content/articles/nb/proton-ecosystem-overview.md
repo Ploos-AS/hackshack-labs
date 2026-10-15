@@ -9,6 +9,7 @@ series: "Privacy & Digital Independence"
 translationKey: proton-ecosystem-overview
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Reklame – annonselenker:** Denne artikkelen inneholder tydelig merkede Proton-annonselenker. Hvis du kjøper via en av dem, kan Ploos AS motta provisjon uten ekstra kostnad for deg. Kommersielle avtaler styrer ikke de redaksjonelle konklusjonene våre.
