@@ -4,6 +4,7 @@ description: "A documented setup and failure-test plan for Proton VPN with Linux
 category: guides
 lang: en
 date: 2026-10-14
+updated: 2026-10-15
 tags: [proton, vpn, linux, docker, gluetun, wireguard, privacy]
 series: "Privacy & Digital Independence"
 translationKey: proton-vpn-linux-docker-gluetun
@@ -34,28 +35,7 @@ Proton documents downloading a WireGuard configuration from the account portal a
 
 Example of a *starting point*, not a verified production deployment:
 
-```yaml
-services:
-  gluetun:
-    image: qmcgaw/gluetun:v3
-    cap_add:
-      - NET_ADMIN
-    devices:
-      - /dev/net/tun:/dev/net/tun
-    environment:
-      VPN_SERVICE_PROVIDER: protonvpn
-      VPN_TYPE: wireguard
-      WIREGUARD_PRIVATE_KEY: ${WIREGUARD_PRIVATE_KEY:?Set in protected environment}
-      SERVER_COUNTRIES: Netherlands
-    restart: unless-stopped
-
-  test-client:
-    image: curlimages/curl:latest
-    network_mode: "service:gluetun"
-    depends_on:
-      - gluetun
-    command: ["sh", "-c", "sleep 3600"]
-```
+The runnable, digest-pinned Compose example and commands are in the lab procedure below.
 
 **Do not paste a real WireGuard private key into Git.** Supply it through a protected local environment or secrets mechanism, keep the corresponding configuration out of screenshots, and consider key rotation after accidental disclosure. A pinned image digest is preferable for reproducible production tests; the tags above are illustrative.
 
@@ -64,6 +44,79 @@ The sidecar pattern is the critical point: `network_mode: "service:gluetun"` mea
 For Proton specifically, the Gluetun provider guide currently requires `VPN_SERVICE_PROVIDER=protonvpn`, `VPN_TYPE=wireguard` and a valid Proton-generated `WIREGUARD_PRIVATE_KEY`. Some other providers also require `WIREGUARD_ADDRESSES`; **do not blindly copy another provider's settings**. Never copy keys from documentation samples.
 
 For provider-specific configuration and current options, use the [Gluetun Proton page](https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/protonvpn.md) and [WireGuard options](https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/wireguard.md).
+
+## Executable lab procedure (proposed, not yet run)
+
+Use a disposable Ubuntu Docker host with no production workloads. The commands below are **test instructions**, not results. Run `docker compose version` and `docker version`, record the output, and confirm the selected image digests before testing.
+
+To pin the two images, pull the chosen versions, then inspect the registry digests:
+
+```sh
+docker pull qmcgaw/gluetun:v3
+docker pull nicolaka/netshoot:latest
+docker image inspect --format '{{index .RepoDigests 0}}' qmcgaw/gluetun:v3
+docker image inspect --format '{{index .RepoDigests 0}}' nicolaka/netshoot:latest
+```
+
+Copy the resulting **full repository@sha256 digests** into the two image variables in a protected local `.env` file; do not commit it. A tag is only used during the initial pull. Recheck the digest after intentional upgrades. The lab requires `GLUETUN_IMAGE`, `NETSHOOT_IMAGE` and `WIREGUARD_PRIVATE_KEY` to be set.
+
+```yaml
+services:
+  gluetun:
+    image: ${GLUETUN_IMAGE:?Set pinned Gluetun repository digest}
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      VPN_SERVICE_PROVIDER: protonvpn
+      VPN_TYPE: wireguard
+      WIREGUARD_PRIVATE_KEY: ${WIREGUARD_PRIVATE_KEY:?Set privately}
+      SERVER_COUNTRIES: Netherlands
+    healthcheck:
+      test: ["CMD", "/gluetun-entrypoint", "healthcheck"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  test-client:
+    image: ${NETSHOOT_IMAGE:?Set pinned Netshoot repository digest}
+    network_mode: "service:gluetun"
+    depends_on:
+      gluetun:
+        condition: service_healthy
+    command: ["sleep", "infinity"]
+```
+
+**Healthcheck caution:** The Gluetun healthcheck command and Docker image contents must be verified against the pinned release before use; if unsupported, replace the healthcheck with the documented probe for that version. A healthy status is a startup gate, **not** a security test. Compose implementations vary in their handling of dependent-service restarts; recreate the test client explicitly after restarting Gluetun.
+
+```sh
+docker compose config --quiet
+docker compose up -d
+docker compose ps
+docker compose exec test-client sh -c 'ip -4 route; ip -6 addr; ip -6 route; cat /etc/resolv.conf'
+docker compose exec test-client dig example.org
+docker compose exec test-client curl -4 --max-time 10 https://ifconfig.me/ip
+docker compose exec test-client curl -6 --max-time 10 https://ifconfig.me/ip
+docker network inspect "$(docker compose ps -q gluetun | xargs docker inspect --format '{{range $n, $v := .NetworkSettings.Networks}}{{$n}}{{end}}' | head -n1)" --format '{{json .EnableIPv6}}'
+```
+
+The last command is only a network-inspection example; record the actual Compose network name first and prefer `docker network inspect <network-name>` if the lookup differs on your host. A failed IPv6 request is not proof of correct filtering without a packet capture.
+
+| Test | Action | Pass criterion |
+| --- | --- | --- |
+| Baseline | Record routes, resolver, `dig`, IPv4/IPv6 egress and Gluetun endpoint | Observations recorded; no security conclusion yet |
+| DNS | Run `dig example.org` inside Netshoot and capture packets on the host | No unintended plaintext DNS packets leaving the host uplink; inspect Gluetun's upstream resolver separately |
+| IPv6 | Record `ip -6 addr`, `ip -6 route` and Docker network `EnableIPv6`; attempt `curl -6` | Either verified tunneled IPv6 or no IPv6 egress outside the tunnel |
+| Tunnel loss | On the **isolated lab host**, temporarily block only the known VPN endpoint UDP destination using a reversible host firewall rule, while keeping Docker networking up; generate repeated client requests for 60 seconds | **Zero** client payload packets exit the host uplink outside the tunnel during the 60-second interval |
+| Recovery | Remove only the temporary rule; repeat `dig` and egress checks | Connectivity returns through the tunnel; no direct-egress packets during transition |
+| Restart | `docker compose restart gluetun`, then `docker compose up -d --force-recreate test-client`; repeat checks after a separate Docker-daemon restart | No fail-open packets; dependent client reconnects or is deliberately recreated |
+| Application | Repeat loss and recovery with a disposable application workload | No direct-egress traffic, regardless of application status |
+
+**Packet-capture method:** Identify the host uplink and Docker bridge using `ip route` and `docker network inspect`. In a second terminal on the **host**, capture both interfaces (for example `sudo tcpdump -ni <uplink> -w uplink.pcap` and `sudo tcpdump -ni <bridge> -w bridge.pcap`). Compare client traffic on the bridge with encrypted traffic to the VPN endpoint on the uplink. Docker NAT can rewrite the source address, so filtering the uplink only by the container IP can miss leaks. Treat *any* unencrypted client-originated egress as a failure. Stop capture and remove the temporary firewall rule immediately after the test. Never upload unsanitized captures.
+
+The endpoint-blocking command is intentionally not copy-pasteable: firewall backends and endpoint addresses vary, and a generic rule can interrupt remote administration. Perform the test with console access and a documented rollback. The 60-second interval is a **proposed acceptance threshold**, not a result we have measured.
 
 ## A failure test is more important than a successful IP check
 
@@ -89,13 +142,13 @@ For each run, record the test identifier, image digests, Docker/Ubuntu versions,
 
 ## A note on health-check failures
 
-A log line like `write udp ... 1.1.1.1:53: operation not permitted` is evidence that **a specific UDP operation was rejected**. It does not, by itself, prove that a DNS leak occurred, that Proton failed or that the firewall is broken. Possible causes include firewall policy, routing transitions, container capabilities and probe configuration. Correlate the error with routes, firewall rules, tunnel state and packet captures before changing security controls. Disabling the firewall just to make the health check green defeats the point of this setup.
+undefined that **a specific UDP operation was rejected**. It does not, by itself, prove that a DNS leak occurred, that Proton failed or that the firewall is broken. Possible causes include firewall policy, routing transitions, container capabilities and probe configuration. Correlate the error with routes, firewall rules, tunnel state and packet captures before changing security controls. Disabling the firewall just to make the health check green defeats the point of this setup.
 
 ## Port forwarding is a separate feature
 
 Gluetun and Proton can require additional configuration for port forwarding, and port assignment may change after reconnects. Do not equate a successful VPN connection with functioning inbound connections. Refer to the provider and Gluetun documentation for the current limitations, and test that application settings update when ports change.
 
-## Editorial conclusion
+undefined
 
 For ordinary Linux desktop use, Proton's official supported client is a reasonable starting point. For dedicated Docker workloads, a deliberately scoped Gluetun gateway is often easier to reason about than routing an entire host through a VPN—**provided the failure tests pass**. Manual WireGuard offers flexibility at the price of administering leak prevention yourself.
 
