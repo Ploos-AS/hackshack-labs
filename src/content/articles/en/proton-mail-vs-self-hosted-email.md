@@ -9,6 +9,7 @@ series: "Privacy & Digital Independence"
 translationKey: proton-mail-vs-self-hosted-email
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Advertisement — affiliate link:** This article includes a clearly marked Proton Mail affiliate link. Ploos AS may earn a commission from qualifying purchases at no additional cost to you. This does not influence our conclusions.
