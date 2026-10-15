@@ -17,15 +17,21 @@ Mini-PC-er er praktiske servere, men lokal AI, rendering og beregningsoppgaver k
 
 Det holder ikke å finne en USB-C-port. Vi må vite om porten faktisk gir tilgang til **PCI Express (PCIe)**, hvordan den er koblet internt, og om fastvare og operativsystem støtter løsningen.
 
+## Kort svar
+
+**Har du allerede en mini-PC?** Vurder et dokumentert Thunderbolt-/USB4-oppsett eller OCuLink dersom maskinen støtter det. **Skal du kjøpe alt nytt for tunge GPU-oppgaver?** Sammenlign først med en stasjonær arbeidsstasjon. **Trenger du mye minne til lokal AI?** En maskin med stort delt minne kan være et alternativ.
+
 ## Fem aktuelle tilkoblingsmetoder
 
-| Tilkobling | Løsning | Viktigste begrensning |
+| Tilkobling | Løsning | Dokumentert PCIe-kapasitet / teoretisk tak | Viktigste begrensning |
 | --- | --- | --- |
-| Thunderbolt 3/4 | Eksternt GPU-kabinett med kompatibel vert | Enkel kabel, men PCIe-tunnellering gir overhead |
-| USB4 med PCIe-tunnellering | Kompatibel USB4-port og eGPU-dokk | USB4-merket alene garanterer ikke eGPU-støtte |
-| OCuLink | Ekstern PCIe-tilkobling | Direkte forbindelse, normalt ikke egnet for hotplug |
-| M.2 til PCIe | Adapter i NVMe-spor | Kan koste deg lagringsplass og kreve åpent kabinett |
-| Innebygd PCIe-spor | Mini-arbeidsstasjon med PCIe | God løsning, men sjelden i de minste maskinene |
+| Thunderbolt 3/4 | Eksternt GPU-kabinett med kompatibel vert | TB4: **32 Gbit/s minimumskrav til PCIe-data**; TB3 varierer | Enkel kabel, men PCIe-tunnellering gir overhead |
+| USB4 med PCIe-tunnellering | Kompatibel USB4-port og eGPU-dokk | **Avhenger av implementasjonen**; ingen universell garantert eGPU-hastighet | USB4-merket alene garanterer ikke eGPU-støtte |
+| OCuLink | Ekstern PCIe-tilkobling | PCIe 3.0 ×4: **3,94 GB/s**; 4.0 ×4: **7,88 GB/s**, teoretisk per retning | Direkte forbindelse, normalt ikke egnet for tilkobling under drift |
+| M.2 til PCIe | Adapter i NVMe-spor | Avhenger av generasjon og baner; PCIe 4.0 ×4: **7,88 GB/s** teoretisk | Kan koste deg lagringsplass og kreve åpent kabinett |
+| Eget PCIe-spor | Mini-arbeidsstasjon med PCIe | Avhenger av baner; PCIe 4.0 ×16: **31,5 GB/s** teoretisk | God løsning, men sjelden i de minste maskinene |
+
+**Nyere grensesnitt:** Thunderbolt 5 tilbyr 80 Gbit/s symmetrisk lenkehastighet, og Intel oppgir **64 Gbit/s som minimumskrav til PCIe-data**. USB4 versjon 2.0 kan ha høyere lenkehastigheter enn tidligere USB4, men dette er ikke en garanti for en bestemt PCIe-tunnel. Se [Intels Thunderbolt-sammenligning](https://www.intel.com/content/www/us/en/architecture-and-technology/thunderbolt/overview.html). Tabellen blander ikke PCIe-tall i GB/s med Thunderbolt-krav i Gbit/s: tallene beskriver ulike størrelser, og ingen av dem er målte applikasjonshastigheter.
 
 **Vanlig USB-A, USB 3.x via USB-C og DisplayPort Alt Mode er ikke eGPU-tilkoblinger.** En USB-grafikkadapter kan drive en skjerm, men erstatter ikke et PCIe-tilkoblet skjermkort for CUDA eller ROCm.
 
@@ -35,7 +41,7 @@ Thunderbolt 3 og 4 kan frakte PCIe-trafikk mellom datamaskinen og et eksternt GP
 
 Kontroller at mini-PC-en faktisk støtter eGPU, at kabinettet passer skjermkortet fysisk, og at strømforsyningen er dimensjonert riktig. USB-C-kontakt alene betyr ikke Thunderbolt.
 
-Ved spilling kan det være gunstig å koble skjermen direkte til skjermkortet i stedet for å sende ferdige bilder tilbake til mini-PC-en. For AI-inferens kan situasjonen være annerledes: når modellen og arbeidsdataene ligger i VRAM, kan behovet for overføring over vertstilkoblingen være lavere. Dette avhenger av arbeidslasten.
+Ved spilling kan det være gunstig å koble skjermen direkte til skjermkortet i stedet for å sende ferdige bilder tilbake til mini-PC-en. For AI-inferens kan situasjonen være annerledes: når modellen og arbeidsdataene ligger i VRAM, kan behovet for overføring over tilkoblingen til vertsmaskinen være lavere. Dette avhenger av arbeidslasten.
 
 ## USB4: undersøk PCIe-tunnellering
 
@@ -73,11 +79,19 @@ Start med å kontrollere om Linux finner GPU-en:
 lspci -nn | grep -Ei 'vga|3d|display|nvidia|amd'
 lspci -tv
 uname -r
+# Erstatt 01:00.0 med GPU-ens PCI-adresse fra lspci:
+sudo lspci -vv -s 01:00.0 | grep -E 'LnkCap:|LnkSta:'
+# På Thunderbolt-systemer med bolt installert:
+boltctl list
 ```
 
-Kommandoene er skrivebeskyttede undersøkelser av PCIe-enheter og kjernen. De beviser ikke at driverne eller AI-programmene fungerer.
+Dette er kommandoer som bare leser informasjon og ikke endrer oppsettet. **LnkCap** viser lenkens kapasitet, mens **LnkSta** viser forhandlet hastighet og bredde. Sammenlign verdiene: et kort kan oppdages, men likevel kjøre med færre PCIe-baner enn forventet. Noen ganger må du undersøke PCIe-broen oppstrøms. `boltctl list` viser blant annet Thunderbolt-enheter og autorisasjon når verktøyet er installert.
 
 For **NVIDIA CUDA** må driver, verktøykjede og GPU-arkitektur passe sammen. For **AMD ROCm** må den konkrete GPU-en være støttet av den aktuelle ROCm-versjonen. En AMD-GPU som fungerer som skjermkort i Linux, har ikke nødvendigvis støtte for ROCm.
+
+**BIOS/UEFI før kjøp:** Undersøk **Above 4G Decoding** (64-bits adresserom for PCIe-enheter) og **Resizable BAR**, samt PCIe-tunnellering, IOMMU og eventuelle hotplug-innstillinger. Manglende støtte for ressursallokering over 4 GB kan hindre initialisering av enkelte oppsett. Resizable BAR er derimot **ikke et universelt krav** for at eGPU skal fungere. Noen produsenter skjuler eller håndterer innstillingene automatisk.
+
+**Mac:** Apple [dokumenterer eGPU-støtte på kompatible Intel-baserte Mac-er](https://support.apple.com/en-gb/102363), **ikke Apple Silicon under macOS**. Ikke kjøp eGPU-kabinett til en M-serie Mac i forventning om at et vanlig eksternt skjermkort vil fungere.
 
 Ved bruk av Docker eller Podman bør GPU-en fungere på **vertsmaskinen først**. Deretter kan man konfigurere GPU-tilgang i containere. PCIe-passthrough til Proxmox/KVM krever i tillegg blant annet IOMMU, riktig BIOS-oppsett og kompatibel enhetsisolasjon.
 
@@ -93,6 +107,10 @@ Før kjøp bør du definere hva GPU-en skal gjøre:
 - **Rendering:** programstøtte, scenestørrelse og tilgjengelig VRAM.
 
 Ikke kjøp kun fordi et produkt markedsføres som «AI-kompatibelt».
+
+## Alternativ: integrert GPU med stort delt minne
+
+En kompakt datamaskin med mye **delt/unifisert minne** kan være enklere til lokal AI enn et eksternt skjermkort med dokk, kabler og egen strømforsyning. Eksempler er systemer med **AMD Ryzen AI Max** og **Apple Silicon**. Delt minne er **ikke identisk med dedikert VRAM**: minnebåndbredde, tilgjengelig kapasitet, drivere og programvarestøtte varierer. Apple Silicon kan heller ikke bruke NVIDIA CUDA under macOS. Vi har ikke ytelsestestet disse løsningene.
 
 ## Hvilken løsning ville vi vurdert?
 
@@ -121,9 +139,10 @@ En eGPU er ikke automatisk det rimeligste valget. Løsningen er mest interessant
 - [USB-IF: USB4-spesifikasjoner](https://www.usb.org/documents)
 - [Intel: Thunderbolt](https://www.intel.com/content/www/us/en/architecture-and-technology/thunderbolt/overview.html)
 - [PCI-SIG: PCI Express](https://pcisig.com/)
-- [NVIDIA: CUDA-kompatibilitet](https://docs.nvidia.com/deploy/cuda-compatibility/)
+- [NVIDIA: GPU-modeller og compute capability](https://developer.nvidia.com/cuda/gpus) og [driver-/verktøykjedekompatibilitet](https://docs.nvidia.com/deploy/cuda-compatibility/)
 - [AMD: ROCm-kompatibilitet](https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html)
+- [Apple: eGPU-støtte på Intel-baserte Mac-er](https://support.apple.com/en-gb/102363)
 
-Les også [Hvorfor mini-PC-er egner seg til homelab](/no/articles/why-mini-pcs-make-excellent-homelab-servers/) og [Fellene ved kjøp av brukte mini-PC-er](/no/articles/used-mini-pc-price-trap/).
+Les også [Hvorfor mini-PC-er er utmerkede homelab-servere](/no/articles/why-mini-pcs-make-excellent-homelab-servers/) og [Prisfellen på brukte mini-PC-er](/no/articles/used-mini-pc-price-trap/).
 
 **Neste artikkel i serien:** modellspesifikk kompatibilitetsoversikt og reproduserbare Linux-tester. Inntil vi har testet maskinvaren selv, er vurderingene dokumentasjonsbaserte.
