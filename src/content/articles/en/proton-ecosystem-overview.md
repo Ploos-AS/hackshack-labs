@@ -86,12 +86,11 @@ A product may be right for one workload and wrong for another. We will state bot
 
 HackShack Labs is editorially independent. Ploos AS participates in the Proton affiliate program, and the five service links in the comparison table are commercial links, not test results or recommendations. We may earn a commission from qualifying purchases. This does not affect our technical conclusions. We explicitly distinguish Proton's documented product claims from our own future hands-on testing.
 
-## Coming next
+## Related articles and planned coverage
 
-- Proton Mail vs self-hosted email: operational realities
-- Proton VPN on Linux and in Docker/Gluetun: connectivity and failure testing
-- Proton Drive vs Nextcloud: sync, sharing and recovery
-- Proton Pass vs Bitwarden and KeePassXC: portability and recovery
-- Using Proton with a custom domain while preserving an exit strategy
+- [Proton Mail vs self-hosted email](/articles/proton-mail-vs-self-hosted-email/): operational realities
+- [Proton VPN with Docker and Gluetun](/articles/proton-vpn-linux-docker-gluetun/): configuration and limitations
+- [Proton Drive & Docs vs Nextcloud](/articles/proton-drive-docs-vs-nextcloud/): encryption, collaboration and recovery
+- Planned: Proton Pass vs Bitwarden and KeePassXC; custom-domain exit strategies
 
 **Sources and verification:** [Proton Mail encryption](https://proton.me/support/what-is-encrypted-within-protonmail); [Proton Drive](https://proton.me/support/drive); [Proton Mail Bridge](https://proton.me/support/imap-smtp-and-pop3-setup); [Proton Calendar](https://proton.me/support/calendar); [Proton Authenticator](https://proton.me/authenticator); [Proton open source](https://proton.me/community/open-source); [Proton transparency](https://proton.me/legal/transparency). Sourced overview as of 14 October 2026; no hands-on testing is claimed.
