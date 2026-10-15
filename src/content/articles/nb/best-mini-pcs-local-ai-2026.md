@@ -1,0 +1,101 @@
+---
+title: "De beste mini-PC-ene for lokal AI i 2026: Hva betyr mest?"
+description: "Merkeuavhengig kjøpsguide til mini-PC-er for lokale språkmodeller, bildegenerering og AI-utvikling, med fokus på minne, GPU, Linux og utvidelser."
+category: guides
+lang: nb
+date: 2026-10-15
+tags: [mini-pc, lokal-ai, llm, ryzen-ai-max, apple-silicon, intel, linux, homelab]
+series: "Used Hardware & Homelab"
+translationKey: best-mini-pcs-local-ai-2026
+draft: false
+tested: false
+---
+
+> **Redaksjonell status – 15. oktober 2026:** Dokumentasjonsbasert kjøpsguide, **ikke en rangering basert på egne tester**. Konfigurasjoner, drivere, priser og tilgjengelighet varierer. Ingen affiliatelenker.
+
+## Kort svar
+
+Den beste mini-PC-en til lokal AI er maskinen som kan kjøre **modellen og programvaren du faktisk skal bruke** innenfor budsjettet. En maskin med mye delt minne kan være interessant for store kvantiserte språkmodeller. En NVIDIA-GPU kan være nødvendig dersom arbeidsflyten krever CUDA. En rimelig mini-PC kan være tilstrekkelig dersom AI-modellen kjøres på en annen maskin.
+
+**Ikke kjøp ut fra «AI TOPS» alene.** NPU-tall forteller ikke om Ollama, llama.cpp, PyTorch eller bildegenereringsprogrammet ditt kan bruke akseleratoren.
+
+## Hvilken maskinvaretype bør du vurdere?
+
+| Type | Eksempler | Mulig fordel | Begrensning | Vurdering |
+| --- | --- | --- | --- | --- |
+| AMD APU med mye delt minne | **Ryzen AI Max**, blant annet Framework Desktop og enkelte kompakte arbeidsstasjoner | Stor delt minnepool og integrert GPU | ROCm-støtte avhenger av modell og versjon | Interessant for minnekrevende inferens; sjekk programvaren |
+| Apple med felles minne | **Mac mini med Apple Silicon** | Integrert minnearkitektur og Metal | macOS-økosystem, lite intern oppgradering; ikke CUDA/eGPU i macOS | God kandidat dersom programmet støtter Metal |
+| x86 mini-PC med eGPU | Utvalgte modeller fra **MINISFORUM**, **GMKtec**, **GEEKOM** og **Beelink** | Kan bruke dedikert GPU-minne | Dokk, PSU, kompatibilitet og kostnad | Mest aktuelt hvis du allerede har vertsmaskinen |
+| Vanlig x86 mini-PC | Intel N-serien og mange Ryzen-modeller | Rimelig og strømgjerrig til små tjenester | Begrenset GPU-akselerasjon | God server, men ikke nødvendigvis kraftig AI-maskin |
+| Kompakt arbeidsstasjon med PCIe | Liten stasjonær PC med GPU-plass | Vanlig PCIe-utvidelse | Større og kan bruke mer strøm | Ofte bedre totalverdi ved tung GPU-bruk |
+
+Dette er **maskinvarekategorier, ikke ytelsestestede rangeringer**.
+
+## Hva betyr mest?
+
+### 1. Tilgjengelig minne
+
+Minnebehovet for språkmodeller avhenger av antall parametere, kvantisering, kontekstlengde, KV-cache, programvare og samtidige forespørsler. Som et grovt *vekt-estimat* krever en modell med sju milliarder parametere ved fire bit omtrent **3,5 GB**, før metadata, arbeidsbuffere og KV-cache. Det reelle behovet er høyere.
+
+Delt systemminne kan gi plass til større modeller, men **er ikke det samme som dedikert VRAM** når det gjelder båndbredde og programvarestøtte.
+
+### 2. Støttet akselerasjon
+
+- **NVIDIA CUDA:** Kontroller GPU-arkitektur, drivere og programstøtte.
+- **AMD ROCm:** Må bekreftes for eksakt GPU/APU og programvareversjon.
+- **Apple Metal:** Relevant for macOS-programmer som støtter Metal.
+- **Intel GPU/NPU:** Kontroller at programmet støtter aktuell OpenVINO-, SYCL-, Vulkan- eller annen backend.
+- **Kun CPU:** Fungerer til små modeller og eksperimentering, men kan være langsomt.
+
+### 3. Båndbredde og kjøling
+
+Stor minnekapasitet hjelper lite hvis båndbredde eller varmebegrensninger gjør maskinen for langsom. Sammenlign bare ytelsestester med tilsvarende modell, kvantisering, kontekst og programvare. «Tokens per sekund» fra ulike testoppsett er ikke direkte sammenlignbare.
+
+### 4. Lagring og oppgradering
+
+Se etter tilstrekkelig NVMe-plass, antall M.2-spor, faktisk RAM-grense, nettverkstilkoblinger, BIOS-muligheter og vedlikeholdbar kjøling. Enkelte maskiner med felles minne kan ikke oppgraderes etter kjøp.
+
+### 5. Totalpris
+
+Regn med RAM, SSD, GPU, dokk, strømforsyning, frakt, avgifter, strømforbruk og garanti. For norske lesere kan det være nyttig å sammenligne **totalpris i NOK inkludert MVA og frakt**, men en slik sammenligning må bygge på daterte priser fra konkrete forhandlere.
+
+## Hvilken løsning passer arbeidsoppgaven?
+
+| Oppgave | Begynn med | Ikke anta |
+| --- | --- | --- |
+| Små språkmodeller og automatisering | Eksisterende mini-PC, CPU eller støttet iGPU | At alle «AI-PC-er» har brukbar NPU-støtte |
+| Større kvantiserte modeller | Ryzen AI Max eller Apple med mye felles minne | At all RAM kan brukes av GPU |
+| CUDA-utvikling | Arbeidsstasjon med NVIDIA eller dokumentert eGPU | At USB-C automatisk betyr eGPU |
+| Lokal bildegenerering | GPU med nok minne og støttet backend | At alle GPU-er støtter de samme modellene |
+| Alltid-på AI-tjenester | Effektiv vertsmaskin og separat GPU-node ved behov | At kraftigste GPU bør stå på hele døgnet |
+
+## Ryzen AI Max eller Apple Silicon?
+
+Begge kan tilby store minneområder til grafikkoppgaver, men resultatet avhenger av tilgjengelig GPU-minne, båndbredde, modell, kvantisering og inferensprogram. Metal og ROCm er ulike økosystemer. Produsentens spesifikasjoner alene dokumenterer ikke ytelsen i ditt Linux-oppsett.
+
+En reproduserbar test må oppgi modellfilens hash, kvantisering, kontekstlengde, prompt, programversjon, operativsystem, strømmodus og målemetode.
+
+## Er eGPU et alternativ?
+
+Ja, særlig om du allerede har en egnet mini-PC. Men GPU, dokk og strømforsyning kan bli dyrere enn en stasjonær maskin med vanlig PCIe-spor. Les [eGPU-guiden](/no/articles/mini-pc-external-gpu-guide/) og [kompatibilitetsmatrisen](/no/articles/mini-pc-egpu-compatibility-matrix/).
+
+## Sjekkliste før kjøp
+
+1. Velg AI-modell og programvare **før** du velger maskin.
+2. Beregn modellvekter, KV-cache og minnemargin.
+3. Kontroller støtte for den konkrete GPU-en eller APU-en.
+4. Sjekk tilgjengelig og oppgraderbart minne.
+5. Se etter sammenlignbare tester ved vedvarende belastning.
+6. Regn inn lagring, strøm, frakt, MVA og garanti.
+7. Velg oppgraderingsmuligheter dersom behovet kan øke.
+
+## Teknisk dokumentasjon
+
+- [AMD Ryzen AI Max](https://www.amd.com/en/products/processors/laptop/ryzen/ai-max-series.html)
+- [Apple Mac mini – spesifikasjoner](https://www.apple.com/mac-mini/specs/)
+- [NVIDIA CUDA – GPU-støtte](https://developer.nvidia.com/cuda/gpus)
+- [AMD ROCm – kompatibilitetsmatrise](https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html)
+- [Ollama-dokumentasjon](https://docs.ollama.com/)
+- [llama.cpp og støttede backender](https://github.com/ggml-org/llama.cpp)
+
+**Vår anbefaling:** Velg ut fra arbeidslast og dokumentert programvarestøtte, ikke produsent eller markedsførte AI TOPS. Vi legger til konkrete priser og målte sammenligninger når de kan dokumenteres.
