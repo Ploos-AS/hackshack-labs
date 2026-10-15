@@ -33,9 +33,7 @@ Proton dokumenterer nedlasting av WireGuard-konfigurasjon fra kontosidene, og br
 
 ## Arkitektur med Gluetun
 
-Dette er et *utgangspunkt*, ikke et produksjonsoppsett vi har testet:
-
-Det kjørbare Compose-eksempelet med låste digester og kommandoer står i laboratorieprosedyren nedenfor.
+Compose-eksempelet med låste digester og kommandoene nedenfor er et foreslått laboratorieoppsett, ikke et verifisert produksjonsoppsett.
 
 **Legg aldri en ekte privat WireGuard-nøkkel i Git.** Bruk et beskyttet lokalt miljø eller en mekanisme for hemmeligheter, hold konfigurasjoner ute av skjermbilder og vurder nøkkelbytte etter lekkasje. Laboratorieprosedyren nedenfor bruker låste OCI-digester.
 
@@ -86,8 +84,11 @@ services:
     depends_on:
       gluetun:
         condition: service_healthy
+        restart: true
     command: ["sleep", "infinity"]
 ```
+
+**Sikkerhetsmerknad:** `docker compose config` utvider miljøvariabler og kan skrive ut WireGuard-nøkkelen. Bruk `docker compose config --quiet` for validering; ikke publiser utvidet konfigurasjon eller CI-logger med hemmeligheter.
 
 **Forbehold om helsesjekk:** Verifiser kommandoen og innholdet i Gluetun-imaget mot den valgte versjonen. Hvis kommandoen ikke støttes, bruk dokumentert helsesjekk for den versjonen. Grønn helsestatus er et oppstartsvilkår, **ikke** en sikkerhetstest. Compose-varianter håndterer omstart av avhengige tjenester ulikt; gjenskap derfor testklienten eksplisitt etter omstart av Gluetun.
 
