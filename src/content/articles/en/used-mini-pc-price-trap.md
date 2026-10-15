@@ -44,26 +44,25 @@ Before buying, check whether the listing includes a working power adapter, RAM, 
 
 **International readers:** Calculate shipping, import taxes and fees for your own delivery country and seller; the total can vary substantially by destination. A displayed US domestic shipping price is not an international quote. **Norway-specific example:** Norwegian private imports generally attract 25% VAT on the relevant taxable basis; eligible VOEC purchases below NOK 3,000 may have VAT collected at checkout. See [Norwegian Customs](https://www.toll.no/no/netthandel/utregning-mva/) and [the Norwegian Tax Administration](https://www.skatteetaten.no/person/avgifter/kjop-fra-utlandet/). We have not verified destination-specific checkout totals for the listings above.
 
-## Worked example: a used NUC imported to Norway
+## Worked example: what a USD 100 used mini PC can really cost
 
-**Illustrative calculation, not a seller quote or an exchange-rate observation.** Suppose a used mini PC costs **USD 100**, shipping is **USD 25**, and we assume **NOK 10.00 per USD** purely to demonstrate the arithmetic. A real purchase must use the exchange rate applicable to the transaction or customs clearance.
+**Illustrative arithmetic, not a seller quote or a country-specific tax estimate.** Imagine buying a used mini PC for **USD 100** with **USD 25** shipping. All extra charges below are hypothetical and must be replaced with the rules and quotes applicable to the buyer's destination.
 
-| Cost item | NOK |
+| Cost item | Illustrative USD |
 | --- | ---: |
-| Computer: USD 100 × 10.00 | 1,000 |
-| Shipping: USD 25 × 10.00 | 250 |
-| Subtotal | 1,250 |
-| Illustrative Norwegian import VAT: 25% × 1,250 | 312.50 |
-| Illustrative carrier clearance fee (assumption, **not a published tariff**) | 150 |
-| **Total before any upgrades** | **1,712.50** |
-| Example replacement SSD or PSU (assumption) | 400 |
-| **Total ready-to-use budget** | **2,112.50** |
+| Used computer | 100 |
+| Shipping | 25 |
+| Subtotal before taxes and fees | 125 |
+| Example tax (10% of USD 125; **assumed, not a universal rate**) | 12.50 |
+| Example import or carrier processing fee (**assumed**) | 15 |
+| Example replacement SSD or power supply (**assumed**) | 40 |
+| **Illustrative ready-to-use total** | **192.50** |
 
-The machine that looked like a **USD 100 purchase** now has a hypothetical all-in budget of **NOK 2,112.50**. This does **not** establish that a specific new N150 mini PC is cheaper; compare against a dated, identically equipped local offer.
+The **USD 100** listing has become a **USD 192.50** hypothetical purchase. That does **not** prove that a new mini PC costs less: compare with a current, similarly equipped local offer, including warranty and power consumption.
 
-The example assumes ordinary import clearance, no customs duty, and that the seller did not already collect Norwegian VAT. **Do not add VAT twice.** Under the VOEC scheme, an eligible item costing less than NOK 3,000 per item from a **VOEC-registered seller or marketplace** normally has Norwegian VAT collected at checkout. VOEC is not a blanket exemption for all imports or sellers; business purchases have different treatment. Actual customs currency conversion, tax basis and carrier fees may differ.
+**Your destination changes the calculation.** Sales tax, VAT/GST, customs duty, brokerage charges, tax collection at checkout and de minimis thresholds vary by country, product, seller and sometimes region. Taxes may be calculated on a different base; shipping and duties may be included. If a marketplace already collects applicable tax, **do not count it twice**. Use the seller's actual checkout, customs guidance and carrier tariff rather than treating the 10% and USD 15 assumptions above as facts.
 
-Official references: [Norwegian Customs: VAT calculation](https://www.toll.no/en/online-shopping/calculation-norwegian-vat) · [Norwegian Tax Administration: buying from foreign shops](https://www.skatteetaten.no/en/person/duties/purchases-from-abroad/) · [VOEC scheme](https://www.skatteetaten.no/en/business-and-organisation/vat-and-duties/vat/foreign/e-commerce-voec/).
+**Reusable formula:** delivered usable cost = item price + shipping + applicable taxes/duties + carrier fees + required upgrades/repairs − any charges already included in the displayed total. If you buy in another currency, record the exchange rate and date.
 
 ## What about a new N100 or N150 mini PC?
 
