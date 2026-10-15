@@ -37,7 +37,7 @@ Dette er et *utgangspunkt*, ikke et produksjonsoppsett vi har testet:
 
 Det kjørbare Compose-eksempelet med låste digester og kommandoer står i laboratorieprosedyren nedenfor.
 
-**Legg aldri en ekte privat WireGuard-nøkkel i Git.** Bruk et beskyttet lokalt miljø eller en mekanisme for hemmeligheter, hold konfigurasjoner ute av skjermbilder og vurder nøkkelbytte etter lekkasje. I reproduserbare produksjonstester bør OCI-images låses til digest; taggene her er eksempler.
+**Legg aldri en ekte privat WireGuard-nøkkel i Git.** Bruk et beskyttet lokalt miljø eller en mekanisme for hemmeligheter, hold konfigurasjoner ute av skjermbilder og vurder nøkkelbytte etter lekkasje. Laboratorieprosedyren nedenfor bruker låste OCI-digester.
 
 Det avgjørende er `network_mode: "service:gluetun"`: testklienten deler Gluetuns nettverksnavnerom. Publiserte porter for applikasjoner som bruker dette mønsteret, må vanligvis defineres på Gluetun-tjenesten. Eksempelet trenger verken tilgang til Docker-socketen eller `privileged: true`.
 
@@ -142,6 +142,26 @@ Noter test-ID, image-digester, Docker- og Ubuntu-versjoner, brannmurmodus, VPN-e
 ## Om feil fra helsesjekken
 
 undefined at **en konkret UDP-operasjon ble avvist**. Den beviser ikke alene DNS-lekkasje, feil hos Proton eller en ødelagt brannmur. Mulige forklaringer er brannmurpolicy, ruting under overgang, containerrettigheter og oppsettet for helsesjekken. Sammenhold loggen med rutetabeller, brannmurregler, tunneltilstand og pakkefangst før sikkerhetsreglene endres. Å slå av brannmuren bare for å få grønn helsestatus undergraver formålet.
+
+## DNS, lokalnett og portvideresending hos Proton: dokumenterte innstillinger
+
+**DNS:** Gluetuns gjeldende DNS-dokumentasjon oppgir `DNS_UPSTREAM_RESOLVER_TYPE=dot` (DNS over TLS) og `DNS_UPSTREAM_RESOLVERS=cloudflare` som standardverdier. `/etc/resolv.conf` i applikasjonscontaineren viser den *lokale* resolveren, men sier ikke hvordan Gluetun sender forespørsler videre. Undersøk både `dig` i Netshoot og pakkefangst på vertens uplink. En ukryptert DNS-forespørsel internt i det delte nettverksnavnerommet er ikke automatisk en ekstern DNS-lekkasje. [Gluetuns DNS-innstillinger](https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/dns.md).
+
+**Webgrensesnitt på lokalnettet:** En tjeneste som deler Gluetuns nettverksnavnerom, skal ikke publisere Docker-porter selv. For et webgrensesnitt på port 8080 som kun skal nås fra Docker-verten, legg `ports: ["127.0.0.1:8080:8080"]` på **gluetun**, ikke den avhengige tjenesten. Tilgang fra en annen maskin på lokalnettet krever en bevisst LAN-binding eller en betrodd reverse proxy, kildebegrensning i brannmuren og autentisering. Gluetun dokumenterer `FIREWALL_INPUT_PORTS=8080` ved behov for innkommende trafikk på standardgrensesnittet. `FIREWALL_OUTBOUND_SUBNETS` tillater utgående tilgang til bestemte LAN-adresser **fra** VPN-navnerommet; det er ikke en generell innkommende portåpning. Unngå overlapp med WireGuard-tunnelens adresseområde. Dette er valgfrie eksempler, **ikke** en del av den isolerte testens Compose-fil. [Brannmurinnstillinger](https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/firewall.md).
+
+**Kontrollserver:** Gluetun har en HTTP-kontrollserver for status og operasjoner. Ikke eksponer den på internett eller publiser porten bare for å sjekke VPN-status. Kontroller autentisering og tillatte endepunkter for valgt Gluetun-versjon før eventuell ekstern tilgang.
+
+**Sjekkliste for Proton VPN-portvideresending (valgfritt, ikke testet her):**
+
+1. Kontroller at Proton-abonnementet og valgt server støtter portvideresending. Bruk eventuelt Gluetuns serverfilter `PORT_FORWARD_ONLY=on`.
+2. Når du genererer **WireGuard**-konfigurasjonen hos Proton, aktiver **NAT-PMP (Port Forwarding)**.
+3. Sett `VPN_PORT_FORWARDING=on` i Gluetun. Dette gjelder videresending på **VPN-leverandørens side**, ikke Dockers `ports:`.
+4. Finn den dynamisk tildelte porten i Gluetuns logger eller statusfil og konfigurer applikasjonen til å lytte på denne. Kontroller på nytt etter gjentilkobling; programmer som annonserer egen lytteport, må kanskje oppdateres eksplisitt.
+5. Test tilgjengelighet fra utsiden av LAN/VPN og dokumenter bestått/feilet. Ikke eksponer administrative webgrensesnitt via VPN-portvideresending.
+
+Se [Proton-veiledningen for Gluetun](https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/protonvpn.md) og [innstillinger for portvideresending](https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/port-forwarding.md). Den samme feiltestmetoden kan brukes med andre VPN-leverandører, men legitimasjon og portvideresending er leverandørspesifikt.
+
+**Compose ved omstart:** Docker Compose dokumenterer `depends_on: { gluetun: { condition: service_healthy, restart: true } }` for å starte avhengige tjenester på nytt etter en *eksplisitt Compose-operasjon*. Dette garanterer ikke at alle nettverksnavnerom blir reparert etter daemon-krasj eller erstatning av containere. Verifiser med installert Compose-versjon og gjenskap testklienten eksplisitt ved behov. [Docker Compose oppstartsrekkefølge](https://docs.docker.com/compose/how-tos/startup-order).
 
 ## Portvideresending må testes separat
 
