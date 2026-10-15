@@ -77,6 +77,28 @@ These commands inspect devices; they do not prove that CUDA, ROCm or a virtual-m
 
 **A USB4 or Thunderbolt port is evidence of an interface, not evidence of a working GPU.** Likewise, manufacturer QVL results are useful but do not guarantee success after BIOS, dock, driver or operating-system changes. ASUS [explicitly cautions about the limits of peripheral validation](https://rog.asus.com/support/faq/1052501/).
 
+## Manufacturer-specific expansion: MINISFORUM, GEEKOM, Beelink and GMKtec
+
+The following entries are **not HackShack hardware tests**. Evidence is restricted to the exact claims supported by the linked manufacturer pages. A vendor-supported host/dock family does not validate a particular GPU under Linux.
+
+| Host model | Connection / dock | Evidence level | Documented claim | Still to verify |
+| --- | --- | --- | --- | --- |
+| **MINISFORUM UM890 Pro** | PCIe 4.0 ×4 OCuLink; **DEG1** dock | **Vendor-demonstrated host + dock** | MINISFORUM publishes a [UM890 Pro + DEG1 eGPU build video](https://www.youtube.com/watch?v=bAZGI6LaPFc) and specifies the [host's OCuLink interface](https://store.minisforum.com/products/minisforum-um890pro-mini-pc) | Exact GPU SKU in the demonstration, BIOS, Linux driver and negotiated link |
+| **GEEKOM GT1 Mega** | USB4; eGPU dock not specified | **Vendor-documented eGPU capability** | GEEKOM's [GT1 Mega specification](https://www.geekom.co.uk/product/geekom-gt1-mega-mini-pc) explicitly lists eGPUs among USB4 external devices | Dock, GPU, firmware, Linux test and actual PCIe tunnel rate |
+| **Beelink GTi14 Ultra** | Dedicated bottom connector + **EX Pro Dock** | **Vendor-documented host + dock pairing** | Beelink's [GTi14 product page](https://www.bee-link.com/products/beelink-gti14-ultra-ai-pc-intel-core-uitra-9-185h-openclaw-pre-installed) describes GPU expansion through its dock; [EX Pro specifications](https://www.bee-link.com/products/beelink-ex-docking-station) advertise PCIe 5.0 ×8 and a 600 W PSU | Exact GPU/driver/OS validation; do **not** assume standard PCIe pinout or third-party dock support |
+| **GMKtec NucBox K8 Plus** | PCIe 4.0 ×4 OCuLink; dock unspecified | **Vendor-documented external PCIe interface only** | [GMKtec specifications](https://www.gmktec.com/products/gmktec-nucbox-k8-plus-mini-pc-amd-ryzen%E2%84%A2-7-8845hs) list OCuLink ×4 and explicitly prohibit hot-plugging | Particular dock + GPU + firmware + OS combination |
+| **GMKtec NucBox K11** | PCIe 4.0 ×4 OCuLink; dock unspecified | **Vendor-documented external PCIe interface only** | [GMKtec specifications](https://www.gmktec.com/products/amd-ryzen%E2%84%A2-9-8945hs-nucbox-k11) list OCuLink ×4 and explicitly prohibit hot-plugging | Particular dock + GPU + firmware + OS combination |
+
+### Specific host–dock combinations worth investigating
+
+**MINISFORUM UM890 Pro + DEG1** is the strongest concrete new lead: MINISFORUM itself demonstrates this pairing. The [DEG1 product page](https://www.minisforum.com/products/minisforum-deg1-egpu-dock) documents the dock; the [UM890 Pro listing](https://store.minisforum.com/products/minisforum-um890pro-mini-pc) describes its PCIe 4.0 ×4 OCuLink interface. **Do not extrapolate this to every graphics card or to Linux.** MINISFORUM also notes that its OCuLink arrangement uses an M.2 storage position on some configurations; verify the exact storage layout before purchase.
+
+**Beelink GTi14 Ultra + EX Pro** is another explicit manufacturer pairing, but it is a **proprietary dock connection**, not interchangeable with an OCuLink cable or a generic PCIe riser. Beelink's [support FAQ](https://bbs.bee-link.com/d/3917-faq-for-gti14) distinguishes the dedicated dock from Thunderbolt-based external enclosures. Check dock revision: older EX and newer EX Pro specifications are not necessarily identical.
+
+**GEEKOM GT1 Mega** is a useful USB4 research candidate because the manufacturer explicitly mentions eGPUs. It is **not** a verified host–dock–GPU triple. We need a named dock, a named graphics card and repeatable operating-system evidence before promoting its status.
+
+**GMKtec K8 Plus / K11** have explicitly documented PCIe 4.0 ×4 OCuLink ports, making them reasonable test candidates. The manufacturer's **no hot-plug** warning must be observed. No specific dock + GPU pairing is established by those specification sheets.
+
 ## Next verification milestone
 
 We will extend this matrix only when we can attach a source to a **specific configuration**, or publish our own repeatable hardware evidence. The next useful addition is a complete host + dock + GPU + firmware + Linux record—not a longer list of marketing claims.
