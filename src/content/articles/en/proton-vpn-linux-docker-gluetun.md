@@ -37,7 +37,7 @@ Example of a *starting point*, not a verified production deployment:
 
 The runnable, digest-pinned Compose example and commands are in the lab procedure below.
 
-**Do not paste a real WireGuard private key into Git.** Supply it through a protected local environment or secrets mechanism, keep the corresponding configuration out of screenshots, and consider key rotation after accidental disclosure. A pinned image digest is preferable for reproducible production tests; the tags above are illustrative.
+**Do not paste a real WireGuard private key into Git.** Supply it through a protected local environment or secrets mechanism, keep the corresponding configuration out of screenshots, and consider key rotation after accidental disclosure. The lab procedure below uses pinned image digests.
 
 The sidecar pattern is the critical point: `network_mode: "service:gluetun"` means the test client shares Gluetun's network namespace. Published ports for such applications generally belong on the Gluetun service. Docker socket access and `privileged: true` are unnecessary for this example.
 
@@ -143,6 +143,26 @@ For each run, record the test identifier, image digests, Docker/Ubuntu versions,
 ## A note on health-check failures
 
 undefined that **a specific UDP operation was rejected**. It does not, by itself, prove that a DNS leak occurred, that Proton failed or that the firewall is broken. Possible causes include firewall policy, routing transitions, container capabilities and probe configuration. Correlate the error with routes, firewall rules, tunnel state and packet captures before changing security controls. Disabling the firewall just to make the health check green defeats the point of this setup.
+
+## DNS, LAN access and Proton port forwarding: documented configuration
+
+**DNS:** The current Gluetun DNS options document `DNS_UPSTREAM_RESOLVER_TYPE=dot` (DNS over TLS) and `DNS_UPSTREAM_RESOLVERS=cloudflare` as defaults. The application container's `/etc/resolv.conf` shows its *local* resolver; it does not establish how Gluetun sends queries upstream. Check both `dig` inside Netshoot and packet captures on the host uplink. A plain DNS request within the shared namespace is not automatically an external DNS leak. [Gluetun DNS options](https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/dns.md).
+
+**LAN web interfaces:** A service sharing Gluetun's namespace does not publish its own Docker ports. For a local-only web interface on port 8080, put `ports: ["127.0.0.1:8080:8080"]` on **gluetun**, not on the dependent service; that binding is reachable from the Docker host only. To access it from another LAN machine, use a deliberately configured LAN-facing binding or a trusted reverse proxy, firewall-restrict the allowed source addresses and enable authentication. Gluetun documents `FIREWALL_INPUT_PORTS=8080` for inbound traffic on the default interface when needed; `FIREWALL_OUTBOUND_SUBNETS` permits explicitly selected LAN destinations **from** the VPN namespace, not general inbound access. Avoid overlapping that subnet with the WireGuard tunnel address range. These are optional configuration examples, **not** additions to the isolated test Compose file. [Firewall options](https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/firewall.md).
+
+**Control server:** Gluetun has an HTTP control server used for status and operations. Do not expose its port to the internet or publish it merely to check VPN status. Review authentication and allowed routes for the pinned Gluetun release before enabling remote access.
+
+**Proton VPN port-forwarding checklist (optional, not tested here):**
+
+1. Confirm your Proton plan and chosen server support port forwarding. Use Gluetun's `PORT_FORWARD_ONLY=on` server filter when appropriate.
+2. When generating the **WireGuard** configuration in Proton, enable **NAT-PMP (Port Forwarding)**.
+3. Set `VPN_PORT_FORWARDING=on` in Gluetun. This is VPN-provider-side forwarding, **not** the same as Docker's `ports:` mapping.
+4. Observe the dynamically assigned port in Gluetun's logs or configured status file, and configure the application to listen on that port. Re-check after reconnects; an application advertising its own listen port may require an explicit update.
+5. Test reachability from outside the LAN/VPN and record pass/fail. Do not expose administrative web interfaces through VPN port forwarding.
+
+See the [Proton provider instructions](https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/protonvpn.md) and [port-forwarding options](https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/port-forwarding.md). The same failure-test method can be applied to other VPN providers; provider-specific credentials and port-forwarding behavior differ.
+
+**Compose restart semantics:** Docker Compose documents `depends_on: { gluetun: { condition: service_healthy, restart: true } }` for restarting dependents after an *explicit Compose operation*. It does not promise to repair every network namespace reference after a daemon crash or container replacement. Verify behavior on the installed Compose version, and explicitly recreate the test client when necessary. [Docker Compose startup order](https://docs.docker.com/compose/how-tos/startup-order).
 
 ## Port forwarding is a separate feature
 
