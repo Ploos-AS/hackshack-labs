@@ -11,7 +11,7 @@ draft: false
 tested: false
 ---
 
-> **Editorial status — 15 October 2026:** Documentation-based comparison, **not a hands-on security audit or identical-environment benchmark**. Features and plans may change. No affiliate links appear in this article.
+> **Editorial status — 15 October 2026:** Documentation-based comparison, **not a hands-on security audit or identical-environment benchmark**. Features and plans may change. This article includes a clearly marked Proton Drive affiliate link. Ploos AS may receive a commission on qualifying purchases at no additional cost to readers; this does not determine our conclusions.
 
 ## Quick answer
 
@@ -101,6 +101,6 @@ For organizations with compliance obligations, independently assess contracts, r
 - [Nextcloud documentation](https://docs.nextcloud.com/)
 - [Nextcloud encryption documentation](https://docs.nextcloud.com/server/latest/user_manual/en/files/encryption.html)
 
-**Editorial independence:** Ploos AS participates in the Proton affiliate program, but **this article contains no affiliate links**. The comparison does not treat a commercial partnership as evidence of technical superiority. Read our related [Proton Mail vs self-hosted email comparison](/articles/proton-mail-vs-self-hosted-email/).
+**Advertisement — affiliate link:** [Explore Proton Drive (affiliate link)](https://go.getproton.me/SH33l). Ploos AS participates in the Proton affiliate program and may receive a commission on qualifying purchases at no additional cost to you. **Nextcloud may still be the better choice** when infrastructure ownership and integration matter more. Our commercial relationship is not evidence of technical superiority. Read our related [Proton Mail vs self-hosted email comparison](/articles/proton-mail-vs-self-hosted-email/).
 
 **Bottom line:** Proton Drive and Docs are compelling when managed E2EE is the requirement. Nextcloud is compelling when control, integration and ownership of the service matter more. Choose by threat model and operational capacity—not by slogans about “the cloud.”
