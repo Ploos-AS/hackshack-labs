@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { entry: CollectionEntry<'articles'> }
+const { entry } = Astro.props;
+const no = entry.data.lang === 'nb';
+const labels = no
+  ? { editorial: 'Redaksjonelt', sources: 'Kilder', 'lab-test': 'Laboratorietest', 'hardware-test': 'Maskinvaretest' }
+  : { editorial: 'Editorial', sources: 'Sources', 'lab-test': 'Lab test', 'hardware-test': 'Hardware test' };
+const changes = [...entry.data.changelog].sort((a,b) => b.date.getTime() - a.date.getTime());
+---
+{changes.length > 0 && (
+  <section aria-label={no ? 'Endringslogg' : 'Change history'}>
+    <h2>{no ? 'Endringslogg' : 'Change history'}</h2>
+    <ol>
+      {changes.map(change => (
+        <li>
+          <time datetime={change.date.toISOString().slice(0,10)}>{change.date.toISOString().slice(0,10)}</time>
+          {' · '}<strong>{labels[change.type]}</strong>{' — '}{change.note}
+        </li>
+      ))}
+    </ol>
+  </section>
+)}
