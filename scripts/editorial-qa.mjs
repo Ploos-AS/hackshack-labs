@@ -43,11 +43,11 @@ for (const e of entries.filter(e => e.lang === 'en' && e.data.draft !== 'true'))
 // Validate internal article URLs against published content, without probing external sites.
 // External HTTP status and redirects are checked separately; these tests remain offline.
 const publishedSlugs = new Set(entries.filter(e => e.data.draft !== 'true').map(e =>
-  (e.lang === 'nb' ? '/no' : '') + '/articles/' + e.filename.replace(/\\.md$/, '') + '/'
+  (e.lang === 'nb' ? '/no' : '') + '/articles/' + e.filename.replace(/\.md$/, '') + '/'
 ));
 const articleLinks = /(?:\]\(|href=["'])(\/[^\s)"'#?]+)(?:[?#][^\s)"']*)?(?:\)|["'])/g;
 for (const e of entries.filter(e => e.data.draft !== 'true')) {
-  const body = e.content.replace(/^---\\r?\\n[\\s\\S]*?\\r?\\n---\\r?\\n/, '');
+  const body = e.content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
   for (const match of body.matchAll(articleLinks)) {
     const url = match[1];
     if (!url.startsWith('/articles/') && !url.startsWith('/no/articles/')) continue;
