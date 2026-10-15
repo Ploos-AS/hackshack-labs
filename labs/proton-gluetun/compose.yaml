@@ -1,0 +1,20 @@
+# Documentation-only lab. Not security verified.
+services:
+  gluetun:
+    image: ${GLUETUN_IMAGE:?Set immutable repository@sha256 digest}
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      VPN_SERVICE_PROVIDER: protonvpn
+      VPN_TYPE: wireguard
+      WIREGUARD_PRIVATE_KEY: ${WIREGUARD_PRIVATE_KEY:?Set private key locally}
+      SERVER_COUNTRIES: Netherlands
+    restart: unless-stopped
+  test-client:
+    image: ${NETSHOOT_IMAGE:?Set immutable repository@sha256 digest}
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
+    command: ["sleep", "infinity"]
