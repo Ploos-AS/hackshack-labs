@@ -1,5 +1,6 @@
 ---
 import { render } from 'astro:content';
+import ArticleStructuredData from '../../../components/ArticleStructuredData.astro';
 import RelatedArticles from '../../../components/RelatedArticles.astro';
 import SiteLayout from '../../../layouts/SiteLayout.astro';
 import { published, articleUrl, categoryLabelsNo, evidenceLabel } from '../../../lib/articles';
@@ -14,5 +15,6 @@ const lastReviewed=entry.data.updated;
 const counterpart=all.find(a=>a.data.lang==='en' && a.data.translationKey && a.data.translationKey===entry.data.translationKey);
 ---
 <SiteLayout title={entry.data.title} lang="nb" alternateUrl={counterpart ? articleUrl(counterpart.id,'en') : undefined} hideLanguageSwitch={!counterpart} description={entry.data.description} pageType="article">
+  <ArticleStructuredData entry={entry} />
   <article><p class="tag">{categoryLabelsNo[entry.data.category]} · {entry.data.date.toLocaleDateString('nb-NO')} · {evidenceLabel(entry.data, 'nb')}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p>{!counterpart && <p class="muted">Engelsk oversettelse er ikke tilgjengelig for denne artikkelen ennå.</p>}<Content /><RelatedArticles entry={entry} all={all} /><footer class="muted"><p>Publisert: <time datetime={entry.data.date.toISOString().slice(0,10)}>{entry.data.date.toISOString().slice(0,10)}</time>{lastReviewed && <> · Sist oppdatert: <time datetime={lastReviewed.toISOString().slice(0,10)}>{lastReviewed.toISOString().slice(0,10)}</time></>} · <a href="/no/about/">Redaksjonell policy og dokumentasjonsnivåer</a> · <a href="https://github.com/Ploos-AS/hackshack-labs/issues">Foreslå rettelse</a></p></footer></article>
 </SiteLayout>
