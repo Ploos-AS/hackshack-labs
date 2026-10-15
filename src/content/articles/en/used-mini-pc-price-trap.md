@@ -8,7 +8,7 @@ tags: [mac-mini, intel-nuc, mini-pc, used-hardware, homelab, ebay, norway]
 series: "Used Hardware & Homelab"
 translationKey: used-mini-pc-price-trap
 draft: false
-tested: false
+tested: false\nevidence: desk-research
 ---
 
 > **Editorial status — 14 October 2026:** Desk research, not a hardware benchmark. The prices below are visible listing prices, including some sold listings whose final accepted prices are not necessarily known, verified Norwegian delivery quotes or evidence of a market-wide average. Listings change or disappear. No affiliate links are used.
