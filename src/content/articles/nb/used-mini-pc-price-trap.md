@@ -9,6 +9,7 @@ series: "Used Hardware & Homelab"
 translationKey: used-mini-pc-price-trap
 draft: false
 tested: false
+evidence: desk-research
 ---
 
 > **Redaksjonell status – 14. oktober 2026:** Dette er en dokumentasjonsbasert prisundersøkelse, ikke en maskinvaretest. Prisene er eksempler fra konkrete eBay-annonser, ikke en representativ markedsstatistikk eller bekreftede totalpriser levert til Norge. Enkelte annonser er avsluttet som solgt, men endelig avtalt pris kan være ukjent. Ingen affiliatelenker.
