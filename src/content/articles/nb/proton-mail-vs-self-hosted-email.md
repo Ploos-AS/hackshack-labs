@@ -9,6 +9,7 @@ series: "Privacy & Digital Independence"
 translationKey: proton-mail-vs-self-hosted-email
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Reklame – annonselenke:** Artikkelen inneholder en tydelig merket Proton Mail-annonselenke. Ploos AS kan motta provisjon ved kvalifiserte kjøp uten ekstra kostnad for deg. Det påvirker ikke konklusjonene.
