@@ -40,6 +40,22 @@ for (const e of entries.filter(e => e.lang === 'en' && e.data.draft !== 'true'))
   if (other.data.category !== e.data.category) issues.push(e.path + ': category mismatch between translations');
   if (other.data.evidence !== e.data.evidence) warn.push(e.path + ': evidence differs between translations');
 }
+// Validate internal article URLs against published content, without probing external sites.
+// External HTTP status and redirects are checked separately; these tests remain offline.
+const publishedSlugs = new Set(entries.filter(e => e.data.draft !== 'true').map(e =>
+  (e.lang === 'nb' ? '/no' : '') + '/articles/' + e.filename.replace(/\\.md$/, '') + '/'
+));
+const articleLinks = /(?:\\]\(|href=["'])(\\/[^\\s)"'#?]+)(?:[?#][^\\s)"']*)?(?:\\)|["'])/g;
+for (const e of entries.filter(e => e.data.draft !== 'true')) {
+  const body = e.content.replace(/^---\\r?\\n[\\s\\S]*?\\r?\\n---\\r?\\n/, '');
+  for (const match of body.matchAll(articleLinks)) {
+    const url = match[1];
+    if (!url.startsWith('/articles/') && !url.startsWith('/no/articles/')) continue;
+    const canonical = url.endsWith('/') ? url : url + '/';
+    if (!publishedSlugs.has(canonical)) issues.push(e.path + ': broken internal article link ' + url);
+    else if (!url.endsWith('/')) warn.push(e.path + ': article link should have trailing slash ' + url);
+  }
+}
 for (const x of warn) console.warn('WARN ' + x);
 for (const x of issues) console.error('ERROR ' + x);
 console.log('Editorial QA: ' + entries.length + ' articles, ' + issues.length + ' errors, ' + warn.length + ' warnings');
