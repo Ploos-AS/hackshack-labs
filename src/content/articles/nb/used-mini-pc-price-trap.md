@@ -30,7 +30,8 @@ Følgende annonser ble undersøkt 14. oktober 2026. Dette er et lite, ikke-tilfe
 | [Intel NUC 10, i3-10110U, 8 GB RAM, 256 GB SSD](https://www.ebay.com/itm/205696247969) | **134,99 USD** | Merket solgt; prisforslag akseptert, faktisk kjøpesum ikke bekreftet |
 | [Intel NUC 11 Pro, i5-1135G7, 8 GB RAM, 256 GB SSD](https://www.ebay.com/itm/398150635339) | **195 USD** | Merket solgt 20. juli 2026 |
 | [Intel NUC 12, i5-1240P, 8 GB RAM, 512 GB SSD](https://www.ebay.com/itm/127733816087) | **199,99 USD** | Merket solgt 11. september 2026; faktisk avtalt pris ikke uavhengig bekreftet |
-| [Mac mini M4, 16 GB RAM, 256 GB SSD](https://www.ebay.com/itm/227505964146) | **769,99 USD** | Brukt annonsepris; en nyere Mac til sammenligning, ikke en gammel Intel-modell |
+
+Eksempelet med annonsepris for Mac mini M4 er fjernet fordi eBay-kilden svarte med HTTP 500 i lenkekontrollen 15. oktober 2026. Svaret beviser ikke at annonsen var ugyldig, men prisen kan foreløpig ikke etterprøves uavhengig.
 
 En pris på eBay er **ikke en norsk totalpris**. Oppgitt amerikansk frakt gjelder ikke nødvendigvis levering til Norge. Tilstand, strømforsyning, RAM, SSD og returvilkår må undersøkes.
 
