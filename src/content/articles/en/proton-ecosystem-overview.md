@@ -9,6 +9,7 @@ series: "Privacy & Digital Independence"
 translationKey: proton-ecosystem-overview
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Advertisement — affiliate links:** This article contains clearly marked Proton affiliate links. If you buy through one of them, Ploos AS may earn a commission at no additional cost to you. Affiliate partnerships do not determine our editorial conclusions.
