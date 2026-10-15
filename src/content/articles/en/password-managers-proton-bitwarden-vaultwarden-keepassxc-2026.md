@@ -1,6 +1,6 @@
 ---
 title: "Proton Pass vs Bitwarden vs Vaultwarden vs KeePassXC: Which Password Manager Should You Use in 2026?"
-description: "A brand-independent comparison of four password management approaches: hosted convenience, official self-hosting, lightweight self-hosting and offline databases."
+description: "An independently written comparison of four password management approaches: hosted convenience, official self-hosting, lightweight self-hosting and offline databases."
 category: guides
 lang: en
 date: 2026-10-15
@@ -18,7 +18,7 @@ evidence: documentation
 
 ## The short answer
 
-**Already happy with a trustworthy password manager? You probably do not need to switch.** For a new user, [Bitwarden](https://bitwarden.com/) is a strong general-purpose starting point; [Proton Pass](https://go.getproton.me/SH33k) is worth considering for people who prefer its hosted experience and identity tools; [KeePassXC](https://keepassxc.org/) is an excellent desktop-first offline choice; and [Vaultwarden](https://github.com/dani-garcia/vaultwarden) is for people who *want to administer* their own compatible server.
+**Already happy with a trustworthy password manager? You probably do not need to switch.** For a new user, [Bitwarden](https://bitwarden.com/) is a strong general-purpose starting point; [Proton Pass (affiliate link)](https://go.getproton.me/SH33k) is worth considering for people who prefer its hosted experience and identity tools; [KeePassXC](https://keepassxc.org/) is an excellent desktop-first offline choice; and [Vaultwarden](https://github.com/dani-garcia/vaultwarden) is for people who *want to administer* their own compatible server.
 
 These are not four identical products. Bitwarden and Proton Pass are services with client applications; Vaultwarden is a community-developed server compatible with many Bitwarden clients; KeePassXC is primarily a local encrypted database application.
 
@@ -60,6 +60,54 @@ Project: [Vaultwarden on GitHub](https://github.com/dani-garcia/vaultwarden).
 KeePassXC stores credentials in an encrypted local database. There is no mandatory hosted account or server. That makes it compelling for people who want an offline-first desktop workflow and are comfortable taking responsibility for synchronization, backup and recovery. Cross-device access is possible but requires deliberate tooling and careful handling of database conflicts.
 
 Project: [KeePassXC](https://keepassxc.org/).
+
+
+## What the free options actually provide
+
+**Verified against project documentation on 15 October 2026; not independently tested.** This is a functional baseline, not a promise about future pricing or plan entitlements.
+
+| Product | No-cost starting point | When payment may matter | Without an internet connection |
+| --- | --- | --- | --- |
+| Proton Pass | Free account and basic password vault | Advanced aliases, sharing and other plan-dependent features; consult the [current plan comparison](https://proton.me/pass/pricing) | Offline access depends on the particular app and whether data has already synchronized; **do not assume a new device can sign in offline** |
+| Bitwarden | Free individual account with password management | Organization, family and some advanced security features; see [plans](https://bitwarden.com/pricing/) | Installed clients can use locally cached vault data in supported circumstances; changes and initial login require connectivity. See [offline access](https://bitwarden.com/help/using-bitwarden-offline/) |
+| Vaultwarden | Free, open-source server software | Hosting, backups, domain and administrator time; not a paid consumer subscription | Depends on the Bitwarden-compatible client and its cached data, not merely whether the server is online |
+| KeePassXC | Free, open-source desktop application | No software subscription; optional sync or hardware-key costs | Opens an available local KDBX database without network access |
+
+A paid plan is not necessarily more secure for an individual. Check whether the particular feature you need is included **before** subscribing.
+
+## Source availability, audits and provider risk
+
+All four have publicly available source code for substantial components, but **open source is not the same as an independent security audit**. Audit scope, date, tested version and remediation status matter. Review [Proton's security information](https://proton.me/pass/security), [Bitwarden's compliance and audits](https://bitwarden.com/compliance/), the [Vaultwarden repository](https://github.com/dani-garcia/vaultwarden) and [KeePassXC security documentation](https://keepassxc.org/docs/) before making an audit-based claim. This article does **not** independently certify the scope or outcome of any audit.
+
+Hosted services add provider availability, account access, legal jurisdiction and business-continuity dependencies. Proton is based in Switzerland; Bitwarden is based in the United States. Vaultwarden and KeePassXC let you choose where data is stored, but you take responsibility for that environment. If a provider is acquired, breached or closes, **an up-to-date, usable export and a recovery plan** matter more than brand promises. Encrypted vaults reduce exposure but do not eliminate risks from compromised devices or malicious client software.
+
+End-to-end or zero-knowledge encryption also has a cost: a provider may be unable to recover your vault if you lose the master password and all available recovery methods. **Test account recovery while you still have access**; do not assume support can decrypt your data.
+
+## A compromised server is still dangerous
+
+A server that stores only encrypted vault records should not ordinarily be able to read the vault contents directly. That does **not** mean the server is outside the trust boundary. A compromised server serving a web vault could potentially deliver malicious JavaScript to the browser, capture secrets entered there, or interfere with authentication. Native clients reduce this particular web-delivered-code exposure, although they still require trustworthy updates and secure endpoints. Treat Vaultwarden administration and server patching as security-critical. See [Vaultwarden documentation](https://github.com/dani-garcia/vaultwarden/wiki) and [Bitwarden security whitepaper](https://bitwarden.com/help/bitwarden-security-white-paper/).
+
+## Keep your vault account separate from its second factor
+
+Storing TOTP codes beside passwords is convenient, but a breach of the **unlocked vault** can expose both secrets. It is not equivalent to keeping a separate authenticator or hardware key. Where supported, protect the vault account with a **FIDO2/WebAuthn hardware security key**, keep backup keys or recovery codes separately, and use a long, unique master passphrase. KeePassXC also supports additional database protection mechanisms such as key files and supported YubiKey challenge-response configurations; understand backup and recovery implications before enabling them. See [KeePassXC user guide](https://keepassxc.org/docs/KeePassXC_UserGuide) and [Bitwarden two-step login documentation](https://bitwarden.com/help/setup-two-step-login/).
+
+## KeePassXC on phones
+
+KeePassXC itself is a **desktop application**, not an official KeePassXC mobile app. Other applications supporting KDBX databases include [KeePassDX for Android](https://www.keepassdx.com/), [Strongbox for iOS](https://strongboxsafe.com/) and [KeePassium for iOS](https://keepassium.com/). These are independent products with their own policies and feature sets. A tool such as [Syncthing](https://syncthing.net/) can synchronize a database file, but simultaneous edits and conflicts require care. Verify each app's current compatibility and backup behavior before relying on it.
+
+## Scope: what this comparison does not cover
+
+This is a **four-option comparison**, not a ranking of every password manager. Apple's built-in Passwords/iCloud Keychain, browser password managers, 1Password and other commercial products are legitimate alternatives. Staying with an existing well-maintained built-in manager may be safer than a rushed migration. We selected these four to illustrate hosted, officially self-hostable, community self-hosted and local-database approaches.
+
+## Related HackShack Labs reading
+
+- [The Proton ecosystem](/articles/proton-ecosystem-overview/) for the broader service trade-offs.
+- [Why mini PCs make excellent homelab servers](/articles/why-mini-pcs-make-excellent-homelab-servers/) for server hardware considerations.
+- [Proton VPN, Docker and Gluetun](/articles/proton-vpn-linux-docker-gluetun/) for the distinction between a configuration and a verified security claim.
+
+## Next experiment: migration compatibility
+
+A useful follow-up is a controlled export/import test between these products using **synthetic credentials only**. Record exactly which usernames, URLs, notes, custom fields, attachments, TOTP seeds and passkeys survive each path, and test recovery from backup. Publish results only after reproducing them on documented versions.
 
 ## Passkeys, MFA and recovery: what to check
 
