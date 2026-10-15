@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { articleUrl } from '../lib/articles';
+interface Props {
+  entry: CollectionEntry<'articles'>;
+}
+const { entry } = Astro.props;
+const canonical = new URL(articleUrl(entry.id, entry.data.lang), Astro.site).href;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  '@id': canonical + '#article',
+  headline: entry.data.title,
+  description: entry.data.description,
+  inLanguage: entry.data.lang === 'nb' ? 'nb-NO' : 'en',
+  datePublished: entry.data.date.toISOString(),
+  dateModified: (entry.data.updated ?? entry.data.date).toISOString(),
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  author: { '@type': 'Organization', name: 'HackShack Labs', url: 'https://labs.hackshack.no/' },
+  publisher: { '@type': 'Organization', name: 'Ploos AS' },
+  ...(entry.data.tags.length ? { keywords: entry.data.tags.join(', ') } : {}),
+};
+const json = JSON.stringify(schema).replace(/</g, '\\u003c');
+---
+<script type="application/ld+json" set:html={json} />
