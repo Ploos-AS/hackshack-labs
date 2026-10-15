@@ -9,7 +9,7 @@ const articles = defineCollection({
     lang: z.enum(['en','nb']), date: z.coerce.date(), updated: z.coerce.date().optional(),
     tags: z.array(z.string()).default([]), series: z.string().optional(),
     translationKey: z.string().optional(), draft: z.boolean().default(false),
-    tested: z.boolean().default(false),
+    tested: z.boolean().default(false), evidence: z.enum(['documentation','desk-research','lab-tested','hardware-verified']).optional(),
   }),
 });
 export const collections = { articles };
