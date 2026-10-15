@@ -56,6 +56,41 @@ for (const e of entries.filter(e => e.data.draft !== 'true')) {
     else if (!url.endsWith('/')) warn.push(e.path + ': article link should have trailing slash ' + url);
   }
 }
+
+// Validate literal navigation and series routes against Astro page files.
+const pageRoot = 'src/pages';
+const pageFiles = [];
+function collectPages(dir) {
+  for (const item of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, item.name);
+    if (item.isDirectory()) collectPages(full);
+    else if (item.name.endsWith('.astro')) pageFiles.push(full);
+  }
+}
+collectPages(pageRoot);
+const staticRoutes = new Set(pageFiles.filter(p => !p.includes('[')).map(p => {
+  const relative = p.slice(pageRoot.length + 1).replace(/\.astro$/, '');
+  return '/' + (relative === 'index' ? '' : relative.replace(/\/index$/, '') + '/');
+}));
+staticRoutes.add('/rss.xml');
+const dynamicCategories = new Set(['projects','guides','how-tos','mini-how-tos','reviews','tests','tutorials','deep-dives','teardowns','experiments','reference']);
+function routeExists(url) {
+  if (staticRoutes.has(url)) return true;
+  const match = url.match(/^\/(no\/)?category\/([^/]+)\/$/);
+  return !!match && dynamicCategories.has(match[2]);
+}
+const navLinks = /(?:\]\(|href=["'])((?:\/(?:no\/)?(?:series|category|about|privacy|search)\/|\/rss\.xml)[^\s)"']*)(?:\)|["'])/g;
+for (const path of [...pageFiles, 'src/layouts/SiteLayout.astro']) {
+  const content = readFileSync(path, 'utf8');
+  for (const match of content.matchAll(navLinks)) {
+    const url = match[1].split(/[?#]/)[0];
+    if (!routeExists(url)) issues.push(path + ': missing navigation/series route ' + url);
+  }
+}
+for (const path of pageFiles.filter(p => p.includes('/series/'))) {
+  const content = readFileSync(path, 'utf8');
+  if (!content.includes('published()')) warn.push(path + ': series page does not use published articles collection');
+}
 for (const x of warn) console.warn('WARN ' + x);
 for (const x of issues) console.error('ERROR ' + x);
 console.log('Editorial QA: ' + entries.length + ' articles, ' + issues.length + ' errors, ' + warn.length + ' warnings');
