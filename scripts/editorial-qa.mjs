@@ -45,7 +45,7 @@ for (const e of entries.filter(e => e.lang === 'en' && e.data.draft !== 'true'))
 const publishedSlugs = new Set(entries.filter(e => e.data.draft !== 'true').map(e =>
   (e.lang === 'nb' ? '/no' : '') + '/articles/' + e.filename.replace(/\\.md$/, '') + '/'
 ));
-const articleLinks = /(?:\\]\(|href=["'])(\\/[^\\s)"'#?]+)(?:[?#][^\\s)"']*)?(?:\\)|["'])/g;
+const articleLinks = /(?:\]\(|href=["'])(\/[^\s)"'#?]+)(?:[?#][^\s)"']*)?(?:\)|["'])/g;
 for (const e of entries.filter(e => e.data.draft !== 'true')) {
   const body = e.content.replace(/^---\\r?\\n[\\s\\S]*?\\r?\\n---\\r?\\n/, '');
   for (const match of body.matchAll(articleLinks)) {
