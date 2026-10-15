@@ -38,7 +38,7 @@ The comparison describes **typical deployment models**, not every optional Nextc
 
 Proton [describes Drive as end-to-end encrypted](https://proton.me/drive/security), meaning the provider is designed not to have the keys needed to read protected file contents. Proton [Docs](https://proton.me/drive/docs) extends this approach to document collaboration. **Do not interpret E2EE as a promise that all metadata, access patterns or shared-link details are hidden.** Review the current threat model and sharing behavior for your use case.
 
-Nextcloud is a **self-hosted collaboration platform**, not automatically an end-to-end encrypted document service. A conventional Nextcloud server terminates TLS, manages file access and commonly handles readable file data. Nextcloud offers [end-to-end encryption functionality](https://docs.nextcloud.com/server/latest/user_manual/en/files/encryption.html) for certain client workflows, but availability, compatibility and limitations must be assessed separately. **Do not claim that enabling a server-side encryption option gives the same threat model as Proton Drive E2EE.**
+Nextcloud is a **self-hosted collaboration platform**, not automatically an end-to-end encrypted document service. A conventional Nextcloud server terminates TLS, manages file access and commonly handles readable file data. Nextcloud offers [end-to-end encryption functionality](https://docs.nextcloud.com/server/latest/user_manual/en/files/using_e2ee.html) for certain client workflows, but availability, compatibility and limitations must be assessed separately. **Do not claim that enabling a server-side encryption option gives the same threat model as Proton Drive E2EE.**
 
 For a trusted home server, administrator access may be desirable. For files that must remain confidential from the storage operator, it changes the risk calculation.
 
@@ -99,7 +99,7 @@ For organizations with compliance obligations, independently assess contracts, r
 - [Nextcloud features](https://nextcloud.com/features/)
 - [Nextcloud Office](https://nextcloud.com/office/)
 - [Nextcloud documentation](https://docs.nextcloud.com/)
-- [Nextcloud encryption documentation](https://docs.nextcloud.com/server/latest/user_manual/en/files/encryption.html)
+- [Nextcloud encryption documentation](https://docs.nextcloud.com/server/latest/user_manual/en/files/using_e2ee.html)
 
 **Advertisement — affiliate link:** [Explore Proton Drive (affiliate link)](https://go.getproton.me/SH33l). Ploos AS participates in the Proton affiliate program and may receive a commission on qualifying purchases at no additional cost to you. **Nextcloud may still be the better choice** when infrastructure ownership and integration matter more. Our commercial relationship is not evidence of technical superiority. Read our related [Proton Mail vs self-hosted email comparison](/articles/proton-mail-vs-self-hosted-email/).
 
