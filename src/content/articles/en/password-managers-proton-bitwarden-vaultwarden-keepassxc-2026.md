@@ -14,7 +14,7 @@ evidence: documentation
 
 > **Documentation-based — not hands-on tested (15 October 2026).** This is an architectural comparison, not an audit or a benchmark. Features, plan limits and pricing can change. Verify current details with each project's official documentation.
 
-> **Affiliate disclosure:** The [Proton Pass link below](https://go.getproton.me/SH33k) is an affiliate link. Ploos AS may receive a commission at no extra cost to you. The Bitwarden, Vaultwarden and KeePassXC links are ordinary, non-affiliate links. Commercial relationships do not influence our recommendations.
+> **Affiliate disclosure:** The Proton Pass link in the article is an affiliate link. Ploos AS may receive a commission at no extra cost to you. The Bitwarden, Vaultwarden and KeePassXC links are ordinary, non-affiliate links. Commercial relationships do not influence our recommendations.
 
 ## The short answer
 
@@ -139,9 +139,14 @@ Self-hosting is not automatically cheaper: count maintenance time, backups, moni
 
 Do not assume passkeys or attachments migrate with passwords.
 
-## Our assessment
+## Our assessment: choose by workflow
 
-**Best general starting point:** Bitwarden, subject to your feature requirements. **Best if you prefer Proton's managed ecosystem:** Proton Pass. **Best for a deliberately offline desktop workflow:** KeePassXC. **Best for enthusiasts committed to running their own service:** Vaultwarden.
+| Your situation | Start by evaluating | Think twice if… |
+| --- | --- | --- |
+| You want a managed manager across devices | Bitwarden | You require an entirely offline workflow |
+| You already use Proton and value integrated identity tools | Proton Pass | You want to avoid dependence on one provider |
+| You want a local desktop database | KeePassXC | You need effortless shared-vault administration |
+| You operate a homelab and accept security maintenance | Vaultwarden | You cannot commit to updates, monitoring and restore tests |
 
 These are **use-case recommendations**, not lab-tested product rankings. We have not measured performance, audited cryptography or verified current plan pricing for this article.
 
@@ -153,4 +158,4 @@ These are **use-case recommendations**, not lab-tested product rankings. We have
 - [Vaultwarden project and documentation](https://github.com/dani-garcia/vaultwarden)
 - [KeePassXC project](https://keepassxc.org/)
 
-*Last editorial review: 15 October 2026. This article contains one clearly identified affiliate link.*
+*Last editorial review: 15 October 2026. This article contains a clearly identified Proton Pass affiliate link.*
