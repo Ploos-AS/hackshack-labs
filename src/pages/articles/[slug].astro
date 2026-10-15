@@ -1,5 +1,6 @@
 ---
 import { render } from 'astro:content';
+import RelatedArticles from '../../components/RelatedArticles.astro';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import { published, articleUrl, categoryLabels, evidenceLabel } from '../../lib/articles';
 export async function getStaticPaths(){
@@ -14,5 +15,5 @@ const lastReviewed=entry.data.updated;
 const counterpart=all.find(a=>a.data.lang==='nb' && a.data.translationKey && a.data.translationKey===entry.data.translationKey);
 ---
 <SiteLayout title={entry.data.title} lang="en" alternateUrl={counterpart ? articleUrl(counterpart.id,'nb') : undefined} hideLanguageSwitch={!counterpart} description={entry.data.description} pageType="article">
-  <article><p class="tag">{categoryLabels[entry.data.category]} · {seriesUrl && <><a href={seriesUrl}>{entry.data.series} · Part 1</a> · </>} {entry.data.date.toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})} · {evidenceLabel(entry.data, 'en')}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p>{!counterpart && <p class="muted">Norwegian translation is not available for this article yet.</p>}<Content /><footer class="muted"><p>Published: <time datetime={entry.data.date.toISOString().slice(0,10)}>{entry.data.date.toISOString().slice(0,10)}</time>{lastReviewed && <> · Last updated: <time datetime={lastReviewed.toISOString().slice(0,10)}>{lastReviewed.toISOString().slice(0,10)}</time></>} · <a href="/about/">Editorial policy and evidence levels</a> · <a href="https://github.com/Ploos-AS/hackshack-labs/issues">Suggest a correction</a></p></footer></article>
+  <article><p class="tag">{categoryLabels[entry.data.category]} · {seriesUrl && <><a href={seriesUrl}>{entry.data.series} · Part 1</a> · </>} {entry.data.date.toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})} · {evidenceLabel(entry.data, 'en')}</p><h1>{entry.data.title}</h1><p class="muted">{entry.data.description}</p>{!counterpart && <p class="muted">Norwegian translation is not available for this article yet.</p>}<Content /><RelatedArticles entry={entry} all={all} /><footer class="muted"><p>Published: <time datetime={entry.data.date.toISOString().slice(0,10)}>{entry.data.date.toISOString().slice(0,10)}</time>{lastReviewed && <> · Last updated: <time datetime={lastReviewed.toISOString().slice(0,10)}>{lastReviewed.toISOString().slice(0,10)}</time></>} · <a href="/about/">Editorial policy and evidence levels</a> · <a href="https://github.com/Ploos-AS/hackshack-labs/issues">Suggest a correction</a></p></footer></article>
 </SiteLayout>
