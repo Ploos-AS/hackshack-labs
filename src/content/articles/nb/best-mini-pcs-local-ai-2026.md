@@ -31,6 +31,39 @@ Den beste mini-PC-en til lokal AI er maskinen som kan kjøre **modellen og progr
 
 Dette er **maskinvarekategorier, ikke ytelsestestede rangeringer**.
 
+## Konkrete modeller i 2026: konfigurasjoner, ikke testvinnere
+
+Dette er **dokumenterte konfigurasjoner vi anbefaler å undersøke**, ikke en rangering etter målte tokens per sekund. Minnekapasiteten er **installert systemminne/fellesminne**, ikke en garanti for at alt kan brukes av GPU-en. Produsentenes påstander om modellstørrelse og ytelse er ikke verifisert av HackShack Labs.
+
+| Modell / konfigurasjon | CPU og grafikk | Minne | Utvidelse / plattform | Hvorfor aktuell? | Forbehold |
+| --- | --- | --- | --- | --- | --- |
+| **GMKtec EVO-X2, 128 GB** | Ryzen AI Max+ 395 / Radeon 8060S | 128 GB loddet LPDDR5X-8000 (også 64 GB) | To M.2 2280; USB4; produsenten oppgir Windows og Ubuntu | Mye delt minne for lokal inferens | Minnet kan ikke oppgraderes; markedsførte AI-tall er ikke uavhengige tester |
+| **Framework Desktop, Ryzen AI Max+ 395 / 128 GB** | Ryzen AI Max+ 395 / Radeon 8060S | 128 GB loddet LPDDR5X | Kompakt stasjonært kabinett, valgbar lagring | Servicevennlig konsept med minnekraftig APU | Kontroller nøyaktig konfigurasjon og Linux-programstøtte |
+| **MINISFORUM AI X1 Pro-370, 64 eller 96 GB** | Ryzen AI 9 HX 370 / Radeon 890M | Utskiftbare DDR5 SO-DIMM; produktsiden viser **96 GB-konfigurasjoner**, men oppgir både **96 og 128 GB som maks** | USB4 og OCuLink PCIe 4.0 ×4 | Oppgraderbart minne og mulig ekstern GPU | **Ikke anta 128 GB-støtte** uten avklaring for aktuell revisjon; 890M er ikke 8060S |
+| **Apple Mac mini M4 Pro, 48 eller 64 GB** | Apple M4 Pro / integrert GPU | Fellesminne; M4 Pro støtter opptil 64 GB | macOS, Metal, Thunderbolt 5 | Kompakt utviklingsmaskin når programvaren støtter Metal | Minnet er fast; ingen CUDA eller eGPU under macOS |
+
+**Hvorfor disse fire?** De viser ulike valg: stor minnekapasitet, servicevennlig kompakt arbeidsstasjon, oppgraderbar x86-mini-PC og macOS/Metal. **Vi hevder ikke at dette er de fire raskeste eller rimeligste maskinene i oktober 2026.**
+
+### Kilder for hver modell
+
+**GMKtec EVO-X2.** [Produsentens spesifikasjoner](https://www.gmktec.com/products/amd-ryzen%E2%84%A2-ai-max-395-evo-x2-ai-mini-pc) oppgir Ryzen AI Max+ 395, Radeon 8060S, 64/128 GB ikke-oppgraderbart LPDDR5X-8000, to M.2-spor og USB4. Påstander om ytelse mot stasjonære GPU-er og svært store språkmodeller er **produsentpåstander**, ikke et grunnlag for vår rangering.
+
+**Framework Desktop.** Se [Frameworks offisielle produktside](https://frame.work/desktop) for aktuelle Ryzen AI Max-konfigurasjoner og opplysninger om service og vedlikehold. Ikke anta at loddet minne kan oppgraderes senere.
+
+**MINISFORUM AI X1 Pro-370.** [Produktsiden](https://store.minisforum.com/products/minisforum-ai-x1-pro-370-mini-pc) oppgir Ryzen AI 9 HX 370, Radeon 890M, to SO-DIMM-sokler, USB4 og OCuLink. **Produsenten oppgir motstridende maksimal RAM-kapasitet** på samme side. Få bekreftet modell og BIOS før du kjøper mer minne enn en dokumentert konfigurasjon.
+
+**Apple Mac mini M4 Pro.** [Apples tekniske kunngjøring](https://www.apple.com/newsroom/2024/10/apples-new-mac-mini-is-more-mighty-more-mini-and-built-for-apple-intelligence/) oppgir opptil 64 GB fellesminne for M4 Pro. Sjekk [gjeldende konfigurasjoner](https://www.apple.com/mac-mini/specs/) før bestilling. Thunderbolt 5 gir **ikke** eGPU-støtte på Apple Silicon under macOS.
+
+### Hvilken ville vi undersøkt først?
+
+- **Store kvantiserte modeller uten separat GPU:** Se på Ryzen AI Max med 128 GB og kontroller støtte for GPU-akselerasjon i valgt program.
+- **Oppgraderbar Linux-maskin:** Sammenlign AI X1 Pro med en liten arbeidsstasjon, men avklar RAM-grensen først.
+- **Utvikling med macOS og Metal/MLX:** Vurder Mac mini M4 Pro med nok minne til modellen.
+- **CUDA er et absolutt krav:** Ingen av de integrerte GPU-ene over erstatter NVIDIA CUDA. Regn på en kompakt arbeidsstasjon med NVIDIA-kort.
+- **Begrenset budsjett:** Test små modeller på en mini-PC du allerede eier før du kjøper nytt.
+
+**Om priser:** Vi bruker ikke udaterte kampanjepriser. En rettferdig sammenligning må angi dato, forhandler, nøyaktig RAM/SSD-konfigurasjon, valuta, MVA og frakt. Sammenlign aldri en barebones-maskin direkte med en ferdig konfigurert modell.
+
 ## Hva betyr mest?
 
 ### 1. Tilgjengelig minne
