@@ -14,7 +14,7 @@ evidence: documentation
 
 > **Dokumentasjonsbasert – ikke praktisk testet (15. oktober 2026).** Dette er en sammenligning av løsningene og arkitekturen deres, ikke en sikkerhetsrevisjon eller ytelsestest. Funksjoner, abonnementsvilkår og priser kan endres. Kontroller gjeldende informasjon i den offisielle dokumentasjonen.
 
-> **Reklame – annonselenke:** [Lenken til Proton Pass](https://go.getproton.me/SH33k) er en affiliatelenke. Ploos AS kan få provisjon uten ekstra kostnad for deg. Lenkene til Bitwarden, Vaultwarden og KeePassXC er vanlige lenker uten affiliate-sporing. Kommersielle avtaler påvirker ikke anbefalingene våre.
+> **Reklame – annonselenke:** Lenken til Proton Pass i artikkelen er en affiliatelenke. Ploos AS kan få provisjon uten ekstra kostnad for deg. Lenkene til Bitwarden, Vaultwarden og KeePassXC er vanlige lenker uten affiliate-sporing. Kommersielle avtaler påvirker ikke anbefalingene våre.
 
 ## Kort fortalt
 
@@ -139,9 +139,14 @@ Selvhosting er ikke automatisk billigere: regn med tidsbruk, sikkerhetskopiering
 
 Ikke anta at passkeys eller vedlegg følger med ved flytting.
 
-## Vår vurdering
+## Vår vurdering: velg etter behov
 
-**Beste generelle utgangspunkt:** Bitwarden, avhengig av funksjonsbehov. **Best for dem som foretrekker Protons administrerte økosystem:** Proton Pass. **Best for bevisst offline-bruk på datamaskin:** KeePassXC. **Best for entusiaster som ønsker å drifte egen tjeneste:** Vaultwarden.
+| Din situasjon | Begynn med å vurdere | Tenk deg om hvis … |
+| --- | --- | --- |
+| Du vil ha en administrert løsning på flere enheter | Bitwarden | Du krever fullstendig offline-bruk |
+| Du bruker allerede Proton og verdsetter integrerte identitetsfunksjoner | Proton Pass | Du vil unngå avhengighet av én leverandør |
+| Du ønsker en lokal database på datamaskinen | KeePassXC | Du trenger enkel administrasjon av delte hvelv |
+| Du driver homelab og tar ansvar for sikkerhetsvedlikehold | Vaultwarden | Du ikke kan følge opp oppdateringer, overvåking og gjenoppretting |
 
 Dette er **anbefalinger etter bruksområde**, ikke en rangering basert på laboratorietester. Vi har ikke målt ytelse, revidert kryptografien eller verifisert gjeldende abonnementspriser for denne artikkelen.
 
@@ -153,4 +158,4 @@ Dette er **anbefalinger etter bruksområde**, ikke en rangering basert på labor
 - [Vaultwarden-prosjektet](https://github.com/dani-garcia/vaultwarden)
 - [KeePassXC-prosjektet](https://keepassxc.org/)
 
-*Sist redaksjonelt gjennomgått: 15. oktober 2026. Artikkelen inneholder én tydelig merket affiliatelenke.*
+*Sist redaksjonelt gjennomgått: 15. oktober 2026. Artikkelen inneholder en tydelig merket affiliatelenke til Proton Pass.*
