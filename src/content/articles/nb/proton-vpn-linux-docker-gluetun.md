@@ -11,6 +11,13 @@ translationKey: proton-vpn-linux-docker-gluetun
 draft: false
 tested: false
 evidence: documentation
+changelog:
+  - date: 2026-10-15
+    type: editorial
+    note: "Utvidet den foreslåtte Gluetun-testprosedyren med bestått/feilet-kriterier, omstartsforbehold og sikkerhetsadvarsler; ingen VPN-tester er utført."
+  - date: 2026-10-15
+    type: sources
+    note: "La til dokumentasjonskilder for Gluetun DNS og brannmur, Proton-portvideresending og oppstartsregler i Docker Compose."
 ---
 
 > **Reklame – annonselenke:** Artikkelen inneholder en tydelig merket Proton VPN-annonselenke. Ploos AS kan få provisjon ved kvalifiserte kjøp uten ekstra kostnad for deg. Det påvirker ikke testkonklusjonene.
