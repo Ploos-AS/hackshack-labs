@@ -46,17 +46,19 @@ for (const e of entries.filter(e => e.lang === 'en' && e.data.draft !== 'true'))
 }
 // Affiliate and source hygiene checks; flag uncertainty for human editorial review.
 for (const e of entries.filter(e => e.data.draft !== 'true')) {
-  const body = e.content.replace(/^---\\r?\\n[\\s\\S]*?\\r?\\n---\\r?\\n/, '');
-  const affiliateUrls = /(?:https?:\\/\\/[^\\s)"'<>]*(?:partner|affiliate|ref=|utm_campaign=)[^\\s)"'<>]*)/gi;
-  const hasAffiliateUrl = affiliateUrls.test(body);
+  const body = e.content.slice(e.content.indexOf('\n---\n', 4) + 5);
+  const hasAffiliateUrl = /https?:\/\/[^\s)"'<>]*(?:partner|affiliate|ref=|utm_campaign=)/i.test(body);
   const hasDisclosure = e.lang === 'nb'
     ? /(?:reklame|annonselenke|affiliate|provisjon)/i.test(body.slice(0, 1800))
     : /(?:advertisement|affiliate disclosure|affiliate links?|commission)/i.test(body.slice(0, 1800));
   if (hasAffiliateUrl && !hasDisclosure) issues.push(e.path + ': affiliate-style URL without an early disclosure');
-  if (/\\b(?:hands.on tested|hardware.verified|lab.tested)\\b/i.test(body.slice(0, 2000)) && e.data.tested === 'false' && !/not hands.on tested|not hardware.verified|ikke maskinvareverifisert/i.test(body.slice(0, 2000))) {
+  if (/\b(?:hands.on tested|hardware.verified|lab.tested)\b/i.test(body.slice(0, 2000)) &&
+      e.data.tested === 'false' &&
+      !/not hands.on tested|not hardware.verified|ikke maskinvareverifisert/i.test(body.slice(0, 2000))) {
     warn.push(e.path + ': test language needs manual review against tested:false');
   }
-  if (/\\]\(https?:\\/\\//.test(body) === false && /\\bhref=["']https?:\\/\\//.test(body) === false) {
+  if (!body.includes('](https://') && !body.includes('](http://') &&
+      !body.includes('href="https://') && !body.includes("href='https://")) {
     warn.push(e.path + ': no external source links found; verify whether citations are needed');
   }
 }
