@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { articleUrl, categoryLabels, categoryLabelsNo } from '../lib/articles';
+interface Props {
+  entry: CollectionEntry<'articles'>;
+  all: CollectionEntry<'articles'>[];
+}
+const { entry, all } = Astro.props;
+const lang = entry.data.lang;
+const currentTags = new Set(entry.data.tags.map(tag => tag.toLocaleLowerCase()));
+const scored = all
+  .filter(other => other.id !== entry.id && other.data.lang === lang && !other.data.draft)
+  .map(other => {
+    const overlap = other.data.tags.filter(tag => currentTags.has(tag.toLocaleLowerCase())).length;
+    const sameSeries = Boolean(entry.data.series && other.data.series === entry.data.series);
+    const sameCategory = other.data.category === entry.data.category;
+    return { other, score: overlap * 4 + (sameSeries ? 6 : 0) + (sameCategory ? 2 : 0) };
+  })
+  .filter(item => item.score > 0)
+  .sort((a, b) => b.score - a.score ||
+    b.other.data.date.getTime() - a.other.data.date.getTime() ||
+    a.other.data.title.localeCompare(b.other.data.title))
+  .slice(0, 3);
+const labels = lang === 'nb' ? categoryLabelsNo : categoryLabels;
+---
+{scored.length > 0 && (
+  <aside aria-label={lang === 'nb' ? 'Relaterte artikler' : 'Related articles'}>
+    <h2>{lang === 'nb' ? 'Relaterte artikler' : 'Related articles'}</h2>
+    <ul>
+      {scored.map(({ other }) => (
+        <li>
+          <a href={articleUrl(other.id, lang)}>{other.data.title}</a>
+          <span class="muted"> · {labels[other.data.category]}</span>
+        </li>
+      ))}
+    </ul>
+  </aside>
+)}
