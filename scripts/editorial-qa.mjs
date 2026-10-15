@@ -39,7 +39,28 @@ for (const e of entries.filter(e => e.lang === 'en' && e.data.draft !== 'true'))
   if (other.data.translationKey !== e.data.translationKey) issues.push(e.path + ': translationKey mismatch');
   if (other.data.category !== e.data.category) issues.push(e.path + ': category mismatch between translations');
   if (other.data.evidence !== e.data.evidence) warn.push(e.path + ': evidence differs between translations');
+  if (other.data.tested !== e.data.tested) issues.push(e.path + ': tested differs between translations');
+  if (other.data.date !== e.data.date) warn.push(e.path + ': publication date differs between translations');
+  if (other.data.updated !== e.data.updated) warn.push(e.path + ': update date differs between translations');
+  if (e.content.includes('Affiliate disclosure') !== other.content.includes('Affiliate disclosure') && !/Reklame|annonselenke|affiliate/i.test(other.content)) warn.push(e.path + ': affiliate disclosure may be missing in Norwegian');
 }
+// Affiliate and source hygiene checks; flag uncertainty for human editorial review.
+for (const e of entries.filter(e => e.data.draft !== 'true')) {
+  const body = e.content.replace(/^---\\r?\\n[\\s\\S]*?\\r?\\n---\\r?\\n/, '');
+  const affiliateUrls = /(?:https?:\\/\\/[^\\s)"'<>]*(?:partner|affiliate|ref=|utm_campaign=)[^\\s)"'<>]*)/gi;
+  const hasAffiliateUrl = affiliateUrls.test(body);
+  const hasDisclosure = e.lang === 'nb'
+    ? /(?:reklame|annonselenke|affiliate|provisjon)/i.test(body.slice(0, 1800))
+    : /(?:advertisement|affiliate disclosure|affiliate links?|commission)/i.test(body.slice(0, 1800));
+  if (hasAffiliateUrl && !hasDisclosure) issues.push(e.path + ': affiliate-style URL without an early disclosure');
+  if (/\\b(?:hands.on tested|hardware.verified|lab.tested)\\b/i.test(body.slice(0, 2000)) && e.data.tested === 'false' && !/not hands.on tested|not hardware.verified|ikke maskinvareverifisert/i.test(body.slice(0, 2000))) {
+    warn.push(e.path + ': test language needs manual review against tested:false');
+  }
+  if (/\\]\(https?:\\/\\//.test(body) === false && /\\bhref=["']https?:\\/\\//.test(body) === false) {
+    warn.push(e.path + ': no external source links found; verify whether citations are needed');
+  }
+}
+
 // Validate internal article URLs against published content, without probing external sites.
 // External HTTP status and redirects are checked separately; these tests remain offline.
 const publishedSlugs = new Set(entries.filter(e => e.data.draft !== 'true').map(e =>
