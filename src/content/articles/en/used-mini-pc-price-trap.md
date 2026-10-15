@@ -30,7 +30,8 @@ Checked 14 October 2026. These are individually linked examples, not a represent
 | [Intel NUC 10 i3, 8 GB, 256 GB](https://www.ebay.com/itm/205696247969) | USD 134.99 | Sold listing, best offer accepted; actual paid price unknown |
 | [Intel NUC 11 Pro i5, 8 GB, 256 GB](https://www.ebay.com/itm/398150635339) | USD 195 | Sold listing, 20 July 2026 |
 | [Intel NUC 12 i5, 8 GB, 512 GB](https://www.ebay.com/itm/127733816087) | USD 199.99 | Sold listing, 11 September 2026; accepted price not independently confirmed |
-| [Mac mini M4, 16 GB, 256 GB](https://www.ebay.com/itm/227505964146) | USD 769.99 | Used asking price, not an older Intel Mac |
+
+The previously listed Mac mini M4 asking-price example was removed because its eBay source returned an HTTP 500 during the 15 October 2026 link audit. That response alone does not prove the listing was invalid, but the price cannot currently be independently rechecked.
 
 The [FINN Mac mini search](https://www.finn.no/recommerce/forsale/search?q=mac+mini) and [FINN NUC search](https://www.finn.no/recommerce/forsale/search?q=nuc) were checked, but we could not independently verify a reproducible set of individual FINN listing prices. We therefore cannot publish a credible FINN price average or conclude that all sellers overprice their machines. US shipping prices displayed by eBay do not establish international shipping costs.
 
