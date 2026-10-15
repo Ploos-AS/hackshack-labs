@@ -33,9 +33,7 @@ Proton documents downloading a WireGuard configuration from the account portal a
 
 ## Gluetun architecture
 
-Example of a *starting point*, not a verified production deployment:
-
-The runnable, digest-pinned Compose example and commands are in the lab procedure below.
+The digest-pinned Compose example and commands below are a proposed lab setup, not a verified production deployment.
 
 **Do not paste a real WireGuard private key into Git.** Supply it through a protected local environment or secrets mechanism, keep the corresponding configuration out of screenshots, and consider key rotation after accidental disclosure. The lab procedure below uses pinned image digests.
 
@@ -86,8 +84,11 @@ services:
     depends_on:
       gluetun:
         condition: service_healthy
+        restart: true
     command: ["sleep", "infinity"]
 ```
+
+**Security note:** `docker compose config` expands environment variables and can print the WireGuard key. Use `docker compose config --quiet` for validation; do not publish expanded configuration or CI logs containing secrets.
 
 **Healthcheck caution:** The Gluetun healthcheck command and Docker image contents must be verified against the pinned release before use; if unsupported, replace the healthcheck with the documented probe for that version. A healthy status is a startup gate, **not** a security test. Compose implementations vary in their handling of dependent-service restarts; recreate the test client explicitly after restarting Gluetun.
 
