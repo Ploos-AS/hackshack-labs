@@ -89,7 +89,7 @@ HackShack Labs is editorially independent. Ploos AS participates in the Proton a
 ## Related articles and planned coverage
 
 - [Proton Mail vs self-hosted email](/articles/proton-mail-vs-self-hosted-email/): operational realities
-- Proton VPN with Docker and Gluetun: configuration and limitations (**draft; not yet published**)
+- [Proton VPN with Docker and Gluetun](/articles/proton-vpn-linux-docker-gluetun/): configuration and limitations (documentation-based test plan; not lab-tested)
 - [Proton Drive & Docs vs Nextcloud](/articles/proton-drive-docs-vs-nextcloud/): encryption, collaboration and recovery
 - Planned: Proton Pass vs Bitwarden and KeePassXC; custom-domain exit strategies
 
