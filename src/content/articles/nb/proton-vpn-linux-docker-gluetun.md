@@ -7,13 +7,14 @@ date: 2026-10-14
 tags: [proton, vpn, linux, docker, gluetun, wireguard, personvern]
 series: "Privacy & Digital Independence"
 translationKey: proton-vpn-linux-docker-gluetun
-draft: true
+draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Reklame – annonselenke:** Artikkelen inneholder en tydelig merket Proton VPN-annonselenke. Ploos AS kan få provisjon ved kvalifiserte kjøp uten ekstra kostnad for deg. Det påvirker ikke testkonklusjonene.
 
-> **Redaksjonell status (14. oktober 2026):** Dette er en dokumentbasert oppsetts- og testplan, **ikke maskinvareverifisert**. Vi har ikke gjennomført hele testprogrammet. Kommandoene er eksempler som må gjennomgås og tilpasses før bruk. Versjoner, innstillinger og plattformstøtte kan endres.
+> **Redaksjonell status (15. oktober 2026):** Dette er en dokumentbasert oppsetts- og testplan, **ikke maskinvareverifisert**. Vi har ikke gjennomført hele testprogrammet. Kommandoene er eksempler som må gjennomgås og tilpasses før bruk. Versjoner, innstillinger og plattformstøtte kan endres.
 
 ## Tre oppsett med ulike sikkerhetsgrenser
 
