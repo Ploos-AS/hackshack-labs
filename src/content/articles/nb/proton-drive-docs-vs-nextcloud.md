@@ -11,7 +11,7 @@ draft: false
 tested: false
 ---
 
-> **Redaksjonell status – 15. oktober 2026:** Dokumentasjonsbasert sammenligning, **ikke en sikkerhetsrevisjon eller en ytelsestest i identiske miljøer**. Funksjoner og abonnementer kan endres. Ingen affiliatelenker i denne artikkelen.
+> **Redaksjonell status – 15. oktober 2026:** Dokumentasjonsbasert sammenligning, **ikke en sikkerhetsrevisjon eller en ytelsestest i identiske miljøer**. Funksjoner og abonnementer kan endres. Artikkelen inneholder en tydelig merket annonselenke til Proton Drive. Ploos AS kan motta provisjon ved kvalifiserte kjøp uten ekstra kostnad for leseren; det påvirker ikke konklusjonene.
 
 ## Kort svar
 
@@ -101,6 +101,6 @@ Ved særskilte krav til personvern eller etterlevelse må avtaler, lagringssted,
 - [Nextcloud-dokumentasjon](https://docs.nextcloud.com/)
 - [Nextcloud – kryptering](https://docs.nextcloud.com/server/latest/user_manual/en/files/encryption.html)
 
-**Redaksjonell uavhengighet:** Ploos AS er med i Protons affiliateprogram, men **denne artikkelen inneholder ingen affiliatelenker**. Et kommersielt samarbeid er ikke dokumentasjon på at en løsning er teknisk bedre. Se også [Proton Mail mot egen e-postserver](/no/articles/proton-mail-vs-self-hosted-email/).
+**Reklame – annonselenke:** [Se Proton Drive (annonselenke)](https://go.getproton.me/SH33l). Ploos AS er med i Protons affiliateprogram og kan motta provisjon ved kvalifiserte kjøp uten ekstra kostnad for deg. **Nextcloud kan fortsatt være det beste valget** når kontroll og integrasjoner er viktigere. Et kommersielt samarbeid er ikke dokumentasjon på teknisk overlegenhet. Se også [Proton Mail mot egen e-postserver](/no/articles/proton-mail-vs-self-hosted-email/).
 
 **Konklusjon:** Proton Drive og Docs er et godt utgangspunkt når administrert ende-til-ende-kryptering er viktigst. Nextcloud passer når kontroll, integrasjoner og eierskap til tjenesten veier tyngst.
