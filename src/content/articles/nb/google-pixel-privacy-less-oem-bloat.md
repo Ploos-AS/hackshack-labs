@@ -75,6 +75,10 @@ Hvis du beholder Google-tjenestene, bør du gjennomgå posisjonshistorikk, annon
 
 Se [personverninnstillinger for Google-kontoen](https://myaccount.google.com/data-and-privacy) og [Androids apptillatelser](https://support.google.com/android/answer/9431959). Dette gjør **ikke vanlig Pixel-Android fri for Google-tjenester**.
 
+## Passordbehandlere, autofyll og passnøkler
+
+Å velge Pixel betyr ikke at du må flytte passordene til Googles passordbehandler. Android støtter autofyll og passnøkler gjennom kompatible leverandører av innloggingsinformasjon, men integrasjonen varierer mellom apper og Android-versjoner. Velg løsning ut fra behov for sikkerhetskopiering, gjenoppretting og bruk på flere enheter – ikke telefonmerke. Se vår [sammenligning av Proton Pass, Bitwarden, Vaultwarden og KeePassXC](/no/articles/password-managers-proton-bitwarden-vaultwarden-keepassxc-2026/) for fordeler og ulemper. Vi har ikke testet alle leverandørenes passnøkkelfunksjoner på Pixel.
+
 ## Alternative Android-systemer
 
 Mange nyere Pixel-generasjoner støtter [GrapheneOS](https://grapheneos.org/faq#supported-devices), men listen over støttede modeller og modeller som anbefales ved nykjøp er ikke identiske. Vår egen GrapheneOS-serie er **planlagt, men ikke publisert ennå**. Denne artikkelen handler bare om Android-programvaren Google leverer på Pixel.
