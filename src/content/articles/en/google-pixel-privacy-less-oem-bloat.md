@@ -28,7 +28,7 @@ A Samsung Galaxy can also be securely configured. Samsung Knox, Knox Vault and o
 
 Many Galaxy phones combine Google services with Samsung services. Some Samsung features require a Samsung account, and Samsung documents its own account and cloud-data processing. A Pixel avoids much of that duplicated vendor-service layer by concentrating more of the default experience in Google services.
 
-That is a **simpler trust model**, not necessarily a smaller *data-collection* footprint. It may also concentrate more data with Google. Neither manufacturer should be described as collecting nothing.
+That is a **simpler trust model**, not necessarily a smaller *data-collection* footprint. That does not by itself mean Google collects more than on a Galaxy using the same Google services. Neither manufacturer should be described as collecting nothing.
 
 ## Privacy, security and simplicity are different
 
@@ -38,19 +38,22 @@ That is a **simpler trust model**, not necessarily a smaller *data-collection* f
 
 Pixel's streamlined interface can help with simplicity. Pixel 8 and later have Google's published seven-year OS and security update policy. Samsung also offers hardware-backed protections and long update commitments on selected models; compare the exact model rather than assuming every Galaxy has the same support period.
 
-## What a fair Pixel vs Galaxy test should measure
+## What “bloat” means here
 
-| Question | Pixel with stock Android | Samsung Galaxy with One UI |
+Here, **bloat** means optional, duplicated vendor apps, account requirements and cloud services that a user does not need. It does not mean every preinstalled app is harmful. We have **not** measured package counts or removability.
+
+## Documented Pixel–Galaxy differences
+
+| Topic | Stock Pixel | Galaxy with One UI |
 | --- | --- | --- |
-| Accounts needed for your chosen workflow | Test with Google account, and separately with minimal sign-in | Test Google-only workflow, then optional Samsung account |
-| Preinstalled apps | Inventory actual model and region | Inventory actual model and region |
-| Unwanted app removal | Record uninstall, disable and non-removable cases | Record uninstall, disable and non-removable cases |
-| Permissions and background services | Audit settings and network traffic | Audit settings and network traffic |
-| Security updates | Check model-specific end date | Check model-specific end date |
-| Backup and recovery | Check what goes to Google or stays local | Check Google and optional Samsung backup paths |
-| Security features | Document Pixel's hardware and Android controls | Document Knox, Knox Vault and One UI controls |
+| Vendor services | Google and Pixel services | Google services plus optional Samsung services |
+| Accounts | Google account for account-dependent Google features | Google account for Google features; Samsung account for certain Samsung features |
+| Security hardware | Titan M2 on supported Pixel generations, verified boot | Knox and Knox Vault on supported models; Auto Blocker adds restrictions on certain risky actions |
+| Update policy | Pixel 8 and newer: seven years of OS and security updates | Galaxy S24 series: seven OS generations and seven years of security updates |
+| Duplicated apps | Google and Pixel apps; actual package count unmeasured | Google and Samsung alternatives may coexist; actual package count unmeasured |
+| Data processing | Google policies and enabled features apply | Google and Samsung policies may apply when both services are enabled |
 
-**We have not performed this test.** A preinstalled-app count alone is not a reliable privacy metric: privileged components, network activity, default settings and data-handling policies matter more than icon count.
+**Documented:** vendor-service structure, named security features and model-specific update promises. **Not established:** which phone transmits less data, or exactly which apps cannot be removed. A Galaxy already using Google services also communicates with Google; Pixel does not inherently increase that collection. Pixel-specific Google features may introduce additional flows when enabled.
 
 ## Is a Pixel really “clean Android”?
 
