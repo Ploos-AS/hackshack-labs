@@ -77,7 +77,7 @@ Se [personverninnstillinger for Google-kontoen](https://myaccount.google.com/dat
 
 ## Alternative Android-systemer
 
-Noen Pixel-modeller støtter også alternativer som [GrapheneOS](https://grapheneos.org/). Dette dekker vi separat. **Denne artikkelen handler bare om Android-programvaren Google leverer på Pixel.**
+Mange nyere Pixel-generasjoner støtter [GrapheneOS](https://grapheneos.org/faq#supported-devices), men listen over støttede modeller og modeller som anbefales ved nykjøp er ikke identiske. Vår egen GrapheneOS-serie er **planlagt, men ikke publisert ennå**. Denne artikkelen handler bare om Android-programvaren Google leverer på Pixel.
 
 ## Hvem bør velge hva?
 
