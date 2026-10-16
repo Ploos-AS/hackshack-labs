@@ -75,6 +75,10 @@ If you keep Google services enabled, review location history, advertising and pe
 
 See [Google Account privacy controls](https://myaccount.google.com/data-and-privacy) and [Android app permissions](https://support.google.com/android/answer/9431959). These steps **do not make stock Pixel Android Google-free**.
 
+## Password managers, autofill and passkeys
+
+Moving to a Pixel does not require moving passwords into Google's password manager. Android supports credential autofill and passkeys through compatible credential providers, although exact integration varies by app and Android version. Choose a provider based on your backup, recovery and device-sharing needs rather than the phone brand. See our [comparison of Proton Pass, Bitwarden, Vaultwarden and KeePassXC](/articles/password-managers-proton-bitwarden-vaultwarden-keepassxc-2026/) for the trade-offs. We have not tested every provider's passkey behavior on a Pixel.
+
 ## Alternative Android systems
 
 Many recent Pixel generations support [GrapheneOS](https://grapheneos.org/faq#supported-devices), although the supported list and recommended new-purchase list differ. Our separate GrapheneOS article series is **planned, not yet published**. This article concerns Google's factory Android software only.
