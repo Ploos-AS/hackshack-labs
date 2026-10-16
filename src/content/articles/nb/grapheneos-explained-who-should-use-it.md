@@ -26,6 +26,12 @@ GrapheneOS støtter bestemte Pixel-modeller fordi prosjektet er avhengig av sikk
 
 En operatørlåst eller på annen måte begrenset variant kan være umulig å installere på, selv om modellnavnet står på støttelisten. Kontroller nøyaktig variant og muligheten til å låse opp oppstartslasteren før kjøp.
 
+## Støttede modeller og kjøpsråd (oktober 2026)
+
+Prosjektets liste over modeller med produksjonsstøtte omfatter **Pixel 10 / 10 Pro / 10 Pro XL / 10 Pro Fold; Pixel 9 / 9 Pro / 9 Pro XL / 9 Pro Fold / 9a; Pixel 8 / 8 Pro / 8a; Pixel 7 / 7 Pro / 7a; Pixel 6 / 6 Pro / 6a; Pixel Fold; og Pixel Tablet**. Dette er et datert øyeblikksbilde, ikke et varig kompatibilitetsløfte. Se [oppdatert offisiell liste (engelsk)](https://grapheneos.org/faq#supported-devices).
+
+Ved nykjøp bør du prioritere en modell som prosjektet anbefaler, som kan låses opp, og som har lengst mulig gjenværende fastvarestøtte. Ikke anta at alle eldre støttede modeller er like gode kjøp. Googles sjuårsløfte om OS- og sikkerhetsoppdateringer gjelder Pixel 8 og nyere; eldre modeller har andre løfter. Kontroller [GrapheneOS sin oversikt over støtteperioder (engelsk)](https://grapheneos.org/faq#device-lifetime) og [Googles oppdateringspolicy](https://support.google.com/pixelphone/answer/4457705?hl=no).
+
 ## Hva endres sammenlignet med Googles Android?
 
 | Spørsmål | Original Android på Pixel | GrapheneOS |
@@ -90,6 +96,10 @@ Vi lager egne artikler om **Google Play i sandkasse**, **brukerprofiler** og **a
 - **Ikke kjøp ny telefon bare på grunn av et løfte om anonymitet.** GrapheneOS er et sikkerhets- og personvernverktøy, ikke en usynlighetskappe.
 
 For norske brukere må **BankID, Vipps, bankapper og kontaktløs betaling testes enkeltvis** på en konkret telefonmodell, OS-versjon og appversjon. Vi har **ikke** verifisert kompatibiliteten og lover ikke at bestemte apper fungerer.
+
+### Sjekkliste før installasjon
+
+Kontroller at den nøyaktige telefonvarianten kan låse opp oppstartslasteren, ta en verifisert sikkerhetskopi, ha en kompatibel datamaskin og nettleser til den offisielle nettinstallasjonen, og bruk en pålitelig USB-kabel med datastøtte. Sjekk [gjeldende krav for nettinstallasjon (engelsk)](https://grapheneos.org/install#web-installation) rett før du starter. Regn med at lokale data slettes. Sjekklisten erstatter ikke de offisielle installasjonstrinnene.
 
 ## Før installasjon
 
