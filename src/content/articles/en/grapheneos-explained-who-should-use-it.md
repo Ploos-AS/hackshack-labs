@@ -44,6 +44,38 @@ GrapheneOS documents hardening such as memory-safety mitigations, improved explo
 
 Privacy depends heavily on behavior. Logging into the same Google account, social networks and other services can still connect your activity across devices. A VPN or separate user profile does not guarantee anonymity.
 
+## Six concrete differences you can configure
+
+GrapheneOS documents several mechanisms beyond ordinary Android; exact defaults and hardware-dependent protections should be checked against its [features reference](https://grapheneos.org/features):
+
+1. **hardened_malloc and kernel hardening** make several classes of memory-corruption exploitation harder. These are mitigations, not immunity.
+2. **Network permission** can deny an individual app network access, including indirect access through appropriately protected Android APIs. It is granted by default for compatibility.
+3. **Sensors permission** controls access to motion and environmental sensors beyond the usual camera/microphone permissions.
+4. **Storage Scopes and Contact Scopes** let you expose selected files or contacts without giving an app broad access to everything.
+5. **Auto-reboot** returns a locked device to the before-first-unlock state after a configurable period without successful unlocking; the documented default is 18 hours.
+6. **USB-C controls** restrict new data connections while locked, reducing physical attack surface; available behavior depends on the device.
+
+These protections involve usability trade-offs: some apps require network, sensors, broad contact access or USB connections. They should be configured according to your actual needs.
+
+## Your threat model matters
+
+| Concern | How GrapheneOS can help | What it cannot promise |
+| --- | --- | --- |
+| Untrusted apps and trackers | App sandbox, optional Google services, network and data-access controls | An app you sign into can still identify you |
+| Exploitation and targeted attacks | Memory and kernel hardening, reduced attack surface | Immunity to new vulnerabilities or phishing |
+| Lost or seized phone | Encryption, auto-reboot and locked-device USB restrictions | Protection against every physical or coercive threat |
+| Less dependence on Google | Run without Play services, or install them only where needed | Complete removal of Google-provided hardware and firmware dependencies |
+
+If your priority is simply a reliable phone with a few better privacy settings, keeping Google's supported Pixel software may be more sensible.
+
+## Trust and installation provenance
+
+You replace Google's OS distribution and update infrastructure with **GrapheneOS releases, maintainers, signing keys and update services**. You still rely on Google's Pixel hardware, firmware and upstream security fixes. Obtain installation files and instructions only from [grapheneos.org](https://grapheneos.org/install). Avoid buying a preinstalled device from an unverified seller. Verify the installed operating system and boot-key fingerprint using the project's current [verification guidance](https://grapheneos.org/install#verifying-installation), rather than trusting a seller's claim or a screenshot.
+
+## Compatibility costs to check before switching
+
+**Google Wallet tap-to-pay and other payment services**, Play Integrity checks, RCS messaging, Android Auto and Pixel-exclusive Google features do not all have identical behavior to stock Pixel Android. In particular, Android Auto has an [official GrapheneOS compatibility path](https://grapheneos.org/usage#android-auto), while RCS has [documented configuration considerations](https://grapheneos.org/usage#rcs). Do not assume either universal failure or universal success. Test the exact bank, car, carrier, app and device combination before migration. The project's [usage guide](https://grapheneos.org/usage) is the primary reference.
+
 ## Google Play is a choice, not a system privilege
 
 GrapheneOS provides an option to install **sandboxed Google Play** for apps that depend on it. The project describes these components as ordinary sandboxed apps rather than privileged OS services. You can decide whether to install them, and in which user profiles. Some apps may still fail or require features not available in your chosen configuration.
@@ -67,7 +99,7 @@ Our upcoming installation guide will distinguish official instructions from any 
 
 ## What we will test
 
-HackShack Labs should record the Pixel model, GrapheneOS release/build, firmware, installation method, app versions and test date. The test plan includes initial setup, security updates, sandboxed Google Play, multiple user profiles, app installation and updates, notifications, backups, and Norwegian essential apps. Until those tests are completed, our articles will remain marked **documentation-based**.
+HackShack Labs will record the Pixel model, GrapheneOS release/build, firmware, installation method, app versions and test date. The test plan includes initial setup, security updates, sandboxed Google Play, multiple user profiles, app installation and updates, notifications, backups, and Norwegian essential apps. Until those tests are completed, our articles will remain marked **documentation-based**.
 
 ## Primary sources
 
