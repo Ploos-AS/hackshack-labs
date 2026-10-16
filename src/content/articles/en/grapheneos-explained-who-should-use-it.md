@@ -26,6 +26,12 @@ GrapheneOS officially supports specific Pixel models because the project depends
 
 A carrier-locked or otherwise bootloader-restricted device may not be installable even if its model name appears on the support list. Verify the exact variant and its ability to unlock the bootloader before purchasing for GrapheneOS.
 
+## Supported devices and buying advice (October 2026)
+
+The project's published production support list includes **Pixel 10 / 10 Pro / 10 Pro XL / 10 Pro Fold; Pixel 9 / 9 Pro / 9 Pro XL / 9 Pro Fold / 9a; Pixel 8 / 8 Pro / 8a; Pixel 7 / 7 Pro / 7a; Pixel 6 / 6 Pro / 6a; Pixel Fold; and Pixel Tablet**. This is a dated snapshot, not a permanent compatibility promise. See the [live official list](https://grapheneos.org/faq#supported-devices).
+
+For a new purchase, prioritize a currently recommended, unlockable model with the longest remaining firmware-support lifetime, rather than assuming every supported older model is equally advisable. Google's seven-year OS/security policy applies to Pixel 8 and later; older models have different commitments. Always check [GrapheneOS device lifetime guidance](https://grapheneos.org/faq#device-lifetime) and [Google's update policy](https://support.google.com/pixelphone/answer/4457705).
+
 ## What changes compared with Google's Android?
 
 | Question | Stock Pixel Android | GrapheneOS |
@@ -90,6 +96,10 @@ We will cover the practical consequences in separate articles on **sandboxed Goo
 - **Do not buy a replacement solely for a promise of anonymity.** GrapheneOS is a security and privacy tool, not an invisibility cloak.
 
 For Norwegian users, **BankID, Vipps, banking apps and contactless payments must be tested individually** on a specific device, OS build and app version. We have **not** verified compatibility, and we do not promise that any named app works.
+
+### Pre-installation checklist
+
+Confirm the exact device variant can unlock its bootloader, make a verified backup, have a compatible computer and browser for the official web installer, and use a reliable data-capable USB cable. Check the current [official web installer requirements](https://grapheneos.org/install#web-installation) immediately before starting. Expect local data to be erased. Do not treat this checklist as a substitute for the official installation steps.
 
 ## Before you install
 
