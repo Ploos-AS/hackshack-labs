@@ -14,7 +14,8 @@ const scored = all
     const overlap = other.data.tags.filter(tag => currentTags.has(tag.toLocaleLowerCase())).length;
     const sameSeries = Boolean(entry.data.series && other.data.series === entry.data.series);
     const sameCategory = other.data.category === entry.data.category;
-    return { other, score: overlap * 4 + (sameSeries ? 6 : 0) + (sameCategory ? 2 : 0) };
+    // Broad editorial series and category alone do not establish topical relevance.
+    return { other, score: overlap > 0 ? overlap * 4 + (sameSeries ? 2 : 0) + (sameCategory ? 1 : 0) : 0 };
   })
   .filter(item => item.score > 0)
   .sort((a, b) => b.score - a.score ||
