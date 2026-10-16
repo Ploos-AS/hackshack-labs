@@ -77,7 +77,7 @@ See [Google Account privacy controls](https://myaccount.google.com/data-and-priv
 
 ## Alternative Android systems
 
-Some Pixels also support alternatives such as [GrapheneOS](https://grapheneos.org/). We cover that separately. **This article concerns Google's factory Android software only.**
+Many recent Pixel generations support [GrapheneOS](https://grapheneos.org/faq#supported-devices), although the supported list and recommended new-purchase list differ. Our separate GrapheneOS article series is **planned, not yet published**. This article concerns Google's factory Android software only.
 
 ## Who should buy—or keep—what?
 
