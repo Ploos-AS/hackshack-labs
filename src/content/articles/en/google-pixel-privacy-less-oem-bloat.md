@@ -10,10 +10,6 @@ translationKey: google-pixel-privacy-less-oem-bloat
 draft: false
 tested: false
 evidence: documentation
-changelog:
-  - date: 2026-10-16
-    type: editorial
-    note: "Clarified stock Pixel Android scope and added practical privacy checklist."
 ---
 
 > **Editorial status — 16 October 2026:** Documentation-based analysis, not a measured telemetry comparison or hands-on review. App bundles and settings differ by device, region, carrier and software version. No affiliate links or sponsored devices are involved.
@@ -54,6 +50,8 @@ Here, **bloat** means optional, duplicated vendor apps, account requirements and
 | Data processing | Google policies and enabled features apply | Google and Samsung policies may apply when both services are enabled |
 
 **Documented:** vendor-service structure, named security features and model-specific update promises. **Not established:** which phone transmits less data, or exactly which apps cannot be removed. A Galaxy already using Google services also communicates with Google; Pixel does not inherently increase that collection. Pixel-specific Google features may introduce additional flows when enabled.
+
+The update commitments in the table are documented by [Google's Pixel update policy](https://support.google.com/pixelphone/answer/4457705) and [Samsung's Galaxy S24 announcement](https://news.samsung.com/global/samsung-galaxy-s24-series-is-now-available-worldwide). They are **not** universal promises for every older Pixel or Galaxy model. Samsung's Auto Blocker is an additional security setting that can restrict certain untrusted installations and commands; it does not prove that Samsung collects less data.
 
 ## Is a Pixel really “clean Android”?
 
@@ -97,9 +95,8 @@ This comparison concerns **Android phones only**, not iOS. For Norwegian buyers,
 
 - [Google: privacy policy and data processing](https://policies.google.com/privacy)
 - [Google: advertising ID controls](https://support.google.com/android/answer/12461628)
-- [Samsung: Galaxy S24 update commitment](https://news.samsung.com/global/enter-the-new-era-of-mobile-ai-with-samsung-galaxy-s24-series)
+- [Samsung: Galaxy S24 update commitment](https://news.samsung.com/global/samsung-galaxy-s24-series-is-now-available-worldwide)
 - [Google Account: data access and export](https://takeout.google.com/)
-
 - [Google: Pixel software update policy](https://support.google.com/pixelphone/answer/4457705)
 - [Google: Pixel privacy and security](https://safety.google/products/pixel/)
 - [Samsung: Knox security and privacy](https://www.samsung.com/no/sustainability/security-and-privacy/security/)
