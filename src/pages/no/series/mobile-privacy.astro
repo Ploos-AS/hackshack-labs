@@ -1,0 +1,18 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { published, articleUrl } from '../../../lib/articles';
+const lang = 'nb';
+const entries = (await published()).filter(a => a.data.lang === lang && a.data.tags.some(t => ['google-pixel','grapheneos'].includes(t)));
+const planned = ["Installere GrapheneOS på Pixel","Brukerprofiler i GrapheneOS","Appinstallasjon og oppdateringer på tvers av profiler","Google Play i sandkasse","GrapheneOS i Norge","Sikkerhetskopiering, flytting og gjenoppretting","Enkle, balanserte og strengt isolerte profiloppsett"];
+---
+<SiteLayout title="Mobilpersonvern" lang="nb" alternateUrl="/series/mobile-privacy/">
+  <p class="tag">SERIE / PERSONVERN</p>
+  <h1>Mobilpersonvern: Pixel og GrapheneOS</h1>
+  <p>En kildebasert guide til Googles Android, GrapheneOS, appisolasjon og kostnadene ved å bytte. Publiserte artikler er ikke nødvendigvis praktisk testet; se redaksjonell status i hver artikkel.</p>
+  <h2>Publiserte artikler</h2>
+  <ul>{entries.map(a => <li><a href={articleUrl(a.id,lang)}>{a.data.title}</a> <span class="muted">({a.data.tested ? 'testet' : 'dokumentasjonsbasert'})</span></li>)}</ul>
+  <h2>Planlagte artikler – ingen lovet publiseringsdato</h2>
+  <ol>{planned.map(title => <li>{title} <span class="muted">(planlagt)</span></li>)}</ol>
+  <p>Vi vil publisere testmetode og begrensninger før vi hevder at bestemte apper er kompatible.</p>
+  <p><a href="https://github.com/Ploos-AS/hackshack-labs/blob/main/docs/GRAPHENEOS-ARTICLE-SERIES.md">Redaksjonell plan og testspørsmål (GitHub)</a></p>
+</SiteLayout>
