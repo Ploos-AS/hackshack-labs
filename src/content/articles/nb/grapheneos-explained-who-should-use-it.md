@@ -18,7 +18,7 @@ evidence: documentation
 
 **GrapheneOS er et Android-basert operativsystem med særlig vekt på sikkerhet og personvern** for utvalgte Google Pixel-enheter. Det forsterker deler av Androids sikkerhetsmodell og gir mer kontroll over apper og Google-tjenester. Det er **ikke** et anonymitetssystem, og installasjon hindrer ikke automatisk sporing fra appene og kontoene du selv bruker.
 
-Hvis du vil ha en vanlig telefon med god støtte og minst mulig vedlikehold, kan **original Android på Pixel være et bedre valg**. Vår separate [personvernartikkel om vanlig Pixel-Android](/no/articles/google-pixel-privacy-less-oem-bloat/) forklarer hva du kan forbedre uten å bytte operativsystem.
+Hvis du vil ha en vanlig telefon med god støtte og minst mulig vedlikehold, kan **Googles Android på Pixel være et bedre valg**. Vår separate [personvernartikkel om vanlig Pixel-Android](/no/articles/google-pixel-privacy-less-oem-bloat/) forklarer hva du kan forbedre uten å bytte operativsystem.
 
 ## Hvorfor Pixel?
 
@@ -44,16 +44,48 @@ GrapheneOS dokumenterer blant annet minnesikkerhetstiltak, ekstra beskyttelse mo
 
 Personvern avhenger også av bruksmønster. Logger du inn på de samme Google-kontoene, sosiale nettverkene og andre tjenestene, kan aktivitet fortsatt knyttes sammen. VPN eller en ekstra brukerprofil garanterer ikke anonymitet.
 
+## Seks konkrete forskjeller du kan konfigurere
+
+GrapheneOS dokumenterer flere mekanismer utover vanlig Android. Kontroller gjeldende standardinnstillinger og maskinvareavhengige funksjoner i prosjektets [funksjonsoversikt (engelsk)](https://grapheneos.org/features):
+
+1. **hardened_malloc og herdet kjerne** gjør utnyttelse av flere typer minnefeil vanskeligere. Dette er beskyttelsestiltak, ikke immunitet.
+2. **Nettverkstillatelse per app** kan hindre direkte og indirekte nettverkstilgang gjennom beskyttede Android-grensesnitt. Den er aktivert som standard av kompatibilitetshensyn.
+3. **Sensortillatelse** styrer tilgang til bevegelses- og miljøsensorer utover de vanlige kamera- og mikrofontillatelsene.
+4. **Storage Scopes og Contact Scopes** gjør det mulig å gi tilgang til utvalgte filer eller kontakter uten bred tilgang til alt.
+5. **Automatisk omstart** setter en låst enhet tilbake i tilstanden før første opplåsing etter en valgt periode uten vellykket opplåsing. Dokumentert standardverdi er 18 timer.
+6. **USB-C-kontroll** begrenser nye datatilkoblinger når telefonen er låst og reduserer den fysiske angrepsflaten. Detaljene avhenger av enheten.
+
+Dette har praktiske kostnader: Noen apper trenger nettverk, sensorer, kontaktdata eller USB-tilkobling. Velg innstillinger etter behov.
+
+## Hvilken trussel vil du beskytte deg mot?
+
+| Bekymring | Hva GrapheneOS kan bidra med | Hva det ikke kan love |
+| --- | --- | --- |
+| Apper og sporing | Appisolasjon, valgfrie Google-tjenester, kontroll over nettverk og data | En app du logger inn i kan fortsatt identifisere deg |
+| Angrep og sårbarheter | Minne- og kjernebeskyttelse, mindre angrepsflate | Immunitet mot nye feil eller phishing |
+| Mistet eller beslaglagt telefon | Kryptering, automatisk omstart og USB-begrensninger | Beskyttelse mot alle fysiske trusler eller tvang |
+| Mindre Google-avhengighet | Bruk uten Play-tjenester eller bare der de trengs | Full uavhengighet av Google-levert maskinvare og fastvare |
+
+Hvis du først og fremst ønsker en pålitelig telefon med bedre personverninnstillinger, kan Googles Android på Pixel være det mest fornuftige.
+
+## Tillitsmodell og installasjonskilde
+
+Du bytter Googles distribusjon og oppdateringsinfrastruktur mot **GrapheneOS-utgivelser, vedlikeholdere, signeringsnøkler og oppdateringstjenester**. Du er fortsatt avhengig av Googles Pixel-maskinvare, fastvare og sikkerhetsrettelser. Bruk bare [grapheneos.org](https://grapheneos.org/install) til installasjonsfiler og instruksjoner. Unngå forhåndsinstallerte telefoner fra selgere du ikke kan verifisere. Kontroller installasjonen og fingeravtrykket til oppstartsnøkkelen mot prosjektets [offisielle verifiseringsveiledning (engelsk)](https://grapheneos.org/install#verifying-installation), ikke en selgers påstand.
+
+## Kompatibilitet du må undersøke før bytte
+
+**Kontaktløs betaling med Google Wallet og andre betalingstjenester**, Play Integrity, RCS-meldinger, Android Auto og Pixel-spesifikke Google-funksjoner kan oppføre seg annerledes enn på Googles Android. Android Auto har en [offisiell kompatibilitetsløsning (engelsk)](https://grapheneos.org/usage#android-auto), mens RCS har [egne konfigurasjonshensyn (engelsk)](https://grapheneos.org/usage#rcs). Ikke anta at alt fungerer eller at ingenting fungerer. Test kombinasjonen av bank, bil, operatør, app og telefon før du flytter over. Se prosjektets [brukerveiledning (engelsk)](https://grapheneos.org/usage).
+
 ## Google Play er valgfritt
 
 GrapheneOS lar deg installere **Google Play i en sandkasse** for apper som trenger tjenestene. Prosjektet beskriver disse komponentene som vanlige isolerte apper, ikke privilegerte systemtjenester. Du velger om de skal installeres og i hvilke brukerprofiler. Enkelte apper kan fortsatt svikte eller kreve funksjoner som ikke finnes i oppsettet ditt.
 
-Vi lager egne artikler om **Google Play i sandkasse**, **brukerprofiler** og **programvareinstallasjon på tvers av profiler**. En egen profil hindrer ikke nødvendigvis tjenesteleverandøren i å koble sammen innlogginger.
+Vi lager egne artikler om **Google Play i sandkasse**, **brukerprofiler** og **appinstallasjon på tvers av profiler**. En egen profil hindrer ikke nødvendigvis tjenesteleverandøren i å koble sammen innlogginger.
 
 ## Hvem passer det for?
 
 - **Vurder GrapheneOS** hvis du ønsker støttet Pixel-maskinvare, regelmessige sikkerhetsoppdateringer, mer kontroll over appisolasjon og muligheten til å la være å installere Google Play-tjenester.
-- **Behold original Pixel-Android** hvis du er avhengig av Pixel-spesifikke funksjoner, produsentstøtte eller apper du ikke kan risikere at slutter å fungere.
+- **Behold Googles Android på Pixel** hvis du er avhengig av Pixel-spesifikke funksjoner, produsentstøtte eller apper du ikke kan risikere at slutter å fungere.
 - **Test før du flytter over** hvis hverdagen avhenger av bank, identifikasjon, betaling, tilgjengelighetsfunksjoner eller jobbapper.
 - **Ikke kjøp ny telefon bare på grunn av et løfte om anonymitet.** GrapheneOS er et sikkerhets- og personvernverktøy, ikke en usynlighetskappe.
 
@@ -67,7 +99,7 @@ Den kommende installasjonsguiden skal skille offisielle instruksjoner fra result
 
 ## Hva vi skal teste
 
-HackShack Labs bør registrere Pixel-modell, GrapheneOS-utgave, fastvare, installasjonsmetode, appversjoner og testdato. Testplanen omfatter første oppsett, sikkerhetsoppdateringer, Google Play i sandkasse, flere brukerprofiler, appinstallasjon og oppdateringer, varslinger, sikkerhetskopier og viktige norske apper. Inntil disse testene er gjennomført, merkes artiklene **dokumentasjonsbasert**.
+HackShack Labs bør registrere Pixel-modell, GrapheneOS-versjon/build, fastvare, installasjonsmetode, appversjoner og testdato. Testplanen omfatter første oppsett, sikkerhetsoppdateringer, Google Play i sandkasse, flere brukerprofiler, appinstallasjon og oppdateringer, varslinger, sikkerhetskopier og viktige norske apper. Inntil disse testene er gjennomført, merkes artiklene **dokumentasjonsbasert**.
 
 ## Primærkilder
 
