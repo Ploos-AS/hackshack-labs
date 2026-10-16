@@ -10,10 +10,6 @@ translationKey: google-pixel-privacy-less-oem-bloat
 draft: false
 tested: false
 evidence: documentation
-changelog:
-  - date: 2026-10-16
-    type: editorial
-    note: "Presiserte fokus på original Pixel-Android og la til praktisk personvernsjekkliste."
 ---
 
 > **Redaksjonell status – 16. oktober 2026:** Dokumentasjonsbasert analyse, ikke en målt sammenligning av telemetri eller praktisk produkttest. Apputvalg og innstillinger varierer etter modell, land, operatør og programvareversjon. Ingen affiliate-lenker eller sponsede testtelefoner.
@@ -54,6 +50,8 @@ Her betyr **bloat** valgfrie, overlappende produsentapper, kontokrav og skytjene
 | Databehandling | Googles retningslinjer og aktiverte funksjoner gjelder | Både Googles og Samsungs retningslinjer kan gjelde når begge tjenestesett brukes |
 
 **Dokumentert:** leverandørstruktur, navngitte sikkerhetsfunksjoner og modellspesifikke oppdateringsløfter. **Ikke fastslått:** hvilken telefon som sender minst data, eller nøyaktig hvilke apper som ikke kan fjernes. En Galaxy med Google-tjenester kommuniserer også med Google; Pixel øker ikke automatisk denne innsamlingen. Pixel-spesifikke Google-funksjoner kan ha egne datastrømmer når de aktiveres.
+
+Oppdateringsløftene i tabellen dokumenteres av [Googles oppdateringspolicy for Pixel](https://support.google.com/pixelphone/answer/4457705?hl=no) og [Samsungs norske kunngjøring om Galaxy S24](https://news.samsung.com/no/velkommen-til-den-nye-aeraen-av-mobil-ai-med-samsung-galaxy-s24-serien). De gjelder **ikke** automatisk alle eldre Pixel- og Galaxy-modeller. Samsungs Auto Blocker er en ekstra sikkerhetsinnstilling som kan begrense enkelte ubetrodde installasjoner og kommandoer; den dokumenterer ikke lavere datainnsamling.
 
 ## Er Pixel egentlig «ren Android»?
 
@@ -99,7 +97,6 @@ Sammenligningen gjelder **bare Android-telefoner**, ikke iOS. Norske kjøpere b�
 - [Google: innstillinger for annonserings-ID (engelsk)](https://support.google.com/android/answer/12461628)
 - [Samsung: oppdateringsløftet for Galaxy S24 (engelsk)](https://news.samsung.com/global/enter-the-new-era-of-mobile-ai-with-samsung-galaxy-s24-series)
 - [Google: innsyn og dataeksport](https://takeout.google.com/)
-
 - [Google: oppdateringspolicy for Pixel](https://support.google.com/pixelphone/answer/4457705?hl=no)
 - [Google: personvern og sikkerhet for Pixel](https://safety.google/products/pixel/)
 - [Samsung: Knox, sikkerhet og personvern](https://www.samsung.com/no/sustainability/security-and-privacy/security/)
