@@ -105,7 +105,7 @@ Kontroller at den nøyaktige telefonvarianten kan låse opp oppstartslasteren, t
 
 Installasjonen erstatter operativsystemet og sletter normalt lokale data. Ta en uavhengig sikkerhetskopi, kontroller støtte for nøyaktig modell og les de [offisielle installasjonsinstruksjonene](https://grapheneos.org/install) i sin helhet. Fremgangsmåten inneholder sikkerhetskritiske trinn for oppstartslasteren. Ikke erstatt dem med tilfeldige tredjepartskommandoer eller la oppstartslasteren stå ulåst som en enkel nødløsning.
 
-Den kommende installasjonsguiden skal skille offisielle instruksjoner fra resultater vi faktisk gjenskaper i laboratoriet.
+Den kommende installasjonsguiden skal skille offisielle instruksjoner fra resultater vi faktisk gjenskaper i laboratoriet. Se [seriesiden for mobilpersonvern](/no/series/mobile-privacy/) for planlagte artikler og den offentlige testplanen.
 
 ## Hva vi skal teste
 
