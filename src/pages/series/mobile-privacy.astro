@@ -1,0 +1,18 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { published, articleUrl } from '../../lib/articles';
+const lang = 'en';
+const entries = (await published()).filter(a => a.data.lang === lang && a.data.tags.some(t => ['google-pixel','grapheneos'].includes(t)));
+const planned = ["Installing GrapheneOS on a Pixel","GrapheneOS user profiles","App installation and updates across profiles","Sandboxed Google Play","Living with GrapheneOS in Norway","Backups, migration and recovery","Minimal, balanced and high-isolation profile setups"];
+---
+<SiteLayout title="Mobile Privacy" lang="en" alternateUrl="/no/series/mobile-privacy/">
+  <p class="tag">SERIES / PRIVACY</p>
+  <h1>Mobile Privacy: Pixel and GrapheneOS</h1>
+  <p>An evidence-led guide to Google's stock Android, GrapheneOS, app isolation and the costs of switching. Published articles are not necessarily hands-on tested; check each article's editorial status.</p>
+  <h2>Published articles</h2>
+  <ul>{entries.map(a => <li><a href={articleUrl(a.id,lang)}>{a.data.title}</a> <span class="muted">({a.data.tested ? 'tested' : 'documentation-based'})</span></li>)}</ul>
+  <h2>Planned articles — no publication dates promised</h2>
+  <ol>{planned.map(title => <li>{title} <span class="muted">(planned)</span></li>)}</ol>
+  <p>We will publish test methods and limitations before making app compatibility claims.</p>
+  <p><a href="https://github.com/Ploos-AS/hackshack-labs/blob/main/docs/GRAPHENEOS-ARTICLE-SERIES.md">Editorial roadmap and test questions (GitHub)</a></p>
+</SiteLayout>
