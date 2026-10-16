@@ -105,7 +105,7 @@ Confirm the exact device variant can unlock its bootloader, make a verified back
 
 Installation replaces the phone's operating system and typically erases local data. Make an independent backup, check support for the exact device, and read the [official installation instructions](https://grapheneos.org/install) from beginning to end. The official procedure includes security-critical bootloader steps; do not substitute random third-party flashing commands or leave the bootloader unlocked as a casual workaround.
 
-Our upcoming installation guide will distinguish official instructions from any results we actually reproduce in the lab.
+Our upcoming installation guide will distinguish official instructions from any results we actually reproduce in the lab. See the [Mobile Privacy series roadmap](/series/mobile-privacy/) for planned articles and the public test plan.
 
 ## What we will test
 
