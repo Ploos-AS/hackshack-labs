@@ -1,10 +1,14 @@
-# GrapheneOS article series — editorial roadmap
+# Pixel privacy → GrapheneOS article series — editorial roadmap
 
 **Status:** Planned; documentation research first, real-device verification before any claim of hands-on testing.
 **Languages:** English originals and Norwegian Bokmål translations.
-**Scope:** GrapheneOS articles are independent from the stock Google Pixel privacy article. That article should contain only a short mention and link.
+**Publishing order:** First publish and maintain the **Google Pixel with stock Google Android** privacy article as a standalone mainstream-Android analysis. GrapheneOS follows as a separate series. The Pixel article mentions GrapheneOS only briefly and links to the later introduction; it must not frame GrapheneOS as a prerequisite.
 
-## Series
+## Article 0 — publish first
+
+**Google Pixel for Privacy: Is Less Android Bloat Actually Better?** — stock Google Android as shipped on Pixel, not bare AOSP and not GrapheneOS. Focus on avoiding a second OEM ecosystem (for example Samsung), app/account duplication, privacy controls, Google data collection, security updates and the limits of this argument. English: `src/content/articles/en/google-pixel-privacy-less-oem-bloat.md`; Norwegian: `src/content/articles/nb/google-pixel-privacy-less-oem-bloat.md`.
+
+## GrapheneOS follow-up series
 
 1. **GrapheneOS Explained: Who Should Use It?** — threat models, supported devices, update lifetime, what changes from stock Pixel.
 2. **Installing GrapheneOS on a Pixel** — official web installer, bootloader relocking, verified installation, recovery and backups; do not invent tested outcomes.
