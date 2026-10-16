@@ -81,7 +81,7 @@ Moving to a Pixel does not require moving passwords into Google's password manag
 
 ## Alternative Android systems
 
-Many recent Pixel generations support [GrapheneOS](https://grapheneos.org/faq#supported-devices), although the supported list and recommended new-purchase list differ. Our separate GrapheneOS article series is **planned, not yet published**. This article concerns Google's factory Android software only.
+Many recent Pixel generations support [GrapheneOS](https://grapheneos.org/faq#supported-devices), although the supported list and recommended new-purchase list differ. Read our [GrapheneOS introduction](/articles/grapheneos-explained-who-should-use-it/); the installation and profile guides are planned. This article concerns Google's factory Android software only.
 
 ## Who should buy—or keep—what?
 
