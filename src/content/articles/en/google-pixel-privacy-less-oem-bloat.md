@@ -70,6 +70,10 @@ If you keep Google services enabled, review location history, advertising and pe
 5. **Disable unused optional features.** Review assistant and personalization settings and check the resulting functionality.
 6. **Reduce unnecessary apps and accounts.** Do not assume every preinstalled system component can be removed.
 7. **Review device-finding and theft protections.** Balance their benefits with their data requirements.
+8. **Review advertising identifiers.** Android's Google services offer controls to reset or delete the advertising ID; this does not remove every other identifier.
+9. **Use Privacy Dashboard** to review recent access to sensitive permissions, and consider **Private DNS** for DNS transport protection. Private DNS does not stop Google's own apps from contacting Google.
+10. **Review Gemini activity and Find Hub.** Check account activity, assistant permissions and offline-finding/network participation before enabling optional features.
+
 
 See [Google Account privacy controls](https://myaccount.google.com/data-and-privacy) and [Android app permissions](https://support.google.com/android/answer/9431959). These steps **do not make stock Pixel Android Google-free**.
 
@@ -83,11 +87,18 @@ Some Pixels also support alternatives such as [GrapheneOS](https://grapheneos.or
 - **Keep a Samsung** if it already receives security updates, you use its features and have configured accounts, permissions and backups deliberately. Switching hardware is not automatically a privacy gain.
 - **Buy nothing** if your existing phone is supported and meets your needs. Updating settings may provide more value than replacing it.
 
-## What HackShack Labs should test next
+## A reproducible future test
 
-Use comparably priced, fully updated Pixel and Galaxy models. Record model, region, firmware, installed packages, permissions, account requirements and repeatable network captures with identical app and network conditions. Report observations without claiming that a single telemetry count proves overall privacy.
+Compare fully updated, factory-reset, similarly priced Pixel and Galaxy devices in the same country and on the same network. Record model, firmware, carrier, installed apps, account setup and permissions. Inventory installed packages with `adb shell pm list packages`; distinguish user-removable, disable-only and protected packages. Capture traffic with a controlled router or PCAPdroid during setup, idle periods and matched app tasks; repeat the runs. Encrypted connections generally do not expose message contents. Domain counts, connection counts and transferred bytes are **not** direct measurements of privacy, and DNS visibility varies with encryption. Publish raw methods and limitations before drawing conclusions.
+
+This comparison concerns **Android phones only**, not iOS. For Norwegian buyers, confirm local availability, warranty, repairs and data-access/export rights with the retailer and each provider before purchase; we have not independently verified a model-by-model Norwegian service matrix.
 
 ## Primary sources
+
+- [Google: privacy policy and data processing](https://policies.google.com/privacy)
+- [Google: advertising ID controls](https://support.google.com/android/answer/12461628)
+- [Samsung: Galaxy S24 update commitment](https://news.samsung.com/global/enter-the-new-era-of-mobile-ai-with-samsung-galaxy-s24-series)
+- [Google Account: data access and export](https://takeout.google.com/)
 
 - [Google: Pixel software update policy](https://support.google.com/pixelphone/answer/4457705)
 - [Google: Pixel privacy and security](https://safety.google/products/pixel/)
