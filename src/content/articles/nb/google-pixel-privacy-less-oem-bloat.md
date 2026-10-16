@@ -70,6 +70,10 @@ Hvis du beholder Google-tjenestene, bør du gjennomgå posisjonshistorikk, annon
 5. **Slå av valgfrie funksjoner du ikke trenger.** Gå gjennom assistent- og personaliseringsinnstillinger og kontroller konsekvensene.
 6. **Begrens unødvendige apper og kontoer.** Ikke anta at alle systemkomponenter kan fjernes.
 7. **Vurder enhetsfinning og tyveribeskyttelse.** Vei nytten opp mot nødvendig datadeling.
+8. **Gå gjennom annonserings-ID-en.** Google-tjenestene i Android har valg for å tilbakestille eller slette annonse-ID-en. Andre identifikatorer kan fortsatt finnes.
+9. **Bruk personvernoversikten** til å se nylig bruk av følsomme tillatelser, og vurder **Privat DNS** for å beskytte DNS-transporten. Privat DNS hindrer ikke Googles egne apper i å kontakte Google.
+10. **Gå gjennom Gemini-aktivitet og Finn Hub.** Vurder kontoaktivitet, assistenttillatelser og deltakelse i nettverket for enhetsfinning før du aktiverer valgfrie funksjoner.
+
 
 Se [personverninnstillinger for Google-kontoen](https://myaccount.google.com/data-and-privacy) og [Androids apptillatelser](https://support.google.com/android/answer/9431959). Dette gjør **ikke vanlig Pixel-Android fri for Google-tjenester**.
 
@@ -83,11 +87,18 @@ Noen Pixel-modeller støtter også alternativer som [GrapheneOS](https://graphen
 - **Behold Samsung** hvis telefonen fortsatt oppdateres, du bruker funksjonene og har kontroll på kontoer, tillatelser og sikkerhetskopier. Ny maskinvare gir ikke automatisk bedre personvern.
 - **Ikke kjøp noe nytt** hvis dagens telefon er støttet og dekker behovene. Bedre innstillinger kan gi større gevinst enn et telefonbytte.
 
-## Hva HackShack Labs bør teste videre
+## Reproduserbar framtidig test
 
-Bruk sammenlignbare og oppdaterte Pixel- og Galaxy-modeller. Dokumenter modell, marked, fastvare, installerte pakker, tillatelser, kontokrav og repeterbare nettverksmålinger under like forhold. Ikke påstå at ett tall for telemetri avgjør personvernet.
+Sammenlign oppdaterte, fabrikktilbakestilte Pixel- og Galaxy-enheter i samme prisklasse, land og nettverk. Dokumenter modell, fastvare, operatør, installerte apper, kontooppsett og tillatelser. Registrer pakker med `adb shell pm list packages`; skill mellom apper som kan avinstalleres, bare deaktiveres og ikke fjernes. Fang trafikk med kontrollert ruter eller PCAPdroid under oppsett, hvile og like appoppgaver; gjenta målingene. Krypterte forbindelser avslører normalt ikke innholdet. Antall domener, forbindelser og overførte byte er **ikke** direkte mål på personvern, og DNS-synlighet varierer med kryptering. Publiser metode og begrensninger før konklusjoner.
+
+Sammenligningen gjelder **bare Android-telefoner**, ikke iOS. Norske kjøpere bør kontrollere tilgjengelighet, garanti, reparasjon og rettigheter til innsyn/eksport hos forhandler og leverandør. Vi har ikke verifisert en norsk servicematrise for hver modell.
 
 ## Primærkilder
+
+- [Google: personvernerklæring og databehandling](https://policies.google.com/privacy?hl=no)
+- [Google: innstillinger for annonserings-ID (engelsk)](https://support.google.com/android/answer/12461628)
+- [Samsung: oppdateringsløftet for Galaxy S24 (engelsk)](https://news.samsung.com/global/enter-the-new-era-of-mobile-ai-with-samsung-galaxy-s24-series)
+- [Google: innsyn og dataeksport](https://takeout.google.com/)
 
 - [Google: oppdateringspolicy for Pixel](https://support.google.com/pixelphone/answer/4457705?hl=no)
 - [Google: personvern og sikkerhet for Pixel](https://safety.google/products/pixel/)
