@@ -4,12 +4,16 @@ description: "Hvorfor Pixel kan gi en enklere Android-modell enn Samsung Galaxy,
 category: deep-dives
 lang: nb
 date: 2026-10-16
-tags: [google-pixel, android, samsung, personvern, sikkerhet, grapheneos]
+tags: [google-pixel, android, samsung, personvern, sikkerhet]
 series: "Privacy & Digital Independence"
 translationKey: google-pixel-privacy-less-oem-bloat
 draft: false
 tested: false
 evidence: documentation
+changelog:
+  - date: 2026-10-16
+    type: editorial
+    note: "Presiserte fokus på original Pixel-Android og la til praktisk personvernsjekkliste."
 ---
 
 > **Redaksjonell status – 16. oktober 2026:** Dokumentasjonsbasert analyse, ikke en målt sammenligning av telemetri eller praktisk produkttest. Apputvalg og innstillinger varierer etter modell, land, operatør og programvareversjon. Ingen affiliate-lenker eller sponsede testtelefoner.
@@ -54,22 +58,31 @@ Pixel bruker Googles Android-versjon, med egne Pixel-funksjoner og tjenester. De
 
 Hvis du beholder Google-tjenestene, bør du gjennomgå posisjonshistorikk, annonse- og personaliseringsinnstillinger, apptillatelser, skysikkerhetskopi, assistentfunksjoner og bildesynkronisering. Kontroller hva hver innstilling faktisk gjør.
 
-## GrapheneOS som alternativ
+## Praktisk personvernsjekkliste for vanlig Pixel-Android
 
-Pixel er også interessant fordi [GrapheneOS](https://grapheneos.org/) offisielt støtter en rekke Pixel-modeller. Systemet gir en egen, sikkerhetsforsterket Android-tilnærming for dem som ønsker større kontroll over Google-integrasjon og isolasjon av apper. Dette er **et annet operativsystem**, ikke en innebygd personvernfunksjon i vanlig Pixel-Android.
+1. **Hold Android oppdatert.** Kontroller gjenværende sikkerhetsstøtte og bruk en god skjermlås.
+2. **Gå gjennom aktivitetsinnstillingene i Google-kontoen.** Sjekk nett- og appaktivitet, tidslinje, annonsetilpasning og automatisk sletting. Én deaktivert innstilling stopper ikke all innsamling.
+3. **Kontroller apptillatelser.** Vurder posisjon, mikrofon, kamera, kontakter og bakgrunnstilgang for hver app. Velg tillatelse bare under bruk når det passer.
+4. **Velg sikkerhetskopiering bevisst.** Se hva Android og Google Foto laster opp, og behold en uavhengig kopi av viktige data.
+5. **Slå av valgfrie funksjoner du ikke trenger.** Gå gjennom assistent- og personaliseringsinnstillinger og kontroller konsekvensene.
+6. **Begrens unødvendige apper og kontoer.** Ikke anta at alle systemkomponenter kan fjernes.
+7. **Vurder enhetsfinning og tyveribeskyttelse.** Vei nytten opp mot nødvendig datadeling.
 
-Før du kjøper en brukt Pixel til GrapheneOS, bør du kontrollere nøyaktig modellstøtte, mulighet for å låse opp bootloader og gjenværende sikkerhetsoppdateringer. Enkelte operatørvarianter kan ikke låses opp.
+Se [personverninnstillinger for Google-kontoen](https://myaccount.google.com/data-and-privacy) og [Androids apptillatelser](https://support.google.com/android/answer/9431959). Dette gjør **ikke vanlig Pixel-Android fri for Google-tjenester**.
+
+## Alternative Android-systemer
+
+Noen Pixel-modeller støtter også alternativer som [GrapheneOS](https://grapheneos.org/). Dette dekker vi separat. **Denne artikkelen handler bare om Android-programvaren Google leverer på Pixel.**
 
 ## Hvem bør velge hva?
 
 - **Velg Pixel med vanlig Android** hvis du ønsker en enklere Android-opplevelse, god oppdateringsstøtte og færre doble produsenttjenester.
 - **Behold Samsung** hvis telefonen fortsatt oppdateres, du bruker funksjonene og har kontroll på kontoer, tillatelser og sikkerhetskopier. Ny maskinvare gir ikke automatisk bedre personvern.
-- **Vurder Pixel med GrapheneOS** hvis målet er å redusere avhengigheten av Google, ikke bare unngå enda et produsentøkosystem.
 - **Ikke kjøp noe nytt** hvis dagens telefon er støttet og dekker behovene. Bedre innstillinger kan gi større gevinst enn et telefonbytte.
 
 ## Hva HackShack Labs bør teste videre
 
-Bruk sammenlignbare og oppdaterte Pixel- og Galaxy-modeller. Dokumenter modell, marked, fastvare, installerte pakker, tillatelser, kontokrav og repeterbare nettverksmålinger under like forhold. Ikke påstå at ett tall for telemetri avgjør personvernet. Sammenlign også vanlig Pixel-Android og GrapheneOS på **samme støttede Pixel**.
+Bruk sammenlignbare og oppdaterte Pixel- og Galaxy-modeller. Dokumenter modell, marked, fastvare, installerte pakker, tillatelser, kontokrav og repeterbare nettverksmålinger under like forhold. Ikke påstå at ett tall for telemetri avgjør personvernet.
 
 ## Primærkilder
 
@@ -78,6 +91,5 @@ Bruk sammenlignbare og oppdaterte Pixel- og Galaxy-modeller. Dokumenter modell, 
 - [Samsung: Knox, sikkerhet og personvern](https://www.samsung.com/no/sustainability/security-and-privacy/security/)
 - [Samsung: Knox Auto Blocker](https://docs.samsungknox.com/admin/fundamentals/whitepaper/samsung-knox-mobile-security/system-security/samsung-auto-blocker/)
 - [Samsung: personvernerklæring for konto](https://terms.samsungconsent.com/j5p7ll8g33/PN/2.9.0/NOR/NOR_eng.html)
-- [GrapheneOS: støttede enheter og levetid](https://grapheneos.org/faq)
 
 *Kilder gjennomgått 16. oktober 2026. Ingen telemetrimålinger er utført for denne artikkelen.*
