@@ -28,7 +28,7 @@ Samsung Galaxy kan også konfigureres sikkert. Samsung Knox, Knox Vault og andre
 
 Mange Galaxy-telefoner kombinerer Google-tjenester med Samsung-tjenester. Enkelte Samsung-funksjoner krever Samsung-konto, og Samsung beskriver egen behandling av konto- og skydata. Pixel unngår mye av dette doble produsentlaget ved at standardopplevelsen i større grad er knyttet til Google.
 
-Det er en **enklere tillitsmodell**, men ikke nødvendigvis mindre *datainnsamling*. Flere opplysninger kan også samles hos Google. Vi skal ikke påstå at noen av leverandørene samler inn null data.
+Det er en **enklere tillitsmodell**, men ikke nødvendigvis mindre *datainnsamling*. Det betyr ikke i seg selv at Google samler mer enn på en Galaxy som bruker de samme Google-tjenestene. Vi skal ikke påstå at noen av leverandørene samler inn null data.
 
 ## Personvern, sikkerhet og enkelhet er forskjellige ting
 
@@ -38,19 +38,22 @@ Det er en **enklere tillitsmodell**, men ikke nødvendigvis mindre *datainnsamli
 
 Pixel kan være enklere å administrere. Pixel 8 og nyere har Googles dokumenterte ordning med sju år OS- og sikkerhetsoppdateringer. Samsung tilbyr også maskinvarebasert sikkerhet og lang oppdateringsstøtte på utvalgte modeller. Sammenlign derfor konkrete modeller.
 
-## Hva en rettferdig Pixel mot Galaxy-test bør undersøke
+## Hva betyr «bloat» her?
 
-| Spørsmål | Pixel med vanlig Android | Samsung Galaxy med One UI |
+Her betyr **bloat** valgfrie, overlappende produsentapper, kontokrav og skytjenester som brukeren ikke trenger. Det betyr ikke at alle forhåndsinstallerte apper er skadelige. Vi har **ikke** målt antall pakker eller hva som kan fjernes.
+
+## Dokumenterte forskjeller mellom Pixel og Galaxy
+
+| Tema | Pixel med original Android | Galaxy med One UI |
 | --- | --- | --- |
-| Nødvendige kontoer | Test Google-konto og oppsett med minst mulig innlogging | Test bare Google-konto og valgfri Samsung-konto |
-| Forhåndsinstallerte apper | Registrer faktisk modell og marked | Registrer faktisk modell og marked |
-| Fjerning av apper | Noter hva som kan avinstalleres, deaktiveres eller ikke fjernes | Noter hva som kan avinstalleres, deaktiveres eller ikke fjernes |
-| Tillatelser og bakgrunnstjenester | Undersøk innstillinger og nettverkstrafikk | Undersøk innstillinger og nettverkstrafikk |
-| Sikkerhetsoppdateringer | Kontroller sluttdato for modellen | Kontroller sluttdato for modellen |
-| Sikkerhetskopiering | Undersøk hva som går til Google og hva som lagres lokalt | Undersøk Google og eventuelle Samsung-løsninger |
-| Sikkerhetsfunksjoner | Dokumenter Pixel- og Android-beskyttelsen | Dokumenter Knox, Knox Vault og One UI |
+| Produsenttjenester | Google- og Pixel-tjenester | Google-tjenester pluss valgfrie Samsung-tjenester |
+| Kontoer | Google-konto for Google-funksjoner som krever innlogging | Google-konto for Google-funksjoner; Samsung-konto for enkelte Samsung-funksjoner |
+| Maskinvaresikkerhet | Titan M2 på støttede Pixel-generasjoner, verifisert oppstart | Knox og Knox Vault på støttede modeller; Auto Blocker begrenser enkelte risikable handlinger |
+| Oppdateringer | Pixel 8 og nyere: sju år med OS- og sikkerhetsoppdateringer | Galaxy S24-serien: sju OS-generasjoner og sju år med sikkerhetsoppdateringer |
+| Overlappende apper | Google- og Pixel-apper; antall pakker ikke målt | Google- og Samsung-alternativer kan eksistere samtidig; antall ikke målt |
+| Databehandling | Googles retningslinjer og aktiverte funksjoner gjelder | Både Googles og Samsungs retningslinjer kan gjelde når begge tjenestesett brukes |
 
-**Vi har ikke utført denne testen.** Antall forhåndsinstallerte apper er ikke alene et godt mål på personvern. Privilegerte komponenter, nettverkstrafikk, standardinnstillinger og databehandling er viktigere enn antall appikoner.
+**Dokumentert:** leverandørstruktur, navngitte sikkerhetsfunksjoner og modellspesifikke oppdateringsløfter. **Ikke fastslått:** hvilken telefon som sender minst data, eller nøyaktig hvilke apper som ikke kan fjernes. En Galaxy med Google-tjenester kommuniserer også med Google; Pixel øker ikke automatisk denne innsamlingen. Pixel-spesifikke Google-funksjoner kan ha egne datastrømmer når de aktiveres.
 
 ## Er Pixel egentlig «ren Android»?
 
