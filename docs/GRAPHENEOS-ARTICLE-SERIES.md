@@ -49,6 +49,10 @@ For every pattern, document:
 8. How are app data backed up and restored for each profile?
 9. Which setup is reasonable for BankID/Vipps? Never claim compatibility without a real tested version matrix.
 
+## Public test protocol
+
+See [GrapheneOS lab test plan and result template](GRAPHENEOS-LAB-TEST-PLAN.md). All 17 cases start as NOT RUN; no hardware testing is claimed. The plan defines reproducible evidence and publication gates.
+
 ## QA and verification
 
 - Use official primary sources: https://grapheneos.org/features , https://grapheneos.org/usage , https://grapheneos.org/faq , https://grapheneos.org/install .
