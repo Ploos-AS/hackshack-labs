@@ -71,3 +71,11 @@ Scope: identify the exact USB interface and required cable; reproduce Linux dete
 | Model | Priority | Status | Linux/data interface | Affiliate link |
 | --- | --- | --- | --- | --- |
 | **UNI-T UT107+** | Medium | Planned purchase; not purchased or tested | No USB/Bluetooth/data-export interface documented in manufacturer specifications; Linux/sigrok support not established. Automotive functions include RPM, dwell, pulse width, 12V battery test; True RMS, 6000 counts. Verify exact listing, CAT rating and accessories before purchase. | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c4sBATAh) |
+
+## Bluetooth multimeter candidate
+
+| Model | Priority | Status | Linux/data interface | Affiliate link |
+| --- | --- | --- | --- | --- |
+| **UNI-T UT60BT** | High | Planned purchase; not purchased or tested | Bluetooth LE; third-party UT60BT hardware-verified support reported by [QtDMM](https://qtdmm.de/) and [libreble/multimeter](https://github.com/libreble/multimeter). Verify exact device revision and Linux logging in our lab. UNI-T specifies 9999 counts and CAT III 600 V / CAT II 1000 V; independently check safety documentation before mains use. | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c4dqIMPP) |
+
+**Proposed article:** *UNI-T UT60BT on Linux: Bluetooth Multimeter Logging Without the Vendor App* (English original, Norwegian Bokmål translation). Test BlueZ/BLE discovery, QtDMM and open protocol tooling, CSV export, Python/MQTT integration, reconnection and range handling. Do not present this as a hands-on test before purchase and verification.
