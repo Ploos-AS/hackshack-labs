@@ -34,6 +34,26 @@ for (const lang of ['en', 'nb']) {
     if (/href=["']http:\/\//.test(content)) warn.push(path + ': non-HTTPS HTML link; inspect target');
   }
 }
+// Legacy articles in the collection root are also loaded by Astro.
+// Check their explicit editorial metadata even though they do not participate
+// in the EN/NB filename parity checks until they are migrated.
+for (const filename of readdirSync(root).filter(x => x.endsWith('.md'))) {
+  const path = join(root, filename);
+  const content = readFileSync(path, 'utf8');
+  const match = content.match(/^---\\r?\\n([\\s\\S]*?)\\r?\\n---\\r?\\n/);
+  if (!match) { issues.push(path + ': missing YAML frontmatter'); continue; }
+  const fm = match[1];
+  const data = Object.fromEntries(['title','description','category','lang','date','translationKey','draft','tested','evidence'].map(k => [k, field(fm,k)]));
+  for (const k of ['title','description','category','lang','date','translationKey','evidence']) {
+    if (!data[k]) issues.push(path + ': missing ' + k);
+  }
+  if (!['true','false'].includes(data.draft)) issues.push(path + ': invalid or missing draft');
+  if (!['true','false'].includes(data.tested)) issues.push(path + ': invalid or missing tested');
+  if (!['documentation','desk-research','lab-tested','hardware-verified'].includes(data.evidence)) issues.push(path + ': invalid evidence');
+  if (data.tested === 'true' && ['documentation','desk-research'].includes(data.evidence)) issues.push(path + ': tested conflicts with evidence');
+  if (data.tested === 'false' && ['lab-tested','hardware-verified'].includes(data.evidence)) issues.push(path + ': untested conflicts with evidence');
+  warn.push(path + ': legacy root article; migrate to language folders for parity checks');
+}
 const byName = new Map(entries.map(e => [e.lang + '/' + e.filename, e]));
 // A translationKey must identify exactly one article per language; otherwise language switching can be ambiguous.
 const translationOwners = new Map();
