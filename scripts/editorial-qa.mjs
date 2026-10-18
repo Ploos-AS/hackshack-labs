@@ -88,8 +88,10 @@ for (const e of entries.filter(e => e.data.draft !== 'true')) {
   }
   // A product/affiliate link is not evidence for a technical claim.
   // Require at least one non-affiliate external link in documentation-based articles.
-  const markdownLinks = [...body.matchAll(new RegExp('\\\\]\\\\((https?:[^\\\\s)]+)\\\\)', 'g'))].map(m => m[1]);
-  const htmlLinks = [...body.matchAll(new RegExp('href=["\\u0027](https?:[^"\\u0027]+)["\\u0027]', 'g'))].map(m => m[1]);
+  const markdownLinks = body.split('](').slice(1).map(part => part.split(')')[0].trim()).filter(url => url.startsWith('https://') || url.startsWith('http://'));
+  const htmlLinks = body.split('href="').slice(1).map(part => part.split('"')[0]).concat(
+    body.split("href='").slice(1).map(part => part.split("'")[0])
+  ).filter(url => url.startsWith('https://') || url.startsWith('http://'));
   const isAffiliate = url => {
     const lower = url.toLowerCase();
     return lower.includes('s.click.aliexpress.com') || lower.includes('aliexpress.com/e/') ||
