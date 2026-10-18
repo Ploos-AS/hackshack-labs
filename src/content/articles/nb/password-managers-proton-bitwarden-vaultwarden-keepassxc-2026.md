@@ -139,6 +139,8 @@ Selvhosting er ikke automatisk billigere: regn med tidsbruk, sikkerhetskopiering
 
 Ikke anta at passkeys eller vedlegg følger med ved flytting.
 
+**Forbehold om klarteksteksport:** Å slette en CSV- eller JSON-fil garanterer ikke at innholdet er ugjenopprettelig, særlig på SSD-er, i øyeblikksbilder, skysynkroniserte mapper eller automatiske sikkerhetskopier. Velg et støttet kryptert eksportformat der det finnes. Hvis klarteksteksport er nødvendig, opprett filen kun på en betrodd enhet og i et kontrollert, kryptert lagringsområde, hold den utenfor synkronisering og sikkerhetskopiering, importer raskt og fjern midlertidige kopier etterpå. Vanlig filsletting er ingen garanti for sikker sletting på flashlagring. Ved migrering med høyere risiko bør du bruke et egnet isolert, midlertidig miljø og kontrollere den nye løsningen før det gamle hvelvet avvikles.
+
 ## Vår vurdering: velg etter behov
 
 | Din situasjon | Begynn med å vurdere | Tenk deg om hvis … |
