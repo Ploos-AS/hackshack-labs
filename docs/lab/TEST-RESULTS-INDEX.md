@@ -33,3 +33,13 @@ docs/lab/
 ```
 
 Results files shown above are **examples**, not completed reports.
+
+## ProbeOS integration — required for PC hardware tests
+
+**ProbeOS is the existing general-purpose hardware testing project:** https://github.com/Ploos-AS/ProbeOS . Do not create a competing HackShack-specific benchmarking tool. ProbeOS remains independent and usable by anyone.
+
+**Evidence pipeline:** ProbeOS (live USB hardware identification, diagnostics, benchmarks, stability testing; JSON/HTML reports) → HackShack HQ (one-way import, validation, archive, human editorial review) → HackShack Labs (independent reviews and comparisons). Importing a report does **not** automatically verify, approve, or publish its claims.
+
+For each PC test, record the ProbeOS version, test profile, physical unit label, hardware revision, run date, test conditions, result status, JSON/HTML report reference and SHA-256 checksum. If a test was not run, use `NOT TESTED`; do not invent results. Keep serial numbers and other unique identifiers private. Where appropriate, run separate Debian workload and compatibility tests after ProbeOS diagnostics, and link both evidence sets.
+
+**Initial ProbeOS targets:** 2 × Intel N150 (32 GB/2 TB), 1 × GMKtec G3 N100 (16 GB/512 GB), 1 × fanless industrial Core i7-5500U (8 GB/256 GB; six serial ports). Compare results using the same ProbeOS version/profile where hardware capabilities permit.
