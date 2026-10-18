@@ -6,6 +6,7 @@ lang: nb
 date: 2026-10-11
 tags: [apen-kildekode, maskinvare, nettverk]
 translationKey: welcome
+draft: false
 tested: false
 evidence: documentation
 ---
