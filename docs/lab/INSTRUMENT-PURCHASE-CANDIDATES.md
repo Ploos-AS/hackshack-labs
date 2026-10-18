@@ -26,3 +26,11 @@
 - Do not imply purchases, hands-on tests, verified calibration, safety certification, Linux compatibility or model equivalence before checking.
 - Verify the destination listing, electrical rating, plug type and suitability for the reader's region before publication.
 - Proposed article: *How to Measure the Power Consumption of Mini PCs, SBCs and Home Servers*; Norwegian: *Slik måler du strømforbruket til mini-PC-er, SBC-er og hjemmeservere*.
+
+## Existing equipment (not purchase candidates)
+
+| Equipment | Quantity | Status | Affiliate link |
+| --- | ---: | --- | --- |
+| Hagibis HDMI video capture with loop-out (MS2131 per seller listing) | 3 | User reports owned; Linux V4L2/UVC, OBS, input/output resolution and audio capabilities not yet independently tested | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c3HEV9Qp) |
+
+Use for future HackShack Labs video capture and tutorials. Clearly distinguish the seller's advertised 4K input/loop-through from verified recording resolution; do not claim tested compatibility before testing.
