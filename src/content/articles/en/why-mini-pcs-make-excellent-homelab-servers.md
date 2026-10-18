@@ -91,6 +91,10 @@ The 10 W versus 50 W example is intentionally conservative: a different illustra
 
 An external USB drive is not automatically a substitute for a well-designed NAS or backup system. Storage-heavy workloads may be better served by a separate NAS.
 
+## Backups must include application state
+
+A backup of container images or a Compose file alone does **not** preserve application data. Identify persistent volumes, bind mounts, database files, encryption keys, secrets needed for recovery, and configuration stored outside the container. For active databases, use a supported consistent snapshot or application-aware dump rather than assuming a live file copy is recoverable. Keep at least one backup independent of the mini PC, restrict access to backup credentials, and periodically restore into a separate test environment. A successful scheduled backup job is not proof that recovery works.
+
 ## One node first, cluster later
 
 Start with one machine and learn to operate it well: automated updates where appropriate, monitoring, documented configuration, independent backups and tested recovery. Add nodes only when you have a reason—separate failure domains, capacity, experiments with clustering or maintenance flexibility. Three boxes are not automatically highly available: quorum, shared or replicated storage, networking and application design still matter.
