@@ -89,6 +89,18 @@ for (const e of entries.filter(e => e.data.draft !== 'true')) {
   const hasExternalSourceLink = body.includes('](https://') || body.includes('](http://') ||
     body.includes('href="https://') || body.includes("href='https://") ||
     body.includes('href="http://') || body.includes("href='http://");
+  // Catch obvious citation placeholders without making network requests.
+  // A source link must not point to a reserved example domain or a fragment-only URL.
+  const externalLinks = [...body.matchAll(new RegExp('https?:' + '/' + '/' + '[^\\s)]+', 'g'))].map(m => m[0]);
+  for (const url of externalLinks) {
+    let host;
+    try { host = new URL(url).hostname.toLowerCase(); }
+    catch { issues.push(e.path + ': malformed external Markdown link: ' + url); continue; }
+    if (['example.com', 'example.org', 'example.net'].includes(host) ||
+        host.endsWith('.example') || host === 'localhost') {
+      issues.push(e.path + ': placeholder domain in external source link: ' + url);
+    }
+  }
   // Documentation-based technical articles must let readers verify the underlying claims.
   // General welcome/editorial pages can reasonably link only to internal articles.
   const requiresSources = ['documentation', 'desk-research'].includes(e.data.evidence) &&
