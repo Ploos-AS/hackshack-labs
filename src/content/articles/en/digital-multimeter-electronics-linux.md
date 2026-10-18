@@ -7,7 +7,7 @@ date: 2026-10-18
 tags: [electronics, linux, multimeter, test-equipment]
 series: "Lab Equipment"
 translationKey: digital-multimeter-electronics-linux
-draft: true
+draft: false
 tested: false
 evidence: documentation
 ---
