@@ -47,3 +47,9 @@ Use for future HackShack Labs video capture and tutorials. Clearly distinguish t
 - **Evidence:** Publish reproducible commands, screenshots or logs, settings and any limitations; avoid unverified compatibility claims.
 - **Editorial:** Clearly disclose the [AliExpress affiliate link](https://s.click.aliexpress.com/e/_c3HEV9Qp) with sponsored link attributes; purchasing source and commission must not affect conclusions.
 - **Deliverables:** YouTube video, English hands-on review, Norwegian translation, and link between the video and articles.
+
+## Linux/sigrok multimeter candidates
+
+| Model | Priority | Status | Notes |
+| --- | --- | --- | --- |
+| **UNI-T UT61E (original, not UT61E+)** | High | Planned purchase; not purchased or tested | Choose the original model with documented sigrok support. Verify exact revision, compatible data cable, Linux detection, seller availability and electrical safety before purchase. Affiliate link not registered. |
