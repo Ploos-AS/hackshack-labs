@@ -57,13 +57,15 @@ Proton har produktdefinerte funksjoner for deling og samarbeid. Sjekk om funksjo
 
 Nextcloud kan integreres med organisasjonens autentisering, brukere, grupper, ekstern lagring og tilgangsregler. Fleksibiliteten gir også større risiko for feilkonfigurasjon. Offentlige lenker, gjestetilgang og føderering bør testes.
 
+**Å trekke tilbake tilgang sletter ikke kopier.** Når du fjerner en delingslenke eller en samarbeidspartners tilgang, kan du ikke regne med at filer mottakeren allerede har lastet ned, eksportert eller kopiert, forsvinner. Vurder hvem som kan laste ned og dele videre før du deler fortrolig innhold. Kontroller gjeldende funksjoner for lenkeutløp og tilgangsrettigheter; tilgangsfjerning er ikke fjernsletting.
+
 ## Drift, oppdateringer og gjenoppretting
 
 Proton drifter infrastrukturen. Du slipper mye vedlikehold, men blir avhengig av tilgjengelighet, produktvalg og prosedyrer for kontogjenoppretting. **En administrert tjeneste erstatter ikke en uavhengig sikkerhetskopi av uerstattelige filer.**
 
 Med Nextcloud må du håndtere oppdateringer av operativsystem og containere, PHP og database, lagringsintegritet, TLS, autentisering, overvåking, backup og testet gjenoppretting. Tidsbruken er reell selv om programvaren er gratis.
 
-En Nextcloud-instans på internnettet kan redusere eksponeringen, men ekstern tilgang, mobilsynkronisering og sikkerhetskopier utenfor huset krever fortsatt planlegging.
+En Nextcloud-instans på det interne nettverket kan redusere eksponeringen, men ekstern tilgang, mobilsynkronisering og sikkerhetskopier utenfor huset krever fortsatt planlegging.
 
 ## Lokal drift eller kombinasjon?
 
