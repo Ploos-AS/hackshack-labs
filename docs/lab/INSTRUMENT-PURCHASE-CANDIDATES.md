@@ -8,6 +8,8 @@
 | Plug-in energy meter | UNI-T UT230B-US (seller listing title; specifications unverified) | US; electrical specifications unverified | Planned; verify voltage, plug type and certification before publishing as US-compatible | [AliExpress US](https://s.click.aliexpress.com/e/_c3fhwf2v) |
 | Digital multimeter | UNI-T UT61E+ (listing variant unverified) | Not yet verified | Planned; not tested | [AliExpress](https://s.click.aliexpress.com/e/_c4nRJVnb) |
 
+| Infrared thermometer | UNI-T UT306C (-50 to 500 °C per seller title; specifications unverified) | General | Planned; not tested | [AliExpress](https://s.click.aliexpress.com/e/_c3Cf19av) |
+
 ## Editorial usage
 
 - English original and Norwegian Bokmål translation must disclose affiliate links clearly and near the links.
