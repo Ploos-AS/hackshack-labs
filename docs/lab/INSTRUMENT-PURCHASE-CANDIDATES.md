@@ -57,3 +57,11 @@ Use for future HackShack Labs video capture and tutorials. Clearly distinguish t
 ### UT61E+ Linux/Python follow-up
 
 UNI-T officially discontinued the original UT61E in 2020, replacing it with UT61E+. Prioritize **UT61E+** for new purchase subject to exact listing, cable, electrical safety and independent verification. sigrok's original UT61E driver does **not** support UT61E+, but the community Python project [ljakob/unit_ut61eplus](https://github.com/ljakob/unit_ut61eplus) reports Linux access via a CP2110 USB connection and includes plotting/MQTT examples. Treat this as community-supported and unverified in our lab, not official sigrok support. The original UT61E remains a low-priority used-only opportunity.
+
+## Planned article: UNI-T UT61E+ on Linux
+
+**Working title:** *UNI-T UT61E+ on Linux: USB Data Logging with Python and MQTT*  
+**Status:** Planned; hardware not yet purchased or tested.  
+**Languages:** English original and Norwegian Bokmål translation.
+
+Scope: identify the exact USB interface and required cable; reproduce Linux detection; evaluate the community [unit_ut61eplus](https://github.com/ljakob/unit_ut61eplus) Python implementation; record measurements to CSV; demonstrate optional MQTT publishing and Home Assistant integration; document reproducible setup, limitations, measurement safety, and the difference between original UT61E sigrok support and UT61E+ community support. No compatibility or performance claims before hands-on verification. Include clearly marked affiliate links only where applicable.
