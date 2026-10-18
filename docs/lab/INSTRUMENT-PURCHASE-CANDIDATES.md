@@ -127,3 +127,13 @@ Scope: identify the exact USB interface and required cable; reproduce Linux dete
 **Status:** One unit owned; not yet tested. **Working title:** *GMKtec G3 N100 on Debian — A Budget Mini PC for Homelab?*
 
 Test Debian Linux compatibility; identify actual RAM/SSD/network/Wi-Fi hardware and firmware; measure idle/load power, CPU/storage/network performance, cooling and noise; evaluate Docker and lightweight server workloads. Compare against the two owned Intel N150 mini-PCs using consistent configurations and reproducible benchmarks. English original with Norwegian Bokmål translation. No affiliate link registered; do not imply a hands-on verdict before tests.
+
+## Owned retro-video test equipment: RetroScaler GBS Control Pro
+
+| Equipment | Quantity | Status | Affiliate link |
+| --- | ---: | --- | --- |
+| **RetroScaler GBS Control Pro (GBSC) video converter / scaler** | **1** | User reports owned; awaiting tests. Seller advertises RGBS, VGA, SCART, YPbPr, composite and S-Video inputs and HDMI output; actual connectors, supported modes, firmware and signal handling must be inspected and verified. | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c3SvS10d) |
+
+**Proposed review:** *RetroScaler GBS Control Pro Tested: Amiga, Atari, SCART and HDMI Capture on Linux* (English original, Norwegian Bokmål translation).
+
+**Test plan:** Photograph and document actual input/output ports and board revision; identify firmware and configuration options; test PAL 15 kHz RGB from Amiga where safely available, Atari ST video modes as supported, RGB SCART, VGA, component and composite/S-Video only if the particular unit really supports them; assess 50/60 Hz behavior, aspect ratio, deinterlacing, scaling, scrolling artifacts, audio if present, and latency with documented methodology. Test HDMI output with the owned Hagibis MS2131 capture devices and OBS on Linux; distinguish device compatibility from any capture-card limitation. Do not assume all advertised interfaces or features are supported without verification. Include affiliate disclosure; no hands-on conclusions before testing.
