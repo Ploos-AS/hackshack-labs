@@ -12,6 +12,8 @@
 
 | Temperature and humidity meter | UNI-T UT333BT | General | Planned; not tested; Bluetooth via iENV, CSV export through mobile app; direct Linux/Python support unverified | [AliExpress](https://s.click.aliexpress.com/e/_c4CALRLT) |
 
+| Sound level meter | UNI-T UT353BT (30–130 dBA) | General | Planned; not tested; Bluetooth to iENV app; direct Linux/Python support unverified | [AliExpress](https://s.click.aliexpress.com/e/_c328j5jx) |
+
 ## Editorial usage
 
 - English original and Norwegian Bokmål translation must disclose affiliate links clearly and near the links.
