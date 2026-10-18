@@ -20,7 +20,7 @@ for (const lang of ['en', 'nb']) {
     const fm = match[1];
     const data = Object.fromEntries(['title','description','category','lang','date','updated','translationKey','draft','tested','evidence'].map(k => [k,field(fm,k)]));
     entries.push({path, filename, lang, content, data});
-    for (const k of ['title','description','category','lang','date']) if (!data[k]) issues.push(path + ': missing ' + k);
+    for (const k of ['title','description','category','lang','date','translationKey']) if (!data[k]) issues.push(path + ': missing ' + k);
     if (data.lang !== lang) issues.push(path + ': lang differs from directory');
     if (data.date && !/^\d{4}-\d{2}-\d{2}$/.test(data.date)) issues.push(path + ': date should use YYYY-MM-DD');
     if (data.updated && !/^\d{4}-\d{2}-\d{2}$/.test(data.updated)) issues.push(path + ': updated should use YYYY-MM-DD');
@@ -31,7 +31,6 @@ for (const lang of ['en', 'nb']) {
     if (data.tested === 'false' && ['lab-tested','hardware-verified'].includes(data.evidence)) issues.push(path + ': untested conflicts with evidence');
     if (/\]\(http:\/\//.test(content)) warn.push(path + ': non-HTTPS markdown link; inspect target');
     if (/href=["']http:\/\//.test(content)) warn.push(path + ': non-HTTPS HTML link; inspect target');
-    if (data.draft !== 'true' && !data.translationKey) warn.push(path + ': missing translationKey');
   }
 }
 const byName = new Map(entries.map(e => [e.lang + '/' + e.filename, e]));
