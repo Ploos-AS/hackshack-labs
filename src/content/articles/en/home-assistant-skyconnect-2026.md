@@ -50,6 +50,10 @@ An upgrade may be worthwhile if you need a feature or reliability improvement de
 4. In Home Assistant, inspect the ZHA integration, connected adapter and available firmware information; record the current version before considering an update. For Zigbee2MQTT, check its adapter and firmware documentation instead.
 5. Back up the coordinator/network before migration. Follow the current migration guide for **your stack**; a firmware flash alone is not a migration.
 
+## A Home Assistant backup is not always a coordinator migration
+
+Before replacing a Zigbee coordinator, distinguish a Home Assistant configuration backup from a **supported radio/network migration**. Depending on the stack and adapter, restoring the application may not transfer the coordinator's network identity, security keys or device relationships to a different radio. Check the current ZHA or Zigbee2MQTT migration procedure for both source and destination hardware, retain the old adapter until the new network is verified, and plan for devices that may need re-pairing. Keep any exported network keys private; they are security-sensitive credentials, not ordinary troubleshooting attachments.
+
 ## What we have not tested
 
 HackShack Labs owns a SkyConnect and IKEA Zigbee devices, which could form a repeatable future test set. **We have not verified their firmware versions, stability, migration behavior or measured performance for this article.**
