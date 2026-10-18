@@ -1,0 +1,25 @@
+name: Validate article pull requests
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/article-pr-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  editorial-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npm run qa:editorial
+      - run: node scripts/qa-code-copy.mjs
+      - run: npm run build
+      - run: node scripts/qa-article-pages.mjs
