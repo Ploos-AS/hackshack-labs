@@ -68,6 +68,9 @@ GL.iNets maskinvaredokumentasjon peker på en viktig **forskjell mellom Wi-Fi-dr
 
 Det siste er kanskje det morsomste: Ruteren trenger ikke gjøre *alt*. Et lite tilgangspunkt og en separat server kan bli en imponerende, bærbar lab.
 
+
+**Frakoblet betyr ikke automatisk sikkert.** Et separat aksesspunkt med en tjenestemaskin på Ethernet kan fortsatt gi alle tilkoblede Wi-Fi-klienter tilgang til maskinen. Bruk et eget testnett, egnet Wi-Fi-autentisering, brannmur på tjenestemaskinen og ingen bro eller rute til produksjonsnett. Kontroller DHCP og ruting; manglende internettforbindelse er ikke i seg selv nettverksisolasjon. Historiske eller uoppdaterte tjenester hører hjemme i et fysisk eller logisk isolert laboratorienett.
+
 ## Original firmware eller vanlig OpenWrt?
 
 De to alternativene gir ikke automatisk samme funksjoner. Leverandørens firmware kan ha brukervennlige reiseruterfunksjoner og andre Wi-Fi-egenskaper. Vanlig OpenWrt gir direkte tilgang til OpenWrts egne pakker og oppsett, men riktig image, versjon, maskinvarerevisjon og driver må kontrolleres.
