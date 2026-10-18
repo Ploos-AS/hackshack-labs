@@ -40,7 +40,7 @@ for (const lang of ['en', 'nb']) {
 for (const filename of readdirSync(root).filter(x => x.endsWith('.md'))) {
   const path = join(root, filename);
   const content = readFileSync(path, 'utf8');
-  const match = content.match(/^---\\r?\\n([\\s\\S]*?)\\r?\\n---\\r?\\n/);
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
   if (!match) { issues.push(path + ': missing YAML frontmatter'); continue; }
   const fm = match[1];
   const data = Object.fromEntries(['title','description','category','lang','date','translationKey','draft','tested','evidence'].map(k => [k, field(fm,k)]));
