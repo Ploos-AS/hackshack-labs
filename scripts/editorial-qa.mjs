@@ -129,6 +129,14 @@ for (const path of [...pageFiles, 'src/layouts/SiteLayout.astro']) {
     if (!routeExists(url)) issues.push(path + ': missing navigation/series route ' + url);
   }
 }
+// Article bodies can also link to series and navigation pages; check these routes too.
+for (const e of entries.filter(e => e.data.draft !== 'true')) {
+  const body = e.content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
+  for (const match of body.matchAll(navLinks)) {
+    const url = match[1].split(/[?#]/)[0];
+    if (!routeExists(url)) issues.push(e.path + ': missing navigation/series route ' + url);
+  }
+}
 for (const path of pageFiles.filter(p => p.includes('/series/'))) {
   const content = readFileSync(path, 'utf8');
   if (!content.includes('published()')) warn.push(path + ': series page does not use published articles collection');
