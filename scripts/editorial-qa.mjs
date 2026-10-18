@@ -35,6 +35,16 @@ for (const lang of ['en', 'nb']) {
   }
 }
 const byName = new Map(entries.map(e => [e.lang + '/' + e.filename, e]));
+// A translationKey must identify exactly one article per language; otherwise language switching can be ambiguous.
+const translationOwners = new Map();
+for (const e of entries) {
+  const key = e.data.translationKey;
+  if (!key) continue;
+  const scopedKey = e.lang + '/' + key;
+  const prior = translationOwners.get(scopedKey);
+  if (prior) issues.push(e.path + ': duplicate translationKey ' + key + ' also used by ' + prior);
+  else translationOwners.set(scopedKey, e.path);
+}
 // EN and NB must have matching file-level coverage, including research drafts.
 for (const e of entries) {
   const counterpart = byName.get((e.lang === 'en' ? 'nb/' : 'en/') + e.filename);
