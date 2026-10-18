@@ -91,7 +91,7 @@ for (const e of entries.filter(e => e.data.draft !== 'true')) {
     body.includes('href="http://') || body.includes("href='http://");
   // Catch obvious citation placeholders without making network requests.
   // A source link must not point to a reserved example domain or a fragment-only URL.
-  const externalLinks = [...body.matchAll(/\\]\\((https?:\\/\\/[^\\s)]+)\\)/g)].map(m => m[1]);
+  const externalLinks = [...body.matchAll(/\\]\\((https?:\/\/[^\\s)]+)\\)/g)].map(m => m[1]);
   for (const url of externalLinks) {
     let host;
     try { host = new URL(url).hostname.toLowerCase(); }
