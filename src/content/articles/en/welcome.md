@@ -7,6 +7,7 @@ date: 2026-10-11
 tags: [open-source, hardware, networking]
 translationKey: welcome
 tested: false
+evidence: documentation
 ---
 
 HackShack Labs documents practical computing projects, hardware experiments, and reproducible technical guides.
