@@ -12,11 +12,13 @@ tested: false
 evidence: documentation
 ---
 
-> **Dokumentasjon og åpenhet:** Dette er en kjøpsguide basert på generelle måleprinsipper og publisert dokumentasjon, ikke en sammenlignende praktisk test. Vi oppgir ingen egne nøyaktighetsmålinger, modellrangeringer eller affiliate-lenker.
+> **Grunnlag og åpenhet:** Dette er en kjøpsguide basert på generelle måleprinsipper og publisert dokumentasjon, ikke en sammenlignende praktisk test. Vi oppgir ingen egne nøyaktighetsmålinger, modellrangeringer eller affiliate-lenker.
 
 ## Kort svar
 
 Til hobbyelektronikk, innebygd utvikling og reparasjon av eldre datamaskiner bør du velge et **sikkert og tilstrekkelig nøyaktig digitalt multimeter** med nyttige måleområder, gode måleledninger og lesbar betjening. Skal du automatisere målinger fra Linux, må du kontrollere grensesnittet og protokollen for **den eksakte modellen** før du betaler ekstra for USB eller Bluetooth.
+
+**Dokumentasjon kontrollert:** 18. oktober 2026. Spesifikasjoner og kompatibilitet må kontrolleres for eksakt modell og maskinvarerevisjon før kjøp.
 
 ## Begynn med målebehovet
 
@@ -26,17 +28,24 @@ Et multimeter er **ikke et oscilloskop** og kan ikke erstatte det ved feilsøkin
 
 ## Nøyaktighet, oppløsning og True RMS
 
-Antall visningssteg («counts») beskriver oppløsning, **ikke** nøyaktighet. Sammenlign spesifikasjonene for aktuelle måleområder og forhold. En angivelse som ±(% av avlesning + digits) inkluderer både en proporsjonal del og et tillegg i visningssiffer. True RMS er nyttig ved relevante AC-målinger, men båndbredde, crest factor og måleforhold spiller fortsatt inn.
+Antall visningssteg («counts») beskriver oppløsning, **ikke** nøyaktighet. Sammenlign spesifikasjonene for aktuelle måleområder og forhold. En angivelse som ±(% av avlesning + digits) inkluderer både en proporsjonal del og et tillegg i visningssiffer. Eksempel: Hvis 5,000 V-området har **0,001 V oppløsning**, viser **5,000 V** og er spesifisert til **±(0,5 % av avlesning + 3 digits)**, blir første ledd 0,025 V og tre siste visningssteg 0,003 V. Samlet toleranse er **±0,028 V**, altså 4,972–5,028 V under oppgitte betingelser. Kontroller oppløsningen på det aktuelle området.
+
+True RMS er nyttig ved relevante AC-målinger, men båndbredde, crest factor og måleforhold spiller fortsatt inn.
 
 ## Sikkerhet først
 
-Ved arbeid på nettspenning må du kontrollere riktig målekategori og spenningsklasse, troverdig uavhengig sikkerhetsdokumentasjon der den finnes, sikringer, måleledninger og prober. CAT-merking i en nettannonse er ikke alene tilstrekkelig dokumentasjon. For nybegynnere er lavspenningselektronikk et fornuftig utgangspunkt. Overskrid aldri instrumentets spesifiserte grenser.
+Ved arbeid på nettspenning må du kontrollere riktig målekategori og spenningsklasse, troverdig uavhengig sikkerhetsdokumentasjon der den finnes, sikringer, måleledninger og prober. CAT-merking i en nettannonse er ikke alene tilstrekkelig dokumentasjon. Ved strømmåling bør du kontrollere at instrumentet har riktig dimensjonerte **HRC-sikringer** med høy bryteevne, og at ledningene er i god stand. **Mål aldri spenning mens en ledning står i strøminngangen**: det kan kortslutte kretsen. Kontroller alltid måleuttak og bryterstilling først.
+
+**USB og jord:** Et multimeter koblet til en jordet PC kan skape en farlig jordforbindelse ved måling på nettrefererte kretser. Undersøk om dataforbindelsen er **galvanisk isolert**, for eksempel optisk/IR; anta aldri at en vanlig USB-forbindelse er sikker isolasjon.
+
+**Norge:** Arbeid på faste elektriske installasjoner er regulert. DSB beskriver hvilke mindre arbeider privatpersoner kan gjøre; øvrig arbeid skal utføres av kvalifiserte fagfolk. Norske boliger kan ha **230 V IT-nett**, med 230 V mellom faseledere. Ikke anta at én leder er en trygg nøytral; velg målekategori, måleledninger og fremgangsmåte etter faktisk anlegg. Se [DSBs veiledning](https://www.dsb.no/sikkerhverdag/strom/elektrisk-arbeid-dette-kan-du-gjore-selv/). For nybegynnere er lavspenningselektronikk et fornuftig utgangspunkt.
 
 ## Sjekkliste for Linux
 
 | Egenskap | Hva må kontrolleres? |
 | --- | --- |
 | USB | USBTMC, seriell tilkobling eller produsentspesifikk adapter? |
+| Isolasjon | Er dataforbindelsen til PC galvanisk isolert, for eksempel optisk/IR? Kontroller dokumentasjonen. |
 | Ethernet | Lokal SCPI/VISA eller bare proprietær programvare? |
 | Bluetooth / BLE | Dokumentert GATT/protokoll eller kun mobilapp? |
 | Python | Fungerende bibliotek og etterprøvbare eksempler for modellen? |
@@ -44,7 +53,11 @@ Ved arbeid på nettspenning må du kontrollere riktig målekategori og spennings
 | Fastvare | Kan den oppdateres uten Windows? |
 | Personvern | Fungerer tilkoblingen lokalt uten konto eller sky? |
 
-**Bluetooth betyr ikke automatisk Linux-kompatibilitet.** Python-biblioteket Bleak kan kommunisere med mange BLE-enheter, men du trenger fortsatt kjennskap til enhetens karakteristikker og dataformat. Sigrok-støtte er også modellavhengig.
+**Bluetooth betyr ikke automatisk Linux-kompatibilitet.** Python-biblioteket Bleak kan kommunisere med mange BLE-enheter, men du trenger fortsatt kjennskap til enhetens karakteristikker og dataformat. Ved USBTMC- eller nettverksinstrumenter som bruker SCPI, kan **PyVISA** være nyttig dersom instrumentet og tilkoblingen støttes. Sigrok-støtte er modellavhengig: **søk etter eksakt modell i [sigroks oversikt over støttet maskinvare](https://sigrok.org/wiki/Supported_hardware)** og sammenlign med produsentens manual og maskinvarerevisjon.
+
+## Eksempel: Slik undersøker du kompatibilitet
+
+Noter **fullt modellnavn, suffiks og maskinvarerevisjon**. Søk etter akkurat dette i [sigroks maskinvareliste](https://sigrok.org/wiki/Supported_hardware). Kontroller deretter i produsentens manual hvilket datagrensesnitt og hvilken protokoll instrumentet faktisk bruker. Sjekk til slutt Linux-driver og loggefunksjon. **Vi hevder ikke at en bestemt modell støttes uten en verifisert oppføring.**
 
 ## Sammenlign merker uten merkelojalitet
 
@@ -54,13 +67,14 @@ UNI-T, Brymen og Fluke har produkter i forskjellige prisklasser. Et kjent merke 
 
 Hvis multimeteret du allerede har, er sikkert og dekker behovet, kan du beholde det. Et ekstra enkelt instrument kan være nyttig ved samtidige strøm- og spenningsmålinger, men er ikke alltid nødvendig. Til protokollfeilsøking kan en kompatibel logikkanalysator være bedre; til bølgeformer trenger du et oscilloskop.
 
-## Planlagte tester hos HackShack Labs
+## Hva har vi ikke testet?
 
-Vi planlegger å registrere modell, maskinvarerevisjon, fastvare, testforhold, referanseinstrument, repeterbarhet, kontinuitetsrespons, USB/BLE-datafangst, Linux-distribusjon, Python-kode og skyavhengighet. **Vi hevder ikke å ha gjennomført disse testene i denne artikkelen.**
+**Ingen multimetre er benktestet for denne guiden.** Nøyaktighet, sikkerhetskonstruksjon og Linux-kompatibilitet må kontrolleres for den enkelte modellen.
 
 ## Videre lesning
 
 - [Maskinvare støttet av sigrok](https://sigrok.org/wiki/Supported_hardware)
 - [Bleak: Python-bibliotek for Bluetooth Low Energy](https://bleak.readthedocs.io/)
 - [PyVISA-dokumentasjon](https://pyvisa.readthedocs.io/)
+- [DSB: Elektrisk arbeid – dette kan du gjøre selv](https://www.dsb.no/sikkerhverdag/strom/elektrisk-arbeid-dette-kan-du-gjore-selv/)
 - [Oversikt over målekategorier (Fluke)](https://www.fluke.com/en/learn/blog/safety/measurement-categories)
