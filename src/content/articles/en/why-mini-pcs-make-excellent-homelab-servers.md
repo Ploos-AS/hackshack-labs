@@ -9,6 +9,7 @@ series: "Used Hardware & Homelab"
 translationKey: why-mini-pcs-make-excellent-homelab-servers
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Editorial status — 14 October 2026:** A documentation-based introduction, not a hands-on benchmark. Power figures below are illustrative assumptions, not measurements of a particular product.

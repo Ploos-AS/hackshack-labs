@@ -9,6 +9,7 @@ series: "Used Hardware & Homelab"
 translationKey: why-mini-pcs-make-excellent-homelab-servers
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Redaksjonell status – 14. oktober 2026:** Introduksjon basert på dokumentasjon, ikke en praktisk ytelsestest. Strømtallene nedenfor er regneeksempler, ikke målinger av bestemte produkter.

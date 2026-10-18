@@ -9,6 +9,7 @@ series: ham-radio-sdr
 translationKey: welcome-to-the-radio-shack
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Editorial status (14 October 2026):** An introduction and project roadmap, not a hands-on equipment test. Specific builds will be documented and marked verified only after real hardware testing.

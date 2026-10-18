@@ -9,6 +9,7 @@ series: "Pocket Networking Lab"
 translationKey: glinet-mango-tinkering
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Reklame – annonselenke:** Artikkelen inneholder en tydelig merket annonselenke til GL.iNet Mango. Ploos AS kan motta provisjon ved kvalifiserte kjøp, uten ekstra kostnad for deg. Det påvirker ikke våre redaksjonelle vurderinger.

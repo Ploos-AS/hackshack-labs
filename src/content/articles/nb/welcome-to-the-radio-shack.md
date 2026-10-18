@@ -9,6 +9,7 @@ series: ham-radio-sdr
 translationKey: welcome-to-the-radio-shack
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Redaksjonell status (14. oktober 2026):** Dette er en introduksjon og prosjektplan, ikke en praktisk utstyrstest. Konkrete oppsett dokumenteres og merkes som verifisert først etter testing på fysisk maskinvare.

@@ -9,6 +9,7 @@ series: "Used Hardware & Homelab"
 translationKey: best-mini-pcs-local-ai-2026
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Editorial status — 15 October 2026:** Documentation-based buyer's guide, **not a hands-on ranking or benchmark**. Hardware configurations, driver support, prices and availability vary by region and change over time. No affiliate links are included.

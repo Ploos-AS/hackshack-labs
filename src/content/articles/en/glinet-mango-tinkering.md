@@ -9,6 +9,7 @@ series: "Pocket Networking Lab"
 translationKey: glinet-mango-tinkering
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Advertisement — affiliate link:** This article includes a clearly marked affiliate link to the GL.iNet Mango. Ploos AS may receive a commission from qualifying purchases, at no additional cost to you. It does not affect our editorial conclusions.

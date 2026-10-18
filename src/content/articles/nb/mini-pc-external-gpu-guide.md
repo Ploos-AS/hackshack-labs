@@ -9,6 +9,7 @@ series: "Used Hardware & Homelab"
 translationKey: mini-pc-external-gpu-guide
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Redaksjonell status – 15. oktober 2026:** Dokumentasjonsbasert guide. Vi har ikke bygget eller ytelsestestet oppsettene i denne artikkelen. Kompatibilitet avhenger av maskinmodell, fastvare, kabinett og operativsystem. Artikkelen inneholder ingen affiliatelenker.
