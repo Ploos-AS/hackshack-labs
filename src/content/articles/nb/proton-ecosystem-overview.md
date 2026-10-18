@@ -52,7 +52,7 @@ Det finnes også praktiske kompatibilitetskostnader. Tradisjonelle e-postkliente
 
 Å drifte e-post selv lærer deg mye om SMTP, DNS, SPF, DKIM, DMARC og leveringssikkerhet. Men god leveringsgrad og håndtering av misbruk krever kontinuerlig innsats. En ekstern e-posttjeneste kan være riktig når e-post er kritisk og man ikke ønsker å drifte hele systemet.
 
-Kryptering må beskrives presist: E-post til vilkårlige eksterne mottakere blir ikke automatisk ende-til-ende-kryptert bare fordi din postkasse er hos Proton. I en egen artikkel skal vi undersøke mottakere utenfor Proton, metadata, egne domener, eksport og samspill med andre systemer.
+Kryptering må beskrives presist: E-post til vilkårlige eksterne mottakere blir ikke automatisk ende-til-ende-kryptert bare fordi din postkasse er hos Proton. Vår [sammenligning av Proton Mail og egen e-postserver](/no/articles/proton-mail-vs-self-hosted-email/) går nærmere inn på mottakere utenfor Proton, metadata, egne domener, eksport og samspill med andre systemer.
 
 ### VPN: tilliten flyttes, den forsvinner ikke
 
@@ -92,6 +92,7 @@ HackShack Labs er redaksjonelt uavhengig. Ploos AS deltar i Protons affiliate-pr
 - [Proton Mail mot selvhostet e-post](/no/articles/proton-mail-vs-self-hosted-email/): drift i praksis
 - [Proton VPN på Linux med Docker/Gluetun](/no/articles/proton-vpn-linux-docker-gluetun/): konfigurasjon og begrensninger (dokumentasjonsbasert, ikke laboratorietestet)
 - [Proton Drive og Docs mot Nextcloud](/no/articles/proton-drive-docs-vs-nextcloud/): kryptering, samarbeid og gjenoppretting
-- Planlagt: Proton Pass mot Bitwarden og KeePassXC; flytting fra Proton med eget domene
+- [Proton Pass mot Bitwarden, Vaultwarden og KeePassXC](/no/articles/password-managers-proton-bitwarden-vaultwarden-keepassxc-2026/): gjenoppretting, selvhosting og flytterisiko
+- [Tuta mot Proton i 2026](/no/articles/tuta-vs-proton-2026/): e-post, Linux-kompatibilitet og domeneflytting
 
 **Kilder og kontroll:** [Kryptering i Proton Mail](https://proton.me/support/what-is-encrypted-within-protonmail); [Proton Drive](https://proton.me/support/drive); [Proton Mail Bridge](https://proton.me/support/imap-smtp-and-pop3-setup); [Proton Calendar](https://proton.me/support/calendar); [Proton Authenticator](https://proton.me/authenticator); [Protons åpne kildekode](https://proton.me/community/open-source); [Protons åpenhetsinformasjon](https://proton.me/legal/transparency). Kildebasert oversikt per 14. oktober 2026; ingen praktisk test er gjennomført.
