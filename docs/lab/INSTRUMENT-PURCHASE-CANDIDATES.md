@@ -41,6 +41,12 @@ Use for future HackShack Labs video capture and tutorials. Clearly distinguish t
 | --- | ---: | --- | --- |
 | Generic Intel N150 mini-PC (AliExpress listing; exact brand/model unverified), 32 GB RAM / 2 TB SSD variant | 2 | User reports owned and awaiting hands-on tests; advertised Windows 11 Pro, Wi-Fi 6 and Bluetooth 5.2 unverified; intended Debian Linux tests | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c3bv6Et3) |
 
+### Industrial mini-PC available for testing
+
+| Equipment | Quantity | Status | Affiliate link |
+| --- | ---: | --- | --- |
+| Fanless industrial mini-PC, selected Core i7-5500U / 8 GB RAM / 256 GB SSD / Wi-Fi / 6 × RS-232 variant (seller listing covers multiple configurations) | 1 | User reports owned, pending hands-on testing; dual LAN and exact port capabilities require verification | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c4BEwkst) |
+
 ## Planned YouTube production
 
 ### Testing a Cheap HDMI Capture Card on Linux — Hagibis MS2131
@@ -101,3 +107,11 @@ Scope: identify the exact USB interface and required cable; reproduce Linux dete
 **Test plan:** Photograph and identify chassis/ports and BIOS; verify CPU, installed RAM capacity/configuration and SSD identity/capacity; inspect network/Wi-Fi/Bluetooth controllers; install and test Debian Linux (kernel, graphics, audio, suspend, networking, thermals); measure idle/load power consumption with a suitable external meter; benchmark CPU, storage and network; record fan noise, temperature and stability; compare both units for manufacturing variation. Check Windows license claims without publishing keys or identifiers. Distinguish listing claims from verified findings, and document any safety concerns.
 
 **Proposed article/video:** *Two Cheap Intel N150 Mini PCs from AliExpress — Debian Linux, Power Consumption and Performance*. Do not publish test results before measurement.
+
+## Planned review: fanless industrial Core i7-5500U mini-PC with six serial ports
+
+**Status:** One unit reportedly owned; not yet hands-on tested. Listing specifies 8 GB RAM, 256 GB SSD, Wi-Fi and six RS-232 ports in the selected variant; confirm all actual components and electrical port standards.
+
+**Test plan:** Identify CPU, RAM, storage, NIC chipsets, UARTs and BIOS/UEFI; install Debian Linux and evaluate FreeBSD where practical; enumerate all six serial ports, test loopback and simultaneous traffic, verify RS-232 voltage levels and distinguish RS-485 only if documented and safely verified; test dual Ethernet routing/firewall use, Wi-Fi, idle/load power, thermal throttling and stability. Use proper serial adapters and never connect TTL UART directly to RS-232.
+
+**Proposed article/video:** *A Fanless Industrial Mini PC with Six Serial Ports — Linux, FreeBSD and Retro Computing*. English original and Norwegian Bokmål translation; disclose affiliate link and do not claim unverified results.
