@@ -125,6 +125,8 @@ En kompakt datamaskin med mye **delt/unifisert minne** kan være enklere til lok
 
 En eGPU er ikke automatisk det rimeligste valget. Løsningen er mest interessant når du **allerede har en egnet mini-PC**.
 
+For en bredere sammenligning av integrerte systemer med mye minne, arbeidsstasjoner med PCIe og mini-PC-er med eGPU, se vår [kjøpsguide til mini-PC-er for lokal AI i 2026](/no/articles/best-mini-pcs-local-ai-2026/). Den forklarer også hvorfor lokal inferens ikke automatisk betyr at hele programvareoppsettet fungerer uten internett.
+
 ## Sjekkliste før du handler
 
 1. Finn nøyaktig mini-PC-modell og BIOS-versjon.

@@ -125,6 +125,8 @@ A compact system with substantial **unified/shared memory** can sometimes be sim
 
 An eGPU is not inherently the best or cheapest choice. It makes the most sense when you **already own a suitable mini PC**, want to preserve its other roles, or specifically need a detachable GPU.
 
+For a broader comparison of high-memory integrated systems, native PCIe workstations and eGPU hosts, see our [2026 mini PC guide for local AI](/articles/best-mini-pcs-local-ai-2026/). It also explains why local inference does not automatically mean the entire software workflow stays offline.
+
 ## Verification checklist before spending money
 
 1. Identify the exact mini PC model and BIOS/firmware revision.
