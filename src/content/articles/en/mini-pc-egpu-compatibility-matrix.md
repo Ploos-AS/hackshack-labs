@@ -78,6 +78,8 @@ These commands inspect devices; they do not prove that CUDA, ROCm or a virtual-m
 
 **A USB4 or Thunderbolt port is evidence of an interface, not evidence of a working GPU.** Likewise, manufacturer QVL results are useful but do not guarantee success after BIOS, dock, driver or operating-system changes. ASUS [explicitly cautions about the limits of peripheral validation](https://rog.asus.com/support/faq/1052501/).
 
+**External PCIe power and handling:** Treat OCuLink and M.2-to-PCIe adapters as non-hot-pluggable unless the exact host and dock documentation explicitly says otherwise. Shut down the host and dock and follow the manufacturer's power-sequencing instructions before connecting or disconnecting cables. Use a GPU power supply and connectors rated for the specific card; do not improvise PCIe power adapters or assume the dock supplies enough power merely because the link enumerates. Exposed GPU boards and risers need secure mounting, airflow and protection from accidental contact. These are precautions, not evidence of compatibility.
+
 ## Manufacturer-specific expansion: MINISFORUM, GEEKOM, Beelink and GMKtec
 
 The following entries are **not HackShack hardware tests**. Evidence is restricted to the exact claims supported by the linked manufacturer pages. A vendor-supported host/dock family does not validate a particular GPU under Linux.
