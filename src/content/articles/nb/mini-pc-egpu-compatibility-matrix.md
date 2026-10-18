@@ -9,6 +9,7 @@ series: "Used Hardware & Homelab"
 translationKey: mini-pc-egpu-compatibility-matrix
 draft: false
 tested: false
+evidence: documentation
 ---
 
 > **Redaksjonell status – 15. oktober 2026:** Dokumentasjonsbasert undersøkelse, **ikke en maskinvaretest utført av HackShack Labs**. En oppgitt port betyr ikke at alle GPU-er, dokker, operativsystemer og fastvareversjoner fungerer. Ingen affiliatelenker.
