@@ -7,7 +7,7 @@ date: 2026-10-18
 tags: [home-assistant, zigbee, thread, smart-home]
 series: "Smart Home Tested"
 translationKey: skyconnect-2026
-draft: true
+draft: false
 tested: false
 evidence: documentation
 ---
@@ -24,7 +24,7 @@ SkyConnect is a USB radio designed for Home Assistant. It is commonly used with 
 
 ## Zigbee, Thread and the multiprotocol question
 
-Choose one clear job for the adapter. For an existing Zigbee network, retaining the Zigbee firmware and coordinator role is the conservative option. Simultaneous Zigbee/Thread operation using multiprotocol firmware has had important support and stability limitations; do not plan a new installation around it without checking current Home Assistant guidance.
+Choose one clear job for the adapter. For an existing Zigbee network, retaining the Zigbee firmware and coordinator role is the conservative option. Home Assistant explicitly classifies its multiprotocol firmware as **experimental and not recommended**. For a new installation, use dedicated Zigbee or Thread firmware instead.
 
 **Do not flash firmware casually.** Changing radio firmware can disrupt an existing network. Before changing coordinator, back up Home Assistant and any applicable Zigbee network information, read the current migration instructions, and verify recovery options.
 
