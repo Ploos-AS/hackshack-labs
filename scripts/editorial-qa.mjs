@@ -26,7 +26,7 @@ for (const lang of ['en', 'nb']) {
     if (data.updated && !/^\d{4}-\d{2}-\d{2}$/.test(data.updated)) issues.push(path + ': updated should use YYYY-MM-DD');
     if (!data.evidence) issues.push(path + ': article must declare evidence explicitly');
     if (!['true','false'].includes(data.tested)) issues.push(path + ': article must declare tested explicitly');
-    if (data.draft && !['true','false'].includes(data.draft)) issues.push(path + ': draft must be true or false');
+    if (!['true','false'].includes(data.draft)) issues.push(path + ': article must declare draft explicitly as true or false');
     if (data.evidence && !['documentation','desk-research','lab-tested','hardware-verified'].includes(data.evidence)) issues.push(path + ': invalid evidence level');
     if (data.tested === 'true' && ['documentation','desk-research'].includes(data.evidence)) issues.push(path + ': tested conflicts with evidence');
     if (data.tested === 'false' && ['lab-tested','hardware-verified'].includes(data.evidence)) issues.push(path + ': untested conflicts with evidence');

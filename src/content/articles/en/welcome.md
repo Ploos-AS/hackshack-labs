@@ -6,6 +6,7 @@ lang: en
 date: 2026-10-11
 tags: [open-source, hardware, networking]
 translationKey: welcome
+draft: false
 tested: false
 evidence: documentation
 ---
