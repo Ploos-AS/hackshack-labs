@@ -93,6 +93,8 @@ Many recent Pixel generations support [GrapheneOS](https://grapheneos.org/faq#su
 
 Compare fully updated, factory-reset, similarly priced Pixel and Galaxy devices in the same country and on the same network. Record model, firmware, carrier, installed apps, account setup and permissions. Inventory installed packages with `adb shell pm list packages`; distinguish user-removable, disable-only and protected packages. Capture traffic with a controlled router or PCAPdroid during setup, idle periods and matched app tasks; repeat the runs. Encrypted connections generally do not expose message contents. Domain counts, connection counts and transferred bytes are **not** direct measurements of privacy, and DNS visibility varies with encryption. Publish raw methods and limitations before drawing conclusions.
 
+**Measurement limitation:** A VPN-based capture app such as PCAPdroid may not observe every traffic path on every Android build, and capturing traffic can itself change device behavior. Use a controlled network-side capture as an independent cross-check where possible. Do not interpret a missing packet in one capture method as proof that no data was transmitted. Do not intercept other people's traffic or publish identifiable payloads.
+
 This comparison concerns **Android phones only**, not iOS. For Norwegian buyers, confirm local availability, warranty, repairs and data-access/export rights with the retailer and each provider before purchase; we have not independently verified a model-by-model Norwegian service matrix.
 
 ## Primary sources
