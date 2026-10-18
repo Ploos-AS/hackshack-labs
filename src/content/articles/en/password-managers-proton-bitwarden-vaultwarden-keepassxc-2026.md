@@ -139,6 +139,8 @@ Self-hosting is not automatically cheaper: count maintenance time, backups, moni
 
 Do not assume passkeys or attachments migrate with passwords.
 
+**Plaintext-export caveat:** Deleting a CSV or JSON export does not guarantee that its contents are unrecoverable, particularly on SSDs, in snapshots, cloud-synced folders or automatic backups. Prefer a supported encrypted export when available. If a plaintext export is unavoidable, create it only on a trusted device in a controlled, encrypted location, keep it out of sync and backup paths, import promptly, and remove temporary copies afterward. Do not promise that ordinary file deletion securely sanitizes flash storage; for a higher-risk migration, use an appropriately isolated disposable environment and verify the destination before retiring the old vault.
+
 ## Our assessment: choose by workflow
 
 | Your situation | Start by evaluating | Think twice if… |
