@@ -137,3 +137,34 @@ Test Debian Linux compatibility; identify actual RAM/SSD/network/Wi-Fi hardware 
 **Proposed review:** *RetroScaler GBS Control Pro Tested: Amiga, Atari, SCART and HDMI Capture on Linux* (English original, Norwegian Bokmål translation).
 
 **Test plan:** Photograph and document actual input/output ports and board revision; identify firmware and configuration options; test PAL 15 kHz RGB from Amiga where safely available, Atari ST video modes as supported, RGB SCART, VGA, component and composite/S-Video only if the particular unit really supports them; assess 50/60 Hz behavior, aspect ratio, deinterlacing, scaling, scrolling artifacts, audio if present, and latency with documented methodology. Test HDMI output with the owned Hagibis MS2131 capture devices and OBS on Linux; distinguish device compatibility from any capture-card limitation. Do not assume all advertised interfaces or features are supported without verification. Include affiliate disclosure; no hands-on conclusions before testing.
+
+## Retro-video test series: RetroScaler GBS-C + Hagibis MS2131
+
+**Status:** Approved as a planned test series; equipment owned (one RetroScaler GBS Control Pro and three Hagibis HDMI capture cards). No test recordings or findings yet. **Publication:** English original, Norwegian Bokmål translation; articles and YouTube videos, with conspicuous affiliate disclosures.
+
+### Episode / article 1 — Hardware and signal chain
+
+- Photograph actual GBSC connectors, board revision, firmware version, power supply and menu options; confirm whether composite and S-Video are truly supported on this variant.
+- Document reproducible wiring: retro source → GBSC → HDMI splitter or loop-out as applicable → Hagibis → OBS on Debian/Ubuntu Linux → monitor.
+- Document safe power-up, audio routing, video standards, capture formats and expected limitations. Never assume a listed signal is supported until verified.
+
+### Episode / article 2 — Amiga PAL RGB to HDMI
+
+- Test real Amiga 15 kHz PAL RGB if hardware/cables are available; record sync stability, 50 Hz, aspect ratio, scanlines, scaling, interlace/deinterlace, scrolling and output latency.
+- Keep native screen output and recorded capture separate when assessing picture quality.
+
+### Episode / article 3 — Atari and other retro video sources
+
+- Test supported Atari ST modes and other available RGB/SCART/VGA/YPbPr sources. Note ST high-resolution mono and other modes may need separate support or adapters; do not promise compatibility.
+
+### Episode / article 4 — Hagibis HDMI capture on Linux
+
+- Enumerate each of the three units via `lsusb`, `v4l2-ctl --list-devices`, `v4l2-ctl --list-formats-ext`; capture with OBS/FFmpeg; check frame cadence, dropped frames, latency, audio synchronization, 50/60 Hz behavior and differences between units.
+- Clearly distinguish issues introduced by the GBSC from capture card or OBS limitations.
+
+### Episode / article 5 — Practical guide and comparison
+
+- Publish recommended settings for confirmed hardware combinations, repeatable sample clips, troubleshooting and a summary of what was verified vs unverified.
+- Do not publish untested compatibility claims or product ratings. No test video is scheduled until the user is ready.
+
+**Suggested series name:** *Retro Video on Linux: From RGB and SCART to HDMI and OBS*.
