@@ -149,7 +149,7 @@ Noter test-ID, image-digester, Docker- og Ubuntu-versjoner, brannmurmodus, VPN-e
 
 ## Om feil fra helsesjekken
 
-undefined at **en konkret UDP-operasjon ble avvist**. Den beviser ikke alene DNS-lekkasje, feil hos Proton eller en ødelagt brannmur. Mulige forklaringer er brannmurpolicy, ruting under overgang, containerrettigheter og oppsettet for helsesjekken. Sammenhold loggen med rutetabeller, brannmurregler, tunneltilstand og pakkefangst før sikkerhetsreglene endres. Å slå av brannmuren bare for å få grønn helsestatus undergraver formålet.
+En UDP-feil med «operation not permitted» i helsesjekkloggen viser bare at **en konkret UDP-operasjon ble avvist**. Den beviser ikke alene DNS-lekkasje, feil hos Proton eller en ødelagt brannmur. Mulige forklaringer er brannmurpolicy, ruting under overgang, containerrettigheter og oppsettet for helsesjekken. Sammenhold loggen med rutetabeller, brannmurregler, tunneltilstand og pakkefangst før sikkerhetsreglene endres. Å slå av brannmuren bare for å få grønn helsestatus undergraver formålet.
 
 ## DNS, lokalnett og portvideresending hos Proton: dokumenterte innstillinger
 
@@ -175,7 +175,7 @@ Se [Proton-veiledningen for Gluetun](https://github.com/qdm12/gluetun-wiki/blob/
 
 Portvideresending kan kreve egne innstillinger hos Gluetun og Proton, og tildelt port kan endre seg ved gjentilkobling. En fungerende VPN-tunnel betyr ikke automatisk at innkommende forbindelser fungerer. Bruk oppdatert dokumentasjon og kontroller at applikasjonen oppdaterer portnummeret ved endringer.
 
-undefined
+## Praktisk konklusjon
 
 På en vanlig Linux-skrivebordsmaskin er Protons støttede klient et naturlig startpunkt. For avgrensede Docker-jobber kan en Gluetun-gateway gi tydeligere sikkerhetsgrenser enn å legge hele vertsmaskinen bak VPN – **forutsatt at feiltestene består**. Manuell WireGuard gir frihet, men du må da selv ivareta lekkasjebeskyttelse.
 
