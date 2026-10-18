@@ -93,6 +93,8 @@ Mange nyere Pixel-generasjoner støtter [GrapheneOS](https://grapheneos.org/faq#
 
 Sammenlign oppdaterte, fabrikktilbakestilte Pixel- og Galaxy-enheter i samme prisklasse, land og nettverk. Dokumenter modell, fastvare, operatør, installerte apper, kontooppsett og tillatelser. Registrer pakker med `adb shell pm list packages`; skill mellom apper som kan avinstalleres, bare deaktiveres og ikke fjernes. Fang trafikk med kontrollert ruter eller PCAPdroid under oppsett, hvile og like appoppgaver; gjenta målingene. Krypterte forbindelser avslører normalt ikke innholdet. Antall domener, forbindelser og overførte byte er **ikke** direkte mål på personvern, og DNS-synlighet varierer med kryptering. Publiser metode og begrensninger før konklusjoner.
 
+**Begrensninger ved måling:** En VPN-basert pakkefangstapp som PCAPdroid ser ikke nødvendigvis alle trafikkveier på alle Android-versjoner, og selve målingen kan påvirke enhetens oppførsel. Bruk om mulig uavhengig pakkefangst på et kontrollert nettverk som kryssjekk. At en pakke mangler i én målemetode, beviser ikke at ingen data ble sendt. Ikke fang opp andres trafikk eller publiser identifiserbart innhold.
+
 Sammenligningen gjelder **bare Android-telefoner**, ikke iOS. Norske kjøpere bør kontrollere tilgjengelighet, garanti, reparasjon og rettigheter til innsyn/eksport hos forhandler og leverandør. Vi har ikke verifisert en norsk servicematrise for hver modell.
 
 ## Primærkilder
