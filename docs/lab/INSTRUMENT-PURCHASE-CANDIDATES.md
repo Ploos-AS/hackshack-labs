@@ -52,4 +52,8 @@ Use for future HackShack Labs video capture and tutorials. Clearly distinguish t
 
 | Model | Priority | Status | Notes |
 | --- | --- | --- | --- |
-| **UNI-T UT61E (original, not UT61E+)** | High | Planned purchase; not purchased or tested | Choose the original model with documented sigrok support. Verify exact revision, compatible data cable, Linux detection, seller availability and electrical safety before purchase. Affiliate link not registered. |
+| **UNI-T UT61E (original, not UT61E+)** | Low / used-only opportunity | Discontinued 2020-11-30; not purchased or tested | sigrok supports the original model, but it is discontinued. Consider only if a reasonably priced used unit with suitable data cable becomes available. No affiliate link registered. |
+
+### UT61E+ Linux/Python follow-up
+
+UNI-T officially discontinued the original UT61E in 2020, replacing it with UT61E+. Prioritize **UT61E+** for new purchase subject to exact listing, cable, electrical safety and independent verification. sigrok's original UT61E driver does **not** support UT61E+, but the community Python project [ljakob/unit_ut61eplus](https://github.com/ljakob/unit_ut61eplus) reports Linux access via a CP2110 USB connection and includes plotting/MQTT examples. Treat this as community-supported and unverified in our lab, not official sigrok support. The original UT61E remains a low-priority used-only opportunity.
