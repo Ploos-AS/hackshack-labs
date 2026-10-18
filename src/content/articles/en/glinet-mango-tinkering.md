@@ -77,6 +77,8 @@ They are not interchangeable promises. Vendor firmware can supply convenient tra
 
 **Never flash a generic image because a router looks similar.** Confirm the precise model **GL-MT300N-V2**, get the correct installation instructions and image type, verify file integrity, and understand the recovery path before touching the firmware. Save any configuration needed to restore access. In Norway, configure the correct regulatory country (**NO**) and verify allowed Wi-Fi channels and transmit-power limits after changing firmware; do not assume the new image inherits the vendor's settings. We have not validated a specific upgrade procedure for this article.
 
+**A configuration backup is not necessarily a firmware recovery image.** Before flashing, distinguish exported settings from a complete, device-specific recovery path. A settings archive may not restore a bootloader, calibration data or an unbootable device, and restoring settings across firmware families can be unsafe. Record the original firmware version and exact hardware revision, consult the vendor's recovery instructions, and do not overwrite device-specific partitions or wireless calibration data. Avoid experimenting with bootloader or flash partitions unless you have a documented recovery method and suitable equipment.
+
 ## Where Mango is *not* ideal
 
 - **Modern high-speed networking:** 100 Mbps Ethernet, single-band 2.4 GHz and a small CPU are genuine constraints.

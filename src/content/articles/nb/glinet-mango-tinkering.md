@@ -77,6 +77,8 @@ De to alternativene gir ikke automatisk samme funksjoner. Leverandørens firmwar
 
 **Ikke flash en firmware bare fordi en annen ruter ligner.** Bekreft modellbetegnelsen **GL-MT300N-V2**, finn riktig installasjonsveiledning og filtype, verifiser filen og sett deg inn i gjenoppretting før du begynner. Vi har ikke verifisert en bestemt flashprosedyre til denne artikkelen. I Norge må korrekt regulatorisk landskode (**NO**) konfigureres, og tillatte Wi-Fi-kanaler og sendeeffekt kontrolleres etter firmwarebytte. Ikke anta at innstillingene overføres fra original firmware.
 
+**En konfigurasjonsbackup er ikke nødvendigvis et firmware-image for gjenoppretting.** Før flashing må du skille mellom eksporterte innstillinger og en fullstendig gjenopprettingsmetode for akkurat denne enheten. En innstillingsfil kan ikke nødvendigvis reparere en ødelagt oppstartslaster, gjenopprette kalibreringsdata eller starte en ruter som ikke lenger booter. Å legge tilbake innstillinger på tvers av firmwarefamilier kan også være risikabelt. Noter opprinnelig firmwareversjon og nøyaktig maskinvarerevisjon, les produsentens gjenopprettingsveiledning, og ikke overskriv enhetsspesifikke partisjoner eller trådløse kalibreringsdata. Unngå eksperimenter med oppstartslaster og flashpartisjoner uten en dokumentert gjenopprettingsmetode og egnet utstyr.
+
 ## Når er Mango feil valg?
 
 - **Raske moderne nettverk:** 100 Mbps Ethernet, én Wi-Fi-frekvens og beskjeden CPU er klare begrensninger.
