@@ -10,6 +10,8 @@
 
 | Infrared thermometer | UNI-T UT306C (-50 to 500 °C per seller title; specifications unverified) | General | Planned; not tested | [AliExpress](https://s.click.aliexpress.com/e/_c3Cf19av) |
 
+| Temperature and humidity meter | UNI-T UT333BT | General | Planned; not tested; Bluetooth via iENV, CSV export through mobile app; direct Linux/Python support unverified | [AliExpress](https://s.click.aliexpress.com/e/_c4CALRLT) |
+
 ## Editorial usage
 
 - English original and Norwegian Bokmål translation must disclose affiliate links clearly and near the links.
