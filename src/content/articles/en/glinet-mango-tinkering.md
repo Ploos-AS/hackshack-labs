@@ -68,6 +68,9 @@ GL.iNet's hardware documentation also flags a **Wi-Fi driver trade-off**: its pr
 
 That last idea is especially appealing: the router does not have to run *everything*. A tiny access point plus a server can make a convincing portable lab.
 
+**Offline does not mean secure by default.** A standalone access point with an Ethernet-attached service host can still expose that host to every associated Wi-Fi client. Use a dedicated test SSID, strong Wi-Fi authentication where appropriate, a host firewall, and no bridge or route to production networks. Verify DHCP and routing rather than assuming the absence of an Internet uplink creates isolation. Historical or unpatched services belong on a physically or logically isolated lab network, not a guest network that can reach household devices.
+
+
 ## Stock firmware or vanilla OpenWrt?
 
 They are not interchangeable promises. Vendor firmware can supply convenient travel-router features and a wireless stack with different capabilities. Vanilla OpenWrt gives a more direct view of upstream packaging and configuration, but the exact image, release, hardware revision and driver behavior must be checked.
