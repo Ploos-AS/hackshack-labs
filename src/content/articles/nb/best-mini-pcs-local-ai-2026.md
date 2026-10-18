@@ -113,6 +113,10 @@ En reproduserbar test må oppgi modellfilens hash, kvantisering, kontekstlengde,
 
 Ja, særlig om du allerede har en egnet mini-PC. Men GPU, dokk og strømforsyning kan bli dyrere enn en stasjonær maskin med vanlig PCIe-spor. Les [eGPU-guiden](/no/articles/mini-pc-external-gpu-guide/) og [kompatibilitetsmatrisen](/no/articles/mini-pc-egpu-compatibility-matrix/).
 
+## Lokal AI er ikke automatisk frakoblet eller privat
+
+Når inferens kjøres på din egen mini-PC, kan spørsmål og svar forbli på utstyr du kontrollerer, **men bare dersom hele arbeidsflyten faktisk er lokal**. Modellverktøy kan laste ned vekter eller oppdateringer, brukergrensesnitt kan kontakte eksterne API-er, og valgfri logging, telemetri, søk eller integrasjoner kan overføre data. Undersøk programmet, grensesnittet, tilleggene og nettverkstilkoblingene før du behandler fortrolig informasjon. Dersom løsningen må fungere helt uten internett, bør hele arbeidsflyten testes med utgående trafikk blokkert etter at nødvendige modellfiler er hentet og kontrollert. En lokalt kjørende modell er ikke alene noen garanti for konfidensialitet.
+
 ## Sjekkliste før kjøp
 
 1. Velg AI-modell og programvare **før** du velger maskin.
