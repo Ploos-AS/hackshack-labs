@@ -1,0 +1,20 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+const items = [
+  ['UNI-T UT230B-EU', 'Plug-in energy meter (EU)', 'https://s.click.aliexpress.com/e/_c3WjGYlx'],
+  ['UNI-T UT230B-US', 'Plug-in energy meter (US listing; electrical compatibility not independently verified)', 'https://s.click.aliexpress.com/e/_c3fhwf2v'],
+  ['UNI-T UT61E+', 'Digital multimeter (listing variant unverified)', 'https://s.click.aliexpress.com/e/_c4nRJVnb'],
+  ['UNI-T UT306C', 'Infrared thermometer', 'https://s.click.aliexpress.com/e/_c3Cf19av'],
+  ['UNI-T UT333BT', 'Temperature and humidity meter', 'https://s.click.aliexpress.com/e/_c4CALRLT'],
+  ['UNI-T UT353BT', 'Sound level meter', 'https://s.click.aliexpress.com/e/_c328j5jx'],
+  ['UNI-T UT658 series / UT658B', 'USB power tester (listing variant unverified)', 'https://s.click.aliexpress.com/e/_c2JpaFtJ']
+];
+---
+<SiteLayout title="Lab Equipment — Planned Instruments" alternateUrl="/no/lab-equipment/">
+  <h1>Lab Equipment</h1>
+  <p>Our instrument purchase candidates for upcoming hardware testing. <strong>None of these instruments has been purchased or hands-on tested by HackShack Labs yet.</strong> This page is not a product review or endorsement.</p>
+  <p><strong>Affiliate disclosure:</strong> The AliExpress links below are affiliate links. Ploos AS may earn a commission if you purchase through them, at no additional cost to you. Commissions do not influence our independent editorial decisions.</p>
+  <p>Check the exact model, plug, voltage, safety certifications and seller before ordering. Product listings and availability may change.</p>
+  <ul>{items.map(([model, description, url]) => <li><strong>{model}</strong> — {description}. <em>Planned / not tested.</em> <a href={url} target="_blank" rel="sponsored noopener noreferrer">View on AliExpress (affiliate)</a></li>)}</ul>
+  <p>For electrical measurements, select equipment with suitable verified safety ratings. Smart plugs and basic power meters are not calibrated laboratory references.</p>
+</SiteLayout>
