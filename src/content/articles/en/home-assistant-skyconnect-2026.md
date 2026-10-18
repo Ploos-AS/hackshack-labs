@@ -18,6 +18,8 @@ evidence: documentation
 
 **If your original Home Assistant SkyConnect is working reliably, keep it.** A newer radio is not automatically a necessary upgrade. SkyConnect was renamed **Home Assistant Connect ZBT-1**; its core purpose remains connecting compatible Zigbee devices to Home Assistant. The right choice depends on your network, firmware, and whether you want Zigbee or Thread.
 
+**Documentation checked:** 18 October 2026. This is a documentation snapshot, not a test against a specific Home Assistant Core release; no Core version is claimed.
+
 ## What is SkyConnect?
 
 SkyConnect is a USB radio designed for Home Assistant. It is commonly used with **ZHA** or **Zigbee2MQTT** to connect Zigbee devices. Thread use requires the appropriate firmware and software configuration; Thread is a networking technology, while Matter is an application interoperability standard. A Thread radio alone does not guarantee that every Matter product will work.
@@ -30,20 +32,32 @@ Choose one clear job for the adapter. For an existing Zigbee network, retaining 
 
 ## ZHA or Zigbee2MQTT?
 
-Both are valid ways to use a Zigbee coordinator, but they are not interchangeable running simultaneously on the same adapter. ZHA is integrated into Home Assistant. Zigbee2MQTT is a separate service that typically uses MQTT to expose devices. Device-specific features and support can differ; check the precise device model in each project's compatibility information.
+Both are valid ways to use a Zigbee coordinator, but you can only run one of them against the same adapter at a time. ZHA is integrated into Home Assistant. Zigbee2MQTT is a separate service that typically uses MQTT to expose devices. Device-specific features and support can differ; check the precise device model in each project's compatibility information.
 
 For a reproducible lab comparison, use the same device models, firmware versions, physical locations and measurement method. Re-pairing may be required when moving between stacks.
 
+## ZBT-2: what actually changed?
+
+**Home Assistant Connect ZBT-2** is the official replacement for ZBT-1. Home Assistant lists a Silicon Labs **MG24** radio rather than MG21, an optimized external antenna/base instead of the small internal antenna, and a faster adapter baud rate (**460800 versus 115200**). These are hardware and interface changes, **not a promise of four times the Zigbee range or application speed**. ZBT-2 still requires choosing **Zigbee or Thread**, not both at once. See the [official ZBT-2 comparison](https://www.home-assistant.io/connect/zbt-2/).
+
 ## Should you upgrade?
 
-An upgrade may be worthwhile if you need a feature or reliability improvement demonstrated in your particular environment. But buying a replacement merely because the name or model number changed is not a sound reason. Start by checking USB placement, interference, device routing, firmware and the current documentation.
+An upgrade may be worthwhile if you need a feature or reliability improvement demonstrated in your particular environment. But buying a replacement merely because the name or model number changed is not a sound reason. Before spending money, try these steps:
 
-## Planned HackShack Labs tests
+1. Move the coordinator away from USB 3 ports, external SSDs and the host using a USB extension cable; Home Assistant specifically warns about 2.4 GHz interference from USB 3.
+2. Inspect nearby 2.4 GHz Wi-Fi channels and the Zigbee channel before changing anything. Plan channel changes carefully: they can require devices to reconnect or be re-paired.
+3. Improve the mesh with compatible **mains-powered Zigbee routers** in useful locations, rather than expecting distant battery sensors to relay traffic.
+4. In Home Assistant, inspect the ZHA integration, connected adapter and available firmware information; record the current version before considering an update. For Zigbee2MQTT, check its adapter and firmware documentation instead.
+5. Back up the coordinator/network before migration. Follow the current migration guide for **your stack**; a firmware flash alone is not a migration.
 
-Our future hands-on follow-up will document: Home Assistant version; ZBT-1 firmware; ZHA and Zigbee2MQTT versions; IKEA device model numbers; pairing success; reconnect behavior; network isolation; and repeatable latency/reliability measurements. **These tests have not yet been performed for this article.**
+## What we have not tested
+
+HackShack Labs owns a SkyConnect and IKEA Zigbee devices, which could form a repeatable future test set. **We have not verified their firmware versions, stability, migration behavior or measured performance for this article.**
 
 ## Sources
 
+- [Home Assistant Connect ZBT-2 specifications and migration FAQ](https://www.home-assistant.io/connect/zbt-2/)
+- [ZBT-1 firmware options and multiprotocol guidance](https://www.home-assistant.io/connectzbt1/)
 - [Home Assistant Connect ZBT-1 official documentation](https://www.home-assistant.io/connectzbt1/)
 - [Home Assistant Zigbee Home Automation](https://www.home-assistant.io/integrations/zha/)
 - [Zigbee2MQTT documentation](https://www.zigbee2mqtt.io/)
