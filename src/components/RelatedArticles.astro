@@ -7,15 +7,22 @@ interface Props {
 }
 const { entry, all } = Astro.props;
 const lang = entry.data.lang;
+// Generic platform/editorial tags are useful for discovery, but not enough to
+// recommend two articles as closely related on their own.
+const broadTags = new Set(['linux', 'privacy', 'security', 'hardware', 'networking', 'self-hosting', 'open-source', 'homelab']);
 const currentTags = new Set(entry.data.tags.map(tag => tag.toLocaleLowerCase()));
 const scored = all
   .filter(other => other.id !== entry.id && other.data.lang === lang && !other.data.draft)
   .map(other => {
-    const overlap = other.data.tags.filter(tag => currentTags.has(tag.toLocaleLowerCase())).length;
+    const sharedTags = other.data.tags.map(tag => tag.toLocaleLowerCase()).filter(tag => currentTags.has(tag));
+    const specificOverlap = sharedTags.filter(tag => !broadTags.has(tag)).length;
     const sameSeries = Boolean(entry.data.series && other.data.series === entry.data.series);
     const sameCategory = other.data.category === entry.data.category;
-    // Broad editorial series and category alone do not establish topical relevance.
-    return { other, score: overlap > 0 ? overlap * 4 + (sameSeries ? 2 : 0) + (sameCategory ? 1 : 0) : 0 };
+    // A shared generic tag (such as Linux or privacy) cannot qualify a
+    // recommendation; project-specific overlap is required.
+    return { other, score: specificOverlap > 0
+      ? specificOverlap * 5 + (sameSeries ? 3 : 0) + (sameCategory ? 1 : 0)
+      : 0 };
   })
   .filter(item => item.score > 0)
   .sort((a, b) => b.score - a.score ||
