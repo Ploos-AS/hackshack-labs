@@ -88,9 +88,14 @@ for (const e of entries.filter(e => e.data.draft !== 'true')) {
   }
   // A product/affiliate link is not evidence for a technical claim.
   // Require at least one non-affiliate external link in documentation-based articles.
-  const markdownLinks = [...body.matchAll(/\\]\\((https?:[^\\s)]+)\\)/g)].map(m => m[1]);
-  const htmlLinks = [...body.matchAll(/href=["'](https?:[^"']+)["']/g)].map(m => m[1]);
-  const isAffiliate = url => /(?:s\\.click\\.aliexpress\\.com|aliexpress\\.com\\/e\\/|amzn\\.to|amazon\\.[^/]+\\/.*(?:tag=|ref=)|[?&](?:aff(?:iliate)?|referral|tag|utm_medium=affiliate)=)/i.test(url);
+  const markdownLinks = [...body.matchAll(new RegExp('\\\\]\\\\((https?:[^\\\\s)]+)\\\\)', 'g'))].map(m => m[1]);
+  const htmlLinks = [...body.matchAll(new RegExp('href=["\\u0027](https?:[^"\\u0027]+)["\\u0027]', 'g'))].map(m => m[1]);
+  const isAffiliate = url => {
+    const lower = url.toLowerCase();
+    return lower.includes('s.click.aliexpress.com') || lower.includes('aliexpress.com/e/') ||
+      lower.includes('amzn.to/') || lower.includes('utm_medium=affiliate') ||
+      lower.includes('affiliate=') || lower.includes('referral=');
+  };
   const hasExternalSourceLink = [...markdownLinks, ...htmlLinks].some(url => !isAffiliate(url));
   // Catch obvious citation placeholders without making network requests.
   // A source link must not point to a reserved example domain or a fragment-only URL.
