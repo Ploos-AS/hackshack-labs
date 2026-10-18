@@ -65,3 +65,9 @@ UNI-T officially discontinued the original UT61E in 2020, replacing it with UT61
 **Languages:** English original and Norwegian Bokmål translation.
 
 Scope: identify the exact USB interface and required cable; reproduce Linux detection; evaluate the community [unit_ut61eplus](https://github.com/ljakob/unit_ut61eplus) Python implementation; record measurements to CSV; demonstrate optional MQTT publishing and Home Assistant integration; document reproducible setup, limitations, measurement safety, and the difference between original UT61E sigrok support and UT61E+ community support. No compatibility or performance claims before hands-on verification. Include clearly marked affiliate links only where applicable.
+
+## Automotive multimeter candidate
+
+| Model | Priority | Status | Linux/data interface | Affiliate link |
+| --- | --- | --- | --- | --- |
+| **UNI-T UT107+** | Medium | Planned purchase; not purchased or tested | No USB/Bluetooth/data-export interface documented in manufacturer specifications; Linux/sigrok support not established. Automotive functions include RPM, dwell, pulse width, 12V battery test; True RMS, 6000 counts. Verify exact listing, CAT rating and accessories before purchase. | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c4sBATAh) |
