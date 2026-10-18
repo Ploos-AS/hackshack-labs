@@ -34,3 +34,16 @@
 | Hagibis HDMI video capture with loop-out (MS2131 per seller listing) | 3 | User reports owned; Linux V4L2/UVC, OBS, input/output resolution and audio capabilities not yet independently tested | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c3HEV9Qp) |
 
 Use for future HackShack Labs video capture and tutorials. Clearly distinguish the seller's advertised 4K input/loop-through from verified recording resolution; do not claim tested compatibility before testing.
+
+## Planned YouTube production
+
+### Testing a Cheap HDMI Capture Card on Linux — Hagibis MS2131
+
+- **Status:** Planned; no test results or video published yet.
+- **Equipment:** Three user-owned Hagibis HDMI capture cards with loop-out, advertised as MS2131-based.
+- **Language:** English video; accompanying English article and Norwegian Bokmål translation.
+- **Test setup:** Ubuntu Linux, V4L2 tools and OBS Studio; document kernel, device IDs and tested hardware.
+- **Test plan:** Identify USB/V4L2/UVC device; enumerate actual capture modes and frame rates; verify advertised 4K input/loop-out versus recorded output; test HDMI audio, latency, frame drops, stability, simultaneous use of up to three units, and compatibility with available HDMI sources.
+- **Evidence:** Publish reproducible commands, screenshots or logs, settings and any limitations; avoid unverified compatibility claims.
+- **Editorial:** Clearly disclose the [AliExpress affiliate link](https://s.click.aliexpress.com/e/_c3HEV9Qp) with sponsored link attributes; purchasing source and commission must not affect conclusions.
+- **Deliverables:** YouTube video, English hands-on review, Norwegian translation, and link between the video and articles.
