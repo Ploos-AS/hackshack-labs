@@ -113,6 +113,10 @@ A reproducible comparison would fix the model file hash, quantization, context l
 
 Possibly, particularly if you already own a suitable host. But a dock, GPU and PSU can cost more than a compact desktop with a native PCIe slot. Consult our [eGPU connection guide](/articles/mini-pc-external-gpu-guide/) and [source-based compatibility matrix](/articles/mini-pc-egpu-compatibility-matrix/) before buying.
 
+## Local AI is not automatically offline or private
+
+Running model inference on your own mini PC can keep prompts and model outputs on equipment you control, **but only if the full application workflow stays local**. Model managers may download weights or updates, frontends may call hosted APIs, and optional logging, telemetry, search or integrations may transmit data. Inspect the actual runtime, UI, plugins and network paths before processing confidential information. For a genuinely offline requirement, test the complete workflow with outbound connectivity blocked after obtaining and verifying the necessary model files. A locally running model is not, by itself, a guarantee of confidentiality.
+
 ## Pre-purchase checklist
 
 1. Choose your model and runtime **before** choosing the PC.
