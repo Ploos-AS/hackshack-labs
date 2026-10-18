@@ -102,6 +102,8 @@ Before committing either way, try an exit rehearsal:
 5. Stage DNS changes, check both inbound and outbound messages, and keep a rollback plan.
 6. Keep independent backups and confirm that restoring them actually works.
 
+**DNS cutover is not instantaneous:** After changing MX records, some senders may continue delivering to the previous provider while cached DNS answers expire. Keep the old mailbox receiving mail during the transition and inspect both destinations. When updating sender authentication, publish a coherent SPF policy rather than creating multiple SPF TXT records for the same domain; configure and verify DKIM signing at the new provider, then review DMARC alignment and reports before tightening enforcement. Lowering DNS TTL shortly before a migration can help, but cannot invalidate records already cached elsewhere.
+
 ## Other managed email providers belong in the comparison
 
 Proton Mail is not the only alternative to running your own server. [Fastmail](https://www.fastmail.com/), [mailbox.org](https://mailbox.org/), [Migadu](https://www.migadu.com/) are also worth considering. These internationally accessible services differ in privacy model, jurisdiction, encryption features, protocol access, storage, pricing and custom-domain policies. Regional providers can also be relevant depending on the reader's country, language, compliance requirements and support needs; we do not assume any particular home market. **We have no affiliate links for these alternatives in this article.** Their inclusion is not a comparative endorsement: evaluate each against the same requirements and current documentation.
