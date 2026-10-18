@@ -102,6 +102,8 @@ Et eget domene er et av de beste tiltakene for flyttbarhet uansett driftsmodell:
 5. Planlegg DNS-endringen, test sending og mottak, og ha en plan for å gå tilbake.
 6. Behold uavhengige sikkerhetskopier og test at de faktisk kan gjenopprettes.
 
+**DNS-endringer virker ikke umiddelbart:** Etter at MX-postene endres, kan enkelte avsendere fortsatt levere til den gamle leverandøren mens hurtiglagrede DNS-svar utløper. La den gamle postkassen motta e-post i overgangsperioden, og kontroller begge mottakssteder. Ved endring av avsenderautentisering bør du bruke én samlet SPF-policy i stedet for flere SPF-TXT-poster for samme domene. Konfigurer og kontroller DKIM-signering hos ny leverandør, og undersøk DMARC-samsvar og rapporter før strengere håndheving. Kortere DNS-TTL før flytting kan hjelpe, men opphever ikke svar som allerede er lagret i andre DNS-mellomlagre.
+
 ## Andre administrerte e-posttilbydere hører også med
 
 Proton Mail er ikke det eneste alternativet til egen server. [Fastmail](https://www.fastmail.com/), [mailbox.org](https://mailbox.org/), [Migadu](https://www.migadu.com/) og norske e-postleverandører kan også være aktuelle. Disse skiller seg fra hverandre i personvernmodell, jurisdiksjon, kryptering, protokolltilgang, lagringsgrenser, priser og støtte for eget domene. **Vi har ingen annonselenker til disse alternativene i artikkelen.** At de nevnes, er ikke en anbefaling: sammenlign alle mot de samme kravene og oppdatert dokumentasjon.
