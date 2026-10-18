@@ -36,11 +36,11 @@ Pakkeradio knytter sammen to av favorittområdene våre: radio og klassiske data
 
 ### Flysporing med ADS-B
 
-En SBC, egnet 1090 MHz-mottaker og antenne, og programvare som readsb og tar1090 kan bli en lokal flysporingsstasjon. Den mottar utsendelser fra kompatible fly; **det er ikke en aktiv radar**, og den kan ikke oppdage alle fly. Rekkevidden påvirkes av terreng, antenneplassering og tilgjengelige sendinger.
+En SBC, egnet 1090 MHz-mottaker og antenne, og programvare som readsb og tar1090 kan bli en lokal flysporingsstasjon. Den mottar utsendelser fra kompatible fly; **det er ikke en aktiv radar**, og den kan ikke oppdage alle fly. Rekkevidden påvirkes av terreng, antenneplassering og tilgjengelige sendinger. **Ikke bruk en hobbybasert ADS-B-visning til flysikkerhetsbeslutninger**: signaler kan mangle, være forsinket eller inneholde feil, og mottakerens dekning er ufullstendig.
 
 ### Skipssporing med AIS
 
-AIS-meldinger fra utstyrte fartøy kan mottas med en egnet VHF-mottaker og programvare som AIS-catcher. AIS benytter maritime VHF-kanaler rundt 162 MHz. Som ADS-B er dette en **passiv sporingsmottaker**, ikke radar, og den gir ikke fullstendig oversikt over trafikken.
+AIS-meldinger fra utstyrte fartøy kan mottas med en egnet VHF-mottaker og programvare som AIS-catcher. AIS benytter maritime VHF-kanaler rundt 162 MHz. Som ADS-B er dette en **passiv sporingsmottaker**, ikke radar, og den gir ikke fullstendig oversikt over trafikken. **Ikke bruk en hobbybasert AIS-visning til navigasjon eller kollisjonsunngåelse**: ikke alle fartøy sender AIS, og mottatte posisjoner kan være gamle eller feil.
 
 ### Kombinert SBC-basert mottakerstasjon
 
@@ -54,4 +54,4 @@ Antenneinstallasjoner krever også en sikkerhetsplan: forsvarlig montering og ar
 
 ## Start her
 
-Vår [serie om amatørradio og SDR](/no/series/ham-radio-sdr/) samler artiklene. **Neste planlagte guide (ennå ikke publisert): Bygg en ADS-B-flysporer med SBC og RTL-SDR.** Første praktiske prosjekt er planlagt som **Bygg en ADS-B-flysporer med SBC og RTL-SDR**, fulgt av AIS-mottaker og deretter en kombinert stasjon. Inntil disse oppsettene er fysisk testet, er de planlagte eksperimenter og ikke verifiserte guider.
+Vår [serie om amatørradio og SDR](/no/series/ham-radio-sdr/) samler artiklene. **Neste planlagte guide (ennå ikke publisert): Bygg en ADS-B-flysporer med SBC og RTL-SDR.** Deretter planlegger vi en AIS-mottaker og en kombinert stasjon. Inntil disse oppsettene er fysisk testet, er de planlagte eksperimenter og ikke verifiserte guider.
