@@ -36,11 +36,11 @@ Packet radio connects two of our favorite subjects: radio and old-school compute
 
 ### Aircraft tracking with ADS-B
 
-An SBC, a suitable 1090 MHz receiver and antenna, and software such as readsb and tar1090 can form a local aircraft-tracking station. It receives broadcasts from compatible aircraft; **it is not an active radar** and cannot see every aircraft. Reception depends on terrain, antenna placement and the transmissions available.
+An SBC, a suitable 1090 MHz receiver and antenna, and software such as readsb and tar1090 can form a local aircraft-tracking station. It receives broadcasts from compatible aircraft; **it is not an active radar** and cannot see every aircraft. Reception depends on terrain, antenna placement and the transmissions available. **Do not use a hobby ADS-B display for aviation safety decisions**: broadcasts may be absent, delayed or inaccurate, and receiver coverage is incomplete.
 
 ### Vessel tracking with AIS
 
-AIS broadcasts from equipped vessels can be received using a suitable VHF receiver and software such as AIS-catcher. AIS uses maritime VHF channels around 162 MHz. Like ADS-B, it is a **passive tracking receiver**, not radar, and cannot provide complete traffic coverage.
+AIS broadcasts from equipped vessels can be received using a suitable VHF receiver and software such as AIS-catcher. AIS uses maritime VHF channels around 162 MHz. Like ADS-B, it is a **passive tracking receiver**, not radar, and cannot provide complete traffic coverage. **Do not use a hobby AIS display for navigation or collision avoidance**: not every vessel transmits AIS, and received positions can be stale or incorrect.
 
 ### A combined SBC monitoring station
 
