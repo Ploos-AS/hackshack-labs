@@ -100,6 +100,12 @@ Strømforbruk bør måles på konkrete maskiner, ikke anslås ut fra alder alene
 - Sammenlign med en nyere maskin med garanti.
 - Betal ekstra for samlerverdi bare hvis det faktisk er samlerverdien du ønsker.
 
+## Datasikkerhet og fastvare ved kjøp av brukt utstyr
+
+En brukt PC kan leveres med forrige eiers SSD, fastvareinnstillinger eller bedriftsadministrasjon. **Ikke les forrige eiers filer, og ikke stol på et forhåndsinstallert operativsystem.** Be selger fjerne eller slette lagringsmediet på forsvarlig måte før overtakelse. Hvis lagring følger med, bør du planlegge ren installasjon av operativsystemet og kontrollere diskens tilstand. For utstyr du har rett til å behandle, må slettemetoden passe lagringsmediet og dokumenteres. Vanlig filsletting er ikke pålitelig sikker sletting, særlig på SSD-er.
+
+Før maskinen kobles til et betrodd nettverk, bør du kontrollere eventuelt fastvarepassord, bedriftsregistrering, tilgjengelige BIOS/UEFI-oppdateringer og om den kan starte fra eget installasjonsmedium. En låst eller bedriftsadministrert maskin kan være ubrukelig til formålet. Avklar eierskifte og returvilkår før betaling. Ikke koble et ukjent forhåndsinstallert system til kontoene dine eller produksjonsnettverket.
+
 ## Vår vurdering: Gammelt utstyr fortjener et nytt liv, ikke en premiumpris
 
 > **Old hardware deserves a second life, not a premium price.**
