@@ -50,6 +50,10 @@ Oppgradering kan være fornuftig dersom du har et konkret behov som en ny radio 
 4. Kontroller ZHA-integrasjonen, adapteren og tilgjengelig fastvareinformasjon i Home Assistant. Noter gjeldende versjon før oppdatering. Bruk Zigbee2MQTTs dokumentasjon dersom du benytter den løsningen.
 5. Ta sikkerhetskopi av nettverksdata før migrering og følg fremgangsmåten for akkurat din Zigbee-løsning.
 
+## Home Assistant-backup er ikke alltid en koordinatorflytting
+
+Før du bytter Zigbee-koordinator, må du skille mellom en sikkerhetskopi av Home Assistant-oppsettet og en **støttet migrering av radio og nettverk**. Avhengig av løsning og adapter er det ikke sikkert at gjenoppretting av applikasjonen overfører koordinatorens nettverksidentitet, sikkerhetsnøkler eller enhetstilknytninger til en annen radio. Følg oppdatert migreringsveiledning for ZHA eller Zigbee2MQTT og både gammel og ny maskinvare, behold den gamle adapteren til den nye løsningen er verifisert, og vær forberedt på at enheter kan måtte pares på nytt. Eksporterte nettverksnøkler må holdes private; de er sikkerhetsfølsomme legitimasjonsdata, ikke vanlige feilsøkingsvedlegg.
+
 ## Hva har vi ikke testet?
 
 HackShack Labs eier SkyConnect og IKEA Zigbee-enheter som kan inngå i en senere, etterprøvbar test. **Vi har ikke verifisert fastvareversjoner, stabilitet, migrering eller målt ytelse som grunnlag for denne artikkelen.**
