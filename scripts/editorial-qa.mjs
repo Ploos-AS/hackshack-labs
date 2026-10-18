@@ -49,6 +49,12 @@ for (const e of entries.filter(e => e.lang === 'en' && e.data.draft !== 'true'))
 // Affiliate and source hygiene checks; flag uncertainty for human editorial review.
 for (const e of entries.filter(e => e.data.draft !== 'true')) {
   const body = e.content.slice(e.content.indexOf('\n---\n', 4) + 5);
+  // Reject accidental JS/template placeholders that can leak into published prose.
+  // Limit this to standalone lines to avoid flagging legitimate code samples.
+  if (/^\s*(?:undefined|null|\[object Object\])\s*$/gm.test(body) ||
+      /^\s*undefined\b/gm.test(body)) {
+    issues.push(e.path + ': stray undefined/null placeholder in published content');
+  }
   const hasAffiliateUrl = /https?:\/\/[^\s)"'<>]*(?:partner|affiliate|ref=|utm_campaign=)/i.test(body);
   const hasDisclosure = e.lang === 'nb'
     ? /(?:reklame|annonselenke|affiliate|provisjon)/i.test(body.slice(0, 1800))

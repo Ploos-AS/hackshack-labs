@@ -5,7 +5,7 @@ category: guides
 lang: en
 date: 2026-10-18
 tags: [home-assistant, zigbee, thread, smart-home]
-series: "Smart Home Tested"
+series: "Smart Home"
 translationKey: skyconnect-2026
 draft: false
 tested: false
