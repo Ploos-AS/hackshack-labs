@@ -92,6 +92,7 @@ HackShack Labs is editorially independent. Ploos AS participates in the Proton a
 - [Proton Mail vs self-hosted email](/articles/proton-mail-vs-self-hosted-email/): operational realities
 - [Proton VPN with Docker and Gluetun](/articles/proton-vpn-linux-docker-gluetun/): configuration and limitations (documentation-based test plan; not lab-tested)
 - [Proton Drive & Docs vs Nextcloud](/articles/proton-drive-docs-vs-nextcloud/): encryption, collaboration and recovery
-- Planned: Proton Pass vs Bitwarden and KeePassXC; custom-domain exit strategies
+- [Proton Pass vs Bitwarden, Vaultwarden and KeePassXC](/articles/password-managers-proton-bitwarden-vaultwarden-keepassxc-2026/): recovery, self-hosting and migration risks
+- [Tuta vs Proton in 2026](/articles/tuta-vs-proton-2026/): email, Linux interoperability and domain migration
 
 **Sources and verification:** [Proton Mail encryption](https://proton.me/support/what-is-encrypted-within-protonmail); [Proton Drive](https://proton.me/support/drive); [Proton Mail Bridge](https://proton.me/support/imap-smtp-and-pop3-setup); [Proton Calendar](https://proton.me/support/calendar); [Proton Authenticator](https://proton.me/authenticator); [Proton open source](https://proton.me/community/open-source); [Proton transparency](https://proton.me/legal/transparency). Sourced overview as of 14 October 2026; no hands-on testing is claimed.
