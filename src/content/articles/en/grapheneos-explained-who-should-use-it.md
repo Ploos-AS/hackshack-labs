@@ -101,6 +101,8 @@ For Norwegian users, **BankID, Vipps, banking apps and contactless payments must
 
 Confirm the exact device variant can unlock its bootloader, make a verified backup, have a compatible computer and browser for the official web installer, and use a reliable data-capable USB cable. Check the current [official web installer requirements](https://grapheneos.org/install#web-installation) immediately before starting. Expect local data to be erased. Do not treat this checklist as a substitute for the official installation steps.
 
+**Account recovery before wiping:** A phone may hold your only authenticator app, passkeys, banking approval method or recovery codes. Before unlocking the bootloader or erasing the device, verify that you can sign in to essential accounts from another trusted device, and that your backup can actually be restored. Export or migrate authentication credentials using each provider's supported process; do not assume a general Android backup includes every app's protected data or hardware-bound credential. Check any work-device enrollment restrictions and have a way to restore the original supported OS if the migration fails.
+
 ## Before you install
 
 Installation replaces the phone's operating system and typically erases local data. Make an independent backup, check support for the exact device, and read the [official installation instructions](https://grapheneos.org/install) from beginning to end. The official procedure includes security-critical bootloader steps; do not substitute random third-party flashing commands or leave the bootloader unlocked as a casual workaround.
