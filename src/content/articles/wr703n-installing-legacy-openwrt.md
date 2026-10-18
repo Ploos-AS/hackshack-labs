@@ -9,6 +9,7 @@ series: "WR703N Labs"
 translationKey: wr703n-install-legacy-openwrt
 draft: true
 tested: false
+evidence: documentation
 ---
 
 > **Work in progress — do not follow this as a flashing procedure yet.** Firmware availability, checksums, installation routes and recovery steps have not been verified on our own hardware.

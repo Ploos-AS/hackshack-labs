@@ -10,6 +10,7 @@ series: "WR703N Labs"
 translationKey: wr703n-second-life
 draft: false
 tested: false
+evidence: documentation
 ---
 
 **Have an old TP-Link TL-WR703N sitting in a drawer?** This tiny travel router is worth another look. It became a favorite among embedded Linux enthusiasts thanks to its compact design, low power requirements, and ability to run OpenWrt.
