@@ -101,6 +101,8 @@ For norske brukere må **BankID, Vipps, bankapper og kontaktløs betaling testes
 
 Kontroller at den nøyaktige telefonvarianten kan låse opp oppstartslasteren, ta en verifisert sikkerhetskopi, ha en kompatibel datamaskin og nettleser til den offisielle nettinstallasjonen, og bruk en pålitelig USB-kabel med datastøtte. Sjekk [gjeldende krav for nettinstallasjon (engelsk)](https://grapheneos.org/install#web-installation) rett før du starter. Regn med at lokale data slettes. Sjekklisten erstatter ikke de offisielle installasjonstrinnene.
 
+**Kontogjenoppretting før sletting:** Telefonen kan være den eneste enheten med autentiseringsapp, passnøkler, bankgodkjenning eller gjenopprettingskoder. Før du låser opp oppstartslasteren eller sletter telefonen, må du kontrollere at du kan logge inn på viktige kontoer fra en annen betrodd enhet, og at sikkerhetskopien faktisk kan gjenopprettes. Flytt autentiseringsopplysninger med den enkelte leverandørens støttede metode. Ikke anta at en vanlig Android-sikkerhetskopi inneholder alle beskyttede appdata eller maskinvarebundne innloggingsnøkler. Undersøk eventuelle begrensninger for jobbtelefoner, og ha en plan for å gjenopprette det opprinnelige støttede operativsystemet dersom overgangen mislykkes.
+
 ## Før installasjon
 
 Installasjonen erstatter operativsystemet og sletter normalt lokale data. Ta en uavhengig sikkerhetskopi, kontroller støtte for nøyaktig modell og les de [offisielle installasjonsinstruksjonene](https://grapheneos.org/install) i sin helhet. Fremgangsmåten inneholder sikkerhetskritiske trinn for oppstartslasteren. Ikke erstatt dem med tilfeldige tredjepartskommandoer eller la oppstartslasteren stå ulåst som en enkel nødløsning.
