@@ -146,4 +146,4 @@ En eGPU er ikke automatisk det rimeligste valget. Løsningen er mest interessant
 
 Les også [Hvorfor mini-PC-er er utmerkede homelab-servere](/no/articles/why-mini-pcs-make-excellent-homelab-servers/) og [Prisfellen på brukte mini-PC-er](/no/articles/used-mini-pc-price-trap/).
 
-**Neste artikkel i serien:** modellspesifikk kompatibilitetsoversikt og reproduserbare Linux-tester. Inntil vi har testet maskinvaren selv, er vurderingene dokumentasjonsbaserte.
+**Allerede publisert:** vår [modellspesifikke eGPU-kompatibilitetsmatrise](/no/articles/mini-pc-egpu-compatibility-matrix/). Reproduserbare maskinvaretester på Linux er fortsatt planlagt. Inntil vi har testet maskinvaren selv, er vurderingene dokumentasjonsbaserte.

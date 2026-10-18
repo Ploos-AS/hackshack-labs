@@ -150,7 +150,7 @@ For each run, record the test identifier, image digests, Docker/Ubuntu versions,
 
 ## A note on health-check failures
 
-undefined that **a specific UDP operation was rejected**. It does not, by itself, prove that a DNS leak occurred, that Proton failed or that the firewall is broken. Possible causes include firewall policy, routing transitions, container capabilities and probe configuration. Correlate the error with routes, firewall rules, tunnel state and packet captures before changing security controls. Disabling the firewall just to make the health check green defeats the point of this setup.
+A health-check log reporting an operation-not-permitted UDP error tells us only that **a specific UDP operation was rejected**. It does not, by itself, prove that a DNS leak occurred, that Proton failed or that the firewall is broken. Possible causes include firewall policy, routing transitions, container capabilities and probe configuration. Correlate the error with routes, firewall rules, tunnel state and packet captures before changing security controls. Disabling the firewall just to make the health check green defeats the point of this setup.
 
 ## DNS, LAN access and Proton port forwarding: documented configuration
 
@@ -176,7 +176,7 @@ See the [Proton provider instructions](https://github.com/qdm12/gluetun-wiki/blo
 
 Gluetun and Proton can require additional configuration for port forwarding, and port assignment may change after reconnects. Do not equate a successful VPN connection with functioning inbound connections. Refer to the provider and Gluetun documentation for the current limitations, and test that application settings update when ports change.
 
-undefined
+## Practical conclusion
 
 For ordinary Linux desktop use, Proton's official supported client is a reasonable starting point. For dedicated Docker workloads, a deliberately scoped Gluetun gateway is often easier to reason about than routing an entire host through a VPN—**provided the failure tests pass**. Manual WireGuard offers flexibility at the price of administering leak prevention yourself.
 
