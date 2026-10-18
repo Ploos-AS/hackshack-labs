@@ -90,6 +90,12 @@ A comparison must match usable RAM, storage, network interfaces, warranty, suppo
 - The machine is too old for the intended supported OS, security posture or virtualization features.
 - A newer, warrantied alternative costs only a little more *after all extras are counted*.
 
+## Data security and firmware checks on used systems
+
+A second-hand PC may arrive with a previous owner's SSD, firmware settings or management enrollment. **Do not browse the previous owner's files or use the preinstalled operating system as a trusted starting point.** Ask the seller to remove or securely erase storage before transfer; if storage is included, plan a clean OS installation and verify the drive's condition. For equipment you are authorized to process, use an appropriate media-sanitization method and document it—ordinary file deletion is not a reliable secure erase, especially on SSDs.
+
+Before putting a used machine on a trusted network, check for firmware passwords, enterprise management enrollment, supported BIOS/UEFI updates and whether the device can boot your own installation media. A locked or organization-managed system may be unusable for your intended purpose; confirm transfer of ownership and return terms before paying. Avoid connecting an unknown preinstalled OS to your accounts or production network.
+
 ## Our opinion: old hardware deserves a second life, not a premium price
 
 > **Old hardware deserves a second life, not a premium price.**
