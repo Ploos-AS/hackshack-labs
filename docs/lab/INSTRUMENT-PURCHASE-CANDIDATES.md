@@ -16,6 +16,8 @@
 
 | USB power tester | UNI-T UT658 series / UT658B (exact selected listing variant unverified) | General | Planned; not tested; USB-A/USB-C compatibility and data export require verification | [AliExpress](https://s.click.aliexpress.com/e/_c2JpaFtJ) |
 
+| Plug-in energy meter | Brennenstuhl Primera-Line PM 231 E | EU / 230 V (verify exact plug and ratings) | Planned; not purchased or tested; affiliate link not registered | — |
+
 ## Editorial usage
 
 - English original and Norwegian Bokmål translation must disclose affiliate links clearly and near the links.
