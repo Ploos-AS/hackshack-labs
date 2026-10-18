@@ -1,10 +1,10 @@
 ---
 title: "Identify Your TP-Link TL-WR703N Hardware Revision"
-description: "Record the exact hardware and firmware identity before attempting an OpenWrt or PirateBox installation."
+description: "Record the exact hardware and firmware identity before considering an OpenWrt installation."
 category: mini-how-tos
 lang: en
 date: 2026-10-11
-tags: [tp-link, tl-wr703n, openwrt, piratebox]
+tags: [tp-link, tl-wr703n, openwrt, hardware-identification]
 series: offline-networking
 translationKey: identify-wr703n-hardware
 draft: true
@@ -26,6 +26,10 @@ Do not flash anything. Disconnect the router from the Internet and inspect the c
 - Any visible modification or evidence of previous reflashing
 
 If the label is missing or ambiguous, **do not guess** the hardware revision from appearance alone. Further identification may require boot logs or hardware inspection.
+
+## Why flash size matters
+
+Check the device's actual flash and RAM configuration against the requirements of the **specific OpenWrt release and image**. Historical support for a model does not establish current release compatibility, and a router with very little flash may not accommodate modern images or a useful set of packages. Do not select firmware from the model name alone.
 
 ## Next step
 
