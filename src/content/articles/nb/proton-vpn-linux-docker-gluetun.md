@@ -97,6 +97,8 @@ services:
 
 **Sikkerhetsmerknad:** `docker compose config` utvider miljøvariabler og kan skrive ut WireGuard-nøkkelen. Bruk `docker compose config --quiet` for validering; ikke publiser utvidet konfigurasjon eller CI-logger med hemmeligheter.
 
+**Beskyttelse av hemmeligheter:** En lokal `.env`-fil hindrer at nøkkelen legges i Git, men er **ikke et hemmelighetshvelv**. Compose legger `WIREGUARD_PRIVATE_KEY` inn som miljøvariabel i containeren. Personer med tilgang til Docker-daemonen eller containerinspeksjon kan hente den ut. Begrens filrettigheter og Docker-tilgang, unngå å skrive miljøvariabler i logger og diagnostikk, og bytt nøkkel hvis den eksponeres. `docker compose config --quiet` beskytter ikke mot `docker inspect` eller en kompromittert vert.
+
 **Forbehold om helsesjekk:** Verifiser kommandoen og innholdet i Gluetun-imaget mot den valgte versjonen. Hvis kommandoen ikke støttes, bruk dokumentert helsesjekk for den versjonen. Grønn helsestatus er et oppstartsvilkår, **ikke** en sikkerhetstest. Compose-varianter håndterer omstart av avhengige tjenester ulikt; gjenskap derfor testklienten eksplisitt etter omstart av Gluetun.
 
 ```sh

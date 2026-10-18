@@ -97,6 +97,8 @@ services:
 
 **Security note:** `docker compose config` expands environment variables and can print the WireGuard key. Use `docker compose config --quiet` for validation; do not publish expanded configuration or CI logs containing secrets.
 
+**Secret boundary:** A local `.env` file avoids committing the key, but it is **not a secret store**. Compose injects `WIREGUARD_PRIVATE_KEY` as a container environment variable; users with access to the Docker daemon or container inspection can retrieve it. Restrict permissions on the `.env` file, limit Docker daemon access, avoid printing environment variables in logs or diagnostics, and rotate a key if exposed. Do not mistake `docker compose config --quiet` for protection against `docker inspect` or a compromised host.
+
 **Healthcheck caution:** The Gluetun healthcheck command and Docker image contents must be verified against the pinned release before use; if unsupported, replace the healthcheck with the documented probe for that version. A healthy status is a startup gate, **not** a security test. Compose implementations vary in their handling of dependent-service restarts; recreate the test client explicitly after restarting Gluetun.
 
 ```sh
