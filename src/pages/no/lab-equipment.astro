@@ -1,0 +1,20 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+const items = [
+  ['UNI-T UT230B-EU', 'Energimåler (EU)', 'https://s.click.aliexpress.com/e/_c3WjGYlx'],
+  ['UNI-T UT230B-US', 'Energimåler (USA; elektriske spesifikasjoner ikke uavhengig kontrollert)', 'https://s.click.aliexpress.com/e/_c3fhwf2v'],
+  ['UNI-T UT61E+', 'Digitalt multimeter (annonsevariant ikke bekreftet)', 'https://s.click.aliexpress.com/e/_c4nRJVnb'],
+  ['UNI-T UT306C', 'IR-termometer', 'https://s.click.aliexpress.com/e/_c3Cf19av'],
+  ['UNI-T UT333BT', 'Temperatur- og luftfuktighetsmåler', 'https://s.click.aliexpress.com/e/_c4CALRLT'],
+  ['UNI-T UT353BT', 'Lydnivåmåler', 'https://s.click.aliexpress.com/e/_c328j5jx'],
+  ['UNI-T UT658-serien / UT658B', 'USB-strømmåler (annonsevariant ikke bekreftet)', 'https://s.click.aliexpress.com/e/_c2JpaFtJ']
+];
+---
+<SiteLayout title="Laboratorieutstyr — Planlagte instrumenter" alternateUrl="/lab-equipment/">
+  <h1>Laboratorieutstyr</h1>
+  <p>Aktuelle instrumenter for kommende maskinvaretester. <strong>Ingen av disse er foreløpig bekreftet kjøpt eller testet av HackShack Labs.</strong> Dette er ingen produkttest eller kjøpsanbefaling.</p>
+  <p><strong>Annonselenker:</strong> AliExpress-lenkene nedenfor er affiliate-lenker. Ploos AS kan motta provisjon ved kjøp gjennom lenkene, uten ekstra kostnad for deg. Provisjon påvirker ikke våre uavhengige redaksjonelle vurderinger.</p>
+  <p>Kontroller modell, støpsel, spenning, sikkerhetsdokumentasjon og selger før bestilling.</p>
+  <ul>{items.map(([model, description, url]) => <li><strong>{model}</strong> — {description}. <em>Planlagt / ikke testet.</em> <a href={url} target="_blank" rel="sponsored noopener noreferrer">Se på AliExpress (annonselenke)</a></li>)}</ul>
+  <p>Ved elektriske målinger må instrumentet ha riktig og dokumentert sikkerhetsklassifisering.</p>
+</SiteLayout>
