@@ -57,6 +57,8 @@ Proton offers product-defined sharing and collaboration controls. Check whether 
 
 Nextcloud can be integrated with organizational authentication and configured with user/group permissions, external storage and access policies. Those capabilities bring flexibility **and** configuration risk. Public links, anonymous uploads, guest access and federation deserve explicit testing.
 
+**Revoking access is not deleting copies.** Removing a shared link or a collaborator's access cannot reliably recall files already downloaded, exported or copied by a recipient. For sensitive material, decide who can download or redistribute it before sharing, and verify the product's current link-expiration and permission behavior rather than treating access revocation as remote deletion.
+
 ## Operations, updates and recovery
 
 With Proton, the provider operates the storage and application infrastructure. That removes a substantial maintenance burden but introduces dependence on service availability, product decisions and account recovery procedures. **A provider-managed service is not a replacement for an independent backup of irreplaceable data.**
