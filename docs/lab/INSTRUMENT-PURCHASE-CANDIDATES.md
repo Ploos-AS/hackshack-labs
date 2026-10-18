@@ -5,7 +5,7 @@
 | Instrument | Model | Region | Status | AliExpress affiliate link |
 | --- | --- | --- | --- | --- |
 | Plug-in energy meter | UNI-T UT230B-EU | EU / 230 V | Planned; not tested | [AliExpress EU](https://s.click.aliexpress.com/e/_c3WjGYlx) |
-| Plug-in energy meter | Model not yet verified | US; electrical specifications unverified | Candidate; verify before publishing as US-compatible | [AliExpress US](https://s.click.aliexpress.com/e/_c3fhwf2v) |
+| Plug-in energy meter | UNI-T UT230B-US (seller listing title; specifications unverified) | US; electrical specifications unverified | Planned; verify voltage, plug type and certification before publishing as US-compatible | [AliExpress US](https://s.click.aliexpress.com/e/_c3fhwf2v) |
 | Digital multimeter | UNI-T UT61E+ (listing variant unverified) | Not yet verified | Planned; not tested | [AliExpress](https://s.click.aliexpress.com/e/_c4nRJVnb) |
 
 ## Editorial usage
