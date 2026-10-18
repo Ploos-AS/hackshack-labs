@@ -87,12 +87,11 @@ Et produkt kan være godt egnet til én oppgave og dårlig egnet til en annen. V
 
 HackShack Labs er redaksjonelt uavhengig. Ploos AS deltar i Protons affiliate-program, og de fem tjenestelenkene i sammenligningstabellen er annonselenker, ikke testresultater eller anbefalinger. Vi kan motta provisjon ved kvalifiserte kjøp. Dette påvirker ikke våre tekniske konklusjoner. Vi skiller tydelig mellom Protons dokumenterte produktpåstander og fremtidige egne tester.
 
-## Neste artikler
+## Relaterte artikler og planlagt innhold
 
-- Proton Mail mot selvhostet e-post: drift i praksis
-- Proton VPN på Linux og med Docker/Gluetun: tilkobling og feilhåndtering
-- Proton Drive mot Nextcloud: synkronisering, deling og gjenoppretting
-- Proton Pass mot Bitwarden og KeePassXC: flyttbarhet og gjenoppretting
-- Proton med eget domene uten å låse seg inne
+- [Proton Mail mot selvhostet e-post](/no/articles/proton-mail-vs-self-hosted-email/): drift i praksis
+- [Proton VPN på Linux med Docker/Gluetun](/no/articles/proton-vpn-linux-docker-gluetun/): konfigurasjon og begrensninger (dokumentasjonsbasert, ikke laboratorietestet)
+- [Proton Drive og Docs mot Nextcloud](/no/articles/proton-drive-docs-vs-nextcloud/): kryptering, samarbeid og gjenoppretting
+- Planlagt: Proton Pass mot Bitwarden og KeePassXC; flytting fra Proton med eget domene
 
 **Kilder og kontroll:** [Kryptering i Proton Mail](https://proton.me/support/what-is-encrypted-within-protonmail); [Proton Drive](https://proton.me/support/drive); [Proton Mail Bridge](https://proton.me/support/imap-smtp-and-pop3-setup); [Proton Calendar](https://proton.me/support/calendar); [Proton Authenticator](https://proton.me/authenticator); [Protons åpne kildekode](https://proton.me/community/open-source); [Protons åpenhetsinformasjon](https://proton.me/legal/transparency). Kildebasert oversikt per 14. oktober 2026; ingen praktisk test er gjennomført.

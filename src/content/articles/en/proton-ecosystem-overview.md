@@ -52,7 +52,7 @@ There are also practical compatibility costs. For example, traditional desktop e
 
 Self-hosting email can teach you a great deal about SMTP, DNS, SPF, DKIM, DMARC and deliverability. But reliable delivery and abuse handling are ongoing jobs. A hosted mail provider may be preferable when email is critical and the operator does not want to maintain that entire stack.
 
-Encryption claims require precision: sending email to arbitrary external addresses is not automatically end-to-end encrypted just because your mailbox uses Proton. We will examine external recipients, metadata, custom domains, export and interoperability in a dedicated Mail article.
+Encryption claims require precision: sending email to arbitrary external addresses is not automatically end-to-end encrypted just because your mailbox uses Proton. Our [dedicated Proton Mail comparison](/articles/proton-mail-vs-self-hosted-email/) examines external recipients, metadata, custom domains, export and interoperability.
 
 ### VPN: trust is relocated, not eliminated
 
