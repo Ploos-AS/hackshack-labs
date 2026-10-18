@@ -7,6 +7,7 @@ date: 2026-10-11
 tags: [apen-kildekode, maskinvare, nettverk]
 translationKey: welcome
 tested: false
+evidence: documentation
 ---
 
 HackShack Labs dokumenterer praktiske dataprosjekter, maskinvareeksperimenter og etterprøvbare tekniske guider.
