@@ -52,6 +52,9 @@ for (const filename of readdirSync(root).filter(x => x.endsWith('.md'))) {
   if (!['documentation','desk-research','lab-tested','hardware-verified'].includes(data.evidence)) issues.push(path + ': invalid evidence');
   if (data.tested === 'true' && ['documentation','desk-research'].includes(data.evidence)) issues.push(path + ': tested conflicts with evidence');
   if (data.tested === 'false' && ['lab-tested','hardware-verified'].includes(data.evidence)) issues.push(path + ': untested conflicts with evidence');
+  // Legacy root content bypasses the EN/NB publication and affiliate checks.
+  // Never silently publish an unpaired root article.
+  if (data.draft === 'false') issues.push(path + ': published legacy root article bypasses EN/NB parity; migrate or mark as draft');
   warn.push(path + ': legacy root article; migrate to language folders for parity checks');
 }
 const byName = new Map(entries.map(e => [e.lang + '/' + e.filename, e]));

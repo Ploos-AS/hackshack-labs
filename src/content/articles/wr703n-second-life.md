@@ -8,7 +8,7 @@ updated: 2026-10-11
 tags: [openwrt, tp-link, wr703n, embedded-linux, retro-hardware]
 series: "WR703N Labs"
 translationKey: wr703n-second-life
-draft: false
+draft: true
 tested: false
 evidence: documentation
 ---
