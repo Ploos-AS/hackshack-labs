@@ -79,3 +79,11 @@ Scope: identify the exact USB interface and required cable; reproduce Linux dete
 | **UNI-T UT60BT** | High | Planned purchase; not purchased or tested | Bluetooth LE; third-party UT60BT hardware-verified support reported by [QtDMM](https://qtdmm.de/) and [libreble/multimeter](https://github.com/libreble/multimeter). Verify exact device revision and Linux logging in our lab. UNI-T specifies 9999 counts and CAT III 600 V / CAT II 1000 V; independently check safety documentation before mains use. | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c4dqIMPP) |
 
 **Proposed article:** *UNI-T UT60BT on Linux: Bluetooth Multimeter Logging Without the Vendor App* (English original, Norwegian Bokmål translation). Test BlueZ/BLE discovery, QtDMM and open protocol tooling, CSV export, Python/MQTT integration, reconnection and range handling. Do not present this as a hands-on test before purchase and verification.
+
+## Contact thermometry candidate
+
+| Model | Priority | Status | Interface and scope | Affiliate link |
+| --- | --- | --- | --- | --- |
+| **UNI-T UT325** | High | Planned purchase; not purchased or tested; seller availability and exact bundle unverified | Dual thermocouple inputs; types K/J/T/E/R/S/N; USB interface and 100-reading storage per UNI-T. Temperature range depends on thermocouple type and probe. Manufacturer provides PC software, but native Linux/sigrok/Python support has not been verified. UNI-T official product page currently marks this model unavailable; verify seller stock and potential newer alternatives. | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c3WU2fSZ) |
+
+**Proposed article:** *UNI-T UT325 on Linux: Dual-Channel Thermocouple Logging and USB Compatibility*. Compare against UT306C infrared readings where meaningful, document probe selection and calibration/reference limitations, identify USB chipset/protocol, and attempt Linux/Python logging without promising support in advance.
