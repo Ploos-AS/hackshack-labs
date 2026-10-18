@@ -7,7 +7,7 @@ date: 2026-10-18
 tags: [home-assistant, zigbee, thread, smart-home]
 series: "Smart Home Tested"
 translationKey: skyconnect-2026
-draft: true
+draft: false
 tested: false
 evidence: documentation
 ---
@@ -24,7 +24,7 @@ SkyConnect er en USB-radio utviklet for Home Assistant. Den brukes ofte med **ZH
 
 ## Zigbee, Thread og multiprotokoll
 
-Gi adapteren én tydelig oppgave. Har du allerede et Zigbee-nettverk, er det tryggeste utgangspunktet å beholde Zigbee-fastvaren og koordinatorrollen. Samtidig Zigbee/Thread-drift med multiprotokollfastvare har hatt vesentlige begrensninger i støtte og stabilitet. Sjekk oppdatert Home Assistant-dokumentasjon før du baserer en ny installasjon på dette.
+Gi adapteren én tydelig oppgave. Har du allerede et Zigbee-nettverk, er det tryggeste utgangspunktet å beholde Zigbee-fastvaren og koordinatorrollen. Home Assistant klassifiserer multiprotokollfastvaren som **eksperimentell og ikke anbefalt**. Bruk dedikert Zigbee- eller Thread-fastvare for nye installasjoner.
 
 **Ikke bytt fastvare uten en plan.** Det kan forstyrre eksisterende nettverk. Ta sikkerhetskopi av Home Assistant og relevante Zigbee-nettverksdata, les migreringsveiledningen og kontroller hvordan du kan gjenopprette oppsettet.
 
