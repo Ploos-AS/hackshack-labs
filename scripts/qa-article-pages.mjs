@@ -15,6 +15,33 @@ const files = (await htmlFiles('dist')).filter(path =>
   /[/\\](?:no[/\\])?articles[/\\][^/\\]+[/\\]index\.html$/.test(path));
 assert(files.length > 0, 'No generated article pages');
 const counts = { en: 0, nb: 0, changes: 0, related: 0, code: 0 };
+const allPages = await htmlFiles('dist');
+assert(allPages.length > files.length, 'Expected non-article pages');
+const siteLinks = new Set(allPages.map(p => '/' + p.replace(/^dist[/\\]/, '').replace(/index\.html$/, '').replace(/\\/g, '/')));
+siteLinks.add('/');
+siteLinks.add('/no/');
+for (const file of allPages) {
+  const html = await readFile(file, 'utf8');
+  assert(/<html lang="(?:en|nb)"/.test(html), `${file}: missing language`);
+  for (const [label, pattern] of [
+    ['description', /<meta name="description" content="[^"]+"/],
+    ['canonical', /<link rel="canonical" href="https:\/\/labs\.hackshack\.no\/[^"]*"/],
+    ['Open Graph title', /<meta property="og:title" content="[^"]+"/],
+    ['Open Graph description', /<meta property="og:description" content="[^"]+"/],
+    ['Open Graph URL', /<meta property="og:url" content="[^"]+"/],
+    ['navigation', /<nav aria-label="Main navigation"/],
+    ['About footer', /About &amp; editorial policy|Om oss og redaksjonell policy/],
+    ['RSS footer', /href="\/rss\.xml"/],
+    ['privacy footer', /href="\/(?:no\/)?privacy\/"/],
+    ['support footer', /ko-fi\.com\/hackshacklabs/]
+  ]) assert(pattern.test(html), `${file}: missing ${label}`);
+  for (const match of html.matchAll(/\bhref="(\/[^"#?]*)(?:[?#][^"]*)?"/g)) {
+    const href = match[1];
+    if (href.startsWith('//') || href === '/rss.xml' || /\.[a-z0-9]+$/i.test(href)) continue;
+    assert(siteLinks.has(href), `${file}: broken internal link ${href}`);
+  }
+}
+
 for (const file of files) {
   const html = await readFile(file, 'utf8');
   const no = /[/\\]no[/\\]articles[/\\]/.test(file);
