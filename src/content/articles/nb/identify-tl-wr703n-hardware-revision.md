@@ -4,7 +4,7 @@ description: "Registrer nøyaktig maskinvare- og fastvareidentitet før du vurde
 category: mini-how-tos
 lang: nb
 date: 2026-10-11
-tags: [tp-link, tl-wr703n, openwrt, piratebox]
+tags: [tp-link, tl-wr703n, openwrt, hardware-identification]
 series: offline-networking
 translationKey: identify-wr703n-hardware
 draft: true
@@ -26,6 +26,10 @@ evidence: documentation
 - Synlige modifikasjoner eller tegn på tidligere endring av fastvaren.
 
 Hvis etiketten mangler eller er uklar, **ikke gjett revisjonen ut fra utseendet alene**. Sikker identifisering kan kreve oppstartslogger eller fysisk inspeksjon.
+
+## Hvorfor flashstørrelsen er viktig
+
+Kontroller faktisk flashminne og RAM mot kravene til **den konkrete OpenWrt-versjonen og fastvarefilen**. At en modell hadde støtte tidligere, betyr ikke nødvendigvis at den støttes av dagens utgivelser. Rutere med svært lite flashminne har kanskje ikke plass til moderne firmware eller et nyttig utvalg pakker. Ikke velg fastvare ut fra modellnavnet alene.
 
 ## Neste steg
 
