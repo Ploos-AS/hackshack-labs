@@ -63,6 +63,12 @@ At the time of checking, Tuta's published **annual-billing** personal offers inc
 
 Do not compare Tuta's mail-storage allowance with Proton's combined suite storage as if they represented identical products.
 
+## Migration: domain ownership and account recovery
+
+If you use your own domain, verify access to the domain registrar and DNS before changing providers. Plan the MX, SPF, DKIM and DMARC changes using each provider's current instructions, and allow for DNS propagation. Export or archive mail and calendars using the supported methods **before** cancelling the old account; test imports and calendar invitations rather than assuming every label, folder, contact and event survives intact. Keep the old service available during a controlled transition when practical.
+
+Also review account-recovery methods, 2FA devices and addresses used to recover other services. If your current mailbox is the recovery address for your registrar, password manager or banking accounts, changing it without a verified fallback can lock you out. Provider portability and encryption do not eliminate these operational dependencies.
+
 ## Who should choose which?
 
 - **Consider Tuta** if your main needs are email and calendar, you prefer its first-party client model, and you do not require standard mail protocols.
