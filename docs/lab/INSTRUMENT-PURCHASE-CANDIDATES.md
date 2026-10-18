@@ -35,6 +35,12 @@
 
 Use for future HackShack Labs video capture and tutorials. Clearly distinguish the seller's advertised 4K input/loop-through from verified recording resolution; do not claim tested compatibility before testing.
 
+### Mini-PCs available for testing
+
+| Equipment | Quantity | Status | Affiliate link |
+| --- | ---: | --- | --- |
+| Generic Intel N150 mini-PC (AliExpress listing; exact brand/model unverified), 32 GB RAM / 2 TB SSD variant | 2 | User reports owned and awaiting hands-on tests; advertised Windows 11 Pro, Wi-Fi 6 and Bluetooth 5.2 unverified; intended Debian Linux tests | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c3bv6Et3) |
+
 ## Planned YouTube production
 
 ### Testing a Cheap HDMI Capture Card on Linux — Hagibis MS2131
@@ -87,3 +93,11 @@ Scope: identify the exact USB interface and required cable; reproduce Linux dete
 | **UNI-T UT325** | High | Planned purchase; not purchased or tested; seller availability and exact bundle unverified | Dual thermocouple inputs; types K/J/T/E/R/S/N; USB interface and 100-reading storage per UNI-T. Temperature range depends on thermocouple type and probe. Manufacturer provides PC software, but native Linux/sigrok/Python support has not been verified. UNI-T official product page currently marks this model unavailable; verify seller stock and potential newer alternatives. | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c3WU2fSZ) |
 
 **Proposed article:** *UNI-T UT325 on Linux: Dual-Channel Thermocouple Logging and USB Compatibility*. Compare against UT306C infrared readings where meaningful, document probe selection and calibration/reference limitations, identify USB chipset/protocol, and attempt Linux/Python logging without promising support in advance.
+
+## Planned review: two Intel N150 mini-PCs (32 GB / 2 TB)
+
+**Status:** Two units reportedly owned; hands-on review pending. Exact OEM, hardware revision and shipped components unverified. **Editorial:** English original, Norwegian Bokmål translation, clear affiliate disclosure.
+
+**Test plan:** Photograph and identify chassis/ports and BIOS; verify CPU, installed RAM capacity/configuration and SSD identity/capacity; inspect network/Wi-Fi/Bluetooth controllers; install and test Debian Linux (kernel, graphics, audio, suspend, networking, thermals); measure idle/load power consumption with a suitable external meter; benchmark CPU, storage and network; record fan noise, temperature and stability; compare both units for manufacturing variation. Check Windows license claims without publishing keys or identifiers. Distinguish listing claims from verified findings, and document any safety concerns.
+
+**Proposed article/video:** *Two Cheap Intel N150 Mini PCs from AliExpress — Debian Linux, Power Consumption and Performance*. Do not publish test results before measurement.
