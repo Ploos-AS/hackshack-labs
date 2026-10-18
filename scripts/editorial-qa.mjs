@@ -86,9 +86,14 @@ for (const e of entries.filter(e => e.data.draft !== 'true')) {
       !/not hands.on tested|not hardware.verified|ikke maskinvareverifisert/i.test(body.slice(0, 2000))) {
     warn.push(e.path + ': test language needs manual review against tested:false');
   }
-  if (!body.includes('](https://') && !body.includes('](http://') &&
-      !body.includes('href="https://') && !body.includes("href='https://")) {
-    warn.push(e.path + ': no external source links found; verify whether citations are needed');
+  const hasExternalSourceLink = /\\]\\(https?:\\/\\//.test(body) || /href=["']https?:\\/\\//.test(body);
+  // Documentation-based technical articles must let readers verify the underlying claims.
+  // General welcome/editorial pages can reasonably link only to internal articles.
+  const requiresSources = ['documentation', 'desk-research'].includes(e.data.evidence) &&
+    !['welcome.md'].includes(e.filename);
+  if (!hasExternalSourceLink) {
+    if (requiresSources) issues.push(e.path + ': documentation-based article needs at least one external source link');
+    else warn.push(e.path + ': no external source links found; verify whether citations are needed');
   }
 }
 
