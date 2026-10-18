@@ -168,3 +168,11 @@ Test Debian Linux compatibility; identify actual RAM/SSD/network/Wi-Fi hardware 
 - Do not publish untested compatibility claims or product ratings. No test video is scheduled until the user is ready.
 
 **Suggested series name:** *Retro Video on Linux: From RGB and SCART to HDMI and OBS*.
+
+## USB-to-TTL serial adapter candidate
+
+| Model | Priority | Status | Linux and electrical considerations | Affiliate link |
+| --- | --- | --- | --- | --- |
+| **CH343G USB-to-TTL UART module (USB-A/USB-C options in listing)** | **High** | Planned purchase; not ordered or tested. Exact USB connector variant, breakout pins and included accessories unverified. | Candidate for Linux serial console/debugging with kernel USB-serial support to be verified on the exact unit. Check advertised 3.3 V / 5 V logic level, actual TX/RX voltage, VCC supply selection and pinout before connection. **TTL UART is not RS-232 or RS-485**: use a proper level shifter/transceiver for those interfaces. Avoid connecting target VCC unless intentionally powering it within the adapter's rated limits. | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c3HfSMkp) |
+
+**Suggested use and article:** *CH343G USB-to-TTL Serial Adapter on Linux: UART Debugging and Compatibility*. Verify USB ID and Linux driver, `dmesg`, `lsusb`, `/dev/ttyUSB*` or `/dev/ttyACM*`, loopback, common baud rates, stability and 3.3 V/5 V signaling. Test with development boards and router serial consoles using correct electrical levels. Record the exact product variant; do not infer support from the chipset name alone.
