@@ -9,6 +9,7 @@ series: offline-networking
 translationKey: identify-wr703n-hardware
 draft: true
 tested: false
+evidence: documentation
 ---
 
 > **Research draft:** No physical unit has yet been inspected for this article.
@@ -29,3 +30,5 @@ If the label is missing or ambiguous, **do not guess** the hardware revision fro
 ## Next step
 
 Compare the recorded information with the [OpenWrt TL-WR703N device page](https://openwrt.org/toh/tp-link/tl-wr703n) and the firmware compatibility evidence before choosing an image.
+
+PirateBox and LibraryBox are discontinued historical projects. HackShack Labs now prioritizes documenting compatible OpenWrt and, later, MikroWrt and Ploos PocketBox when ready. No firmware installation on this router has been verified for this article.
