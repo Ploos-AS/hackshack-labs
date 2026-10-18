@@ -86,9 +86,19 @@ for (const e of entries.filter(e => e.data.draft !== 'true')) {
       !/not hands.on tested|not hardware.verified|ikke maskinvareverifisert/i.test(body.slice(0, 2000))) {
     warn.push(e.path + ': test language needs manual review against tested:false');
   }
-  const hasExternalSourceLink = body.includes('](https://') || body.includes('](http://') ||
-    body.includes('href="https://') || body.includes("href='https://") ||
-    body.includes('href="http://') || body.includes("href='http://");
+  // A product/affiliate link is not evidence for a technical claim.
+  // Require at least one non-affiliate external link in documentation-based articles.
+  const markdownLinks = body.split('](').slice(1).map(part => part.split(')')[0].trim()).filter(url => url.startsWith('https://') || url.startsWith('http://'));
+  const htmlLinks = body.split('href="').slice(1).map(part => part.split('"')[0]).concat(
+    body.split("href='").slice(1).map(part => part.split("'")[0])
+  ).filter(url => url.startsWith('https://') || url.startsWith('http://'));
+  const isAffiliate = url => {
+    const lower = url.toLowerCase();
+    return lower.includes('s.click.aliexpress.com') || lower.includes('aliexpress.com/e/') ||
+      lower.includes('amzn.to/') || lower.includes('utm_medium=affiliate') ||
+      lower.includes('affiliate=') || lower.includes('referral=');
+  };
+  const hasExternalSourceLink = [...markdownLinks, ...htmlLinks].some(url => !isAffiliate(url));
   // Catch obvious citation placeholders without making network requests.
   // A source link must not point to a reserved example domain or a fragment-only URL.
   const externalLinks = [...body.matchAll(new RegExp('https?:' + '/' + '/' + '[^\\s)]+', 'g'))].map(m => m[0]);
