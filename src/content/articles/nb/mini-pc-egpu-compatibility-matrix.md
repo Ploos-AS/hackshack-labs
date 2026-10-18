@@ -76,6 +76,8 @@ Kommandoene leser informasjon uten å endre oppsettet. De beviser ikke at CUDA, 
 
 **En Thunderbolt-/USB4-port er ikke en GPU-test.** Produsentens QVL er nyttig, men garanterer ikke at en annen BIOS-, dokk-, driver- eller OS-versjon fungerer. ASUS [beskriver selv begrensningene ved periferiutstyrstesting](https://rog.asus.com/support/faq/1052501/).
 
+**Strøm og håndtering av ekstern PCIe:** Behandle OCuLink og M.2-til-PCIe-adaptere som tilkoblinger som ikke kan kobles om under drift, med mindre dokumentasjonen for nøyaktig PC og dokk sier noe annet. Slå av både PC og dokk, og følg produsentens angitte rekkefølge for strøm og tilkobling før kabler kobles til eller fra. Bruk strømforsyning og GPU-strømkontakter dimensjonert for skjermkortet; ikke improviser PCIe-strømadaptere eller anta at dokken leverer nok strøm bare fordi kortet blir oppdaget. Åpne GPU-kort og risere må monteres stabilt, ha kjøling og beskyttes mot utilsiktet berøring. Dette er forholdsregler, ikke dokumentasjon på kompatibilitet.
+
 ## Utvidelse: MINISFORUM, GEEKOM, Beelink og GMKtec
 
 Oppføringene nedenfor er **ikke maskinvaretestet av HackShack Labs**. Vi gjengir kun det de lenkede produsentkildene dokumenterer. Produsentstøtte for en PC og dokk betyr ikke at en bestemt GPU fungerer under Linux.
