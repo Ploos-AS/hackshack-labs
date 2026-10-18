@@ -4,6 +4,7 @@ on:
     paths:
       - 'src/**'
       - 'scripts/**'
+      - 'docs/**'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/article-pr-qa.yml'
