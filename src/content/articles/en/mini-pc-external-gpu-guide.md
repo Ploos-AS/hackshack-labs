@@ -146,4 +146,4 @@ An eGPU is not inherently the best or cheapest choice. It makes the most sense w
 
 Also see [Why Mini PCs Make Excellent Homelab Servers](/articles/why-mini-pcs-make-excellent-homelab-servers/) and [The Used Mini PC Price Trap](/articles/used-mini-pc-price-trap/).
 
-**Next in this series:** a model-specific eGPU compatibility matrix and reproducible Linux tests. Until we test hardware ourselves, performance and compatibility claims remain documentation-based.
+**Already published:** our [model-specific eGPU compatibility matrix](/articles/mini-pc-egpu-compatibility-matrix/). Reproducible Linux hardware tests remain planned. Until we test hardware ourselves, performance and compatibility claims remain documentation-based.
