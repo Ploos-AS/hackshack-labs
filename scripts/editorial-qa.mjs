@@ -24,6 +24,8 @@ for (const lang of ['en', 'nb']) {
     if (data.lang !== lang) issues.push(path + ': lang differs from directory');
     if (data.date && !/^\d{4}-\d{2}-\d{2}$/.test(data.date)) issues.push(path + ': date should use YYYY-MM-DD');
     if (data.updated && !/^\d{4}-\d{2}-\d{2}$/.test(data.updated)) issues.push(path + ': updated should use YYYY-MM-DD');
+    if (data.draft !== 'true' && !data.evidence) issues.push(path + ': published article must declare evidence explicitly');
+    if (data.draft !== 'true' && !['true','false'].includes(data.tested)) issues.push(path + ': published article must declare tested explicitly');
     if (data.evidence && !['documentation','desk-research','lab-tested','hardware-verified'].includes(data.evidence)) issues.push(path + ': invalid evidence level');
     if (data.tested === 'true' && ['documentation','desk-research'].includes(data.evidence)) issues.push(path + ': tested conflicts with evidence');
     if (data.tested === 'false' && ['lab-tested','hardware-verified'].includes(data.evidence)) issues.push(path + ': untested conflicts with evidence');
@@ -38,9 +40,9 @@ for (const e of entries.filter(e => e.lang === 'en' && e.data.draft !== 'true'))
   if (!other) { warn.push(e.path + ': no Norwegian counterpart'); continue; }
   if (other.data.translationKey !== e.data.translationKey) issues.push(e.path + ': translationKey mismatch');
   if (other.data.category !== e.data.category) issues.push(e.path + ': category mismatch between translations');
-  if (other.data.evidence !== e.data.evidence) warn.push(e.path + ': evidence differs between translations');
+  if (other.data.evidence !== e.data.evidence) issues.push(e.path + ': evidence differs between translations');
   if (other.data.tested !== e.data.tested) issues.push(e.path + ': tested differs between translations');
-  if (other.data.date !== e.data.date) warn.push(e.path + ': publication date differs between translations');
+  if (other.data.date !== e.data.date) issues.push(e.path + ': publication date differs between translations');
   if (other.data.updated !== e.data.updated) warn.push(e.path + ': update date differs between translations');
   if (e.content.includes('Affiliate disclosure') !== other.content.includes('Affiliate disclosure') && !/Reklame|annonselenke|affiliate/i.test(other.content)) warn.push(e.path + ': affiliate disclosure may be missing in Norwegian');
 }
