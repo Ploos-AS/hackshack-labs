@@ -63,6 +63,12 @@ Tutas annonserte personlige abonnement ved **årlig betaling** omfatter Free (1 
 
 Vi må ikke sammenligne Tutas e-postlagring og Protons samlede tjenestelagring som om de var identiske produkter.
 
+## Flytting: domenekontroll og kontogjenoppretting
+
+Bruker du eget domene, må du kontrollere tilgangen til domeneregistraren og DNS før du bytter leverandør. Planlegg endringer i MX, SPF, DKIM og DMARC etter leverandørenes oppdaterte veiledninger, og ta høyde for DNS-forplantning. Eksporter eller arkiver e-post og kalendere med støttede metoder **før** du sier opp den gamle kontoen. Test import og kalenderinvitasjoner i stedet for å anta at alle etiketter, mapper, kontakter og avtaler overføres feilfritt. Behold om mulig den gamle tjenesten tilgjengelig under en kontrollert overgang.
+
+Kontroller også kontogjenoppretting, tofaktorenheter og e-postadresser som brukes til å gjenopprette andre tjenester. Hvis den gamle e-postkontoen er gjenopprettingsadresse for domeneregistrar, passordbehandler eller bank, kan et uforberedt bytte føre til at du mister tilgangen. Flyttbarhet og kryptering fjerner ikke slike praktiske avhengigheter.
+
 ## Hvem bør velge hva?
 
 - **Vurder Tuta** hvis e-post og kalender er viktigst, du liker leverandørens egne klienter og ikke trenger standard e-postprotokoller.
