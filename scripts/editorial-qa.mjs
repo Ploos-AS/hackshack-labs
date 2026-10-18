@@ -54,17 +54,17 @@ for (const e of entries) {
     if (counterpart.data.translationKey !== e.data.translationKey) issues.push(e.path + ': translationKey differs between translations');
     if (counterpart.data.tested !== e.data.tested) issues.push(e.path + ': tested status differs between translations');
     if (counterpart.data.evidence !== e.data.evidence) issues.push(e.path + ': evidence differs between translations');
+    if (counterpart.data.category !== e.data.category) issues.push(e.path + ': category differs between translations');
+    if (counterpart.data.date !== e.data.date) issues.push(e.path + ': publication date differs between translations');
+    if (counterpart.data.updated !== e.data.updated) warn.push(e.path + ': update date differs between translations');
   }
 }
 for (const e of entries.filter(e => e.lang === 'en' && e.data.draft !== 'true')) {
   const other = byName.get('nb/' + e.filename);
   if (!other) { warn.push(e.path + ': no Norwegian counterpart'); continue; }
   if (other.data.translationKey !== e.data.translationKey) issues.push(e.path + ': translationKey mismatch');
-  if (other.data.category !== e.data.category) issues.push(e.path + ': category mismatch between translations');
   if (other.data.evidence !== e.data.evidence) issues.push(e.path + ': evidence differs between translations');
   if (other.data.tested !== e.data.tested) issues.push(e.path + ': tested differs between translations');
-  if (other.data.date !== e.data.date) issues.push(e.path + ': publication date differs between translations');
-  if (other.data.updated !== e.data.updated) warn.push(e.path + ': update date differs between translations');
   if (e.content.includes('Affiliate disclosure') !== other.content.includes('Affiliate disclosure') && !/Reklame|annonselenke|affiliate/i.test(other.content)) warn.push(e.path + ': affiliate disclosure may be missing in Norwegian');
 }
 // Affiliate and source hygiene checks; flag uncertainty for human editorial review.
