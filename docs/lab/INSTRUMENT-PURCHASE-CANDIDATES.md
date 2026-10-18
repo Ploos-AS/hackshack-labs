@@ -47,6 +47,12 @@ Use for future HackShack Labs video capture and tutorials. Clearly distinguish t
 | --- | ---: | --- | --- |
 | Fanless industrial mini-PC, selected Core i7-5500U / 8 GB RAM / 256 GB SSD / Wi-Fi / 6 × RS-232 variant (seller listing covers multiple configurations) | 1 | User reports owned, pending hands-on testing; dual LAN and exact port capabilities require verification | [AliExpress (affiliate)](https://s.click.aliexpress.com/e/_c4BEwkst) |
 
+### GMKtec mini-PC available for testing
+
+| Equipment | Quantity | Status | Affiliate link |
+| --- | ---: | --- | --- |
+| GMKtec G3 mini-PC, Intel N100, 16 GB RAM / 512 GB SSD | 1 | User reports owned; pending hands-on tests; exact revision, interfaces and components to verify | None registered |
+
 ## Planned YouTube production
 
 ### Testing a Cheap HDMI Capture Card on Linux — Hagibis MS2131
@@ -115,3 +121,9 @@ Scope: identify the exact USB interface and required cable; reproduce Linux dete
 **Test plan:** Identify CPU, RAM, storage, NIC chipsets, UARTs and BIOS/UEFI; install Debian Linux and evaluate FreeBSD where practical; enumerate all six serial ports, test loopback and simultaneous traffic, verify RS-232 voltage levels and distinguish RS-485 only if documented and safely verified; test dual Ethernet routing/firewall use, Wi-Fi, idle/load power, thermal throttling and stability. Use proper serial adapters and never connect TTL UART directly to RS-232.
 
 **Proposed article/video:** *A Fanless Industrial Mini PC with Six Serial Ports — Linux, FreeBSD and Retro Computing*. English original and Norwegian Bokmål translation; disclose affiliate link and do not claim unverified results.
+
+## Planned review: GMKtec G3 N100 (16 GB / 512 GB)
+
+**Status:** One unit owned; not yet tested. **Working title:** *GMKtec G3 N100 on Debian — A Budget Mini PC for Homelab?*
+
+Test Debian Linux compatibility; identify actual RAM/SSD/network/Wi-Fi hardware and firmware; measure idle/load power, CPU/storage/network performance, cooling and noise; evaluate Docker and lightweight server workloads. Compare against the two owned Intel N150 mini-PCs using consistent configurations and reproducible benchmarks. English original with Norwegian Bokmål translation. No affiliate link registered; do not imply a hands-on verdict before tests.
