@@ -35,6 +35,12 @@ for (const lang of ['en', 'nb']) {
   }
 }
 const byName = new Map(entries.map(e => [e.lang + '/' + e.filename, e]));
+// EN and NB must have matching file-level coverage, including research drafts.
+for (const e of entries) {
+  const counterpart = byName.get((e.lang === 'en' ? 'nb/' : 'en/') + e.filename);
+  if (!counterpart) issues.push(e.path + ': missing ' + (e.lang === 'en' ? 'Norwegian' : 'English') + ' counterpart');
+  else if (counterpart.data.draft !== e.data.draft) issues.push(e.path + ': draft status differs between translations');
+}
 for (const e of entries.filter(e => e.lang === 'en' && e.data.draft !== 'true')) {
   const other = byName.get('nb/' + e.filename);
   if (!other) { warn.push(e.path + ': no Norwegian counterpart'); continue; }
