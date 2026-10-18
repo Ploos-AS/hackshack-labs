@@ -91,6 +91,10 @@ Eksemplet 10 mot 50 W er bevisst enkelt. Et annet *illustrativt*, ikke målt, sc
 
 Eksterne USB-disker erstatter ikke automatisk en gjennomtenkt NAS- eller backup-løsning.
 
+## Sikkerhetskopier må omfatte applikasjonsdata
+
+En sikkerhetskopi av containerbilder eller en Compose-fil alene tar **ikke** vare på applikasjonsdata. Kartlegg vedvarende volumer, bind mounts, databasefiler, krypteringsnøkler, hemmeligheter som trengs ved gjenoppretting, og konfigurasjon utenfor containeren. For databaser i drift bør du bruke en støttet konsistent øyeblikkskopi eller en applikasjonstilpasset eksport i stedet for å anta at en vanlig filkopi kan gjenopprettes. Ha minst én sikkerhetskopi uavhengig av mini-PC-en, begrens tilgangen til backup-legitimasjon og test jevnlig gjenoppretting i et separat miljø. En vellykket planlagt backupjobb beviser ikke at gjenoppretting fungerer.
+
 ## Én node først, klynge senere
 
 Begynn med én maskin og lær å drifte den godt: oppdateringer, overvåking, dokumentert oppsett, uavhengige sikkerhetskopier og testet gjenoppretting. Flere noder gir mening ved behov for kapasitet, separate feildomener eller klyngeeksperimenter. Tre maskiner gir ikke automatisk høy tilgjengelighet; quorum, lagring, nettverk og applikasjonsdesign må også fungere.
