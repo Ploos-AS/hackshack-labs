@@ -27,10 +27,10 @@ For most people, **official Signal remains the simplest default**. Consider Moll
 | Android client | Official | Independent Signal fork | Independent Signal fork |
 | Signal contacts and network | Yes | Yes | Yes |
 | End-to-end encrypted conversations | Yes | Uses Signal's messaging protocol | Uses Signal's messaging protocol |
-| Optional extra database passphrase | Not Molly's equivalent feature | Yes | Yes |
-| Automatic app locking and other Molly controls | Different feature set | Yes | Yes |
+| Optional extra database passphrase | Screen Lock uses device authentication; Signal PIN and registration lock protect different account functions | Yes | Yes |
+| Automatic app locking and other Molly controls | Screen Lock with timeout or manual lock; no equivalent separate Molly database passphrase | Yes | Yes |
 | Proprietary Google components | May be used | May be included | Excluded by the FOSS variant |
-| Google-free notification options | Depends on configuration | WebSocket / UnifiedPush options | WebSocket / UnifiedPush options |
+| Google-free notification options | FCM where available; WebSocket without Google Play services | WebSocket / UnifiedPush options | WebSocket / UnifiedPush options |
 | Official Signal support | Yes | No | No |
 
 This is a **feature comparison, not a security ranking**. The extra passphrase does not mean official Signal stores all messages unencrypted; Android's existing storage protections and Signal's own security features still matter.
@@ -40,6 +40,36 @@ This is a **feature comparison, not a security ranking**. The extra passphrase d
 According to the [Molly project](https://molly.im/) and its [source repository](https://github.com/mollyim/mollyim-android), the fork offers passphrase-based encryption for its local database, automatic locking, optional memory-clearing measures, configurable backups, and proxy options including SOCKS/Tor through Orbot. The project also documents UnifiedPush support for users who do not want to rely on Google's push service.
 
 These are **project-described capabilities**, not features we have independently verified on a test phone. Memory clearing in particular should not be interpreted as a guarantee against forensic recovery or a compromised operating system.
+
+
+## When does Molly actually help?
+
+A modern Pixel already provides strong Android file-based encryption, and GrapheneOS adds further hardening. **Molly's database passphrase is an additional application-level control, not a replacement for device encryption.** Its practical value depends on whether an attacker can access an unlocked session, knows the device credential, or can interact with the app.
+
+| Scenario | Does Molly make a meaningful difference? |
+| --- | --- |
+| Phone lost or stolen while securely locked | **Usually limited additional benefit:** Android encryption and a strong device credential are the primary protections. |
+| Someone can use an already-unlocked phone | **Potentially yes:** an independent Molly passphrase and automatic locking can add a barrier, depending on configuration. |
+| Shared device or someone knows the screen-unlock credential | **Potentially yes:** separate app credentials can help, but notifications, screenshots and compromised sessions remain concerns. |
+| Compromised Android OS or malware with high privileges | **Do not rely on it:** app-level measures cannot guarantee protection against a compromised endpoint. |
+| Avoiding Google's push infrastructure | **Yes, as a configuration choice:** Molly supports UnifiedPush; both Molly and official Signal also support WebSocket. |
+| Keeping messaging functional with minimal maintenance | **Often no:** official Signal avoids the additional fork-maintenance dependency. |
+
+## Updates, expiry and fork risk
+
+Signal's service and clients evolve. **Older Signal clients can expire and require updating**, so an independent fork that falls behind may lose compatibility or stop working until its maintainers catch up. Molly's [README](https://github.com/mollyim/mollyim-android#readme) says it normally incorporates upstream changes every two weeks and prioritizes security fixes, but this is a *project policy*, not a guarantee.
+
+As a dated reference, the [Molly release list](https://github.com/mollyim/mollyim-android/releases) showed **v8.19.2-4 released 31 July 2026** when reviewed on 19 October 2026. That is a reason to investigate release cadence, **not** proof of an unpatched vulnerability: compare current upstream Signal and Molly versions and security advisories before relying on either. We have **not completed a like-for-like release-lag measurement**. See [Signal's official support and update guidance](https://support.signal.org/hc/en-us/articles/360007318751-Registration-troubleshooting).
+
+## Installation and verification
+
+Use the [Molly project's release page](https://github.com/mollyim/mollyim-android/releases), its [official Molly F-Droid repository](https://molly.im/fdroid/repo/) or the [separate Molly-FOSS F-Droid repository](https://molly.im/fdroid/foss/repo/). The project also lists Accrescent for Molly-FOSS. Follow the project's published signing-certificate fingerprint and the repository's signing-key fingerprint; **these are different keys for different verification purposes**. Verify them from the official pages at installation time rather than trusting a copied fingerprint in an old article.
+
+## Security review and metadata limits
+
+**Independent audit status:** We have not verified a publicly available independent security audit specifically covering Molly's added features. Open source and reproducible-build support are valuable for scrutiny, but are **not substitutes for an audit**.
+
+Molly does **not** remove Signal's phone-number registration requirement or turn Signal into an anonymous network. Signal's server still handles account registration and message delivery metadata needed to operate the service, subject to Signal's published privacy design. See [Signal's privacy documentation](https://signal.org/legal/#privacy-policy) and [Signal PIN and registration lock](https://support.signal.org/hc/en-us/articles/360007059792-Signal-PIN).
 
 ## What stays the same?
 
@@ -71,7 +101,7 @@ If you are moving from Signal, **check the current backup and migration instruct
 
 ## Verdict
 
-Molly is best described as **an alternative Signal client**, not a replacement network or a blanket upgrade in privacy. Its added controls are worth understanding, especially for privacy-focused Android and GrapheneOS users. The official Signal app is still a sensible recommendation for most readers.
+**Is Molly worth using? Yes, if you need a separate app-level passphrase or UnifiedPush, can configure them correctly, and are willing to verify that Molly keeps pace with Signal releases. Otherwise, choose official Signal.** Molly is an alternative client, not a new network or an automatic privacy upgrade. Its added controls are worth understanding, especially for privacy-focused Android and GrapheneOS users. The official Signal app is still a sensible recommendation for most readers.
 
 ## Sources and further reading
 

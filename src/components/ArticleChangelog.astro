@@ -12,7 +12,7 @@ const changes = [...(entry.data.changelog ?? [])].sort((a,b) => b.date.getTime()
   <section aria-label={no ? 'Endringslogg' : 'Change history'}>
     <h2>{no ? 'Endringslogg' : 'Change history'}</h2>
     <ol>
-      {changes.length === 0 && <li><time datetime={entry.data.date.toISOString().slice(0,10)}>{entry.data.date.toISOString().slice(0,10)}</time>{no ? ' · Første publisering (detaljert endringslogg ikke tilgjengelig).' : ' · Initial publication (detailed change log not available).'}</li>}
+      {changes.length === 0 && <li><time datetime={entry.data.date.toISOString().slice(0,10)}>{entry.data.date.toISOString().slice(0,10)}</time>{no ? ' · Første publisering.' : ' · Initial publication.'}</li>}
       {changes.map(change => (
         <li>
           <time datetime={change.date.toISOString().slice(0,10)}>{change.date.toISOString().slice(0,10)}</time>
