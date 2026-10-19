@@ -90,6 +90,8 @@ Se etter pålitelige måleledninger, utskiftbare sikringer, egnet inngangsbeskyt
 
 **Aktuell kandidat som hovedmultimeter:** [UNI-T UT61E+ – AliExpress-affiliate](https://s.click.aliexpress.com/e/_c4q9NTqD) (**planlagt kandidat; ikke bekreftet bestilt eller testet**). Kontroller modell, medfølgende USB-grensesnitt/kabel, sikkerhetsdokumentasjon, selger og totalpris før kjøp.
 
+**Kandidat til trådløst multimeter:** [UNI-T UT60BT – AliExpress-affiliate](https://s.click.aliexpress.com/e/_c38szw9F) (**planlagt; ikke bekreftet bestilt eller testet**). Bluetooth/BLE-data på Linux må verifiseres for den konkrete maskinvare-/fastvarerevisjonen. Kontroller produktannonsen og sikkerhetsdokumentasjonen før kjøp.
+
 ## 2. Strømforsyning: strømbegrensning er viktig
 
 En justerbar likestrømsforsyning med **strømbegrensning** kan beskytte prototyper mot koblingsfeil. Undersøk hvordan begrensningen virker, hvordan utgangen oppfører seg ved oppstart, og om forsyningen kan styres lokalt. USB eller Ethernet, dokumentert SCPI/API og Linux/Python-støtte er ønskelig for automatisering, men ikke nødvendig for den første benken.
