@@ -90,6 +90,8 @@ Look for dependable leads, accessible replacement fuses, appropriate input prote
 
 **Shortlisted primary meter:** [UNI-T UT61E+ — AliExpress affiliate](https://s.click.aliexpress.com/e/_c4q9NTqD) (**planned candidate; not confirmed ordered or tested**). Verify the listing's exact model, included USB interface/cable, safety documentation, seller and total delivered cost before purchase.
 
+**Wireless multimeter candidate:** [UNI-T UT60BT — AliExpress affiliate](https://s.click.aliexpress.com/e/_c38szw9F) (**planned; not confirmed ordered or tested**). Bluetooth/BLE data access on Linux remains to be verified for the exact hardware/firmware revision; verify the seller's listing and safety documentation before purchase.
+
 ## 2. Power supplies: current limiting matters
 
 A variable DC supply with an adjustable **current limit** helps protect prototypes from wiring mistakes. Check whether current limiting works predictably, how outputs behave at power-on, and whether the supply can be controlled locally. USB or Ethernet, documented SCPI/API, and Linux/Python support are desirable for automated tests—not essential for a first bench.
