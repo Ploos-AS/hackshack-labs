@@ -102,6 +102,8 @@ A variable DC supply with an adjustable **current limit** helps protect prototyp
 
 Do not use an improvised mains-powered supply or unverified exposed-mains modules as a beginner's bench supply.
 
+**Compact supply candidate:** [FNIRSI DPS-150 — Amazon product link](https://link.amazon/B0hGQ6gNL) (**planned; not confirmed purchased or tested**). The exact listing, included accessories and Amazon Associates tracking are not independently verified; check tracking for `hackshacklabs-20`. Before purchase, verify output/current-limit behavior, power-input requirements, firmware version and whether Linux USB software provides actual control/logging rather than charging-only connectivity.
+
 ## 3. USB-to-TTL adapters for debugging
 
 A USB-to-TTL adapter is one of the cheapest ways to diagnose routers, microcontrollers and embedded Linux boards. **TTL UART is not RS-232 and is not USB**: confirm signal voltage (often 3.3 V or 5 V), ground reference and pinout before connecting. Never connect an adapter's power pin without understanding both devices' power arrangements.
