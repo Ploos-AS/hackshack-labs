@@ -97,6 +97,11 @@ Sammenlign oppdaterte, fabrikktilbakestilte Pixel- og Galaxy-enheter i samme pri
 
 Sammenligningen gjelder **bare Android-telefoner**, ikke iOS. Norske kjøpere bør kontrollere tilgjengelighet, garanti, reparasjon og rettigheter til innsyn/eksport hos forhandler og leverandør. Vi har ikke verifisert en norsk servicematrise for hver modell.
 
+
+## Relatert lesning: Signal og Molly
+
+For personvern i meldingsapper på Android, se [Molly vs. Signal: Er den alternative klienten verdt å bruke?](/no/articles/molly-vs-signal/). Der sammenligner vi offisiell Signal med Molly og Molly-FOSS, blant annet lokal databasebeskyttelse, varsler og risiko ved forsinkede oppdateringer.
+
 ## Primærkilder
 
 - [Google: personvernerklæring og databehandling](https://policies.google.com/privacy?hl=no)
