@@ -28,6 +28,23 @@ Guiden er delt i tre nivåer. Kjøp bare det prosjektene krever, og sett av peng
 | **2. Hobbylab** | Strømbegrenset laboratorieforsyning, logikkanalysator, ESD-utstyr, avloddeverktøy | Gi prototyper trygg strømforsyning, undersøke digitale signaler, reparere kretskort |
 | **3. Avansert hobbylab** | Oscilloskop, elektronisk last, effekt-/energimåler, kalibreringsreferanser ved behov | Undersøke timing, rippel, belastningsrespons og energibruk |
 
+## Valg av instrumentmerker: UNI-T først, alternativer vurderes
+
+Til denne benken vil vi **undersøke UNI-T først** for multimetre, laboratorieforsyninger, oscilloskoper og andre måleinstrumenter, med **FNIRSI** og **ANENG** som alternativer når de gir en fordel i pris, størrelse eller funksjoner. Dette er en **innkjøps- og redaksjonell prioritering, ikke en generell anbefaling av merkene**. Hver modell må vurderes ut fra sikkerhet, målespesifikasjoner, dokumentasjon og Linux-kompatibilitet.
+
+| Instrument | Førstevalg til vurdering | Alternativer | Viktigste kriterier |
+| --- | --- | --- | --- |
+| Digitalt multimeter | UNI-T | ANENG; FNIRSI | Sikringer, CAT-klasse, inngangsbeskyttelse, nøyaktighet og reparerbarhet |
+| Oscilloskop | UNI-T | FNIRSI | Båndbredde, reell samplingshastighet, minne, prober og eksport |
+| Laboratorieforsyning | UNI-T | FNIRSI | Strømbegrensning, rippel, sikkerhet, fjernstyring og dokumentasjon |
+| Komponent-/LCR-tester | UNI-T | FNIRSI; ANENG der det passer | Måleområder, målemetode og kalibrering |
+| USB-/serie- og logikkutstyr | Best dokumenterte enhet | Alle merker med dokumentert protokoll | Linux-drivere, sigrok-støtte og signalnivåer |
+| Energimåler for stikkontakt | UNI-T UT230B-EU som kandidat | Alternativer med verifisert sikkerhet og eksport | Riktig støpsel, sikkerhet, lavlastmåling og datagrensesnitt |
+
+**Merkenavnet erstatter aldri dokumentasjon for den konkrete modellen.** Kontroller selger, modell/revisjon, relevant sikkerhetsdokumentasjon og totalpris. Ved instrumenter til strømnettet skal ikke merkelojalitet gå foran elsikkerhet.
+
+Produsentkataloger: [UNI-T laboratorieinstrumenter](https://instruments.uni-trend.com/), [UNI-T måleinstrumenter](https://meters.uni-trend.com/product-categories/), [FNIRSI](https://www.fnirsi.com/). ANENG-modeller er foreløpig kandidater som må vurderes enkeltvis. Vi legger inn affiliate-lenker til **kontrollerte produktannonser**, ikke generelle merkepåstander.
+
 ## 1. Start med multimeteret
 
 Se etter pålitelige måleledninger, utskiftbare sikringer, egnet inngangsbeskyttelse og tydelig dokumenterte **CAT-klassifiseringer for den konkrete modellen**. Nybegynnere bør starte med **lavspente likestrømskretser**. Et billig multimeter er ikke automatisk trygt ved måling på strømnettet.
