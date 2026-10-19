@@ -133,6 +133,8 @@ Plug-in energy meters are convenient for measuring a mini-PC or a soldering stat
 
 For reproducible computer measurements, we prefer meters with a documented local interface (USB, Ethernet or Bluetooth/BLE), Linux-friendly tools and exportable readings.
 
+**USB power meter candidate:** [FNIRSI FNB58 — Amazon product link](https://link.amazon/B0imBBrVb) (**planned; not confirmed purchased or tested**). The listing's exact model and Amazon Associates tracking are not independently verified; check the link in Associates Central for `hackshacklabs-20`. Before buying, confirm the hardware revision, USB/BLE logging compatibility on Linux, voltage/current ranges and applicable safety documentation.
+
 ## 7. Software and documentation
 
 A practical Linux workstation can use serial terminals, **sigrok/PulseView** for supported logic analyzers, Python for logging, and version-controlled Markdown for test notes. Document the instrument model, firmware, settings, ambient conditions, connections and known uncertainty. Proprietary Windows-only software is a disadvantage when a reliable open interface is available.
