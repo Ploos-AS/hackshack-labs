@@ -127,6 +127,8 @@ A USB logic analyzer can decode UART, SPI and I²C. Verify actual sampling perfo
 
 An oscilloscope becomes valuable for timing, waveform shape, noise and power-rail behavior. Compare bandwidth, sample rate, memory depth, probe quality and Linux-based data export. **Ground clips on many bench oscilloscopes are earth-referenced**: incorrect probing of mains or non-isolated circuits can be dangerous.
 
+**Oscilloscope candidate:** [UNI-T UPO1102 — Amazon product link](https://link.amazon/B05TiAw4b) (**planned; not confirmed purchased or tested**). The submitted listing describes a 100 MHz, 2-channel ultra-phosphor DSO with up to 1 GSa/s, 56 Mpts memory, 500,000 waveforms/s, a 7-inch display and 1 Mpt FFT. **These are seller-supplied claims, not independently verified specifications**; acquisition modes may affect headline figures. Before recommending it for Linux automation, verify the exact model and firmware, whether USB supports USBTMC/SCPI and waveform transfer (rather than file export only), availability of a programming manual, probe bundle, warranty and safety documentation. Amazon Associates attribution for `hackshacklabs-20` is unverified.
+
 ## 6. Measuring power consumption
 
 Plug-in energy meters are convenient for measuring a mini-PC or a soldering station, but **accuracy at low loads, power factor and transient behavior vary**. Do not assume data export unless documented.
