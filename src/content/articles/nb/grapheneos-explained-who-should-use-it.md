@@ -113,6 +113,11 @@ Den kommende installasjonsguiden skal skille offisielle instruksjoner fra result
 
 HackShack Labs bør registrere Pixel-modell, GrapheneOS-versjon/build, fastvare, installasjonsmetode, appversjoner og testdato. Testplanen omfatter første oppsett, sikkerhetsoppdateringer, Google Play i sandkasse, flere brukerprofiler, appinstallasjon og oppdateringer, varslinger, sikkerhetskopier og viktige norske apper. Inntil disse testene er gjennomført, merkes artiklene **dokumentasjonsbasert**.
 
+
+## Relatert lesning: Signal og Molly
+
+For personvern i meldingsapper på Android, se [Molly vs. Signal: Er den alternative klienten verdt å bruke?](/no/articles/molly-vs-signal/). Der sammenligner vi offisiell Signal med Molly og Molly-FOSS, blant annet lokal databasebeskyttelse, varsler og risiko ved forsinkede oppdateringer.
+
 ## Primærkilder
 
 - [GrapheneOS: funksjoner (engelsk)](https://grapheneos.org/features)
