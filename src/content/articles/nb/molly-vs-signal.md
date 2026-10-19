@@ -7,7 +7,7 @@ date: 2026-10-19
 tags: [molly, signal, android, privacy, security, grapheneos]
 series: "Privacy & Digital Independence"
 translationKey: molly-vs-signal
-draft: true
+draft: false
 tested: false
 evidence: documentation
 ---
