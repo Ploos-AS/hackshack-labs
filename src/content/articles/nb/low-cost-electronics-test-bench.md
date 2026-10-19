@@ -65,6 +65,23 @@ Produsentkataloger: [UNI-T laboratorieinstrumenter](https://instruments.uni-tren
 
 Kilder: [UNI-T programvarenedlastinger](https://meters.uni-trend.com/services-support/downloads-1/), [UT61E+ USB-protokoll](https://github.com/mwuertinger/ut61ep), [dmm-tools på flere plattformer](https://github.com/antoinecellerier/dmm-tools), [status for åpne BLE-multimeterprotokoller](https://github.com/libreble/multimeter/blob/main/docs/protocols/README.md).
 
+## Første modellutvalg (dokumentasjonsgjennomgang, ikke testet)
+
+Vi prioriterer instrumenter som kan inngå i en målekjede med **Debian/Ubuntu og Python**. Grensesnittstøtte avhenger av modell og revisjon. Vi legger ikke inn priser eller nye AliExpress-affiliate-lenker før produktannonser og provisjonsvilkår er kontrollert.
+
+| Bruksområde | Modell til vurdering | Dokumentasjon for tilkobling | Prioritet / uavklarte punkter |
+| --- | --- | --- | --- |
+| Hovedmultimeter | **UNI-T UT61E+** | USB CP2110; åpne Python- og loggeprosjekter | **Høy** – kontroller medfølgende kabel, inngangsbeskyttelse og annonse |
+| Trådløst multimeter | **UNI-T UT60BT** | Bluetooth omtalt i åpne verktøy; deler av støtten er eksperimentell | **Vurderes** – bekreft protokoll, BLE og maskinvarerevisjon |
+| Budsjettmultimeter | **ANENG AN9002** | Oppført i åpne multimeterverktøy | **Vurderes** – bekreft variant, beskyttelse og Linux-funksjon |
+| USB-effektmåler | **FNIRSI FNB58** | Åpent USB/BLE-loggeverktøy med Linux-CLI og CSV/JSON | **Høy** – kontroller revisjon og funksjoner |
+| Kompakt laboratorieforsyning | **FNIRSI DPS-150** | Produsenten tilbyr Linux-programvare | **Vurderes** – kontroller styring, strømbegrensning og sikkerhet |
+| Energimåler til stikkontakt | **UNI-T UT230B-EU** | Dataeksport ikke dokumentert | **Planlagt** – kontroller sikkerhet, EU-variant og nøyaktighet ved lav last |
+
+**Dokumentasjon:** [UT61E+ Linux/Python](https://github.com/ljakob/unit_ut61eplus), [UNI-T dmm-tools](https://github.com/antoinecellerier/dmm-tools), [ut61xpy for flere merker](https://github.com/olegv142/ut61xpy), [FNIRSI Linux-programvare](https://www.fnirsi.com/pages/software-downloads), [FNIRSI USB-logger](https://github.com/Randomblock1/fnirsi-usb-tool). Dette er opplysninger fra programvareprosjekter, **ikke verifisert i vårt laboratorium**.
+
+**Før kjøp:** Kontroller selger, eksakt modell og fastvare, originalt tilbehør, merkedata, sikkerhetsdokumentasjon, datagrensesnitt, Linux-oppsett, totalpris/MVA og provisjonsberettigelse. Utstyr til nettspenning må tilfredsstille sikkerhetskrav uavhengig av tilkoblingsmuligheter.
+
 ## 1. Start med multimeteret
 
 Se etter pålitelige måleledninger, utskiftbare sikringer, egnet inngangsbeskyttelse og tydelig dokumenterte **CAT-klassifiseringer for den konkrete modellen**. Nybegynnere bør starte med **lavspente likestrømskretser**. Et billig multimeter er ikke automatisk trygt ved måling på strømnettet.
