@@ -97,6 +97,11 @@ Compare fully updated, factory-reset, similarly priced Pixel and Galaxy devices 
 
 This comparison concerns **Android phones only**, not iOS. For Norwegian buyers, confirm local availability, warranty, repairs and data-access/export rights with the retailer and each provider before purchase; we have not independently verified a model-by-model Norwegian service matrix.
 
+
+## Related reading: Signal and Molly
+
+For messaging privacy on Android, see [Molly vs Signal: Is the alternative client worth using?](/articles/molly-vs-signal/). It compares the official Signal client with Molly and Molly-FOSS, including local database protection, notification options and the risk of falling behind upstream updates.
+
 ## Primary sources
 
 - [Google: privacy policy and data processing](https://policies.google.com/privacy)
