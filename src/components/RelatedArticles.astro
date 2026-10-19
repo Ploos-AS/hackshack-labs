@@ -18,11 +18,8 @@ const scored = all
     const specificOverlap = sharedTags.filter(tag => !broadTags.has(tag)).length;
     const sameSeries = Boolean(entry.data.series && other.data.series === entry.data.series);
     const sameCategory = other.data.category === entry.data.category;
-    // A shared generic tag (such as Linux or privacy) cannot qualify a
-    // recommendation; project-specific overlap is required.
-    return { other, score: specificOverlap > 0
-      ? specificOverlap * 5 + (sameSeries ? 3 : 0) + (sameCategory ? 1 : 0)
-      : 0 };
+    // A shared series qualifies independently; generic tags and category alone do not.
+    return { other, score: specificOverlap * 5 + (sameSeries ? 6 : 0) + (specificOverlap > 0 && sameCategory ? 1 : 0) };
   })
   .filter(item => item.score > 0)
   .sort((a, b) => b.score - a.score ||
