@@ -67,7 +67,7 @@ The **USD 100** listing has become a **USD 192.50** hypothetical purchase. That 
 
 ## What about a new N100 or N150 mini PC?
 
-A modern low-power mini PC may offer a more sensible always-on server, but **new does not always mean cheap**. Norwegian price listings for N150 systems vary widely depending on memory, storage, manufacturer and seller. For context, Apple announced a Mac mini M6 starting at NOK 11,990 in Norway in September 2026; it is a different class of product, not a like-for-like alternative to an older NUC. This is a price observation, not a like-for-like benchmark against an old NUC. [Apple's Norwegian launch announcement](https://images.apple.com/no/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/).
+A modern low-power mini PC may offer a more sensible always-on server, but **new does not always mean cheap**. Norwegian price listings for N150 systems vary widely depending on memory, storage, manufacturer and seller. Avoid using unverified product launch claims or unsourced prices as comparison anchors. Compare against a current, dated Norwegian retailer listing for a specific configuration instead.
 
 A comparison must match usable RAM, storage, network interfaces, warranty, supported operating systems and actual workloads. We should measure idle and load power before claiming energy savings for a specific model.
 

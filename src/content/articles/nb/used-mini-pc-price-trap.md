@@ -76,7 +76,7 @@ Vi har **ikke** bekreftet norsk frakt- og kassepris for eBay-eksemplene over.
 
 En nyere, strømgjerrig mini-PC kan være et bedre valg for tjenester som skal kjøre hele døgnet. Men vi må sammenligne komplette konfigurasjoner med tilsvarende RAM, SSD, nettverksporter, garanti og operativsystemstøtte. Det holder ikke å sammenligne én gammel NUC med en tilfeldig annonse for en ny barebone.
 
-Som et annet referansepunkt [lanserte Apple Mac mini M6 fra 11 990 kroner i Norge i september 2026](https://images.apple.com/no/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/). Den er i en helt annen pris- og ytelsesklasse enn en gammel Intel NUC. En direkte sammenligning må ta hensyn til faktisk bruk.
+Ikke bruk ubekreftede produktlanseringer eller priser uten etterprøvbar kilde som sammenligningsgrunnlag. Sammenlign heller med en datert norsk forhandlerpris for en konkret konfigurasjon.
 
 Strømforbruk bør måles på konkrete maskiner, ikke anslås ut fra alder alene. Forskjellen mellom tomgang og full belastning kan være betydelig.
 

@@ -14,7 +14,7 @@ evidence: documentation
 
 > **Reklame – annonselenker:** Denne artikkelen inneholder tydelig merkede Proton-annonselenker. Hvis du kjøper via en av dem, kan Ploos AS motta provisjon uten ekstra kostnad for deg. Kommersielle avtaler styrer ikke de redaksjonelle konklusjonene våre.
 
-> **Redaksjonell merknad (14. oktober 2026):** Dette er en oversiktsartikkel, ikke en praktisk ytelsestest. Funksjoner, abonnementsvilkår og plattformstøtte kan endres; kontroller den lenkede dokumentasjonen. Dette er en kildebasert oversikt, ikke en uavhengig praktisk test av tjenestene.
+> **Dokumentasjonsbasert (14. oktober 2026):** Dette er en kildebasert tjenesteoversikt, ikke en praktisk test. Funksjoner, abonnementsvilkår og plattformstøtte kan endres; kontroller den lenkede dokumentasjonen.
 
 ## Personvern betyr ikke at du må drifte alle tjenester selv
 
@@ -85,7 +85,7 @@ Et produkt kan være godt egnet til én oppgave og dårlig egnet til en annen. V
 
 ## Redaksjonell uavhengighet
 
-HackShack Labs er redaksjonelt uavhengig. Ploos AS deltar i Protons affiliate-program, og de fem tjenestelenkene i sammenligningstabellen er annonselenker, ikke testresultater eller anbefalinger. Vi kan motta provisjon ved kvalifiserte kjøp. Dette påvirker ikke våre tekniske konklusjoner. Vi skiller tydelig mellom Protons dokumenterte produktpåstander og fremtidige egne tester.
+HackShack Labs er redaksjonelt uavhengig. Ploos AS deltar i Protons affiliate-program, og de merkede tjenestelenkene i sammenligningstabellen er annonselenker, ikke testresultater eller anbefalinger. Vi kan motta provisjon ved kvalifiserte kjøp. Dette påvirker ikke våre tekniske konklusjoner. Vi skiller tydelig mellom Protons dokumenterte produktpåstander og fremtidige egne tester.
 
 ## Relaterte artikler og planlagt innhold
 

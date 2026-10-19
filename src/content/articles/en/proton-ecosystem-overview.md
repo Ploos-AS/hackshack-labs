@@ -14,7 +14,7 @@ evidence: documentation
 
 > **Advertisement — affiliate links:** This article contains clearly marked Proton affiliate links. If you buy through one of them, Ploos AS may earn a commission at no additional cost to you. Affiliate partnerships do not determine our editorial conclusions.
 
-> **Editorial note (14 October 2026):** This is a feature overview, not a hands-on benchmark. Features, subscription terms and platform availability may change; check the linked official documentation. This is a sourced overview, not an independent hands-on test of these services.
+> **Evidence level — documentation-based (14 October 2026):** This is a sourced feature overview, not a hands-on test. Features, subscription terms and platform availability may change; consult the linked official documentation.
 
 ## Privacy does not require running every server yourself
 
@@ -85,7 +85,7 @@ A product may be right for one workload and wrong for another. We will state bot
 
 ## Our editorial position
 
-HackShack Labs is editorially independent. Ploos AS participates in the Proton affiliate program, and the five service links in the comparison table are commercial links, not test results or recommendations. We may earn a commission from qualifying purchases. This does not affect our technical conclusions. We explicitly distinguish Proton's documented product claims from our own future hands-on testing.
+HackShack Labs is editorially independent. Ploos AS participates in the Proton affiliate program, and the marked service links in the comparison table are commercial links, not test results or recommendations. We may earn a commission from qualifying purchases. This does not affect our technical conclusions. We explicitly distinguish Proton's documented product claims from our own future hands-on testing.
 
 ## Related articles and planned coverage
 
