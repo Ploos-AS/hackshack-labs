@@ -18,6 +18,12 @@ evidence: desk-research
 
 The AliExpress listing advertises an 8-channel USB logic analyzer with a 24 MHz sampling rate. These are seller claims, not measured performance. The unit was ordered for independent testing by HackShack Labs.
 
+## Additional seller-advertised details (unverified)
+
+The listing also states: eight input channels; USB power; real-time data upload; a maximum capture depth of **"10T"** (unit and meaning unspecified); and support for **Windows 7 (32/64-bit), Windows 2000, Windows XP and Linux**. It describes a black plastic case, a small indicator showing the electrical level on **CH0** (printed as "CHO" in the listing), and an input characteristic of **5 pF and 100 kΩ**. The advertised package includes one analyzer, one USB cable and connection leads (described as "Connection Sorting").
+
+These are **seller claims only**. In particular, "10T" does not establish onboard memory size or a validated maximum recording length; 5 pF / 100 kΩ do not establish input voltage tolerance; and the legacy OS list does not establish compatibility with current distributions. We will inspect the delivered package and measure or verify the relevant electrical and capture properties before making recommendations.
+
 ## A buyer's Linux setup report
 
 One buyer provided the following steps for Ubuntu and derivatives:
