@@ -135,6 +135,8 @@ An oscilloscope becomes valuable for timing, waveform shape, noise and power-rai
 
 **LCR meter candidate:** [UNI-T UT612 — AliExpress affiliate link](https://s.click.aliexpress.com/e/_c2xbYqTR) (**planned; not purchased or tested**). The seller's title also mentions **UT611**, so verify that the selected variant is **UT612** before ordering. An LCR meter measures inductance, capacitance and resistance; the listing claims a USB interface, but Linux compatibility, data export, protocol documentation and Python automation remain **unverified**. Check included test leads, measurement frequencies and seller authenticity. Affiliate disclosure applies. **Additional retailer listing:** [UNI-T UT612 — Amazon product link](https://link.amazon/B0dgMBmw6) (user supplied; model, contents and Amazon Associates attribution not independently verified).
 
+**Component tester candidate:** [FNIRSI LCR-P1 — Amazon product link](https://link.amazon/B03HUgEGS) (**planned; not purchased or tested**). The submitted listing calls this an automatic transistor/LCR/capacitor tester. Useful as a quick component identifier alongside a dedicated LCR meter such as the UNI-T UT612, **not a substitute for calibrated measurements**. Verify the exact model, supported components, test limits, included accessories and seller authenticity before purchase. USB/Linux/Python connectivity and Amazon Associates tracking are **not verified**.
+
 ## 6. Measuring power consumption
 
 Plug-in energy meters are convenient for measuring a mini-PC or a soldering station, but **accuracy at low loads, power factor and transient behavior vary**. Do not assume data export unless documented.
