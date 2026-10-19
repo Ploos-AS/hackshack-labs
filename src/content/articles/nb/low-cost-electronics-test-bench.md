@@ -45,6 +45,26 @@ Til denne benken vil vi **undersøke UNI-T først** for multimetre, laboratorief
 
 Produsentkataloger: [UNI-T laboratorieinstrumenter](https://instruments.uni-trend.com/), [UNI-T måleinstrumenter](https://meters.uni-trend.com/product-categories/), [FNIRSI](https://www.fnirsi.com/). ANENG-modeller er foreløpig kandidater som må vurderes enkeltvis. Vi legger inn affiliate-lenker til **kontrollerte produktannonser**, ikke generelle merkepåstander.
 
+## Tilkoblingskrav: Linux, USB og Bluetooth/BLE
+
+**Linux-kompatibilitet er et høyt prioritert innkjøpskriterium.** En USB-port eller Bluetooth-logo er ikke nok: instrumentet må kunne levere nyttige måledata eller styrekommandoer, ikke bare lade batteriet eller koble til en proprietær mobilapp.
+
+| Krav | Slik kontrollerer vi det |
+| --- | --- |
+| Linux (Debian/Ubuntu) | Dokumentert driver/protokoll eller troverdig fungerende åpen integrasjon for den konkrete modellen |
+| USB | Type datagrensesnitt (CDC/seriell, HID, USBTMC eller proprietært), ikke bare lading |
+| Bluetooth/BLE | Lokal GATT-/seriell datatilgang, paring og eventuelle krav om mobil/skykonto |
+| Automatisering | Dokumentert SCPI eller annen protokoll, Python-bibliotek eller repeterbar CLI-bruk |
+| Logging/eksport | CSV/JSON eller skriptbare målinger med enheter, tidsstempler og kjente samplingsgrenser |
+| Vedlikehold | Helst fastvareoppdatering uten Windows; reservedeler og kalibreringsinformasjon |
+| Sikkerhet | Egnet beskyttelse og etterprøvbar dokumentasjon for modellen, særlig ved nettspenning |
+
+**Tilkoblingsnivåer:** **A** = verifisert datatilgang/styring fra Linux; **B** = dokumentert protokoll eller troverdig åpen implementasjon, men maskinvaretest gjenstår; **C** = bare leverandørapp/Windows eller uklar protokoll; **D** = intet nyttig datagrensesnitt. Nivåene **erstatter ikke** vurdering av elsikkerhet.
+
+**Eksempler vi vil undersøke, ennå ikke laboratorietestet:** UNI-T UT61E+ har en USB-protokoll dokumentert av miljøet; UNI-T UT60BT har åpen Linux-/BLE-støtte; enkelte ANENG-multimetre med BLE har åpne dekodere. Støtten varierer mellom modeller og fastvare. En Bluetooth-app fra produsenten er ikke dokumentasjon på Linux-kompatibilitet.
+
+Kilder: [UNI-T programvarenedlastinger](https://meters.uni-trend.com/services-support/downloads-1/), [UT61E+ USB-protokoll](https://github.com/mwuertinger/ut61ep), [dmm-tools på flere plattformer](https://github.com/antoinecellerier/dmm-tools), [status for åpne BLE-multimeterprotokoller](https://github.com/libreble/multimeter/blob/main/docs/protocols/README.md).
+
 ## 1. Start med multimeteret
 
 Se etter pålitelige måleledninger, utskiftbare sikringer, egnet inngangsbeskyttelse og tydelig dokumenterte **CAT-klassifiseringer for den konkrete modellen**. Nybegynnere bør starte med **lavspente likestrømskretser**. Et billig multimeter er ikke automatisk trygt ved måling på strømnettet.
