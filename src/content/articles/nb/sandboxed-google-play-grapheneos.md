@@ -22,7 +22,7 @@ evidence: documentation
 
 ## Hva installeres?
 
-GrapheneOS tilbyr et valgfritt kompatibilitetslag for tre Google-komponenter: **Google Play services, Google Play Store og Google Services Framework**. Installer dem via GrapheneOS-appen **Apps**, ikke fra tilfeldige APK-nettsteder. GrapheneOS dokumenterer riktig installasjonsrekkefølge og avhengigheter.
+GrapheneOS tilbyr et valgfritt kompatibilitetslag for **Google Play services og Google Play Store**. Åpne GrapheneOS sin **App Store**, velg **Google Play services** og installer den; Play Store installeres som avhengighet. Eldre installasjoner fra før Android 15 kan også ha **Google Services Framework**, som prosjektet sier at man ikke bør fjerne. Ikke følg utdaterte veiledninger som krever tre komponenter, og unngå tilfeldige APK-nettsteder.
 
 I motsetning til privilegerte systemtjenester på vanlig Android kjører disse komponentene i den ordinære Android-sandkassen. De får ikke automatisk ekstra systemrettigheter bare fordi Google har laget dem.
 
@@ -33,7 +33,7 @@ I motsetning til privilegerte systemtjenester på vanlig Android kjører disse k
 | Google Play-integrasjon | Privilegert systemintegrasjon | Vanlige apper med kompatibilitetslag |
 | Installasjon | Del av standardsystemet | Valgfritt, per brukerprofil |
 | Tillatelser | Android-tillatelser og privilegerte integrasjoner | Vanlige apptillatelser; GrapheneOS har blant annet nettverkstillatelse |
-| Google-konto | Vanlig del av standardoppsettet | Valgfri; enkelte apper og Play Store-funksjoner kan kreve innlogging |
+| Google-konto | Vanlig del av standardoppsettet | Valgfri; Play Store krever innlogging for å installere apper og foreta kjøp i apper |
 | Appkompatibilitet | Oppsettet Google utvikler for | Mange apper fungerer, men integritetssjekker og proprietære funksjoner kan feile |
 | Data til Google | Avhenger av innstillinger og bruk | Avhenger også av innstillinger og bruk; ikke målt her |
 
@@ -47,9 +47,13 @@ Samtidig kan en vanlig Google-app i sandkassen ikke automatisk omgå Androids ti
 
 ## Varsler og bakgrunnsaktivitet
 
-Mange Android-apper bruker **Firebase Cloud Messaging (FCM)** gjennom Google Play services. Installasjon av Google Play i sandkasse kan gjøre at slike apper får varsler igjen. GrapheneOS beskriver særskilt håndtering av bakgrunnskjøring for at pushvarsler skal fungere. Resultatet avhenger av batteriinnstillinger, appversjoner og enhetsoppsett.
+Mange Android-apper bruker **Firebase Cloud Messaging (FCM)** gjennom Google Play services. Installasjon av Google Play i sandkasse kan gjøre at slike apper får varsler igjen. GrapheneOS anbefaler å **unnta Google Play services fra batterioptimalisering** for at pushvarsler skal fungere pålitelig i bakgrunnen; dette unntaket trengs ikke for Play Store. Resultatet avhenger av batteriinnstillinger, appversjoner og enhetsoppsett.
 
 Noen apper tilbyr andre varslingsmekanismer. [Sammenligningen vår av Molly og Signal](/no/articles/molly-vs-signal/) omtaler WebSocket og UnifiedPush. Ikke anta at alle apper trenger Google Play for varsler.
+
+## Installasjon og Google-konto
+
+GrapheneOS anbefaler å starte med **Owner-profilen** for enkelhets skyld; appene er fortsatt i sandkasse. En separat bruker- eller arbeidsprofil kan begrense hvilke apper som kan bruke Play-tjenestene, men gjør varsler og profilbytte mer komplisert. **Innlogging på Google-konto er valgfritt for Play-tjenestene, men nødvendig for å installere apper via Play Store og for kjøp i apper.** Kompatibilitetslaget støtter også lisenskontroll og oppdateringer, men fjerner ikke butikkens kontokrav.
 
 ## Separate brukerprofiler
 
