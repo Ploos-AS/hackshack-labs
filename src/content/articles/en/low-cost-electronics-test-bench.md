@@ -131,6 +131,8 @@ An oscilloscope becomes valuable for timing, waveform shape, noise and power-rai
 
 **Logic analyzer candidate:** [“DSLogic Plus” — Amazon product link](https://link.amazon/B00qFQvib) (**planned; not confirmed purchased or tested**). The submitted title advertises **8 channels at 24 MHz**, which may not match the genuine DSLogic Plus specification. **Do not assume this is an original DSLogic Plus.** Verify manufacturer, model, VID/PID, channel count, sampling modes, supported voltage ranges and sigrok/PulseView compatibility before buying or recommending it. Amazon Associates tracking for `hackshacklabs-20` has not been verified.
 
+**Manufacturer comparison (DreamSourceLab):** The [official shop](https://www.dreamsourcelab.com/shop/) currently lists **DSLogic Plus at US$149**, **DSLogic U3Pro16 at US$299** and **DSLogic U3Pro32 at US$399**, before any applicable import costs. The manufacturer's pictured specifications identify the Plus as **16 channels, up to 400 MHz**, U3Pro16 as **16 channels, up to 1 GHz**, and U3Pro32 as **32 channels, up to 1 GHz**. These are headline figures, not guarantees for every channel configuration. The earlier Amazon listing described as “DSLogic Plus” claims 8 channels / 24 MHz: **do not assume it is the same device**. Confirm manufacturer identity and Linux/PulseView support before purchase. This manufacturer link is **not** presented as an affiliate link.
+
 ## 6. Measuring power consumption
 
 Plug-in energy meters are convenient for measuring a mini-PC or a soldering station, but **accuracy at low loads, power factor and transient behavior vary**. Do not assume data export unless documented.
