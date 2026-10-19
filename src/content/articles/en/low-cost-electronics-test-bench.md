@@ -88,6 +88,8 @@ Look for dependable leads, accessible replacement fuses, appropriate input prote
 
 **Buying checklist:** DC voltage and resistance, continuity response, current ranges and fusing, manual availability, replaceable leads, local warranty and total delivered price.
 
+**Amazon listing supplied by editor:** [UNI-T UT61E+ — Amazon product link](https://link.amazon/B0dtyhsMO). Listing contents and Associates tracking have **not** been independently verified. Before labeling it as an Amazon affiliate link, generate or verify the tracking URL for `hackshacklabs-20` in Associates Central.
+
 **Shortlisted primary meter:** [UNI-T UT61E+ — AliExpress affiliate](https://s.click.aliexpress.com/e/_c4q9NTqD) (**planned candidate; not confirmed ordered or tested**). Verify the listing's exact model, included USB interface/cable, safety documentation, seller and total delivered cost before purchase.
 
 **Amazon listing supplied by editor:** [UNI-T UT60BT — Amazon product link](https://link.amazon/B0aUA8xlV). The destination could not be independently verified; **affiliate attribution is not confirmed**. Do not treat this as an Associates link until generated or verified in Associates Central for `hackshacklabs-20`.
