@@ -18,6 +18,12 @@ evidence: desk-research
 
 AliExpress-annonsen oppgir åtte kanaler og en samplingsfrekvens på 24 MHz. Dette er selgerens opplysninger, ikke målte resultater. Instrumentet er bestilt for uavhengig testing hos HackShack Labs.
 
+## Flere opplysninger fra annonsen (ikke verifisert)
+
+Selgeren oppgir også åtte inngangskanaler, USB-strøm, sanntidsoverføring av data, maksimal opptaksdybde på **«10T»** (enhet og betydning ikke forklart) og støtte for **Windows 7 (32/64-bit), Windows 2000, Windows XP og Linux**. Annonsen beskriver svart plastkabinett, en liten indikator for elektrisk nivå på **CH0** (skrevet «CHO» i annonsen) og inngangsegenskapene **5 pF og 100 kΩ**. Pakken skal inneholde analysator, USB-kabel og tilkoblingsledninger (omtalt som «Connection Sorting»).
+
+Dette er **kun selgerens påstander**. «10T» dokumenterer verken internminne eller verifisert maksimal opptakslengde; 5 pF / 100 kΩ sier ikke hvilke inngangsspenninger som tåles; og listen over eldre operativsystemer dokumenterer ikke kompatibilitet med dagens distribusjoner. Vi kontrollerer leveransen og undersøker relevante elektriske egenskaper og opptaksgrenser før vi anbefaler produktet.
+
 ## Linux-oppsett rapportert av en kjøper
 
 En kjøper beskriver følgende fremgangsmåte for Ubuntu og avledede distribusjoner:
