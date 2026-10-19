@@ -16,6 +16,12 @@ const files = (await htmlFiles('dist')).filter(path =>
 assert(files.length > 0, 'No generated article pages');
 const counts = { en: 0, nb: 0, changes: 0, related: 0, code: 0 };
 const allPages = await htmlFiles('dist');
+// Every internally advertised article must have a generated page, including links in RSS.
+const rss = await readFile('dist/rss.xml', 'utf8');
+for (const match of rss.matchAll(/<link>https:\/\/labs\.hackshack\.no(\/articles\/[^<]+)<\/link>/g)) {
+  const route = match[1];
+  assert(files.some(f => f.replace(/\\\\/g, '/').endsWith(route + 'index.html')), `RSS links to missing article ${route}`);
+}
 assert(allPages.length > files.length, 'Expected non-article pages');
 const siteLinks = new Set(allPages.map(p => '/' + p.replace(/^dist[/\\]/, '').replace(/index\.html$/, '').replace(/\\/g, '/')));
 siteLinks.add('/');
@@ -56,7 +62,9 @@ for (const file of files) {
   assert(data.headline && data.datePublished && data.dateModified && data.publisher?.name === 'Ploos AS');
   assert(data.mainEntityOfPage?.['@id']?.startsWith('https://labs.hackshack.no/'));
   assert(html.includes('code-copy'), `${file}: copy script not linked`);
-  if (html.includes(no ? 'Endringslogg' : 'Change history')) counts.changes++;
+  assert(html.includes(no ? 'Endringslogg' : 'Change history'), `${file}: missing change history`);
+  counts.changes++;
+  // RelatedArticles may legitimately be empty when no suitable articles exist.
   if (html.includes(no ? 'Relaterte artikler' : 'Related articles')) counts.related++;
   if (/<pre[^>]*>/.test(html)) counts.code++;
 }
