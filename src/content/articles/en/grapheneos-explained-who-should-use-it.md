@@ -113,6 +113,11 @@ Our upcoming installation guide will distinguish official instructions from any 
 
 HackShack Labs will record the Pixel model, GrapheneOS release/build, firmware, installation method, app versions and test date. The test plan includes initial setup, security updates, sandboxed Google Play, multiple user profiles, app installation and updates, notifications, backups, and Norwegian essential apps. Until those tests are completed, our articles will remain marked **documentation-based**.
 
+
+## Related reading: Signal and Molly
+
+For messaging privacy on Android, see [Molly vs Signal: Is the alternative client worth using?](/articles/molly-vs-signal/). It compares the official Signal client with Molly and Molly-FOSS, including local database protection, notification options and the risk of falling behind upstream updates.
+
 ## Primary sources
 
 - [GrapheneOS: features](https://grapheneos.org/features)
