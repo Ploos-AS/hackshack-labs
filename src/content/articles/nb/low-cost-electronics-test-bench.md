@@ -133,6 +133,8 @@ Et oscilloskop er nyttig for timing, bølgeformer, støy og strømforsyning. Sam
 
 **Sammenligning fra produsenten (DreamSourceLab):** Den [offisielle nettbutikken](https://www.dreamsourcelab.com/shop/) viser nå **DSLogic Plus til 149 USD**, **DSLogic U3Pro16 til 299 USD** og **DSLogic U3Pro32 til 399 USD**, før eventuelle importkostnader. Produsentens illustrerte spesifikasjoner oppgir **16 kanaler og opptil 400 MHz** for Plus, **16 kanaler og opptil 1 GHz** for U3Pro16 og **32 kanaler og opptil 1 GHz** for U3Pro32. Dette er maksimaltall som ikke nødvendigvis gjelder alle kanaloppsett. Amazon-annonsen vi fant tidligere, beskriver «DSLogic Plus» med 8 kanaler / 24 MHz: **ikke anta at det er samme enhet**. Bekreft produsent og Linux-/PulseView-støtte før kjøp. Produsentlenken er **ikke merket som affiliate-lenke**.
 
+**Kandidat til LCR-måler:** [UNI-T UT612 – AliExpress-affiliate-lenke](https://s.click.aliexpress.com/e/_c2xbYqTR) (**planlagt; ikke kjøpt eller testet**). Annonsetittelen nevner også **UT611**, så kontroller at valgt variant faktisk er **UT612** før bestilling. En LCR-måler måler induktans, kapasitans og resistans; annonsen oppgir USB-grensesnitt, men Linux-kompatibilitet, dataeksport, protokolldokumentasjon og Python-automatisering er **ikke verifisert**. Kontroller medfølgende måleledninger, målefrekvenser og selgerens troverdighet. Affiliate-merking gjelder.
+
 ## 6. Måling av strømforbruk
 
 Energimålere til stikkontakt er praktiske for måling av en mini-PC eller loddestasjon, men **nøyaktighet ved lav belastning, effektfaktor og kortvarige endringer varierer**. Ikke anta at data kan eksporteres uten dokumentasjon.
