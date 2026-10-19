@@ -133,6 +133,8 @@ Energimålere til stikkontakt er praktiske for måling av en mini-PC eller lodde
 
 For repeterbare datamålinger foretrekker vi instrumenter med dokumentert lokalt grensesnitt (USB, Ethernet eller Bluetooth/BLE), Linux-verktøy og eksporterbare målinger.
 
+**Kandidat til USB-effektmåler:** [FNIRSI FNB58 – Amazon-produktlenke](https://link.amazon/B0imBBrVb) (**planlagt; ikke bekreftet kjøpt eller testet**). Eksakt modell i annonsen og Amazon Associates-sporing er ikke uavhengig verifisert; kontroller lenken i Associates Central for `hackshacklabs-20`. Før kjøp må vi sjekke maskinvarerevisjon, USB/BLE-logging på Linux, spennings-/strømområder og relevant sikkerhetsdokumentasjon.
+
 ## 7. Programvare og dokumentasjon
 
 En Linux-maskin kan bruke serieterminal, **sigrok/PulseView** for støttede logikkanalysatorer, Python for logging og versjonskontrollert Markdown for testnotater. Dokumenter instrumentmodell, fastvare, innstillinger, omgivelsesforhold, koblinger og kjent måleusikkerhet. Programvare som bare fungerer på Windows, er en ulempe når det finnes pålitelige åpne grensesnitt.
