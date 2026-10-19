@@ -88,7 +88,7 @@ Look for dependable leads, accessible replacement fuses, appropriate input prote
 
 **Buying checklist:** DC voltage and resistance, continuity response, current ranges and fusing, manual availability, replaceable leads, local warranty and total delivered price.
 
-**Status:** Specific meter recommendation pending verification; no hands-on test claimed.
+**Shortlisted primary meter:** [UNI-T UT61E+ — AliExpress affiliate](https://s.click.aliexpress.com/e/_c4q9NTqD) (**planned candidate; not confirmed ordered or tested**). Verify the listing's exact model, included USB interface/cable, safety documentation, seller and total delivered cost before purchase.
 
 ## 2. Power supplies: current limiting matters
 
