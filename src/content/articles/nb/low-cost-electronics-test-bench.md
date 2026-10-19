@@ -88,6 +88,8 @@ Se etter pålitelige måleledninger, utskiftbare sikringer, egnet inngangsbeskyt
 
 **Sjekkliste:** Likespenning og motstand, kontinuitetsmåling, strømområder og sikringer, bruksanvisning, utskiftbare ledninger, garanti og totalpris.
 
+**Amazon-annonse oppgitt av redaksjonen:** [UNI-T UT61E+ – Amazon-produktlenke](https://link.amazon/B0dtyhsMO). Annonseinnhold og Associates-sporing er **ikke** uavhengig verifisert. Før den merkes som Amazon-affiliate-lenke må sporingsadressen opprettes eller bekreftes for `hackshacklabs-20` i Associates Central.
+
 **Aktuell kandidat som hovedmultimeter:** [UNI-T UT61E+ – AliExpress-affiliate](https://s.click.aliexpress.com/e/_c4q9NTqD) (**planlagt kandidat; ikke bekreftet bestilt eller testet**). Kontroller modell, medfølgende USB-grensesnitt/kabel, sikkerhetsdokumentasjon, selger og totalpris før kjøp.
 
 **Amazon-annonse oppgitt av redaksjonen:** [UNI-T UT60BT – Amazon-produktlenke](https://link.amazon/B0aUA8xlV). Måladressen kunne ikke verifiseres uavhengig; **affiliate-sporing er ikke bekreftet**. Ikke behandle den som en Associates-lenke før den er opprettet eller verifisert i Associates Central for `hackshacklabs-20`.
