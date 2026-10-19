@@ -65,6 +65,23 @@ Manufacturer catalogs: [UNI-T bench instruments](https://instruments.uni-trend.c
 
 Sources: [UNI-T software downloads](https://meters.uni-trend.com/services-support/downloads-1/), [UT61E+ USB protocol](https://github.com/mwuertinger/ut61ep), [cross-platform dmm-tools](https://github.com/antoinecellerier/dmm-tools), [open BLE meter protocol status](https://github.com/libreble/multimeter/blob/main/docs/protocols/README.md).
 
+## First model shortlist (documentation review, not tested)
+
+This shortlist favors instruments that can feed a **Debian/Ubuntu + Python** measurement workflow. Interface support is model- and revision-specific; no prices or AliExpress affiliate links are added until listings and eligibility are checked.
+
+| Instrument role | Model to investigate | Connectivity evidence | Priority / open questions |
+| --- | --- | --- | --- |
+| Primary DMM | **UNI-T UT61E+** | USB CP2110; community Python and cross-platform logging projects | **High** — verify supplied cable, input protection and exact listing |
+| Wireless DMM | **UNI-T UT60BT** | Bluetooth support reported in community tooling; some implementations marked experimental | **Evaluate** — confirm protocol, BLE behavior and hardware revision |
+| Budget DMM | **ANENG AN9002** | Listed by open-source multimeter tooling | **Evaluate** — verify exact variant, protection and Linux behavior |
+| USB power tester | **FNIRSI FNB58** | Community USB/BLE logger with Linux CLI and CSV/JSON output | **High** — verify device revision and features |
+| Compact bench supply | **FNIRSI DPS-150** | Manufacturer offers Linux PC software | **Evaluate** — verify control functions, current limit and safety |
+| Plug-in energy meter | **UNI-T UT230B-EU** | Data export not established | **Planned** — verify safety, EU variant and low-load accuracy |
+
+**Evidence links:** [UT61E+ Linux/Python reader](https://github.com/ljakob/unit_ut61eplus), [UNI-T dmm-tools](https://github.com/antoinecellerier/dmm-tools), [cross-brand ut61xpy](https://github.com/olegv142/ut61xpy), [FNIRSI Linux software downloads](https://www.fnirsi.com/pages/software-downloads), [FNIRSI USB logger](https://github.com/Randomblock1/fnirsi-usb-tool). These are software/project claims, **not our bench verification**.
+
+**Purchase gate:** Confirm seller, exact model and firmware, genuine accessories, electrical ratings, safety documentation, data interface, Linux setup, shipped price/VAT and affiliate eligibility. Mains-connected equipment must meet safety requirements regardless of connectivity score.
+
 ## 1. A multimeter comes first
 
 Look for dependable leads, accessible replacement fuses, appropriate input protection and clearly documented **CAT ratings for the specific model**. For beginners, start with **low-voltage DC** circuits. A cheap meter is not automatically safe for mains measurements.
