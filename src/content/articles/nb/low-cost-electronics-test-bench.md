@@ -102,6 +102,8 @@ En justerbar likestrømsforsyning med **strømbegrensning** kan beskytte prototy
 
 Ikke bruk improviserte nettspenningsforsyninger eller udokumenterte moduler med eksponert nettspenning som nybegynnerutstyr.
 
+**Kandidat til kompakt laboratorieforsyning:** [FNIRSI DPS-150 – Amazon-produktlenke](https://link.amazon/B0hGQ6gNL) (**planlagt; ikke bekreftet kjøpt eller testet**). Annonsens innhold, medfølgende tilbehør og Amazon Associates-sporing er ikke uavhengig verifisert; kontroller sporing for `hackshacklabs-20`. Før kjøp må vi kontrollere strømbegrensning, krav til inngangsstrøm, fastvareversjon og om Linux-programvaren faktisk gir USB-styring/logging og ikke bare lading.
+
 ## 3. USB-til-TTL-adaptere for feilsøking
 
 En USB-til-TTL-adapter er en rimelig måte å feilsøke rutere, mikrokontrollere og innebygde Linux-enheter på. **TTL-UART er verken RS-232 eller USB**: Kontroller signalspenning (ofte 3,3 V eller 5 V), felles jord og pinneoppsett før tilkobling. Ikke koble adapterens strømforsyningspinne uten å forstå strømforsyningen i begge enhetene.
