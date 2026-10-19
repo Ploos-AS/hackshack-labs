@@ -20,9 +20,20 @@ const allPages = await htmlFiles('dist');
 const rss = await readFile('dist/rss.xml', 'utf8');
 for (const match of rss.matchAll(/<link>https:\/\/labs\.hackshack\.no(\/articles\/[^<]+)<\/link>/g)) {
   const route = match[1];
-  assert(files.some(f => f.replace(/\\\\/g, '/').endsWith(route + 'index.html')), `RSS links to missing article ${route}`);
+  assert(files.some(f => f.replace(/\\/g, '/').endsWith(route + 'index.html')), `RSS links to missing article ${route}`);
 }
 assert(allPages.length > files.length, 'Expected non-article pages');
+const homepageRoutes = new Set();
+for (const homepage of ['dist/index.html', 'dist/no/index.html']) {
+  const html = await readFile(homepage, 'utf8');
+  for (const match of html.matchAll(/href="(\/(?:no\/)?articles\/[^"#?]+)"/g)) {
+    homepageRoutes.add(match[1]);
+  }
+}
+for (const route of homepageRoutes) {
+  assert(files.some(f => '/' + f.replace(/^dist[/\\]/, '').replace(/index\.html$/, '').replace(/\\/g, '/') === route), `Homepage links to missing article ${route}`);
+}
+
 const siteLinks = new Set(allPages.map(p => '/' + p.replace(/^dist[/\\]/, '').replace(/index\.html$/, '').replace(/\\/g, '/')));
 siteLinks.add('/');
 siteLinks.add('/no/');
