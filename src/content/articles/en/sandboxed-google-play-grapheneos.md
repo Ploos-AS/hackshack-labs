@@ -7,7 +7,7 @@ date: 2026-10-19
 tags: [grapheneos, android, google-play, privacy, security]
 series: "Privacy & Digital Independence"
 translationKey: sandboxed-google-play-grapheneos
-draft: true
+draft: false
 tested: false
 evidence: documentation
 ---
