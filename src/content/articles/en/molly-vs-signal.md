@@ -27,10 +27,10 @@ For most people, **official Signal remains the simplest default**. Consider Moll
 | Android client | Official | Independent Signal fork | Independent Signal fork |
 | Signal contacts and network | Yes | Yes | Yes |
 | End-to-end encrypted conversations | Yes | Uses Signal's messaging protocol | Uses Signal's messaging protocol |
-| Optional extra database passphrase | Screen Lock uses device authentication; Signal PIN and registration lock protect different account functions | Yes | Yes |
+| Optional extra database passphrase | No separate database passphrase; relies on Android storage protections. Screen Lock uses device authentication; Signal PIN is not a database password | Yes | Yes |
 | Automatic app locking and other Molly controls | Screen Lock with timeout or manual lock; no equivalent separate Molly database passphrase | Yes | Yes |
 | Proprietary Google components | May be used | May be included | Excluded by the FOSS variant |
-| Google-free notification options | FCM where available; WebSocket without Google Play services | WebSocket / UnifiedPush options | WebSocket / UnifiedPush options |
+| Google-free notification options | FCM when available; WebSocket fallback without Play services (possible battery trade-off) | WebSocket; UnifiedPush with distributor and server | WebSocket; UnifiedPush with distributor and server |
 | Official Signal support | Yes | No | No |
 
 This is a **feature comparison, not a security ranking**. The extra passphrase does not mean official Signal stores all messages unencrypted; Android's existing storage protections and Signal's own security features still matter.
@@ -61,6 +61,10 @@ Signal's service and clients evolve. **Older Signal clients can expire and requi
 
 As a dated reference, the [Molly release list](https://github.com/mollyim/mollyim-android/releases) showed **v8.19.2-4 released 31 July 2026** when reviewed on 19 October 2026. That is a reason to investigate release cadence, **not** proof of an unpatched vulnerability: compare current upstream Signal and Molly versions and security advisories before relying on either. We have **not completed a like-for-like release-lag measurement**. See [Signal's official support and update guidance](https://support.signal.org/hc/en-us/articles/360007318751-Registration-troubleshooting).
 
+## UnifiedPush setup
+
+UnifiedPush is **not plug-and-play**. It needs a compatible **distributor app** (for example, ntfy configured as a UnifiedPush distributor) and a push server or endpoint. The distributor, its configuration and the server you choose affect notification reliability and privacy. WebSocket is a separate alternative and does not require a UnifiedPush distributor. Compare delivery and battery use on your own device before relying on either option. See the [UnifiedPush documentation](https://unifiedpush.org/users/intro/).
+
 ## Installation and verification
 
 Use the [Molly project's release page](https://github.com/mollyim/mollyim-android/releases), its [official Molly F-Droid repository](https://molly.im/fdroid/repo/) or the [separate Molly-FOSS F-Droid repository](https://molly.im/fdroid/foss/repo/). The project also lists Accrescent for Molly-FOSS. Follow the project's published signing-certificate fingerprint and the repository's signing-key fingerprint; **these are different keys for different verification purposes**. Verify them from the official pages at installation time rather than trusting a copied fingerprint in an old article.
@@ -83,11 +87,11 @@ An independent fork can ship useful features, but it also needs to track upstrea
 
 Before switching, check the project's [current releases and installation instructions](https://github.com/mollyim/mollyim-android). Install only from a distribution channel linked by the project, and follow its signature-verification guidance where available. Avoid random APK mirrors.
 
-Do not assume that an unofficial client has the same support guarantees as Signal. Compatibility and account-registration behavior can change.
+**Signal does not officially support Molly or other third-party Signal clients.** You depend on an unofficial fork, and compatibility or account-registration behavior may change. Review [Signal's Terms of Service](https://signal.org/legal/#terms) and the project's current notices; we have not established that merely using Molly automatically results in account sanctions.
 
 ## Molly on GrapheneOS
 
-Molly-FOSS is an interesting option for people who use GrapheneOS without Google Play services. UnifiedPush or WebSocket notifications can reduce dependence on Google's notification infrastructure, but the **battery, reliability and background-delivery trade-offs need testing on the exact device and configuration**.
+**Official Signal also works on GrapheneOS without Google Play services**, using its WebSocket fallback. Molly-FOSS is an optional alternative, not a requirement for de-Googled messaging. UnifiedPush or WebSocket notifications can reduce dependence on Google's notification infrastructure, but the **battery, reliability and background-delivery trade-offs need testing on the exact device and configuration**.
 
 GrapheneOS does not automatically make an unofficial app trustworthy. Keep the OS and app updated, check permissions, and choose software based on your actual threat model. Our [GrapheneOS introduction](/articles/grapheneos-explained-who-should-use-it/) covers the broader security and privacy considerations.
 
@@ -109,3 +113,7 @@ If you are moving from Signal, **check the current backup and migration instruct
 - [Molly Android source, features and distribution](https://github.com/mollyim/mollyim-android)
 - [Signal: Is it private? Can I trust it?](https://support.signal.org/hc/en-us/articles/360007320391-Is-it-private-Can-I-trust-it)
 - [GrapheneOS features](https://grapheneos.org/features)
+- [Signal: Screen Lock](https://support.signal.org/hc/en-us/articles/360007059572-Screen-Lock)
+- [UnifiedPush: Introduction](https://unifiedpush.org/users/intro/)
+- [Signal: Terms of Service](https://signal.org/legal/#terms)
+- [Molly: Releases](https://github.com/mollyim/mollyim-android/releases)

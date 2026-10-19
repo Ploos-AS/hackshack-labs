@@ -27,10 +27,10 @@ For de fleste er **offisiell Signal fortsatt det enkleste utgangspunktet**. Moll
 | Android-klient | Offisiell | Uavhengig Signal-variant | Uavhengig Signal-variant |
 | Signal-kontakter og -nettverk | Ja | Ja | Ja |
 | Ende-til-ende-kryptering | Ja | Bruker Signals meldingsprotokoll | Bruker Signals meldingsprotokoll |
-| Ekstra passfrase for lokal database | Skjermlås bruker enhetsautentisering; Signal-PIN og registreringslås beskytter andre kontofunksjoner | Ja | Ja |
+| Ekstra passfrase for lokal database | Ingen separat databasepassfrase; bygger på Androids lagringsbeskyttelse. Skjermlås bruker enhetsautentisering; Signal-PIN er ikke et databasepassord | Ja | Ja |
 | Automatisk applås og andre Molly-kontroller | Skjermlås med tidsgrense eller manuell låsing; ikke tilsvarende separat Molly-databasepassfrase | Ja | Ja |
 | Proprietære Google-komponenter | Kan brukes | Kan være inkludert | Utelatt i FOSS-varianten |
-| Varsler uten Google | FCM der det er tilgjengelig; WebSocket uten Google Play-tjenester | WebSocket / UnifiedPush | WebSocket / UnifiedPush |
+| Varsler uten Google | FCM når tilgjengelig; WebSocket uten Play-tjenester (kan påvirke batteriet) | WebSocket; UnifiedPush med distributør og server | WebSocket; UnifiedPush med distributør og server |
 | Offisiell Signal-støtte | Ja | Nei | Nei |
 
 Dette er en **funksjonssammenligning, ikke en sikkerhetsrangering**. Ekstra databasepassfrase betyr ikke at vanlig Signal lagrer alle meldinger ukryptert; Androids lagringsbeskyttelse og Signals øvrige sikkerhet er fortsatt relevant.
@@ -61,6 +61,10 @@ Signal endrer både tjenesten og klientene. **Eldre Signal-klienter kan utløpe 
 
 Som et datert kontrollpunkt viste [Mollys utgivelsesside](https://github.com/mollyim/mollyim-android/releases) **v8.19.2-4 fra 31. juli 2026** ved gjennomgang 19. oktober 2026. Dette er grunn til å undersøke oppdateringstakten, **ikke** bevis på et usikret program. Vi har **ikke gjennomført en direkte måling av etterslepet** mot nyeste Signal-versjon. Se [Signals veiledning om oppdateringer](https://support.signal.org/hc/en-us/articles/360007318751-Registration-troubleshooting).
 
+## Slik fungerer UnifiedPush
+
+UnifiedPush fungerer **ikke automatisk uten oppsett**. Du trenger en kompatibel **distributørapp** (for eksempel ntfy konfigurert som UnifiedPush-distributør) og en pushserver eller et endepunkt. Distributøren, oppsettet og serveren du velger, påvirker pålitelighet og personvern. WebSocket er et separat alternativ som ikke krever en UnifiedPush-distributør. Sammenlign varsler og batteribruk på egen telefon før du stoler på løsningen. Se [dokumentasjonen til UnifiedPush](https://unifiedpush.org/users/intro/).
+
 ## Installasjon og verifisering
 
 Bruk [Mollys GitHub-utgivelser](https://github.com/mollyim/mollyim-android/releases), [Mollys offisielle F-Droid-kilde](https://molly.im/fdroid/repo/) eller [den separate F-Droid-kilden for Molly-FOSS](https://molly.im/fdroid/foss/repo/). Prosjektet oppgir også Accrescent som distribusjonskanal for Molly-FOSS. Kontroller APK-ens signeringssertifikat og F-Droid-kildens signeringsnøkkel mot fingeravtrykkene prosjektet publiserer. **Dette er forskjellige nøkler med forskjellige formål.** Hent fingeravtrykkene fra de offisielle sidene ved installasjon.
@@ -83,13 +87,13 @@ En uavhengig variant kan tilby nyttige funksjoner, men må også følge sikkerhe
 
 Kontroller prosjektets [oppdaterte utgivelser og installasjonsveiledning](https://github.com/mollyim/mollyim-android) før du bytter. Installer bare fra kanaler prosjektet selv lenker til, og følg veiledningen for signaturkontroll der det er mulig. Unngå tilfeldige APK-nettsteder.
 
-Ikke anta at en uoffisiell klient har samme støttegarantier som Signal. Kompatibilitet og kontoregistrering kan endre seg.
+**Signal gir ikke offisiell støtte til Molly eller andre tredjepartsklienter.** Du er avhengig av en uoffisiell variant, og kompatibilitet eller kontoregistrering kan endre seg. Les [Signals bruksvilkår](https://signal.org/legal/#terms) og oppdaterte meldinger fra prosjektet. Vi har ikke dokumentasjon for å hevde at bruk av Molly i seg selv automatisk fører til kontosanksjoner.
 
 ## Molly på GrapheneOS
 
-Molly-FOSS er interessant for dem som bruker GrapheneOS uten Google Play-tjenester. UnifiedPush eller WebSocket kan redusere avhengigheten av Googles varslingsinfrastruktur, men **batteriforbruk, pålitelighet og varsler i bakgrunnen må testes på den aktuelle telefonen og konfigurasjonen**.
+**Offisiell Signal fungerer også på GrapheneOS uten Google Play-tjenester**, med WebSocket som alternativ for varsler. Molly-FOSS er et valgfritt alternativ, ikke et krav for å bruke Signal uten Google. UnifiedPush eller WebSocket kan redusere avhengigheten av Googles varslingsinfrastruktur, men **batteriforbruk, pålitelighet og varsler i bakgrunnen må testes på den aktuelle telefonen og konfigurasjonen**.
 
-GrapheneOS gjør ikke automatisk en uoffisiell app pålitelig. Hold både operativsystem og app oppdatert, kontroller tillatelser og velg etter din egen trusselmodell. Vår [introduksjon til GrapheneOS](/articles/grapheneos-explained-who-should-use-it/) beskriver flere av avveiningene.
+GrapheneOS gjør ikke automatisk en uoffisiell app pålitelig. Hold både operativsystem og app oppdatert, kontroller tillatelser og velg etter din egen trusselmodell. Vår [introduksjon til GrapheneOS](/no/articles/grapheneos-explained-who-should-use-it/) beskriver flere av avveiningene.
 
 ## Hvem bør velge hva?
 
@@ -109,3 +113,7 @@ Hvis du bytter fra Signal, **les oppdaterte veiledninger for sikkerhetskopiering
 - [Molly – kildekode, funksjoner og distribusjon](https://github.com/mollyim/mollyim-android)
 - [Signal: Is it private? Can I trust it?](https://support.signal.org/hc/en-us/articles/360007320391-Is-it-private-Can-I-trust-it)
 - [GrapheneOS – funksjoner](https://grapheneos.org/features)
+- [Signal: Skjermlås](https://support.signal.org/hc/en-us/articles/360007059572-Screen-Lock)
+- [UnifiedPush: Introduksjon](https://unifiedpush.org/users/intro/)
+- [Signal: Bruksvilkår](https://signal.org/legal/#terms)
+- [Molly: Utgivelser](https://github.com/mollyim/mollyim-android/releases)
