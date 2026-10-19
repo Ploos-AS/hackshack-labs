@@ -59,7 +59,7 @@ Ikke anta at en uoffisiell klient har samme støttegarantier som Signal. Kompati
 
 Molly-FOSS er interessant for dem som bruker GrapheneOS uten Google Play-tjenester. UnifiedPush eller WebSocket kan redusere avhengigheten av Googles varslingsinfrastruktur, men **batteriforbruk, pålitelighet og varsler i bakgrunnen må testes på den aktuelle telefonen og konfigurasjonen**.
 
-GrapheneOS gjør ikke automatisk en uoffisiell app pålitelig. Hold både operativsystem og app oppdatert, kontroller tillatelser og velg etter din egen trusselmodell. Vår [introduksjon til GrapheneOS](/nb/articles/grapheneos-explained-who-should-use-it/) beskriver flere av avveiningene.
+GrapheneOS gjør ikke automatisk en uoffisiell app pålitelig. Hold både operativsystem og app oppdatert, kontroller tillatelser og velg etter din egen trusselmodell. Vår [introduksjon til GrapheneOS](/articles/grapheneos-explained-who-should-use-it/) beskriver flere av avveiningene.
 
 ## Hvem bør velge hva?
 
