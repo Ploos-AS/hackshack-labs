@@ -28,6 +28,23 @@ This guide follows three stages. Buy only what your projects justify; reserve so
 | **2. Practical hobby lab** | Current-limited bench power supply, logic analyzer, ESD setup, desoldering tools | Power prototypes safely, inspect digital signals, repair boards |
 | **3. Advanced hobby lab** | Oscilloscope, electronic load, power/energy meter, calibrated references as needed | Characterize timing, ripple, load response and energy consumption |
 
+## Instrument brand strategy: UNI-T first, alternatives tested fairly
+
+For this bench we will **shortlist UNI-T first** for multimeters, bench power supplies, oscilloscopes and other measurement instruments, with **FNIRSI** and **ANENG** as alternative candidates when they offer a useful price, form factor or feature advantage. This is a **purchasing and editorial shortlist, not a brand endorsement**. Specific models must still pass checks for safety, measurement specifications, documentation and Linux compatibility.
+
+| Instrument | First shortlist | Alternatives | Selection criteria |
+| --- | --- | --- | --- |
+| Digital multimeter | UNI-T | ANENG; FNIRSI | Fusing, CAT rating, input protection, accuracy and serviceability |
+| Oscilloscope | UNI-T | FNIRSI | Bandwidth, real sample rate, memory, probes and waveform export |
+| Bench DC supply | UNI-T | FNIRSI | Current limit, ripple, safety, remote interface and documentation |
+| Component / LCR tester | UNI-T | FNIRSI; ANENG where suitable | Supported ranges, test methods and calibration |
+| USB/serial and logic tools | Best supported exact device | Any brand with documented protocol | Linux drivers, sigrok compatibility, signal levels |
+| Mains energy meter | UNI-T UT230B-EU candidate | Alternatives with verified safety and export | Correct plug, safety, low-load behavior, data interface |
+
+**Brand is never a substitute for model-level evidence.** Verify the seller, exact model/revision, applicable safety documentation and delivered price. For mains-connected instruments, do not compromise on electrical safety to stay within one brand.
+
+Manufacturer catalogs: [UNI-T bench instruments](https://instruments.uni-trend.com/), [UNI-T meters](https://meters.uni-trend.com/product-categories/), [FNIRSI](https://www.fnirsi.com/). ANENG models remain candidates pending model-by-model documentation review. We will add affiliate links to **verified listings**, not generic brand claims.
+
 ## 1. A multimeter comes first
 
 Look for dependable leads, accessible replacement fuses, appropriate input protection and clearly documented **CAT ratings for the specific model**. For beginners, start with **low-voltage DC** circuits. A cheap meter is not automatically safe for mains measurements.
