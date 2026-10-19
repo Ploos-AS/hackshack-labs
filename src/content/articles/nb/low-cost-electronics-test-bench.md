@@ -88,7 +88,7 @@ Se etter pålitelige måleledninger, utskiftbare sikringer, egnet inngangsbeskyt
 
 **Sjekkliste:** Likespenning og motstand, kontinuitetsmåling, strømområder og sikringer, bruksanvisning, utskiftbare ledninger, garanti og totalpris.
 
-**Status:** Konkret multimetervalg gjenstår; ingen egen test er gjennomført.
+**Aktuell kandidat som hovedmultimeter:** [UNI-T UT61E+ – AliExpress-affiliate](https://s.click.aliexpress.com/e/_c4q9NTqD) (**planlagt kandidat; ikke bekreftet bestilt eller testet**). Kontroller modell, medfølgende USB-grensesnitt/kabel, sikkerhetsdokumentasjon, selger og totalpris før kjøp.
 
 ## 2. Strømforsyning: strømbegrensning er viktig
 
