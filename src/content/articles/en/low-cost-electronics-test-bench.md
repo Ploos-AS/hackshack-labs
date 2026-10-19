@@ -90,6 +90,8 @@ Look for dependable leads, accessible replacement fuses, appropriate input prote
 
 **Shortlisted primary meter:** [UNI-T UT61E+ — AliExpress affiliate](https://s.click.aliexpress.com/e/_c4q9NTqD) (**planned candidate; not confirmed ordered or tested**). Verify the listing's exact model, included USB interface/cable, safety documentation, seller and total delivered cost before purchase.
 
+**Amazon listing supplied by editor:** [UNI-T UT60BT — Amazon product link](https://link.amazon/B0aUA8xlV). The destination could not be independently verified; **affiliate attribution is not confirmed**. Do not treat this as an Associates link until generated or verified in Associates Central for `hackshacklabs-20`.
+
 **Wireless multimeter candidate:** [UNI-T UT60BT — AliExpress affiliate](https://s.click.aliexpress.com/e/_c38szw9F) (**planned; not confirmed ordered or tested**). Bluetooth/BLE data access on Linux remains to be verified for the exact hardware/firmware revision; verify the seller's listing and safety documentation before purchase.
 
 ## 2. Power supplies: current limiting matters
