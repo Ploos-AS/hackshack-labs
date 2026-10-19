@@ -129,6 +129,8 @@ Et oscilloskop er nyttig for timing, bølgeformer, støy og strømforsyning. Sam
 
 **Kandidat til oscilloskop:** [UNI-T UPO1102 – Amazon-produktlenke](https://link.amazon/B05TiAw4b) (**planlagt; ikke bekreftet kjøpt eller testet**). Den oppgitte annonsen beskriver et 100 MHz oscilloskop med to kanaler, opptil 1 GSa/s, 56 Mpts minne, 500 000 bølgeformer/s, 7-tommers skjerm og FFT med 1 Mpt. **Dette er opplysninger fra selger, ikke uavhengig verifiserte spesifikasjoner**; ytelsen kan variere med innsamlingsmodus. Før vi anbefaler det til Linux-automatisering, må vi bekrefte modell og fastvare, om USB gir USBTMC/SCPI og bølgeformoverføring (ikke bare fileksport), programmeringsmanual, medfølgende prober, garanti og sikkerhetsdokumentasjon. Amazon Associates-sporing for `hackshacklabs-20` er ikke verifisert.
 
+**Kandidat til logikkanalysator:** [«DSLogic Plus» – Amazon-produktlenke](https://link.amazon/B00qFQvib) (**planlagt; ikke bekreftet kjøpt eller testet**). Den oppgitte tittelen annonserer **8 kanaler ved 24 MHz**, som kan avvike fra spesifikasjonene til en original DSLogic Plus. **Ikke anta at dette er en original DSLogic Plus.** Kontroller produsent, modell, VID/PID, antall kanaler, samplingsmoduser, tillatte signalnivåer og sigrok/PulseView-kompatibilitet før kjøp eller anbefaling. Amazon Associates-sporing for `hackshacklabs-20` er ikke bekreftet.
+
 ## 6. Måling av strømforbruk
 
 Energimålere til stikkontakt er praktiske for måling av en mini-PC eller loddestasjon, men **nøyaktighet ved lav belastning, effektfaktor og kortvarige endringer varierer**. Ikke anta at data kan eksporteres uten dokumentasjon.
