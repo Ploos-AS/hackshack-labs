@@ -90,6 +90,8 @@ Se etter pålitelige måleledninger, utskiftbare sikringer, egnet inngangsbeskyt
 
 **Aktuell kandidat som hovedmultimeter:** [UNI-T UT61E+ – AliExpress-affiliate](https://s.click.aliexpress.com/e/_c4q9NTqD) (**planlagt kandidat; ikke bekreftet bestilt eller testet**). Kontroller modell, medfølgende USB-grensesnitt/kabel, sikkerhetsdokumentasjon, selger og totalpris før kjøp.
 
+**Amazon-annonse oppgitt av redaksjonen:** [UNI-T UT60BT – Amazon-produktlenke](https://link.amazon/B0aUA8xlV). Måladressen kunne ikke verifiseres uavhengig; **affiliate-sporing er ikke bekreftet**. Ikke behandle den som en Associates-lenke før den er opprettet eller verifisert i Associates Central for `hackshacklabs-20`.
+
 **Kandidat til trådløst multimeter:** [UNI-T UT60BT – AliExpress-affiliate](https://s.click.aliexpress.com/e/_c38szw9F) (**planlagt; ikke bekreftet bestilt eller testet**). Bluetooth/BLE-data på Linux må verifiseres for den konkrete maskinvare-/fastvarerevisjonen. Kontroller produktannonsen og sikkerhetsdokumentasjonen før kjøp.
 
 ## 2. Strømforsyning: strømbegrensning er viktig
