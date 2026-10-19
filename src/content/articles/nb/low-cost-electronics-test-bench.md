@@ -135,6 +135,8 @@ Et oscilloskop er nyttig for timing, bølgeformer, støy og strømforsyning. Sam
 
 **Kandidat til LCR-måler:** [UNI-T UT612 – AliExpress-affiliate-lenke](https://s.click.aliexpress.com/e/_c2xbYqTR) (**planlagt; ikke kjøpt eller testet**). Annonsetittelen nevner også **UT611**, så kontroller at valgt variant faktisk er **UT612** før bestilling. En LCR-måler måler induktans, kapasitans og resistans; annonsen oppgir USB-grensesnitt, men Linux-kompatibilitet, dataeksport, protokolldokumentasjon og Python-automatisering er **ikke verifisert**. Kontroller medfølgende måleledninger, målefrekvenser og selgerens troverdighet. Affiliate-merking gjelder. **Ekstra forhandlerlenke:** [UNI-T UT612 – Amazon-produktlenke](https://link.amazon/B0dgMBmw6) (oppgitt av bruker; modell, pakkeinnhold og Amazon Associates-sporing er ikke uavhengig verifisert).
 
+**Kandidat til komponenttester:** [FNIRSI LCR-P1 – Amazon-produktlenke](https://link.amazon/B03HUgEGS) (**planlagt; ikke kjøpt eller testet**). Den oppgitte annonsen beskriver automatisk testing av transistorer, LCR og kondensatorer. Nyttig for rask komponentidentifikasjon ved siden av en dedikert LCR-måler som UNI-T UT612, men **ikke en erstatning for kalibrerte målinger**. Kontroller eksakt modell, støttede komponenter, testgrenser, medfølgende tilbehør og selger før kjøp. USB-/Linux-/Python-støtte og Amazon Associates-sporing er **ikke verifisert**.
+
 ## 6. Måling av strømforbruk
 
 Energimålere til stikkontakt er praktiske for måling av en mini-PC eller loddestasjon, men **nøyaktighet ved lav belastning, effektfaktor og kortvarige endringer varierer**. Ikke anta at data kan eksporteres uten dokumentasjon.
