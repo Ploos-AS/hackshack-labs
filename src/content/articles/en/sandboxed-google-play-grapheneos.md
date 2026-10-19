@@ -22,7 +22,7 @@ evidence: documentation
 
 ## What exactly gets installed?
 
-GrapheneOS offers an optional compatibility layer for three Google components: **Google Play services, Google Play Store and Google Services Framework**. Install them using the GrapheneOS **Apps** application rather than downloading random APKs. GrapheneOS documents the supported installation order and dependencies.
+GrapheneOS offers an optional compatibility layer for **Google Play services and Google Play Store**. Open the GrapheneOS **App Store**, select **Google Play services**, and install it; the Store is installed as a dependency. Older installations from before Android 15 may also have **Google Services Framework**, which the project says should not be removed. Do not follow outdated three-component installation guides or download random APKs.
 
 Unlike privileged system Google Play on typical Android installations, these components run within Android's regular app sandbox on GrapheneOS. They do not automatically receive privileged operating-system access simply because they are made by Google.
 
@@ -33,7 +33,7 @@ Unlike privileged system Google Play on typical Android installations, these com
 | Google Play integration | Privileged system integration | Ordinary apps with a compatibility layer |
 | Install Play services | Part of the default system | Optional, per user profile |
 | Permission controls | Android permissions plus privileged integrations | Ordinary app permissions; GrapheneOS adds controls such as Network permission |
-| Google account | Usually integrated into the default setup experience | Optional; some apps or Play Store features may require sign-in |
+| Google account | Usually integrated into the default setup experience | Optional; the Play Store requires sign-in to install apps and make in-app purchases |
 | App compatibility | Google's intended configuration | Many apps work, but some integrity checks and proprietary features can still fail |
 | Data sent to Google | Depends on settings, apps and usage | Also depends on settings, apps and usage; not measured here |
 
@@ -47,9 +47,13 @@ On the other hand, an ordinary sandboxed Google app cannot simply bypass Android
 
 ## Notifications and background activity
 
-Many Android apps use **Firebase Cloud Messaging (FCM)** through Google Play services. Installing sandboxed Play services may restore notifications for such apps. GrapheneOS documents special handling for background execution so push messaging can function. Behavior depends on battery settings, app versions and the exact device configuration.
+Many Android apps use **Firebase Cloud Messaging (FCM)** through Google Play services. Installing sandboxed Play services may restore notifications for such apps. GrapheneOS recommends granting **Google Play services an exception to battery optimization** for push notifications to work reliably in the background; this exception is not required for the Play Store. Behavior depends on battery settings, app versions and the exact device configuration.
 
 Some apps offer their own push mechanisms. For example, [our Molly vs Signal comparison](/articles/molly-vs-signal/) discusses WebSocket and UnifiedPush alternatives. Do not assume that every app needs Google Play for notifications.
+
+## Installation and account trade-offs
+
+GrapheneOS recommends starting with the **Owner** profile for simplicity; apps there are still sandboxed. A separate user or work profile is an optional way to restrict which apps can use Play services, but may add notification and profile-switching complexity. **Google account sign-in is optional for Play services, but required to install apps through the Play Store and for in-app purchases.** The compatibility layer also provides Play Store license checks and updates; it does not remove the store's account requirements.
 
 ## Separate user profiles
 
