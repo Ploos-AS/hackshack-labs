@@ -129,6 +129,8 @@ An oscilloscope becomes valuable for timing, waveform shape, noise and power-rai
 
 **Oscilloscope candidate:** [UNI-T UPO1102 — Amazon product link](https://link.amazon/B05TiAw4b) (**planned; not confirmed purchased or tested**). The submitted listing describes a 100 MHz, 2-channel ultra-phosphor DSO with up to 1 GSa/s, 56 Mpts memory, 500,000 waveforms/s, a 7-inch display and 1 Mpt FFT. **These are seller-supplied claims, not independently verified specifications**; acquisition modes may affect headline figures. Before recommending it for Linux automation, verify the exact model and firmware, whether USB supports USBTMC/SCPI and waveform transfer (rather than file export only), availability of a programming manual, probe bundle, warranty and safety documentation. Amazon Associates attribution for `hackshacklabs-20` is unverified.
 
+**Logic analyzer candidate:** [“DSLogic Plus” — Amazon product link](https://link.amazon/B00qFQvib) (**planned; not confirmed purchased or tested**). The submitted title advertises **8 channels at 24 MHz**, which may not match the genuine DSLogic Plus specification. **Do not assume this is an original DSLogic Plus.** Verify manufacturer, model, VID/PID, channel count, sampling modes, supported voltage ranges and sigrok/PulseView compatibility before buying or recommending it. Amazon Associates tracking for `hackshacklabs-20` has not been verified.
+
 ## 6. Measuring power consumption
 
 Plug-in energy meters are convenient for measuring a mini-PC or a soldering station, but **accuracy at low loads, power factor and transient behavior vary**. Do not assume data export unless documented.
