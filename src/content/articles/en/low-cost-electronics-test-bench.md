@@ -45,6 +45,26 @@ For this bench we will **shortlist UNI-T first** for multimeters, bench power su
 
 Manufacturer catalogs: [UNI-T bench instruments](https://instruments.uni-trend.com/), [UNI-T meters](https://meters.uni-trend.com/product-categories/), [FNIRSI](https://www.fnirsi.com/). ANENG models remain candidates pending model-by-model documentation review. We will add affiliate links to **verified listings**, not generic brand claims.
 
+## Connectivity requirements: Linux, USB and Bluetooth/BLE
+
+**Linux compatibility is a high-priority buying criterion.** A USB port or Bluetooth badge alone is insufficient: the instrument must expose useful measurement data or control commands, not merely charge a battery or connect to a proprietary phone app.
+
+| Requirement | How we verify it |
+| --- | --- |
+| Linux (Debian/Ubuntu) | Documented driver/protocol or credible working open-source integration for the exact model |
+| USB | Data interface type (CDC/serial, HID, USBTMC or vendor-specific), not charging only |
+| Bluetooth/BLE | Local GATT/serial data access, pairing requirements and whether a phone/cloud account is mandatory |
+| Automation | Documented SCPI or other protocol, Python library or reproducible CLI access |
+| Logging/export | CSV/JSON or scriptable measurements with units, timestamps and sampling limits |
+| Maintenance | Firmware updates possible without Windows where feasible; replaceable parts and calibration information |
+| Safety | Appropriate protection and verifiable model-specific documentation, especially for mains measurements |
+
+**Connectivity tiers:** **A** = verified Linux data/control access; **B** = documented protocol or credible community implementation, hardware verification pending; **C** = vendor app/Windows-only or unclear protocol; **D** = no useful data interface. These tiers do **not** replace electrical-safety evaluation.
+
+**Examples to investigate, not yet lab-tested:** The UNI-T UT61E+ has a community-documented USB interface; UNI-T UT60BT has community Linux/BLE support; selected ANENG BLE meters have open-source decoders. Support varies by model and firmware. Manufacturer-provided Bluetooth apps are not evidence of Linux compatibility.
+
+Sources: [UNI-T software downloads](https://meters.uni-trend.com/services-support/downloads-1/), [UT61E+ USB protocol](https://github.com/mwuertinger/ut61ep), [cross-platform dmm-tools](https://github.com/antoinecellerier/dmm-tools), [open BLE meter protocol status](https://github.com/libreble/multimeter/blob/main/docs/protocols/README.md).
+
 ## 1. A multimeter comes first
 
 Look for dependable leads, accessible replacement fuses, appropriate input protection and clearly documented **CAT ratings for the specific model**. For beginners, start with **low-voltage DC** circuits. A cheap meter is not automatically safe for mains measurements.
