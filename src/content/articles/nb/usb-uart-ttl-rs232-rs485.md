@@ -18,16 +18,16 @@ USB-kontakten forteller ikke hvilket elektrisk seriegrensesnitt adapteren bruker
 | Grensesnitt | Vanlig bruk | Elektriske egenskaper |
 | --- | --- | --- |
 | UART med logikknivåer («TTL-seriell») | Ruterkonsoller og mikrokontrollere | Enkeltendte signaler, ofte 3,3 V eller 5 V; kontroller kortet |
-| RS-232 | Eldre PC-er og instrumenter | Inverterte signaler og positive/negative spenninger; ikke direkte kompatibelt med MCU-UART |
+| RS-232 | Eldre PC-er og instrumenter | Inverterte signaler, vanligvis omtrent ±3–15 V ved mottakeren; ikke direkte kompatibelt med MCU-UART |
 | RS-485 | Industrielle nettverk | Differensielt A/B-par; krever RS-485-transceiver |
 
 «TTL» brukes ofte upresist i annonser. **En 3,3 V UART tåler ikke nødvendigvis 5 V.** USB-plugg, kontaktform og brikkenavn beviser ikke spenningsnivået.
 
 ## TX, RX og GND
 
-For en UART med bekreftet kompatible logikknivåer kobles **adapter TX → enhet RX**, **adapter RX → enhet TX** og **GND → GND**. Enheten bør normalt ha egen strømforsyning; ikke koble adapterens 3,3 V- eller 5 V-utgang uten dokumentert behov.
+For en UART med bekreftet kompatible logikknivåer kobles **adapter TX → enhet RX**, **adapter RX → enhet TX** og **GND → GND**. Enheten bør normalt ha egen strømforsyning; **la adapterens VCC-pinne være frakoblet** med mindre det finnes et dokumentert behov. På rimelige adaptere kan 3,3 V/5 V-bryteren styre bare VCC-utgangen, ikke logikknivåene på TX/RX.
 
-På en ukjent ruter er et tryggere første forsøk **ruter TX → adapter RX og felles GND**, mens ruteren får strøm separat. Da kan oppstartsmeldinger leses uten å drive ruterens RX-inngang. Verifiser alltid pinnene og spenningsnivåene først.
+På en ukjent ruter er et tryggere første forsøk **ruter TX → adapter RX og felles GND**, mens ruteren får strøm separat. Da kan oppstartsmeldinger leses uten å drive ruterens RX-inngang. Verifiser alltid pinnene og spenningsnivåene først. Med enheten påslått med sin vanlige strømforsyning kan et multimeter brukes til å sjekke target-TX **mot GND** for uventet høy spenning før tilkobling. Multimeteret kan imidlertid ikke bevise kompatible logikknivåer eller vise korte seriepulser pålitelig. Bruk skjema og eventuelt oscilloskop eller logikkanalysator med egnet spenningsområde.
 
 ## Finn adapteren i Linux
 
@@ -46,20 +46,24 @@ sudo apt install picocom
 picocom -b 115200 /dev/ttyUSB0
 ```
 
-**115200 8N1 er vanlig, men ikke universelt.** Sjekk dokumentasjonen til enheten. På enkelte distribusjoner kreves medlemskap i en gruppe for tilgang til serieporten.
+**115200 8N1 er vanlig, men ikke universelt.** Sjekk dokumentasjonen til enheten. På Debian/Ubuntu kreves ofte medlemskap i gruppen `dialout` (`sudo usermod -aG dialout "$USER"`); logg ut og inn igjen etter endringen. Kontroller først rettighetene i distribusjonen din. På ChromeOS/Crostini kan USB-deling eller passthrough også være et hinder.
 
 ## Typiske feil
 
 - RS-232 kobles direkte til 3,3 V UART-pinner.
 - Man antar at 3,3 V/5 V-bryteren endrer signalnivået, selv om den kanskje bare endrer strømuttaket.
-- TX kobles mot TX i stedet for mot RX.
+- Adapter-TX kobles til enhetens TX i stedet for RX; da kan to utganger kobles sammen.
 - Enheten mates samtidig fra adapterens VCC og egen strømforsyning.
 - Felles jord mangler.
 - Man antar at RS-485-merkingen A/B er lik hos alle produsenter.
 
+## RS-485: terminering, bias og retning
+
+Lengre RS-485-busser kan trenge **120 Ω terminering i hver fysisk ende av kabelen**, tilpasset kabelimpedansen; ikke terminer vilkårlig ved hver node. Bussen trenger dessuten en definert hviletilstand gjennom egnet bias eller mottakere med fail-safe-funksjon. Mange USB–RS-485-adaptere er **halvdupleks**, slik at sending og mottak deler samme lederpar, og noen trenger retningsstyring. Følg dokumentasjonen for transceiveren og bussen; A/B-merking varierer mellom produsenter.
+
 ## Våre rimelige adaptere
 
-HackShack Labs har bestilt FT232RL, CH340N og CH343G UART-adaptere, samt en separat CH343G RS-232/RS-485-konverter. **Vi har ennå ikke testet noen av dem selv.** Spenningsnivåer og Linux-støtte skal undersøkes når de kommer.
+HackShack Labs har bestilt FT232RL, CH340N og CH343G UART-adaptere, samt en separat CH343G RS-232/RS-485-konverter. **Vi har ennå ikke testet noen av dem selv.** Vi skal måle de faktiske signalnivåene og undersøke Linux-funksjonaliteten før vi anbefaler dem til følsom maskinvare.
 
 ## Videre lesning
 
