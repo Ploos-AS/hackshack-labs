@@ -29,7 +29,7 @@ Some older black CH341A programmer boards have been reported to drive 5 V logic 
 
 ## In-circuit clips have limitations
 
-A SOIC8 clip can avoid desoldering, but other components connected to the SPI bus may load the signals, and a programmer may back-power the motherboard through protection diodes. **Disconnect power and batteries where practical; do not connect a programmer to a powered board.** Even an unpowered board can be unsuitable for in-circuit reading. If reads are inconsistent, stop and investigate rather than increasing voltage.
+A SOIC8 clip can avoid desoldering, but other components connected to the SPI bus may load the signals, and a programmer may back-power the motherboard through protection diodes. **Disconnect power and batteries where practical; do not connect a programmer to a powered board.** Even an unpowered board can be unsuitable for in-circuit reading. If reads are inconsistent, stop and investigate rather than increasing voltage. Even three identical reads and matching hashes show only repeatability, not that an in-circuit image is valid.
 
 ## Install flashrom
 
@@ -41,23 +41,25 @@ sudo apt install flashrom
 flashrom --version
 ```
 
-Check the [flashrom programmer documentation](https://www.flashrom.org/) for your exact adapter and current version. The following examples assume a compatible CH341A SPI programmer, an electrically safe connection and a supported chip.
+Check the [flashrom programmer documentation](https://www.flashrom.org/) for your exact adapter and current version. Distribution packages may lag behind upstream; newer flash chips can require a newer flashrom release. The following examples assume a compatible CH341A SPI programmer, an electrically safe connection and a supported chip.
 
 ## Read twice, compare, keep the originals
 
 ```sh
 sudo flashrom -p ch341a_spi
-sudo flashrom -p ch341a_spi -r backup-1.bin
+sudo flashrom -V -p ch341a_spi -r backup-1.bin 2>&1 | tee flashrom-read-1.log
 sudo flashrom -p ch341a_spi -r backup-2.bin
 sha256sum backup-1.bin backup-2.bin
 cmp backup-1.bin backup-2.bin
 ```
 
-Two identical reads are **necessary evidence of repeatability, not proof that the contents are valid**. Check the reported chip model, expected image size and any platform-specific structure. Store the original image safely, and document the board revision, chip markings, flashrom version and command output.
+The first command **only probes/detects** the chip; do not proceed if the identification is ambiguous. Some chips share an identification value and flashrom can report several candidates: consult the markings and documentation, then use `-c` only for an independently confirmed exact chip model. Keep the verbose (`-V`) output with the backups. When using `tee`, check the `flashrom` exit status (`set -o pipefail` in Bash) rather than assuming the command succeeded.
+
+Two identical reads are **evidence of repeatability, not proof that the contents are valid**. A third stable read can increase confidence in the connection, but identical hashes still do not establish firmware validity. Check the reported chip model, expected image size and any platform-specific structure. Store the original image safely, and document the board revision, chip markings, flashrom version and command output.
 
 ## Do not start with a write
 
-Writing the wrong image can make a device unbootable. Firmware images may contain device-specific data such as calibration values, MAC addresses, serial numbers or configuration. Do not flash an image merely because it has the correct size. For an initial learning exercise, use a separate, known-compatible spare flash chip rather than an irreplaceable motherboard.
+Writing the wrong image can make a device unbootable. Firmware images may contain device-specific data such as calibration values, MAC addresses, serial numbers or configuration. Do not flash an image merely because it has the correct size. Intel firmware descriptor regions, flash layouts and protected sections (`--ifd` and layout options) need separate, platform-specific treatment; they are outside this beginner read-only guide. Do not assume a full SPI dump is safe to write back. For an initial learning exercise, use a separate, known-compatible spare flash chip rather than an irreplaceable motherboard.
 
 A backup may also contain secrets or identifying data. Store it securely and do not publish raw firmware dumps without checking rights, privacy and licensing.
 
