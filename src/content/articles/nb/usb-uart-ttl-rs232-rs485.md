@@ -29,6 +29,10 @@ For en UART med bekreftet kompatible logikknivåer kobles **adapter TX → enhet
 
 På en ukjent ruter er et tryggere første forsøk **ruter TX → adapter RX og felles GND**, mens ruteren får strøm separat. Da kan oppstartsmeldinger leses uten å drive ruterens RX-inngang. Verifiser alltid pinnene og spenningsnivåene først. Med enheten påslått med sin vanlige strømforsyning kan et multimeter brukes til å sjekke target-TX **mot GND** for uventet høy spenning før tilkobling. Multimeteret kan imidlertid ikke bevise kompatible logikknivåer eller vise korte seriepulser pålitelig. Bruk skjema og eventuelt oscilloskop eller logikkanalysator med egnet spenningsområde.
 
+![Vanlig kobling for USB–UART med logikknivåer: TX til RX, RX til TX, felles GND og frakoblet VCC. Kontroller spenningsnivåene først.](/images/usb-uart-wiring.svg)
+
+*Diagram: Ved første, passive avlesning kobler du bare enhetens TX til adapterens RX og felles GND. Koble til adapterens TX først etter at kompatibiliteten er kontrollert. Diagrammet gjelder ikke kobling av RS-232 eller RS-485.*
+
 ## Finn adapteren i Linux
 
 ```sh
