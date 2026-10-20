@@ -27,6 +27,10 @@ Les hele merkingen på brikken og finn databladet. Kontroller:
 
 Enkelte eldre svarte CH341A-kort er rapportert å sende 5 V-signaler til flashbrikker som skal ha 3,3 V. Ikke anta at en medfølgende 1,8 V-adapter også nivåtilpasser alle signalene. Kontroller den konkrete kortrevisjonen.
 
+![SOIC8 sett ovenfra med vanlig pinnekobling for SPI NOR i 25-serien og merking av pinne 1. Kontroller databladet til den konkrete brikken.](/images/spi-nor-soic8-pinout.svg)
+
+*Diagram: Veiledende pinnenummer, **ikke** en universell tilkoblingsanvisning for programmerere. Kontroller pinnekobling, orientering og spenning i databladet før du fester klemmen.*
+
 ## Begrensninger ved klemme på montert brikke
 
 En SOIC8-klemme kan spare avlodding, men andre komponenter på SPI-bussen kan forstyrre signalene. Programmereren kan også bakmate hovedkortet gjennom beskyttelsesdioder. **Koble fra strøm og batterier der det er praktisk mulig; ikke koble programmereren til et kort som er påslått.** Selv et avslått kort kan være uegnet for avlesning med klemme. Stopp og undersøk hvis avlesningene er ustabile – **ikke øk spenningen**. Selv tre identiske avlesninger med samme hash viser bare gjentakbarhet, ikke at et bilde lest på kortet er gyldig.
