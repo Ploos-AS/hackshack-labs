@@ -6,6 +6,7 @@ lang: en
 date: 2026-10-20
 tags: [uart, ttl, rs232, rs485, linux, electronics]
 translationKey: usb-uart-ttl-rs232-rs485
+draft: false
 tested: false
 evidence: documentation
 ---
