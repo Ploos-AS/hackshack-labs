@@ -6,6 +6,7 @@ lang: nb
 date: 2026-10-20
 tags: [spi, flashrom, ch341a, linux, firmware, reparasjon]
 translationKey: spi-flash-linux-flashrom
+draft: false
 tested: false
 evidence: documentation
 ---
