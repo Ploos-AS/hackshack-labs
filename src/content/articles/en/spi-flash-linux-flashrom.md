@@ -27,6 +27,10 @@ Read the full chip marking and locate its datasheet. Confirm:
 
 Some older black CH341A programmer boards have been reported to drive 5 V logic into nominally 3.3 V flash devices. Do not assume that an included 1.8 V adapter also translates all signal levels correctly. Verify the exact hardware revision.
 
+![Top view of a common 25-series SPI NOR SOIC8 pinout showing pin 1 orientation; verify the exact chip datasheet.](/images/spi-nor-soic8-pinout.svg)
+
+*Diagram: Illustrative pin numbers only, **not** a universal programmer wiring guide. Confirm pinout, orientation and voltage in the exact chip datasheet before attaching a clip.*
+
 ## In-circuit clips have limitations
 
 A SOIC8 clip can avoid desoldering, but other components connected to the SPI bus may load the signals, and a programmer may back-power the motherboard through protection diodes. **Disconnect power and batteries where practical; do not connect a programmer to a powered board.** Even an unpowered board can be unsuitable for in-circuit reading. If reads are inconsistent, stop and investigate rather than increasing voltage. Even three identical reads and matching hashes show only repeatability, not that an in-circuit image is valid.
