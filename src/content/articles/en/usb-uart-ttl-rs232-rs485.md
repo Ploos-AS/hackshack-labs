@@ -29,6 +29,10 @@ For a known-compatible logic-level UART, connect **adapter TX → target RX**, *
 
 For an unfamiliar router, a safer first inspection is **target TX → adapter RX plus common GND**, with the target powered separately. This allows passive reception of boot messages without driving the router's RX pin. First verify the pinout and voltage levels; a pin header is not proof of a UART console. With the target powered normally, a multimeter can help check target TX **relative to GND** for an unexpectedly high voltage before connection, but a meter cannot prove logic-level compatibility or show short serial pulses reliably. Consult the board schematic and, where needed, use a scope or logic analyzer with an appropriate voltage rating.
 
+![Typical logic-level USB–UART connection: TX to RX, RX to TX, common GND, with VCC disconnected. Confirm voltages first.](/images/usb-uart-wiring.svg)
+
+*Diagram: For a first receive-only check, connect target TX to adapter RX and common GND. Add adapter TX only after confirming compatibility. The diagram does not apply to RS-232 or RS-485 wiring.*
+
 ## Identify your USB adapter on Linux
 
 ```sh
