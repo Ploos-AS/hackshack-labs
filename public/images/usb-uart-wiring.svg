@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+<title id="title">Logic-level USB UART wiring</title><desc id="desc">Compatible logic-level adapter TX connects to target RX, adapter RX to target TX, ground to ground. VCC is disconnected. Start with receive-only target TX to adapter RX and ground.</desc>
+<rect width="960" height="420" rx="16" fill="#101820"/><g font-family="system-ui, sans-serif" fill="#e7f4ef">
+<text x="36" y="44" font-size="25" font-weight="700">USB–UART (logic level only): TX / RX / GND</text>
+<rect x="45" y="85" width="265" height="290" rx="14" fill="#192c32" stroke="#6ce6aa" stroke-width="2"/><rect x="650" y="85" width="265" height="290" rx="14" fill="#192c32" stroke="#6ce6aa" stroke-width="2"/>
+<text x="72" y="121" font-size="21" font-weight="700">USB adapter</text><text x="680" y="121" font-size="21" font-weight="700">Target board</text>
+<g font-size="20"><text x="244" y="173">TX</text><text x="244" y="232">RX</text><text x="229" y="292">GND</text><text x="223" y="350">VCC</text><text x="672" y="173">RX</text><text x="672" y="232">TX</text><text x="672" y="292">GND</text><text x="672" y="350">VCC</text></g>
+</g><g fill="none" stroke-linecap="round" stroke-width="5"><path d="M310 166 H650" stroke="#ffbf66"/><path d="M310 225 H650" stroke="#79c5ff"/><path d="M310 285 H650" stroke="#a8bab6"/><path d="M310 344 h64 M394 344 h30" stroke="#fa8787" stroke-dasharray="7 10"/></g>
+<g fill="#e7f4ef" font-family="system-ui,sans-serif" font-size="15"><text x="402" y="158">TX → RX</text><text x="401" y="216">RX ← TX</text><text x="437" y="275">Common ground</text><text x="441" y="348" fill="#ff9a9a">Do not connect VCC</text><text x="43" y="407" font-size="14">Safer first step: connect only target TX → adapter RX and GND ↔ GND, after voltage/pinout verification.</text></g>
+</svg>
