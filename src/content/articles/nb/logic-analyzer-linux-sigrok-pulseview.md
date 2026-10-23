@@ -27,7 +27,7 @@ En logikkanalysator registrerer i hovedsak om signaler tolkes som *lave* eller *
 - **Samplingsfrekvens:** Antall målinger per sekund per kanal. Flere prøver innenfor korteste puls gir bedre tidsoppløsning. Annonsert maksimalverdi kan avhenge av antall aktive kanaler og USB-kapasitet.
 - **Opptakslengde:** Hvor mye som kan lagres. Høyere samplingsfrekvens kan redusere tilgjengelig opptakstid.
 
-Som eksempel gir **24 MS/s** et nominelt intervall mellom prøvene på omtrent **41,7 ns**. Det betyr **ikke** at instrumentet kan analysere vilkårlige 24 MHz-signaler korrekt. Bruk en samplingsfrekvens vesentlig høyere enn frekvensinnholdet du skal undersøke. Kontroller terskelverdier, kanalbegrensninger og kravene til dekoderen.
+Som eksempel gir **24 MS/s** et nominelt intervall mellom prøvene på omtrent **41,7 ns**. Det betyr **ikke** at instrumentet kan analysere vilkårlige 24 MHz-signaler korrekt. Som en **grov tommelfingerregel** bør du starte med minst **4× bitraten eller raskeste hendelsesfrekvens**, og sikte mot **10× eller mer** for tidsdetaljer. Svært korte glitcher krever langt høyere rate; tallene garanterer ikke fangst, og en flanke har ikke én bestemt frekvens. Kontroller terskelverdier, kanalbegrensninger og kravene til dekoderen.
 
 ## Installer på Debian eller Ubuntu
 
@@ -36,13 +36,25 @@ Installer PulseView og sigrok-verktøy der de er tilgjengelige:
 ```sh
 sudo apt update
 sudo apt install pulseview sigrok-cli
+# For kompatible Cypress FX2/FX2LP-analysatorer på Debian:
+sudo apt install sigrok-firmware-fx2lafw
 sigrok-cli --version
 sigrok-cli --scan
 ```
 
 Pakkenavn, støttede drivere, firmware og USB-rettigheter varierer med distribusjon og adapter. At utstyret vises i `lsusb`, betyr **ikke** at sigrok støtter det. Sjekk [listen over støttet maskinvare](https://sigrok.org/wiki/Supported_hardware) for **den konkrete revisjonen**.
 
-Ved tilgangsproblemer bør du undersøke udev- og USB-rettighetene for systemet. Ikke start ukjente grafiske verktøy som root som en tilfeldig løsning.
+Mange rimelige åttekanalsanalysatorer bruker Cypress FX2/FX2LP som laster **fx2lafw**-firmware ved tilkobling. Debian-pakken `sigrok-firmware-fx2lafw` leverer den for kompatibel maskinvare; andre revisjoner trenger andre drivere eller firmware. Hvis søket ikke finner enheten, kontroller USB-ID og firmwaremeldinger.
+
+Kontroller at passende **udev-regler** fra libsigrok er installert (noen distribusjoner krever ekstra oppsett). Kjør `sudo udevadm control --reload`, koble fra og til analysatoren, og kontroller sesjons-/grupperettigheter. Ikke kjør GUI som root for å omgå problemet.
+
+Eksempel på opptak fra en **identifisert, kompatibel FX2-analysator** med trygg elektrisk tilkobling:
+
+```sh
+sigrok-cli -d fx2lafw --config samplerate=1m --samples 1M -o cap.sr
+```
+
+Kommandoen lagrer en sigrok-opptaksfil. Kontroller støttede rater og tilpass til signalet. **Dette er ikke et måleresultat fra HackShack Labs.**
 
 ## Første trygge opptak
 
@@ -63,11 +75,13 @@ Ved tilgangsproblemer bør du undersøke udev- og USB-rettighetene for systemet.
 | I²C | SDA + SCL | Riktige kanaler; se START, adresse, ACK og STOP |
 | SPI | CLK, MOSI, MISO, CS | SPI-modus (CPOL/CPHA), bitrekkefølge og CS-polaritet |
 
+Ved I²C-opptak må SDA og SCL ha fungerende pull-up-motstander til riktig spenning. Uten gyldige stigeflanker fungerer ikke dekodingen pålitelig.
+
 Dekoderen kan vise noe som **ser riktig ut**, selv om innstillingene er feil. Sammenlign derfor dekodingen med rå timingdata og databladet.
 
 ## Typiske feil
 
-Manglende opptak kan skyldes driver, rettigheter, løs kontakt eller feil trigger. Uforståelig dekoding kan komme av for lav samplingsfrekvens, byttede kanaler eller feil dekoderinnstillinger. Dersom signalet alltid vises høyt eller lavt, kontroller spenning og referansejord før du fortsetter.
+Manglende opptak kan skyldes manglende **fx2lafw-firmware** på FX2-kloner, driver, udev-rettigheter, løs kontakt eller feil trigger. Enkelte rimelige analysatorer har faste logiske terskler rundt **1,4–1,6 V**, men dette varierer. **1,8 V-signaler kan ha for liten støymargin**; kontroller terskel og inngangsspenning for akkurat din modell. Uforståelig dekoding kan komme av for lav samplingsfrekvens, byttede kanaler eller feil dekoderinnstillinger. Dersom signalet alltid vises høyt eller lavt, kontroller spenning og referansejord før du fortsetter.
 
 Rimelige «8-channel 24 MHz»-modeller kan finnes i flere revisjoner og kloner med ulik støtte. Ikke anta at like produktnavn betyr lik funksjonalitet. 24 MHz i en annonse kan vise til samplingsklokken, ikke en garantert bussfrekvens eller målenøyaktighet.
 
@@ -81,3 +95,6 @@ I vår senere laboratorietest vil vi dokumentere brikketype og revisjon, firmwar
 - [Støttet maskinvare](https://sigrok.org/wiki/Supported_hardware)
 - [PulseView-dokumentasjon](https://sigrok.org/wiki/PulseView)
 - [sigrok-cli-dokumentasjon](https://sigrok.org/wiki/Sigrok-cli)
+
+- [fx2lafw-firmware og udev-oppsett](https://sigrok.org/wiki/Fx2lafw)
+- [Debian-pakken for FX2-firmware](https://packages.debian.org/stable/sigrok-firmware-fx2lafw)
