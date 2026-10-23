@@ -21,7 +21,7 @@ Most I²C connections need **SDA, SCL and a common GND**. Power is usually suppl
 
 | Signal | Purpose | Check before connecting |
 | --- | --- | --- |
-| SDA | Bidirectional serial data | Voltage domain, direction-free shared bus |
+| SDA | Bidirectional serial data | Voltage domain; shared by all devices |
 | SCL | Serial clock | Pull-ups and controller/device capabilities |
 | GND | Reference ground | A safe shared reference between compatible boards |
 | VCC | Module power, if required | Exact supply rating; **not** automatically the bus logic voltage |
@@ -32,7 +32,7 @@ Some breakout boards already include pull-ups. Others include voltage translator
 
 Because bus devices do not normally drive SDA and SCL high, the high level depends on the pull-up supply and resistor values. Too-weak pull-ups yield slow rising edges; too-strong pull-ups require devices to sink more current. Bus capacitance, cable length and speed affect the trade-off.
 
-A common hobby-board example is **4.7 kΩ** pull-ups to **3.3 V**, but this is **not a universal recommendation**. Check the controller and peripheral current ratings, actual capacitance and rise-time requirements. Multiple breakout boards may create unintended parallel pull-ups. **Never pull a 3.3 V-only device up to 5 V.** Use a suitable level translator when voltage domains differ.
+A common hobby-board example is **4.7 kΩ** pull-ups to **3.3 V**, but this is **not a universal recommendation**. For Standard-mode and Fast-mode, the I²C specification uses approximately **3 mA** as the nominal low-level sink-current design limit and maximum rise times of **1000 ns at 100 kHz** and **300 ns at 400 kHz**, respectively. These values are mode-dependent, not universal device ratings. Select resistance to meet both sink-current and bus RC rise-time limits. Check controller and peripheral ratings and actual capacitance. Many SBCs, including Raspberry Pi boards on their dedicated I²C pins, already have onboard pull-ups; multiple modules can create unintended parallel pull-ups. **Never pull a 3.3 V-only device up to 5 V.** Use a suitable level translator when voltage domains differ.
 
 ## Addresses are not always what they seem
 
@@ -50,6 +50,8 @@ sudo apt install i2c-tools
 i2cdetect -l
 ls -l /dev/i2c-*
 ```
+
+On systems where the `i2c` group grants access to `/dev/i2c-*`, adding your user to that group can avoid `sudo` for permitted operations. Sign out and back in, then verify permissions. This does not make unsafe probing safe.
 
 **A listed adapter is not proof that your external pins are wired correctly.** Identify the mapping in your board's documentation. Linux adapter numbers can change; do not hard-code `i2c-1` without verifying the platform.
 
@@ -74,6 +76,7 @@ Likewise, `i2cget` and `i2cset` are not harmless diagnostic toys: reads can have
 | Addresses appear unexpected | 7-bit versus 8-bit notation, alternative address pins or a multiplexed bus |
 | SDA stays low | A stuck peripheral, miswiring or a partially powered device |
 | Kernel driver owns the address | The OS has bound a device; avoid competing raw accesses |
+| Works on one controller but stalls on another | Clock stretching or controller-driver limitations; verify compatibility |
 
 **Start with power removed**, confirm pinouts, check idle voltage using suitable equipment, and only then power the setup. A logic analyzer can decode traffic but does not replace voltage verification with a meter or oscilloscope.
 
