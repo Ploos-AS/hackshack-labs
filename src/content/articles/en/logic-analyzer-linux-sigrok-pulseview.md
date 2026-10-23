@@ -27,7 +27,7 @@ A logic analyzer generally samples whether a signal is interpreted as *low* or *
 - **Sampling rate:** how many measurements per second each channel receives. More samples per shortest pulse improves timing resolution; the advertised maximum may depend on active channels and USB bandwidth.
 - **Capture depth:** how much data can be stored. Higher sampling rates may shorten the capture time unless buffering and streaming can keep up.
 
-For illustration, sampling at **24 MS/s** gives a nominal sample interval of about **41.7 ns**. That does **not** mean the analyzer can faithfully measure arbitrary 24 MHz signals. The sampling rate should be substantially higher than the signal transition frequency relevant to your question. Verify per-channel limits, threshold behaviour and protocol-decoder requirements.
+For illustration, sampling at **24 MS/s** gives a nominal sample interval of about **41.7 ns**. That does **not** mean the analyzer can faithfully measure arbitrary 24 MHz signals. As a **rough starting point**, sample at least **4× the bit rate or fastest event rate** you want to distinguish, and aim for **10× or more** for useful timing detail. Very short glitches need substantially higher rates; these multipliers do not guarantee detection, and an edge does not have a single frequency. Verify per-channel limits, threshold behaviour and protocol-decoder requirements.
 
 ## Install on Debian or Ubuntu
 
@@ -36,13 +36,25 @@ Install the front end and, where available, sigrok command-line tools:
 ```sh
 sudo apt update
 sudo apt install pulseview sigrok-cli
+# For compatible Cypress FX2/FX2LP analyzers on Debian:
+sudo apt install sigrok-firmware-fx2lafw
 sigrok-cli --version
 sigrok-cli --scan
 ```
 
 The available package names, device drivers, firmware-loading behaviour and permission rules vary by distribution and analyzer. A device appearing in `lsusb` does **not** guarantee compatibility with sigrok. Check the [sigrok supported-hardware list](https://sigrok.org/wiki/Supported_hardware) for the **exact hardware revision**, not just a similar-looking enclosure.
 
-If the device is not accessible, inspect USB permission and udev guidance for your distribution and hardware. Avoid launching an unfamiliar GUI as root simply to work around permissions.
+Many low-cost 8-channel analyzers use Cypress FX2/FX2LP controllers that load **fx2lafw** firmware when connected. The Debian `sigrok-firmware-fx2lafw` package supplies it for compatible devices. Other hardware needs other drivers or firmware. If scanning finds nothing, examine USB IDs and firmware messages.
+
+For access errors, check whether suitable libsigrok **udev rules** are installed (some distributions need additional setup). Reload with `sudo udevadm control --reload`, then unplug and reconnect the device; verify active-session or group access. Do not run the GUI as root as a workaround.
+
+Example capture for an **identified compatible FX2 analyzer** on a safely connected digital signal:
+
+```sh
+sigrok-cli -d fx2lafw --config samplerate=1m --samples 1M -o cap.sr
+```
+
+This example saves a sigrok capture file; check your device's supported rates and adjust the rate to the signal. **No HackShack Labs measurement is claimed.**
 
 ## A safe first capture
 
@@ -63,11 +75,13 @@ If the device is not accessible, inspect USB permission and udev guidance for yo
 | I²C | SDA + SCL | Assign the correct channels; inspect START, address, ACK and STOP |
 | SPI | CLK, MOSI, MISO, CS | SPI mode (CPOL/CPHA), bit order, CS polarity |
 
+For I²C captures, SDA and SCL need working pull-ups to the correct logic supply; without valid rising edges the analyzer cannot decode reliably.
+
 Decoders can produce plausible but **wrong** output when configured incorrectly. Cross-check against documentation and the underlying timing trace.
 
 ## What can go wrong?
 
-A missing capture can be caused by the wrong USB driver, inadequate permissions, a defective connection or an incorrect trigger. A nonsensical decode may mean sampling too slowly, swapped channels or wrong protocol settings. If the captured signal looks permanently high or low, stop and check voltage levels and reference ground before trying more aggressive settings.
+A missing capture can be caused by missing **fx2lafw firmware** on an FX2 clone, the wrong USB driver, inadequate permissions, a defective connection or an incorrect trigger. Some budget analyzers have fixed logic thresholds around **1.4–1.6 V**, but thresholds vary by model. **1.8 V signals may have insufficient noise margin**; verify the actual input threshold and voltage rating. A nonsensical decode may mean sampling too slowly, swapped channels or wrong protocol settings. If the captured signal looks permanently high or low, stop and check voltage levels and reference ground before trying more aggressive settings.
 
 Some low-cost “8-channel 24 MHz” devices are clones or revisions with differing capabilities. Do not infer identical support from a listing title. The advertised 24 MHz may describe a capture clock, not a guaranteed bus frequency or measurement accuracy.
 
@@ -81,3 +95,6 @@ Our forthcoming hands-on report will record the analyzer chipset and revision, f
 - [sigrok supported hardware](https://sigrok.org/wiki/Supported_hardware)
 - [PulseView documentation](https://sigrok.org/wiki/PulseView)
 - [sigrok-cli documentation](https://sigrok.org/wiki/Sigrok-cli)
+
+- [fx2lafw firmware and udev setup](https://sigrok.org/wiki/Fx2lafw)
+- [Debian FX2 firmware package](https://packages.debian.org/stable/sigrok-firmware-fx2lafw)
