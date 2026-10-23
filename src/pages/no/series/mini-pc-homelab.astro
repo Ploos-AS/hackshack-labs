@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { published, articleUrl, evidenceLabel } from '../../../lib/articles';
+const order=["why-mini-pcs-make-excellent-homelab-servers","used-mini-pc-price-trap","best-mini-pcs-local-ai-2026","mini-pc-external-gpu-guide","mini-pc-egpu-compatibility-matrix"];
+const all=(await published()).filter(a=>a.data.lang==='nb');
+const entries=order.map(slug=>all.find(a=>a.id.split('/').at(-1)===slug)).filter(Boolean);
+---
+<SiteLayout title="Mini-PC og hjemmelab" lang="nb" alternateUrl="/series/mini-pc-homelab/" description="Temaguider og sammenligninger med tydelig evidensstatus.">
+<p class="tag">SERIE / GUIDER</p><h1>Mini-PC og hjemmelab</h1>
+<p>Anbefalt leserekkefølge. Les artiklenes evidensstatus og sjekk daterte opplysninger før kjøp.</p><ol>{entries.map(a=><li><a href={articleUrl(a.id,'nb')}>{a.data.title}</a> <span class="muted">· {evidenceLabel(a.data,'nb')}</span><p>{a.data.description}</p></li>)}</ol>
+<p class="muted">Datoer, priser og funksjoner kan endre seg.</p>
+</SiteLayout>
