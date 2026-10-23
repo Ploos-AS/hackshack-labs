@@ -2,7 +2,20 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import { published, articleUrl, categoryLabelsNo, evidenceLabel } from '../../lib/articles';
 const articles=(await published()).filter(a=>a.data.lang==='nb');
-const recent=articles;
+const recent=articles.slice(0,8);
 const sections=[...new Set(articles.map(a=>a.data.category))];
 ---
-<SiteLayout title="Uavhengige teknologiguider og undersøkelser" lang="nb" alternateUrl="/"><section class="hero"><p class="tag">root@hackshack:~$ ls projects/</p><h1>Utforsk. Bygg. Hack.</h1><p>Uavhengige dokumentasjonsbaserte guider og tekniske undersøkelser. Praktiske maskinvaretester er planlagt og vil merkes tydelig når de er gjennomført.</p><p class="muted">Aktuelle temaer: OpenWrt, MikroWrt, PocketBox, personvern og amatørradio / SDR.</p><p><a href="/no/series/ham-radio-sdr/">Utforsk amatørradio og SDR →</a></p></section><h2 id="topics">Utforsk laboratoriet</h2><div class="grid">{sections.map(s => <article class="card"><span class="tag">[ {categoryLabelsNo[s].toUpperCase()} ]</span><h3><a href={`/no/category/${s}/`}>{categoryLabelsNo[s]}</a></h3><p class="muted">{articles.filter(a=>a.data.category===s).length} publiserte artikler i kategorien.</p></article>)}</div><h2>Siste artikler</h2><div class="grid">{recent.map(a=><article class="card"><p class="tag">{a.data.date.toLocaleDateString("nb-NO",{day:"numeric",month:"short",year:"numeric"})} · {categoryLabelsNo[a.data.category]} · {evidenceLabel(a.data, "nb")}</p><h3><a href={articleUrl(a.id,'nb')}>{a.data.title}</a></h3><p class="muted">{a.data.description}</p></article>)}</div></SiteLayout>
+<SiteLayout title="Uavhengige teknologiguider og undersøkelser" lang="nb" alternateUrl="/" description="Uavhengige guider om Linux, elektronikk, mini-PC-er og personvern, med tydelig merket dokumentasjon og laboratoriegrunnlag.">
+<section class="hero"><p class="tag">root@hackshack:~$ ls articles/</p><h1>Utforsk. Bygg. Hack.</h1><p>Uavhengige guider om Linux, elektronikk, mini-PC-er, nettverk og digitalt personvern. Vi skiller dokumenterte undersøkelser fra eksperimenter som faktisk er utført på maskinvare.</p><p><a href="/no/category/guides/">Begynn med guidene våre →</a></p></section>
+<h2>Start her</h2><div class="grid">
+<article class="card"><h3><a href="/no/category/guides/">Praktiske guider</a></h3><p class="muted">Kobling, feilsøking, Linux-verktøy og trygg oppstart.</p></article>
+<article class="card"><h3><a href="/no/series/offline-networking/">Frakoblet nettverk</a></h3><p class="muted">Rutere, lokale nettverk og pågående arbeid, tydelig merket som planlagt.</p></article>
+<article class="card"><h3><a href="/no/about/">Slik vurderer vi dokumentasjonen</a></h3><p class="muted">Hva vi har undersøkt, og hva vi faktisk har testet.</p></article></div>
+<h2>Hva evidensmerkingen betyr</h2><div class="grid">
+<article class="card"><h3>Dokumentasjonsbasert</h3><p class="muted">Teknisk dokumentasjon, uten påstand om fysisk test.</p></article>
+<article class="card"><h3>Skrivebordsundersøkelse</h3><p class="muted">Analyse av spesifikasjoner, publikasjoner og andre kilder.</p></article>
+<article class="card"><h3>Laboratorietestet</h3><p class="muted">Et dokumentert eksperiment med metode og begrensninger.</p></article>
+<article class="card"><h3>Maskinvareverifisert</h3><p class="muted">En konkret påstand kontrollert på identifisert fysisk utstyr.</p></article></div><p><a href="/no/about/">Les vår redaksjonelle policy →</a></p>
+<h2 id="topics">Utforsk laboratoriet</h2><div class="grid">{sections.map(s => <article class="card"><span class="tag">[ {categoryLabelsNo[s].toUpperCase()} ]</span><h3><a href={`/no/category/${s}/`}>{categoryLabelsNo[s]}</a></h3><p class="muted">{articles.filter(a=>a.data.category===s).length} publiserte artikler.</p></article>)}</div>
+<h2>Siste artikler</h2><div class="grid">{recent.map(a=><article class="card"><p class="tag">{a.data.date.toLocaleDateString("nb-NO",{day:"numeric",month:"short",year:"numeric"})} · {categoryLabelsNo[a.data.category]} · {evidenceLabel(a.data, "nb")}</p><h3><a href={articleUrl(a.id,'nb')}>{a.data.title}</a></h3><p class="muted">{a.data.description}</p></article>)}</div><p><a href="/no/search/">Se og søk i alle artiklene →</a></p>
+</SiteLayout>
