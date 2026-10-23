@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "qa:editorial": "node scripts/editorial-qa.mjs"
+    "qa:editorial": "node scripts/editorial-qa.mjs",
+    "qa:freshness": "node scripts/qa-freshness.mjs"
   },
   "dependencies": {
     "astro": "^5.0.0",
