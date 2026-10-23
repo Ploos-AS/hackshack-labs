@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { published, articleUrl, evidenceLabel } from '../../../lib/articles';
+const order=["proton-ecosystem-overview","tuta-vs-proton-2026","proton-mail-vs-self-hosted-email","proton-drive-docs-vs-nextcloud","password-managers-proton-bitwarden-vaultwarden-keepassxc-2026","proton-vpn-linux-docker-gluetun"];
+const all=(await published()).filter(a=>a.data.lang==='nb');
+const entries=order.map(slug=>all.find(a=>a.id.split('/').at(-1)===slug)).filter(Boolean);
+---
+<SiteLayout title="Personverntjenester og digital uavhengighet" lang="nb" alternateUrl="/series/privacy-services/" description="Temaguider og sammenligninger med tydelig evidensstatus.">
+<p class="tag">SERIE / GUIDER</p><h1>Personverntjenester og digital uavhengighet</h1>
+<p>Anbefalt leserekkefølge. Les artiklenes evidensstatus og sjekk daterte opplysninger før kjøp.</p><ol>{entries.map(a=><li><a href={articleUrl(a.id,'nb')}>{a.data.title}</a> <span class="muted">· {evidenceLabel(a.data,'nb')}</span><p>{a.data.description}</p></li>)}</ol>
+<p class="muted">Datoer, priser og funksjoner kan endre seg.</p>
+</SiteLayout>
