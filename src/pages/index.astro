@@ -2,7 +2,20 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { published, articleUrl, categoryLabels, evidenceLabel } from '../lib/articles';
 const articles=(await published()).filter(a=>a.data.lang==='en');
-const recent=articles;
-const sections = [...new Set(articles.map(a=>a.data.category))];
+const recent=articles.slice(0,8);
+const sections=[...new Set(articles.map(a=>a.data.category))];
 ---
-<SiteLayout title="Independent Technology Guides & Research" alternateUrl="/no/"><section class="hero"><p class="tag">root@hackshack:~$ ls projects/</p><h1>Explore. Build. Hack.</h1><p>Independent documentation-based guides and technical research. Hands-on hardware tests are planned and will be clearly identified when completed.</p><p class="muted">Current labs: OpenWrt, MikroWrt, PocketBox, privacy and ham radio / SDR.</p><p><a href="/series/ham-radio-sdr/">Explore Ham Radio &amp; SDR →</a></p></section><h2 id="topics">Explore the lab</h2><div class="grid">{sections.map(s => <article class="card"><span class="tag">[ {categoryLabels[s].toUpperCase()} ]</span><h3><a href={`/category/${s}/`}>{categoryLabels[s]}</a></h3><p class="muted">{articles.filter(a=>a.data.category===s).length} published article(s) in this category.</p></article>)}</div><h2>Latest articles</h2><div class="grid">{recent.map(a=><article class="card"><p class="tag">{a.data.date.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})} · {categoryLabels[a.data.category]} · {evidenceLabel(a.data, "en")}</p><h3><a href={articleUrl(a.id,'en')}>{a.data.title}</a></h3><p class="muted">{a.data.description}</p></article>)}</div></SiteLayout>
+<SiteLayout title="Independent Technology Guides & Research" alternateUrl="/no/" description="Independent Linux, electronics, mini-PC and privacy guides, with clearly labelled research and laboratory evidence.">
+<section class="hero"><p class="tag">root@hackshack:~$ ls articles/</p><h1>Explore. Build. Hack.</h1><p>Independent guides to Linux, electronics, mini PCs, networking and digital privacy. We separate documented research from experiments performed on real hardware.</p><p><a href="/category/guides/">Start with our guides →</a></p></section>
+<h2>Start here</h2><div class="grid">
+<article class="card"><h3><a href="/category/guides/">Practical guides</a></h3><p class="muted">Wiring, diagnostics, Linux workflows and safer first steps.</p></article>
+<article class="card"><h3><a href="/series/offline-networking/">Offline networking</a></h3><p class="muted">Routers, local networks and work in progress, with planned work clearly labelled.</p></article>
+<article class="card"><h3><a href="/about/">How we evaluate evidence</a></h3><p class="muted">What we have documented—and what we have actually tested.</p></article></div>
+<h2>What our evidence labels mean</h2><div class="grid">
+<article class="card"><h3>Documentation-based</h3><p class="muted">Technical documentation, without a claimed hands-on test.</p></article>
+<article class="card"><h3>Desk research</h3><p class="muted">Analysis of specifications, publications and other sources.</p></article>
+<article class="card"><h3>Lab-tested</h3><p class="muted">A recorded experiment with a method and limitations.</p></article>
+<article class="card"><h3>Hardware verified</h3><p class="muted">A specified claim checked on identified physical hardware.</p></article></div><p><a href="/about/">Read our editorial policy →</a></p>
+<h2 id="topics">Explore the lab</h2><div class="grid">{sections.map(s => <article class="card"><span class="tag">[ {categoryLabels[s].toUpperCase()} ]</span><h3><a href={`/category/${s}/`}>{categoryLabels[s]}</a></h3><p class="muted">{articles.filter(a=>a.data.category===s).length} published article(s).</p></article>)}</div>
+<h2>Latest articles</h2><div class="grid">{recent.map(a=><article class="card"><p class="tag">{a.data.date.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})} · {categoryLabels[a.data.category]} · {evidenceLabel(a.data, "en")}</p><h3><a href={articleUrl(a.id,'en')}>{a.data.title}</a></h3><p class="muted">{a.data.description}</p></article>)}</div><p><a href="/search/">Browse and search all articles →</a></p>
+</SiteLayout>
