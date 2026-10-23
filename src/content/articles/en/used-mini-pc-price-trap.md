@@ -14,6 +14,10 @@ evidence: desk-research
 
 > **Editorial status — 14 October 2026:** Desk research, not a hardware benchmark. The prices below are visible listing prices, including some sold listings whose final accepted prices are not necessarily known, verified Norwegian delivery quotes or evidence of a market-wide average. Listings change or disappear. No affiliate links are used.
 
+## Quick answer
+
+**A used mini PC is only a bargain when its total delivered and upgraded cost is justified by its actual role.** Add shipping, VAT or import charges where applicable, missing RAM/storage, replacement parts and expected energy use. An older Mac mini or NUC can still be ideal for retro software or a specific operating system, but do not assume it beats a newer, quieter and more efficient machine for a general homelab. The listing examples below are dated observations, **not live prices**.
+
 ## A used computer is not automatically a bargain
 
 There is something appealing about an old Intel NUC or Mac mini. The footprint is small, the hardware is often well built, and a second life as a Linux server, retro workstation or operating-system test machine is more interesting than a trip to recycling.
