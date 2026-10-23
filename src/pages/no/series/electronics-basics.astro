@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { published, articleUrl } from '../../../lib/articles';
+const order=['digital-multimeter-electronics-linux','usb-uart-ttl-rs232-rs485','i2c-linux-wiring-pullups','spi-flash-linux-flashrom','logic-analyzer-linux-sigrok-pulseview'];
+const all=(await published()).filter(a=>a.data.lang==='nb');
+const entries=order.map(id=>all.find(a=>a.id.split('/').at(-1)===id)).filter(Boolean);
+---
+<SiteLayout title="Elektronikk for nybegynnere" lang="nb" alternateUrl="/series/electronics-basics/" description="Begynn med multimeteret og lær UART, I²C, SPI-flash og logikkanalysator på Linux i en anbefalt leserekkefølge.">
+<p class="tag">SERIE / ELEKTRONIKK</p><h1>Elektronikk for nybegynnere</h1>
+<p>Fem dokumentasjonsbaserte guider i anbefalt rekkefølge for tryggere eksperimenter med innebygde systemer og Linux. Les sikkerhetsadvarslene før du kobler til maskinvare. Serien påstår ikke at egne laboratoriemålinger er gjennomført.</p>
+<ol>{entries.map(a=><li><a href={articleUrl(a.id,'nb')}>{a.data.title}</a><p class="muted">{a.data.description}</p></li>)}</ol>
+<h2>Neste laboratorietest</h2><p>Vi planlegger å dokumentere et kjent UART-referansesignal med en rimelig USB-logikkanalysator, inkludert maskinvarerevisjon, spenninger, firmware, kommandoer og begrensninger. Først når forsøket er gjennomført, merkes rapporten «Laboratorietestet».</p>
+</SiteLayout>
