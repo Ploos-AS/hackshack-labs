@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { published, articleUrl, evidenceLabel } from '../../lib/articles';
+const order=["why-mini-pcs-make-excellent-homelab-servers","used-mini-pc-price-trap","best-mini-pcs-local-ai-2026","mini-pc-external-gpu-guide","mini-pc-egpu-compatibility-matrix"];
+const all=(await published()).filter(a=>a.data.lang==='en');
+const entries=order.map(slug=>all.find(a=>a.id.split('/').at(-1)===slug)).filter(Boolean);
+---
+<SiteLayout title="Mini PCs & Homelab" lang="en" alternateUrl="/no/series/mini-pc-homelab/" description="A curated reading path with clear evidence labels and source-based comparisons.">
+<p class="tag">SERIES / GUIDES</p><h1>Mini PCs & Homelab</h1>
+<p>Suggested reading order. Check each article's evidence level and recheck time-sensitive details before purchasing.</p><ol>{entries.map(a=><li><a href={articleUrl(a.id,'en')}>{a.data.title}</a> <span class="muted">· {evidenceLabel(a.data,'en')}</span><p>{a.data.description}</p></li>)}</ol>
+<p class="muted">Prices, availability and platform features may change.</p>
+</SiteLayout>
