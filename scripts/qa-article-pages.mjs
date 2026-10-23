@@ -79,6 +79,17 @@ for (const file of files) {
   if (html.includes(no ? 'Relaterte artikler' : 'Related articles')) counts.related++;
   if (/<pre[^>]*>/.test(html)) counts.code++;
 }
+// Every published English article must have its Norwegian counterpart, and vice versa.
+const routeSlugs = language => new Set(files.filter(f => language === 'nb' ? /[/\\\\]no[/\\\\]articles[/\\\\]/.test(f) : !/[/\\\\]no[/\\\\]articles[/\\\\]/.test(f)).map(f => f.replace(/\\\\/g, '/').split('/').at(-2)));
+const enSlugs = routeSlugs('en');
+const nbSlugs = routeSlugs('nb');
+assert.deepEqual([...enSlugs].sort(), [...nbSlugs].sort(), 'EN/NO published article slugs differ');
+for (const [file, prefix, other] of [['dist/index.html', '', '/no'], ['dist/no/index.html', '/no', '']]) {
+  const html = await readFile(file, 'utf8');
+  const ownLinks = [...html.matchAll(new RegExp('href="(' + prefix + '/articles/[^"]+)"', 'g'))].map(m => m[1]);
+  assert(ownLinks.length <= 8, file + ': more than 8 recent articles shown');
+  assert(html.includes('href="' + (other || '/') + '"') || html.includes('hreflang='), file + ': language alternate missing');
+}
 assert(counts.en > 0 && counts.nb > 0, 'Expected article pages in both languages');
 assert(counts.changes > 0, 'No changelog rendered');
 assert(counts.related > 0, 'No related-article section rendered');
