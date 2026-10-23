@@ -11,7 +11,7 @@ tested: false
 evidence: documentation
 ---
 
-I²C er en synkron tobussforbindelse som ofte brukes mellom kontrollere, sensorer, sanntidsklokker, EEPROM og strømstyringskretser. Den ser enkel ut – **SDA** for data og **SCL** for klokke – men feil spenningsnivå eller kobling kan skade utstyret.
+I²C er en synkron to-leders buss som ofte brukes mellom kontrollere, sensorer, sanntidsklokker, EEPROM og strømstyringskretser. Den ser enkel ut – **SDA** for data og **SCL** for klokke – men feil spenningsnivå eller kobling kan skade utstyret.
 
 *Redaksjonell merknad: Dette er en dokumentasjonsbasert guide. HackShack Labs har ennå ikke utført egne målinger på eksempelhåndvaren.*
 
@@ -32,7 +32,7 @@ Noen breakout-kort har pull-up-motstander fra før. Andre har spenningsomformere
 
 Enhetene driver normalt ikke SDA og SCL aktivt høyt. Motstandene og forsyningsspenningen bestemmer derfor høynivået. For høye motstandsverdier kan gi langsomme flanker; for lave verdier kan kreve for stor strøm når en enhet trekker signalet lavt. Ledningslengde, kapasitans og bussfrekvens spiller inn.
 
-**4,7 kΩ mot 3,3 V** er et vanlig eksempel på hobbykort, men ikke en universell verdi. Kontroller spesifikasjonen til alle enhetene. Flere moduler kan ha pull-up-motstander i parallell. **Ikke trekk en 3,3 V-enhet opp til 5 V.** Bruk egnet nivåomformer dersom spenningsdomenene er forskjellige.
+**4,7 kΩ mot 3,3 V** er et vanlig eksempel på hobbykort, men ikke en universell verdi. For standard- og hurtigmodus bruker spesifikasjonen omtrent **3 mA** som dimensjonerende grense når linjen trekkes lav, med maksimal stigetid på **1000 ns ved 100 kHz** og **300 ns ved 400 kHz**. Grensene avhenger av modus og enhet. Velg motstanden slik at både synkestrøm og RC-stigetid er innenfor kravene. Kontroller spesifikasjonene til alle enhetene. Mange enkortsmaskiner, blant annet Raspberry Pi på egne I²C-pinner, har allerede pull-up-motstander. Flere moduler kan dermed gi uønskede parallellkoblinger. **Ikke trekk en 3,3 V-enhet opp til 5 V.** Bruk egnet nivåomformer dersom spenningsdomenene er forskjellige.
 
 ## 7-bit- og 8-bit-adresser
 
@@ -50,6 +50,8 @@ sudo apt install i2c-tools
 i2cdetect -l
 ls -l /dev/i2c-*
 ```
+
+På systemer der gruppen `i2c` gir tilgang til `/dev/i2c-*`, kan gruppemedlemskap erstatte `sudo` for tillatte operasjoner. Logg ut og inn og kontroller rettighetene. Det gjør ikke uforsvarlig probing trygg.
 
 At en adapter finnes, betyr **ikke** at pinnene på tilkoblingen din er riktig identifisert. Bruk kortets dokumentasjon. Adapterens nummer kan også endre seg; ikke anta at riktig buss alltid er `i2c-1`.
 
@@ -74,6 +76,7 @@ Også `i2cget` og `i2cset` kan ha bivirkninger: lesing kan endre status, og skri
 | Overraskende adresser | 7-bit versus 8-bit, adressestropper eller multiplekser |
 | SDA står lavt | Enhet henger, feil kobling eller delvis spenningssatt krets |
 | Adressen brukes av driver | Kjernen eier enheten; unngå konkurrerende råtilgang |
+| Fungerer på én kontroller, men stopper på en annen | Clock stretching eller begrensninger i kontroller/driver |
 
 **Begynn med avslått strøm**, kontroller pinout, mål tomgangsspenning med egnet instrument og slå først deretter på oppsettet. En logikkanalysator kan dekode trafikk, men erstatter ikke voltmåling eller oscilloskop.
 
