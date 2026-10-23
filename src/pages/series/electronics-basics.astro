@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { published, articleUrl } from '../../lib/articles';
+const order=['digital-multimeter-electronics-linux','usb-uart-ttl-rs232-rs485','i2c-linux-wiring-pullups','spi-flash-linux-flashrom','logic-analyzer-linux-sigrok-pulseview'];
+const all=(await published()).filter(a=>a.data.lang==='en');
+const entries=order.map(id=>all.find(a=>a.id.split('/').at(-1)===id)).filter(Boolean);
+---
+<SiteLayout title="Electronics Fundamentals" alternateUrl="/no/series/electronics-basics/" description="Start with a multimeter, then learn UART, I²C, SPI flash and Linux logic analyzers in a practical reading sequence.">
+<p class="tag">SERIES / ELECTRONICS</p><h1>Electronics Fundamentals</h1>
+<p>Five documentation-based guides, in a suggested order, for safer experiments with embedded systems and Linux. Read the electrical-safety notes before connecting hardware. This series does not claim hands-on results.</p>
+<ol>{entries.map(a=><li><a href={articleUrl(a.id,'en')}>{a.data.title}</a><p class="muted">{a.data.description}</p></li>)}</ol>
+<h2>Next lab step</h2><p>We plan to document a reference UART capture with a budget USB logic analyzer, recording hardware revisions, voltages, firmware, command lines and limitations. The hands-on report will only be labelled Lab-tested after it is performed.</p>
+</SiteLayout>
