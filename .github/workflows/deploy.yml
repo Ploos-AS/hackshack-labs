@@ -20,6 +20,7 @@ jobs:
           node-version: '22'
       - run: npm install --no-audit --no-fund
       - run: npm run qa:editorial
+      - run: npm run qa:freshness
       - run: node scripts/qa-code-copy.mjs
       - run: npm run build
       - run: node scripts/qa-article-pages.mjs
