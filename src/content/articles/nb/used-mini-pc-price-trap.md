@@ -14,6 +14,10 @@ evidence: desk-research
 
 > **Redaksjonell status – 14. oktober 2026:** Dette er en dokumentasjonsbasert prisundersøkelse, ikke en maskinvaretest. Prisene er eksempler fra konkrete eBay-annonser, ikke en representativ markedsstatistikk eller bekreftede totalpriser levert til Norge. Enkelte annonser er avsluttet som solgt, men endelig avtalt pris kan være ukjent. Ingen affiliatelenker.
 
+## Kort svar
+
+**En brukt mini-PC er først et kupp når totalprisen står i forhold til oppgaven den skal løse.** Regn med frakt, eventuell merverdiavgift/importkostnader, manglende RAM og lagring, reservedeler og forventet strømforbruk. En eldre Mac mini eller NUC kan være svært nyttig til retroprogramvare eller et bestemt operativsystem, men er ikke nødvendigvis bedre enn en nyere og mer energieffektiv maskin til vanlig hjemmelab. Priseksemplene nedenfor er **daterte observasjoner, ikke dagspriser**.
+
 ## En brukt datamaskin er ikke automatisk et godt kjøp
 
 En gammel Intel NUC eller Mac mini kan være en utmerket Linux-server, retrodatamaskin eller testmaskin for alternative operativsystemer. Den tar liten plass og kan få mange nye leveår.
