@@ -1,11 +1,11 @@
 ---
 title: "GL.iNet Mango: A Tiny Router Made for Tinkering"
 description: "Why the tiny GL-MT300N-V2 is an inviting OpenWrt, Wi-Fi and Linux lab—and where its limitations begin."
-category: reference
+category: guides
 lang: en
 date: 2026-10-14
 tags: [gl-inet, mango, openwrt, routers, linux, networking, maker]
-series: "Pocket Networking Lab"
+series: offline-networking
 translationKey: glinet-mango-tinkering
 draft: false
 tested: false
@@ -15,6 +15,10 @@ evidence: documentation
 > **Advertisement — affiliate link:** This article includes a clearly marked affiliate link to the GL.iNet Mango. Ploos AS may receive a commission from qualifying purchases, at no additional cost to you. It does not affect our editorial conclusions.
 
 > **Editorial status (14 October 2026):** This is a documentation-based first look, not a hands-on review. We have not yet flashed or benchmarked the GL-MT300N-V2 for this article. Prices and firmware support can change.
+
+## Quick answer
+
+**The GL.iNet Mango (GL-MT300N-V2) is a useful small router for learning about Wi-Fi access points, OpenWrt and isolated networks, provided its limited hardware fits the task.** This is a documentation-based assessment—not evidence that we have flashed, benchmarked or tested PocketBox on this unit. Our [Offline Networking series](/series/offline-networking/) separates published research from planned experiments with Mango and the older TL-WR703N.
 
 ## The most fun router might be the one you are not afraid to break
 
