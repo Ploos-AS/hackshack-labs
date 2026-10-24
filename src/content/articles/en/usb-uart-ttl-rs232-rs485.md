@@ -5,6 +5,7 @@ category: guides
 lang: en
 date: 2026-10-20
 tags: [uart, ttl, rs232, rs485, linux, electronics]
+series: "Electronics Fundamentals"
 translationKey: usb-uart-ttl-rs232-rs485
 draft: false
 tested: false
@@ -68,6 +69,9 @@ Long RS-485 buses may need **120 Ω termination at each physical end of the cabl
 ## What about our budget adapters?
 
 HackShack Labs has ordered FT232RL, CH340N and CH343G logic-level UART adapters, plus a separate CH343G RS-232/RS-485 converter. **None has been independently tested by us yet.** We will measure their actual levels and Linux behavior before recommending them for sensitive hardware.
+
+
+**Continue learning:** Follow the [Electronics Fundamentals reading path](/series/electronics-basics/) for the complete sequence from multimeter basics through UART, I²C, SPI flash and logic analysis. Each guide distinguishes documentation from actual lab measurements.
 
 ## Further reading
 
