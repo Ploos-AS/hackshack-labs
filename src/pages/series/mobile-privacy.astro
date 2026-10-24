@@ -1,11 +1,11 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
-import { published, articleUrl } from '../../lib/articles';
+import { published, articleUrl, evidenceLabel } from '../../lib/articles';
 const lang = 'en';
-const entries = (await published()).filter(a => a.data.lang === lang && a.data.tags.some(t => ['google-pixel','grapheneos'].includes(t)));
+const entries = (await published()).filter(a => a.data.lang === lang && a.data.tags.some(t => ['google-pixel','grapheneos','molly'].includes(t)));
 const planned = ["Installing GrapheneOS on a Pixel","GrapheneOS user profiles","App installation and updates across profiles","Sandboxed Google Play","Living with GrapheneOS in Norway","Backups, migration and recovery","Minimal, balanced and high-isolation profile setups"];
 ---
-<SiteLayout title="Mobile Privacy" lang="en" alternateUrl="/no/series/mobile-privacy/">
+<SiteLayout title="Mobile Privacy" lang="en" alternateUrl="/no/series/mobile-privacy/" description="GrapheneOS, Pixel, Molly and sandboxed Google Play guides with clearly labelled evidence.">
   <p class="tag">SERIES / PRIVACY</p>
   <h1>Mobile Privacy: Pixel and GrapheneOS</h1>
   <p>An evidence-led guide to Google's stock Android, GrapheneOS, app isolation and the costs of switching. Published articles are not necessarily hands-on tested; check each article's editorial status.</p>
