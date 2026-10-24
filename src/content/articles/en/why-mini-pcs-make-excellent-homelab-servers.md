@@ -16,6 +16,10 @@ evidence: documentation
 
 You do not need a rack full of servers to build a serious homelab. For many people, one quiet mini PC is a better starting point: small enough to sit on a shelf, capable of running mainstream Linux, and powerful enough for multiple useful services. The important question is not whether it looks like a server. It is whether it meets your workload, expansion and reliability needs.
 
+## Quick answer
+
+**Start with one mini PC if your workloads fit its memory, storage and network limits.** It is usually a sensible way to learn Linux, containers and self-hosting without buying rack equipment. Before using it for essential household services, plan backups, updates, remote recovery and power-loss behaviour. Do not assume that a low advertised TDP predicts measured wall-power consumption.
+
 ## What is a homelab?
 
 A homelab is an environment you control for learning, experimentation or running your own services. It might host DNS filtering, a VPN, Home Assistant, a password manager, a development environment, a media library or backups. Some homelabs are purely educational; others become household infrastructure. The latter need more deliberate security, monitoring and recovery planning.
