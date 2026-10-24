@@ -5,6 +5,7 @@ category: guides
 lang: en
 date: 2026-10-23
 tags: [i2c, linux, electronics, embedded, sensors]
+series: "Electronics Fundamentals"
 translationKey: i2c-linux-wiring-pullups
 draft: false
 tested: false
@@ -83,6 +84,9 @@ Likewise, `i2cget` and `i2cset` are not harmless diagnostic toys: reads can have
 ## What HackShack Labs will test later
 
 Our planned follow-up will document breakout-board pull-up values, actual bus voltages, Linux kernel visibility and captures at several clock rates. Until those measurements are complete, this article is a wiring and workflow reference—not a review of specific adapters.
+
+
+**Continue learning:** Follow the [Electronics Fundamentals reading path](/series/electronics-basics/) for the complete sequence from multimeter basics through UART, I²C, SPI flash and logic analysis. Each guide distinguishes documentation from actual lab measurements.
 
 ## References
 
