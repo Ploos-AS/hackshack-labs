@@ -52,6 +52,8 @@ Check the [flashrom programmer documentation](https://www.flashrom.org/) for you
 
 ```sh
 sudo flashrom -p ch341a_spi
+# Bash: fail the pipeline if flashrom fails, even when tee succeeds
+set -o pipefail
 sudo flashrom -V -p ch341a_spi -r backup-1.bin 2>&1 | tee flashrom-read-1.log
 sudo flashrom -p ch341a_spi -r backup-2.bin
 sha256sum backup-1.bin backup-2.bin
