@@ -1,11 +1,11 @@
 ---
 title: "GL.iNet Mango: En liten ruter å eksperimentere med"
 description: "Hvorfor GL-MT300N-V2 kan være en glimrende inngang til OpenWrt, Linux og nettverkseksperimenter – og hvor begrensningene går."
-category: reference
+category: guides
 lang: nb
 date: 2026-10-14
 tags: [gl-inet, mango, openwrt, ruter, linux, nettverk, maker]
-series: "Pocket Networking Lab"
+series: offline-networking
 translationKey: glinet-mango-tinkering
 draft: false
 tested: false
@@ -15,6 +15,10 @@ evidence: documentation
 > **Reklame – annonselenke:** Artikkelen inneholder en tydelig merket annonselenke til GL.iNet Mango. Ploos AS kan motta provisjon ved kvalifiserte kjøp, uten ekstra kostnad for deg. Det påvirker ikke våre redaksjonelle vurderinger.
 
 > **Redaksjonell merknad (14. oktober 2026):** Dette er en dokumentbasert forhåndsomtale, ikke en praktisk test. Vi har ennå ikke installert firmware eller målt ytelsen på GL-MT300N-V2 i forbindelse med artikkelen. Priser og firmwarestøtte kan endre seg.
+
+## Kort svar
+
+**GL.iNet Mango (GL-MT300N-V2) er en interessant liten ruter for å lære om Wi-Fi-aksesspunkter, OpenWrt og isolerte nettverk, så lenge maskinvarens begrensninger passer oppgaven.** Dette er en dokumentasjonsbasert vurdering – ikke dokumentasjon på at vi har installert ny fastvare, ytelsestestet ruteren eller kjørt PocketBox på den. [Serien om frakoblet nettverk](/no/series/offline-networking/) skiller publiserte undersøkelser fra planlagte eksperimenter med Mango og den eldre TL-WR703N.
 
 ## Den morsomste ruteren er kanskje den du tør å eksperimentere med
 
