@@ -79,7 +79,7 @@ Også `i2cget` og `i2cset` kan ha bivirkninger: lesing kan endre status, og skri
 | Adressen brukes av driver | Kjernen eier enheten; unngå konkurrerende råtilgang |
 | Fungerer på én kontroller, men stopper på en annen | Clock stretching eller begrensninger i kontroller/driver |
 
-**Begynn med avslått strøm**, kontroller pinout, mål tomgangsspenning med egnet instrument og slå først deretter på oppsettet. En logikkanalysator kan dekode trafikk, men erstatter ikke voltmåling eller oscilloskop.
+**Koble og kontroller ledningene med strømmen avslått.** Bekreft pinnekobling og planlagt pull-up-spenning før du slår på. Slå deretter på oppsettet på vanlig måte og mål hvilespenningen på SDA/SCL mot GND med et egnet multimeter. Stopp hvis spenningen ligger utenfor enhetenes tillatte logikkområde. Først da bør du vurdere en dokumentert og trygg busstransaksjon. En logikkanalysator kan dekode trafikk, men erstatter ikke spenningskontroll med multimeter eller oscilloskop.
 
 ## Hva vi vil teste senere
 
