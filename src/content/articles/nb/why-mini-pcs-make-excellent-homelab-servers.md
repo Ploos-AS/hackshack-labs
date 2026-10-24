@@ -16,6 +16,10 @@ evidence: documentation
 
 Du trenger ikke et helt serverrack for å bygge et seriøst homelab. For mange er én stillegående mini-PC et bedre utgangspunkt: Den tar liten plass, kan kjøre vanlig Linux og har ofte kapasitet til flere nyttige tjenester. Det avgjørende er ikke om maskinen ser ut som en server, men om den dekker behovene for ytelse, utvidelse og driftssikkerhet.
 
+## Kort svar
+
+**Begynn gjerne med én mini-PC dersom minne, lagring og nettverk er tilstrekkelig for oppgavene.** Det er ofte en god måte å lære Linux, containere og egenhosting uten å kjøpe rackutstyr. Skal maskinen kjøre viktige tjenester hjemme, trenger du en plan for sikkerhetskopi, oppdateringer, gjenoppretting og strømbrudd. Ikke tolk oppgitt TDP som målt strømforbruk fra stikkontakten.
+
 ## Hva er et homelab?
 
 Et homelab er et miljø du selv kontrollerer, for læring, eksperimentering eller drift av egne tjenester. Det kan kjøre DNS-filtrering, VPN, Home Assistant, passordbehandler, utviklingsmiljø, mediebibliotek eller sikkerhetskopiering. Når tjenestene blir viktige for husstanden, øker også kravene til sikkerhet, overvåking og gjenoppretting.
