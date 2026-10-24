@@ -31,6 +31,10 @@ Hvis etiketten mangler eller er uklar, **ikke gjett revisjonen ut fra utseendet 
 
 Kontroller faktisk flashminne og RAM mot kravene til **den konkrete OpenWrt-versjonen og fastvarefilen**. At en modell hadde støtte tidligere, betyr ikke nødvendigvis at den støttes av dagens utgivelser. Rutere med svært lite flashminne har kanskje ikke plass til moderne firmware eller et nyttig utvalg pakker. Ikke velg fastvare ut fra modellnavnet alene.
 
+## Krav før publisering: dokumentasjon fra fysisk ruter
+
+Dette forskningsutkastet skal forbli upublisert til vi har dokumentert etikett, maskinvarerevisjon, kretskortbilder og observert fastvareidentitet for en fysisk TL-WR703N. Etiketten alene beviser ikke at flashbrikken eller kortet er umodifisert. Før en installasjonsguide kan publiseres, må vi registrere faktisk flash/RAM, en uavhengig kontrollert offisiell fastvarefil med kontrollsum og en gjenopprettingsmetode som passer den bekreftede revisjonen. **Ikke utled en trygg installasjonsprosedyre fra arkivfilnavn eller et kabinett som ser riktig ut.**
+
 ## Neste steg
 
 Sammenlign opplysningene med [OpenWrts enhetsside for TL-WR703N](https://openwrt.org/toh/tp-link/tl-wr703n). Undersøk støtte for den konkrete revisjonen, flashminne og RAM før du vurderer et fastvarebilde.
