@@ -71,6 +71,9 @@ If your current meter is safe and covers your measurement needs, keep using it. 
 
 **No meter has been bench-tested for this guide.** Accuracy, safety construction and Linux compatibility remain model-specific checks, not measured HackShack Labs results.
 
+
+**Continue learning:** Follow the [Electronics Fundamentals reading path](/series/electronics-basics/) for the complete sequence from multimeter basics through UART, I²C, SPI flash and logic analysis. Each guide distinguishes documentation from actual lab measurements.
+
 ## Further reading
 
 - [sigrok supported hardware](https://sigrok.org/wiki/Supported_hardware)
