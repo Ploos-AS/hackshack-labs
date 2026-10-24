@@ -118,6 +118,9 @@ HackShack Labs bør registrere Pixel-modell, GrapheneOS-versjon/build, fastvare,
 
 For personvern i meldingsapper på Android, se [Molly vs. Signal: Er den alternative klienten verdt å bruke?](/no/articles/molly-vs-signal/). Der sammenligner vi offisiell Signal med Molly og Molly-FOSS, blant annet lokal databasebeskyttelse, varsler og risiko ved forsinkede oppdateringer.
 
+
+For mer om valgfrie Google Play-tjenester og apprettigheter, se [Google Play i sandkasse på GrapheneOS](/no/articles/sandboxed-google-play-grapheneos/).
+
 ## Primærkilder
 
 - [GrapheneOS: funksjoner (engelsk)](https://grapheneos.org/features)
