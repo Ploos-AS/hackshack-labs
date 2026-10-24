@@ -79,7 +79,7 @@ Likewise, `i2cget` and `i2cset` are not harmless diagnostic toys: reads can have
 | Kernel driver owns the address | The OS has bound a device; avoid competing raw accesses |
 | Works on one controller but stalls on another | Clock stretching or controller-driver limitations; verify compatibility |
 
-**Start with power removed**, confirm pinouts, check idle voltage using suitable equipment, and only then power the setup. A logic analyzer can decode traffic but does not replace voltage verification with a meter or oscilloscope.
+**Connect and inspect wiring with power removed.** Confirm pinouts and the intended pull-up voltage before applying power. Then power the setup normally and measure the SDA/SCL idle voltage relative to GND with a suitably rated meter; stop if it is outside the devices' permitted logic range. Only after that should you consider a documented, safe bus transaction. A logic analyzer can decode traffic but does not replace voltage verification with a meter or oscilloscope.
 
 ## What HackShack Labs will test later
 
