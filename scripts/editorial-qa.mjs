@@ -118,8 +118,10 @@ for (const e of entries.filter(e => e.data.draft !== 'true')) {
   const isAffiliate = url => {
     const lower = url.toLowerCase();
     return lower.includes('s.click.aliexpress.com') || lower.includes('aliexpress.com/e/') ||
-      lower.includes('amzn.to/') || lower.includes('utm_medium=affiliate') ||
-      lower.includes('affiliate=') || lower.includes('referral=');
+      lower.includes('amzn.to/') || lower.includes('go.getproton.me/') ||
+      lower.includes('awin1.com/') || lower.includes('tidd.ly/') ||
+      lower.includes('utm_medium=affiliate') || lower.includes('affiliate=') ||
+      lower.includes('referral=') || lower.includes('aff_id=');
   };
   const hasExternalSourceLink = [...markdownLinks, ...htmlLinks].some(url => !isAffiliate(url));
   // Catch obvious citation placeholders without making network requests.
