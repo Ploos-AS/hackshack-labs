@@ -5,6 +5,7 @@ category: guides
 lang: en
 date: 2026-10-20
 tags: [spi, flashrom, ch341a, linux, firmware, repair]
+series: "Electronics Fundamentals"
 translationKey: spi-flash-linux-flashrom
 draft: false
 tested: false
@@ -75,6 +76,9 @@ A backup may also contain secrets or identifying data. Store it securely and do 
 | Different hashes on repeated reads | Unreliable connection, in-circuit interference or unstable supply |
 | Read succeeds but device will not boot after write | Incorrect image, missing board-specific data or failed verification |
 | Unexpectedly warm chip | **Disconnect immediately**; possible wiring or voltage fault |
+
+
+**Continue learning:** Follow the [Electronics Fundamentals reading path](/series/electronics-basics/) for the complete sequence from multimeter basics through UART, I²C, SPI flash and logic analysis. Each guide distinguishes documentation from actual lab measurements.
 
 ## Further reading
 
