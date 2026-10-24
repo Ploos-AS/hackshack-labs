@@ -5,6 +5,7 @@ category: guides
 lang: nb
 date: 2026-10-23
 tags: [logikkanalysator, linux, sigrok, pulseview, uart, spi, i2c]
+series: "Electronics Fundamentals"
 translationKey: logic-analyzer-linux-sigrok-pulseview
 draft: false
 tested: false
@@ -88,6 +89,9 @@ Rimelige «8-channel 24 MHz»-modeller kan finnes i flere revisjoner og kloner m
 ## Planlagte tester hos HackShack Labs
 
 I vår senere laboratorietest vil vi dokumentere brikketype og revisjon, firmware/drivere, fungerende samplingsfrekvenser, kanalbegrensninger, opptak av kjente UART/I²C/SPI-referanser, stabilitet og Linux-rettigheter. **Her påstår vi ingen gjennomførte laboratoriemålinger.**
+
+
+**Les videre:** Se [Elektronikk for nybegynnere](/no/series/electronics-basics/) for en anbefalt rekkefølge fra multimeter til UART, I²C, SPI-flash og logikkanalyse. Artiklene skiller mellom dokumentasjon og faktiske laboratoriemålinger.
 
 ## Kilder
 
