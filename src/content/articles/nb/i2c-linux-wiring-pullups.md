@@ -5,6 +5,7 @@ category: guides
 lang: nb
 date: 2026-10-23
 tags: [i2c, linux, elektronikk, embedded, sensorer]
+series: "Electronics Fundamentals"
 translationKey: i2c-linux-wiring-pullups
 draft: false
 tested: false
@@ -83,6 +84,9 @@ Også `i2cget` og `i2cset` kan ha bivirkninger: lesing kan endre status, og skri
 ## Hva vi vil teste senere
 
 HackShack Labs planlegger å dokumentere faktiske pull-up-verdier, spenningsnivåer, synlighet i Linux og opptak ved flere bussfrekvenser. Før dette er gjort, er artikkelen en referanse – ikke en test av konkrete adaptere.
+
+
+**Les videre:** Se [Elektronikk for nybegynnere](/no/series/electronics-basics/) for en anbefalt rekkefølge fra multimeter til UART, I²C, SPI-flash og logikkanalyse. Artiklene skiller mellom dokumentasjon og faktiske laboratoriemålinger.
 
 ## Kilder
 
