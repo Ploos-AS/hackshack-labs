@@ -5,6 +5,7 @@ category: guides
 lang: nb
 date: 2026-10-20
 tags: [uart, ttl, rs232, rs485, linux, elektronikk]
+series: "Electronics Fundamentals"
 translationKey: usb-uart-ttl-rs232-rs485
 draft: false
 tested: false
@@ -68,6 +69,9 @@ Lengre RS-485-busser kan trenge **120 Ω terminering i hver fysisk ende av kabel
 ## Våre rimelige adaptere
 
 HackShack Labs har bestilt FT232RL, CH340N og CH343G UART-adaptere, samt en separat CH343G RS-232/RS-485-konverter. **Vi har ennå ikke testet noen av dem selv.** Vi skal måle de faktiske signalnivåene og undersøke Linux-funksjonaliteten før vi anbefaler dem til følsom maskinvare.
+
+
+**Les videre:** Se [Elektronikk for nybegynnere](/no/series/electronics-basics/) for en anbefalt rekkefølge fra multimeter til UART, I²C, SPI-flash og logikkanalyse. Artiklene skiller mellom dokumentasjon og faktiske laboratoriemålinger.
 
 ## Videre lesning
 
