@@ -118,6 +118,9 @@ HackShack Labs will record the Pixel model, GrapheneOS release/build, firmware, 
 
 For messaging privacy on Android, see [Molly vs Signal: Is the alternative client worth using?](/articles/molly-vs-signal/). It compares the official Signal client with Molly and Molly-FOSS, including local database protection, notification options and the risk of falling behind upstream updates.
 
+
+For a closer look at the optional Google Play integration and its permission boundaries, see [Sandboxed Google Play on GrapheneOS](/articles/sandboxed-google-play-grapheneos/).
+
 ## Primary sources
 
 - [GrapheneOS: features](https://grapheneos.org/features)
