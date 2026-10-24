@@ -73,6 +73,9 @@ Hvis multimeteret du allerede har, er sikkert og dekker behovet, kan du beholde 
 
 **Ingen multimetre er benktestet for denne guiden.** Nøyaktighet, sikkerhetskonstruksjon og Linux-kompatibilitet må kontrolleres for den enkelte modellen.
 
+
+**Les videre:** Se [Elektronikk for nybegynnere](/no/series/electronics-basics/) for en anbefalt rekkefølge fra multimeter til UART, I²C, SPI-flash og logikkanalyse. Artiklene skiller mellom dokumentasjon og faktiske laboratoriemålinger.
+
 ## Videre lesning
 
 - [Maskinvare støttet av sigrok](https://sigrok.org/wiki/Supported_hardware)
