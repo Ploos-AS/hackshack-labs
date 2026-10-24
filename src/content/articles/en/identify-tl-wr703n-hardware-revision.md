@@ -31,6 +31,10 @@ If the label is missing or ambiguous, **do not guess** the hardware revision fro
 
 Check the device's actual flash and RAM configuration against the requirements of the **specific OpenWrt release and image**. Historical support for a model does not establish current release compatibility, and a router with very little flash may not accommodate modern images or a useful set of packages. Do not select firmware from the model name alone.
 
+## Publication gate: real device evidence required
+
+This research draft must remain unpublished until we have recorded a physical TL-WR703N's label, hardware revision, board photos and observed firmware identity. A label alone does not prove that its flash chip or board has not been modified. Before any firmware guide is promoted, document the actual flash/RAM configuration, an independently matched official firmware image, its checksum and a recovery path appropriate to the confirmed revision. **Do not infer a safe flashing procedure from archived filenames or an apparently matching case.**
+
 ## Next step
 
 Compare the recorded information with the [OpenWrt TL-WR703N device page](https://openwrt.org/toh/tp-link/tl-wr703n) and the firmware compatibility evidence before choosing an image.
