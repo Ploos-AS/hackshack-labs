@@ -52,6 +52,9 @@ An upgrade may be worthwhile if you need a feature or reliability improvement de
 
 ## A Home Assistant backup is not always a coordinator migration
 
+**Before changing coordinators:** Back up Home Assistant *and* follow the migration or backup procedure documented for your actual Zigbee stack (ZHA or Zigbee2MQTT). A general Home Assistant backup does not by itself prove that radio network identity, keys and paired devices will migrate without re-pairing. Check current ZBT-1/ZBT-2 and stack documentation for your firmware and hardware revision.
+
+
 Before replacing a Zigbee coordinator, distinguish a Home Assistant configuration backup from a **supported radio/network migration**. Depending on the stack and adapter, restoring the application may not transfer the coordinator's network identity, security keys or device relationships to a different radio. Check the current ZHA or Zigbee2MQTT migration procedure for both source and destination hardware, retain the old adapter until the new network is verified, and plan for devices that may need re-pairing. Keep any exported network keys private; they are security-sensitive credentials, not ordinary troubleshooting attachments.
 
 ## What we have not tested
