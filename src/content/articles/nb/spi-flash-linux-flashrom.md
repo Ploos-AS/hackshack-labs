@@ -5,6 +5,7 @@ category: guides
 lang: nb
 date: 2026-10-20
 tags: [spi, flashrom, ch341a, linux, firmware, reparasjon]
+series: "Electronics Fundamentals"
 translationKey: spi-flash-linux-flashrom
 draft: false
 tested: false
@@ -75,6 +76,9 @@ En sikkerhetskopi kan også inneholde hemmeligheter og personopplysninger. Oppbe
 | Ulike hashverdier | Ustabil tilkobling, forstyrrelser på kortet eller ustabil forsyning |
 | Enheten starter ikke etter skriving | Feil firmware, manglende enhetsspesifikke data eller feil ved verifisering |
 | Brikken blir uventet varm | **Koble fra umiddelbart**; mulig koblings- eller spenningsfeil |
+
+
+**Les videre:** Se [Elektronikk for nybegynnere](/no/series/electronics-basics/) for en anbefalt rekkefølge fra multimeter til UART, I²C, SPI-flash og logikkanalyse. Artiklene skiller mellom dokumentasjon og faktiske laboratoriemålinger.
 
 ## Videre lesning
 
