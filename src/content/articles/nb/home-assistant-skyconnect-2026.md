@@ -52,6 +52,9 @@ Oppgradering kan være fornuftig dersom du har et konkret behov som en ny radio 
 
 ## Home Assistant-backup er ikke alltid en koordinatorflytting
 
+**Før du bytter koordinator:** Ta sikkerhetskopi av Home Assistant *og* følg migrerings- eller sikkerhetskopiprosedyren for Zigbee-løsningen du faktisk bruker (ZHA eller Zigbee2MQTT). En vanlig Home Assistant-backup garanterer ikke alene at nettverksidentitet, nøkler og parede enheter blir overført uten ny paring. Kontroller gjeldende dokumentasjon for ZBT-1/ZBT-2, fastvare og Zigbee-løsning.
+
+
 Før du bytter Zigbee-koordinator, må du skille mellom en sikkerhetskopi av Home Assistant-oppsettet og en **støttet migrering av radio og nettverk**. Avhengig av løsning og adapter er det ikke sikkert at gjenoppretting av applikasjonen overfører koordinatorens nettverksidentitet, sikkerhetsnøkler eller enhetstilknytninger til en annen radio. Følg oppdatert migreringsveiledning for ZHA eller Zigbee2MQTT og både gammel og ny maskinvare, behold den gamle adapteren til den nye løsningen er verifisert, og vær forberedt på at enheter kan måtte pares på nytt. Eksporterte nettverksnøkler må holdes private; de er sikkerhetsfølsomme legitimasjonsdata, ikke vanlige feilsøkingsvedlegg.
 
 ## Hva har vi ikke testet?
