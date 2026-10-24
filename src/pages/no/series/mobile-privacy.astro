@@ -1,11 +1,11 @@
 ---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
-import { published, articleUrl } from '../../../lib/articles';
+import { published, articleUrl, evidenceLabel } from '../../../lib/articles';
 const lang = 'nb';
-const entries = (await published()).filter(a => a.data.lang === lang && a.data.tags.some(t => ['google-pixel','grapheneos'].includes(t)));
+const entries = (await published()).filter(a => a.data.lang === lang && a.data.tags.some(t => ['google-pixel','grapheneos','molly'].includes(t)));
 const planned = ["Installere GrapheneOS på Pixel","Brukerprofiler i GrapheneOS","Appinstallasjon og oppdateringer på tvers av profiler","Google Play i sandkasse","GrapheneOS i Norge","Sikkerhetskopiering, flytting og gjenoppretting","Enkle, balanserte og strengt isolerte profiloppsett"];
 ---
-<SiteLayout title="Mobilpersonvern" lang="nb" alternateUrl="/series/mobile-privacy/">
+<SiteLayout title="Mobilpersonvern" lang="nb" alternateUrl="/series/mobile-privacy/" description="Guider om GrapheneOS, Pixel, Molly og Google Play i sandkasse, med tydelig evidensmerking.">
   <p class="tag">SERIE / PERSONVERN</p>
   <h1>Mobilpersonvern: Pixel og GrapheneOS</h1>
   <p>En kildebasert guide til Googles Android, GrapheneOS, appisolasjon og kostnadene ved å bytte. Publiserte artikler er ikke nødvendigvis praktisk testet; se redaksjonell status i hver artikkel.</p>
