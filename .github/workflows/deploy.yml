@@ -21,6 +21,11 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run qa:editorial
       - run: npm run qa:freshness
+      - run: node scripts/generate-editorial-review.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: editorial-review-inventory
+          path: reports/M1-EDITORIAL-REVIEW.md
       - run: node scripts/qa-code-copy.mjs
       - run: npm run build
       - run: node scripts/qa-article-pages.mjs
