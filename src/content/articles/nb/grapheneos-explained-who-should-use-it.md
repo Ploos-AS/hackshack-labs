@@ -28,6 +28,9 @@ En operatørlåst eller på annen måte begrenset variant kan være umulig å in
 
 ## Støttede modeller og kjøpsråd (oktober 2026)
 
+**Advarsel om levetid (kilde kontrollert 25. oktober 2026):** I GrapheneOS' [offisielle oversikt over støttede enheter](https://grapheneos.org/faq#supported-devices) er **oktober 2026** oppgitt som slutten på Googles garanterte minimumsstøtte for Pixel 6 og Pixel 6 Pro. Et alternativt operativsystem kan ikke alene levere fullstendige sikkerhetsrettelser for enhetsfastvare etter at produsenten slutter å oppdatere den. Ikke kjøp disse eldre modellene med tanke på en langvarig, sikker installasjon. Kontroller den oppdaterte støttetabellen og prosjektets kjøpsanbefalinger før du velger Pixel-modell.
+
+
 Prosjektets liste over modeller med produksjonsstøtte omfatter **Pixel 10 / 10 Pro / 10 Pro XL / 10 Pro Fold; Pixel 9 / 9 Pro / 9 Pro XL / 9 Pro Fold / 9a; Pixel 8 / 8 Pro / 8a; Pixel 7 / 7 Pro / 7a; Pixel 6 / 6 Pro / 6a; Pixel Fold; og Pixel Tablet**. Dette er et datert øyeblikksbilde, ikke et varig kompatibilitetsløfte. Se [oppdatert offisiell liste (engelsk)](https://grapheneos.org/faq#supported-devices).
 
 Ved nykjøp bør du prioritere en modell som prosjektet anbefaler, som kan låses opp, og som har lengst mulig gjenværende fastvarestøtte. Ikke anta at alle eldre støttede modeller er like gode kjøp. Googles sjuårsløfte om OS- og sikkerhetsoppdateringer gjelder Pixel 8 og nyere; eldre modeller har andre løfter. Kontroller [GrapheneOS sin oversikt over støtteperioder (engelsk)](https://grapheneos.org/faq#device-lifetime) og [Googles oppdateringspolicy](https://support.google.com/pixelphone/answer/4457705?hl=no).
