@@ -16,6 +16,17 @@ evidence: documentation
 
 Dette er del 2 av [WR703N Labs](/series/wr703n-labs/). Del 1 handler om [TL-WR703N og begrensningene dens](/no/articles/wr703n-second-life/).
 
+## Dokumentasjon og krav før publisering
+
+| Dokumentasjon | Status | Hva det faktisk viser |
+| --- | --- | --- |
+| Kontrollsummer for arkiverte LEDE-filer | Verifisert i GitHub Actions | Nedlastede filer samsvarer med oppgitte summer; **ikke** maskinvarekompatibilitet |
+| Headerfelt og filstørrelser | Automatisk analyse av **binærfiler** | Egenskaper ved arkivfilene; **ikke** målte flashadresser på ruteren |
+| Faktisk maskinvarerevisjon og flashinndeling | **Ikke verifisert på fysisk ruter** | Må dokumenteres før valg av installasjonsfil |
+| OEM-installasjon, seriellkonsoll og TFTP-gjenoppretting | **Ikke testet på fysisk ruter** | Må prøves på bekreftet revisjon før dette utkastet blir en installasjonsguide |
+
+**Publiseringskrav:** Behold `draft: true` inntil fysisk enhet, fastvarekilde, gjenopprettingsmetode, skrivebeskyttet seriell oppstartslogg og en etterprøvbar installasjons- eller gjenopprettingstest er dokumentert. Arkivert fastvare er uten ordinær sikkerhetsstøtte og hører bare hjemme i et bevisst isolert labnett, aldri som sikkerhetsbarriere mot internett.
+
 ## Hva vi må verifisere
 
 Før publisering skal vi dokumentere nøyaktig maskinvarerevisjon, firmwarefilenes navn og kontrollsummer, riktig installasjonsvei fra hver aktuell startfirmware og en praktisk prøvd gjenopprettingsmetode. Opprinnelig WR703N har 4 MB flash og 32 MB RAM. Foreldet firmware må bare brukes på et isolert laboratorienett.
@@ -111,7 +122,7 @@ En ny [kjøring 13. oktober](https://github.com/Ploos-AS/hackshack-labs/actions/
 
 Verdiene er like i begge filer, og oppgitt filsystemutstrekning passer innenfor filstørrelsene. Dette verifiserer verken alle komprimerte blokker eller ruterens faktiske flashpartisjoner. Manglende uImage-signatur betyr ikke nødvendigvis ugyldig firmware. Offseten er **ikke** en verifisert adresse for skriving til flash.
 
-## Factory mot sysupgrade: målte forskjeller
+## Factory mot sysupgrade: forskjeller målt i arkivfiler
 
 Analyseverktøyet sammenligner filene byte for byte og registrerer felles prefiks og suffiks, første ulike byte, størrelsesforskjell og de første 64 bytene.
 
@@ -119,7 +130,7 @@ I [kjøring #3, 13. oktober](https://github.com/Ploos-AS/hackshack-labs/actions/
 
 Dette dokumenterer **ikke** lengden på produsentheader, utfyllingsregler, oppstartslasterområdet eller trygge flashadresser. Factory-filen må bare brukes via en verifisert OEM-installasjonsvei, og sysupgrade bare ved en kompatibel OpenWrt-oppgradering.
 
-## TP-Link v1-header: observerte felt
+## TP-Link v1-header: observasjoner fra binærfiler
 
 En [automatisk kjøring 13. oktober](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38466400856) undersøkte mulige TP-Link v1-headerfelt. Feltinndelingen tilsvarer definisjonene i [OpenWrts mktplinkfw-kildekode](https://lxr.openwrt.org/source/firmware-utils/src/mktplinkfw.c).
 
