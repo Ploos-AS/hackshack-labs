@@ -41,7 +41,7 @@ Dette er en **sammenligning av funksjoner, ikke en sikkerhetsrangering**. Begrep
 
 Tuta beskriver **TutaCrypt** og beskyttelse mot framtidige kvantetrusler. Proton dokumenterer sin ende-til-ende-kryptering og kryptografiske forbedringer. Vi bør undersøke hvilke data og metadata som beskyttes, hvordan nøkler håndteres, hva som skjer ved e-post til eksterne mottakere, og hvilke påstander som er uavhengig kontrollert. Vi har **ikke revidert implementasjonene**.
 
-For begge leverandørene har vanlig e-post begrensninger: Ikke anta at enhver melding til eksterne mottakere automatisk er ende-til-ende-kryptert uten en særskilt sikker leveringsmekanisme. Transportkryptering og kryptert lagring er ikke det samme som ende-til-ende-kryptering.
+Hos begge leverandørene har vanlig e-post begrensninger: Ikke anta at enhver melding til eksterne mottakere automatisk er ende-til-ende-kryptert uten en særskilt sikker leveringsmekanisme. Transportkryptering og kryptert lagring er ikke det samme som ende-til-ende-kryptering.
 
 ## Linux og kompatibilitet
 
