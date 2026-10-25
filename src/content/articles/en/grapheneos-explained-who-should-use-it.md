@@ -28,6 +28,9 @@ A carrier-locked or otherwise bootloader-restricted device may not be installabl
 
 ## Supported devices and buying advice (October 2026)
 
+**Support-life warning (source checked 25 October 2026):** GrapheneOS's [official supported-device FAQ](https://grapheneos.org/faq#supported-devices) lists the Pixel 6 and Pixel 6 Pro OEM minimum support end in **October 2026**. A device reaching the end of OEM security updates cannot receive complete device firmware security fixes from an alternative OS alone. Do not buy these older phones for a long-lived secure installation; consult the live support table and the project's recommended purchase guidance for any Pixel model before buying.
+
+
 The project's published production support list includes **Pixel 10 / 10 Pro / 10 Pro XL / 10 Pro Fold; Pixel 9 / 9 Pro / 9 Pro XL / 9 Pro Fold / 9a; Pixel 8 / 8 Pro / 8a; Pixel 7 / 7 Pro / 7a; Pixel 6 / 6 Pro / 6a; Pixel Fold; and Pixel Tablet**. This is a dated snapshot, not a permanent compatibility promise. See the [live official list](https://grapheneos.org/faq#supported-devices).
 
 For a new purchase, prioritize a currently recommended, unlockable model with the longest remaining firmware-support lifetime, rather than assuming every supported older model is equally advisable. Google's seven-year OS/security policy applies to Pixel 8 and later; older models have different commitments. Always check [GrapheneOS device lifetime guidance](https://grapheneos.org/faq#device-lifetime) and [Google's update policy](https://support.google.com/pixelphone/answer/4457705).
