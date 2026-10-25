@@ -16,6 +16,8 @@ evidence: documentation
 
 This is Part 2 of [WR703N Labs](/series/wr703n-labs/). Part 1 introduces the [TL-WR703N and its limitations](/articles/wr703n-second-life/).
 
+**Current upstream support status (checked 25 October 2026):** OpenWrt's TL-WR703N v1 technical-data page states that support for the original 4 MB flash / 32 MB RAM hardware ended in 2022 and that **19.07.10 was the last official build for 4/32 devices**. The LEDE 17.01.7 images analyzed below are *older archival examples*, not the last OpenWrt build and not a current security-maintained firmware recommendation. See the [device technical data](https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr703n_v1) and [OpenWrt 4/32 warning](https://openwrt.org/supported_devices/432_warning). **No firmware compatibility or recovery testing on our unit is implied.**
+
 ## Evidence boundaries and publication gate
 
 | Evidence | Status | What it establishes |
