@@ -49,6 +49,8 @@ Mange rimelige åttekanalsanalysatorer bruker Cypress FX2/FX2LP som laster **fx2
 
 Kontroller at passende **udev-regler** fra libsigrok er installert (noen distribusjoner krever ekstra oppsett). Kjør `sudo udevadm control --reload`, koble fra og til analysatoren, og kontroller sesjons-/grupperettigheter. Ikke kjør GUI som root for å omgå problemet.
 
+**Detaljer om rettigheter fra oppstrømsdokumentasjonen:** [fx2lafw-veiledningen](https://sigrok.org/wiki/Fx2lafw) beskriver enhetsreglene `60-libsigrok.rules` og en tilgangsregel, for eksempel `61-libsigrok-uaccess.rules` (aktiv skrivebordsøkt) eller `61-libsigrok-plugdev.rules` (plugdev-gruppen). Undersøk først hva distribusjonen allerede har installert, og ikke legg inn begge tilgangsvariantene ukritisk. [Sigroks firmwareveiledning](https://sigrok.org/wiki/Firmware) dokumenterer hvor fastvarefilene skal ligge. Dette er oppstrømsanvisninger, ikke testresultater fra vår analysator.
+
 Eksempel på opptak fra en **identifisert, kompatibel FX2-analysator** med trygg elektrisk tilkobling:
 
 ```sh
