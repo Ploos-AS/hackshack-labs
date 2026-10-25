@@ -49,6 +49,8 @@ Many low-cost 8-channel analyzers use Cypress FX2/FX2LP controllers that load **
 
 For access errors, check whether suitable libsigrok **udev rules** are installed (some distributions need additional setup). Reload with `sudo udevadm control --reload`, then unplug and reconnect the device; verify active-session or group access. Do not run the GUI as root as a workaround.
 
+**Upstream permissions detail:** The [fx2lafw documentation](https://sigrok.org/wiki/Fx2lafw) describes separate `60-libsigrok.rules` device rules plus an access rule such as `61-libsigrok-uaccess.rules` (active desktop session) or `61-libsigrok-plugdev.rules` (plugdev group). Check what your distribution already installed before adding local rules, and do not copy both access policies blindly. Firmware file locations are documented in [sigrok's firmware guide](https://sigrok.org/wiki/Firmware). These are upstream instructions, not yet verified on our analyzer.
+
 Example capture for an **identified compatible FX2 analyzer** on a safely connected digital signal:
 
 ```sh
