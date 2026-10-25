@@ -16,6 +16,17 @@ evidence: documentation
 
 This is Part 2 of [WR703N Labs](/series/wr703n-labs/). Part 1 introduces the [TL-WR703N and its limitations](/articles/wr703n-second-life/).
 
+## Evidence boundaries and publication gate
+
+| Evidence | Status | What it establishes |
+| --- | --- | --- |
+| Archived LEDE image hashes | Verified in GitHub Actions | Downloaded bytes match the cited checksums; **not** device compatibility |
+| Header fields and image size comparison | Automated **file-level** analysis | Properties of archived binary files; **not** measured router flash addresses |
+| Exact physical router revision and flash layout | **Not verified on hardware** | Must be documented before choosing an install image |
+| OEM installation, serial console and TFTP recovery | **Not tested on hardware** | Must be demonstrated on the confirmed revision before this draft becomes instructions |
+
+**Publication gate:** Keep `draft: true` until the exact unit, firmware origin, recovery procedure, read-only serial boot log and a repeatable installation or recovery test are documented. Archived firmware is unsupported and is appropriate only for a deliberately isolated lab, never an Internet-facing security gateway.
+
 ## What this guide will verify
 
 We will document the exact WR703N hardware revision, firmware image filenames and checksums, the supported installation route for each starting firmware, and a recovery procedure. The WR703N's original 4 MB flash and 32 MB RAM make it a legacy OpenWrt target; unsupported firmware should be used only on isolated lab networks.
@@ -113,13 +124,13 @@ The SquashFS fields match across the two image variants, and the declared filesy
 
 Both files begin with the same OpenWrt-related header bytes. The scan is heuristic; an absent uImage signature is not evidence of invalid firmware, and the offset is **not** an established flash partition boundary. These findings do not constitute hardware testing.
 
-## Factory versus sysupgrade: measured differences, not assumptions
+## Factory versus sysupgrade: differences measured in archived files
 
 The read-only analyzer now compares the two verified images byte for byte and records their identical prefix and suffix lengths, first differing offset, file-size difference, and first 64 bytes. This comparison runs automatically as part of the firmware analysis workflow.
 
 **Measured in [GitHub Actions run #3](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38400344910), 13 Oct 2026:** the factory image is **327,676 bytes larger** than sysupgrade; they share an **identical 76-byte prefix**, differ first at **offset 76**, and have no identical suffix. Both start with the ASCII string `OpenWrt` and the identifier `r4030-6028f00df0` within their first 64 bytes. Both image SHA-256 checks passed. These byte-level measurements do not, by themselves, establish an OEM header length, padding policy, bootloader region, or safe flash offsets. Use the **factory** image only for a verified OEM installation route, and **sysupgrade** only for a compatible OpenWrt upgrade route.
 
-## TP-Link v1 header: measured values
+## TP-Link v1 header: file-level observations
 
 The [13 Oct 2026 automated run](https://github.com/Ploos-AS/hackshack-labs/actions/runs/38466400856) inspected candidate TP-Link v1 header fields in both SHA-256-verified images. The layout corresponds to the field definitions in [OpenWrt's mktplinkfw source](https://lxr.openwrt.org/source/firmware-utils/src/mktplinkfw.c).
 
