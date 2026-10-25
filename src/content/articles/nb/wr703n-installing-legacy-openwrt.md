@@ -16,6 +16,8 @@ evidence: documentation
 
 Dette er del 2 av [WR703N Labs](/series/wr703n-labs/). Del 1 handler om [TL-WR703N og begrensningene dens](/no/articles/wr703n-second-life/).
 
+**Gjeldende støtte oppstrøms (kontrollert 25. oktober 2026):** OpenWrts enhetsdata for TL-WR703N v1 oppgir at støtten for opprinnelig maskinvare med 4 MB flash og 32 MB RAM opphørte i 2022, og at **19.07.10 var siste offisielle utgave for 4/32-enheter**. LEDE 17.01.7-filene som analyseres nedenfor, er *eldre arkiveksempler*, ikke siste OpenWrt-utgave eller anbefalt, sikkerhetsvedlikeholdt fastvare. Se [enhetsdata](https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr703n_v1) og [OpenWrts 4/32-advarsel](https://openwrt.org/supported_devices/432_warning). **Dette dokumenterer ikke kompatibilitet eller gjenoppretting på vår fysiske ruter.**
+
 ## Dokumentasjon og krav før publisering
 
 | Dokumentasjon | Status | Hva det faktisk viser |
