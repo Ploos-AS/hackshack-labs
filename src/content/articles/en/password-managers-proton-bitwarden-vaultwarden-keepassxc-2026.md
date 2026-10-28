@@ -128,6 +128,16 @@ Usually **no**. Start with a free tier or KeePassXC, provided it meets your need
 
 Self-hosting is not automatically cheaper: count maintenance time, backups, monitoring, domain/TLS configuration and incident response.
 
+## Export formats: portability is not the same as backup recoverability
+
+**Bitwarden:** Its encrypted JSON exports have two different recovery properties. An **account-restricted** export can only be imported back into the originating account and can become unusable after encryption-key rotation. A **password-protected** encrypted export can be imported into another Bitwarden account with the chosen password. Neither format guarantees that every attachment or passkey migrates; inventory those separately. Read the [official encrypted-export guidance](https://bitwarden.com/help/encrypted-export/).
+
+**Proton Pass:** The [official export guide](https://proton.me/support/pass-export) describes a PGP-encrypted JSON inside ZIP, an unencrypted ZIP, and CSV. Export is documented from the browser extension, web app and Windows desktop app, **not the mobile apps**. A portable encrypted backup may need decryption before another provider can import it; treat any resulting JSON as highly sensitive.
+
+**KeePassXC:** Its [user guide](https://keepassxc.org/docs/KeePassXC_UserGuide) documents export of passkeys to `.passkey` files. **Those exported passkey files are unencrypted** and require protection just like plaintext password exports. Confirm that the *destination* can import each item before promising migration.
+
+**Vaultwarden:** It is an [unofficial Bitwarden-compatible server](https://github.com/dani-garcia/vaultwarden), not a Bitwarden-operated service. Backup of its database, attachments, encryption material and configuration requires its own verified restore procedure; a client-side vault export does not automatically replace a full server backup.
+
 ## Moving safely between managers
 
 1. Create and test backups of the existing vault.
