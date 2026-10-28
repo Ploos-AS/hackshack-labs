@@ -128,6 +128,16 @@ Som regel **nei**. Begynn med en gratisversjon eller KeePassXC hvis det dekker b
 
 Selvhosting er ikke automatisk billigere: regn med tidsbruk, sikkerhetskopiering, overvåking, domene/TLS og håndtering av hendelser.
 
+## Eksportformater: flyttbarhet er ikke det samme som gjenopprettbar sikkerhetskopi
+
+**Bitwarden:** Kryptert JSON-eksport finnes med ulike egenskaper. En **kontobundet** eksport kan bare importeres i kontoen som laget den, og kan bli ubrukelig etter rotasjon av krypteringsnøkkelen. En **passordbeskyttet** kryptert eksport kan importeres til en annen Bitwarden-konto ved hjelp av eksportpassordet. Ingen av delene garanterer at alle vedlegg eller passnøkler følger med. Se [Bitwardens eksportdokumentasjon](https://bitwarden.com/help/encrypted-export/).
+
+**Proton Pass:** [Den offisielle eksportveiledningen](https://proton.me/nb/support/pass-export) beskriver ZIP med PGP-kryptert JSON, ukryptert ZIP og CSV. Eksport er dokumentert fra nettleserutvidelsen, nettappen og Windows-programmet, **ikke fra mobilappene**. Ved flytting til en annen leverandør kan det være nødvendig å dekryptere eksporten først; behandle den resulterende JSON-filen som svært sensitiv.
+
+**KeePassXC:** [Brukerveiledningen](https://keepassxc.org/docs/KeePassXC_UserGuide) beskriver eksport av passnøkler til filer med endelsen `.passkey`. **Disse filene er ukrypterte** og må sikres som andre klarteksteksporter. Kontroller at mottakerprogrammet faktisk støtter import av hvert element før du regner flyttingen som mulig.
+
+**Vaultwarden:** Dette er en [uoffisiell Bitwarden-kompatibel server](https://github.com/dani-garcia/vaultwarden), ikke en tjeneste drevet av Bitwarden. Sikkerhetskopiering av database, vedlegg, krypteringsmateriale og konfigurasjon krever en egen testet gjenopprettingsprosedyre. En eksport fra klienten erstatter ikke nødvendigvis en komplett serversikkerhetskopi.
+
 ## Sikker flytting mellom passordbehandlere
 
 1. Lag og test sikkerhetskopi av den gamle databasen.
